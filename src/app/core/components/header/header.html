@@ -1,0 +1,48 @@
+<header class="tx-navbar"
+        [class.tx-header--solid]="!onHome || elevated"
+        [class.tx-header--transparent]="onHome && !elevated">
+  <div class="container">
+    <div class="tx-navbar-inner">
+      <!-- Brand -->
+      <a routerLink="/" class="tx-nav-brand">
+        <ng-container *ngIf="logo$ | async as logo; else dot">
+          <img [src]="logo" [alt]="(site$|async)?.name || 'Logo'" class="h-16 w-auto" />
+        </ng-container>
+        <ng-template #dot>
+          <span class="inline-block h-10 w-10 rounded-full bg-brand"></span>
+        </ng-template>
+      </a>
+
+      <!-- Links -->
+      <nav class="tx-nav-links">
+        <a routerLink="/" [routerLinkActiveOptions]="{exact:true}"
+           routerLinkActive="tx-nav-link-active" class="tx-nav-link">Home</a>
+        <div class="tx-nav-item">
+          <a routerLink="/services" routerLinkActive="tx-nav-link-active" class="tx-nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
+          <div class="tx-submenu" *ngIf="serviceList$ | async as services" role="menu">
+            <a *ngFor="let s of services" [routerLink]="['/services', s.slug]" class="tx-submenu__link" role="menuitem">
+              {{ s.title }}
+            </a>
+          </div>
+        </div>
+        <a routerLink="/about" routerLinkActive="tx-nav-link-active" class="tx-nav-link">About</a>
+        <a routerLink="/qhse" routerLinkActive="tx-nav-link-active" class="tx-nav-link">QHSE</a>
+        <a routerLink="/contact" routerLinkActive="tx-nav-link-active" class="tx-nav-link">Contact</a>
+        <a routerLink="/work-activities" routerLinkActive="tx-nav-link-active" class="tx-nav-link">Work Activities</a>
+      </nav>
+
+      <!-- Mobile -->
+      <details class="relative">
+        <summary class="tx-burger">☰</summary>
+        <div class="tx-drawer">
+          <a routerLink="/">Home</a>
+          <a routerLink="/services">Services</a>
+          <a routerLink="/about">About</a>
+          <a routerLink="/qhse">QHSE</a>
+          <a routerLink="/contact">Contact</a>
+          <a routerLink="/quote" class="mt-1 bg-brand text-white px-4 py-2 rounded-lg block text-center">Get a Quote</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

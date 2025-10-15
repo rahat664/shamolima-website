@@ -1,0 +1,108 @@
+<app-header />
+
+<section class="page-hero page-hero--navy" @fadeIn>
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="page-hero__orb page-hero__orb--one"></div>
+  <div class="page-hero__orb page-hero__orb--two"></div>
+
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
+    <div>
+      <p class="kicker text-brand">QHSE</p>
+      <h1 class="page-hero__title">Quality, Health, Safety & Environment without compromise</h1>
+      <p class="page-hero__lede">
+        Shamolima’s integrated management system drives zero harm, disciplined execution and continual improvement across every project stage.
+      </p>
+
+      <div class="page-hero__tags">
+        <span class="tag-chip">ISO certification</span>
+        <span class="tag-chip">Training</span>
+        <span class="tag-chip">Audits</span>
+        <span class="tag-chip">Compliance</span>
+      </div>
+
+      <div class="page-hero__actions" *ngIf="qhse$ | async as q">
+        <a [href]="q.pageUrls?.goals" target="_blank" rel="noopener" class="btn btn-primary btn--glow">View QHSE goals</a>
+        <a [href]="q.pageUrls?.training" target="_blank" rel="noopener" class="btn btn--light">Training framework</a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <article class="stat-card">
+        <div class="stat-card__value">Zero</div>
+        <p class="stat-card__label">Incident ambition</p>
+        <p class="stat-card__detail">Daily toolbox talks, audits and stop-work authority across all crews.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value">IMS</div>
+        <p class="stat-card__label">Integrated management system</p>
+        <p class="stat-card__detail">ISO-driven processes covering quality, health, safety and environment.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value">24/7</div>
+        <p class="stat-card__label">Monitoring</p>
+        <p class="stat-card__detail">Live tracking of permits, equipment condition, weather and corridor risk.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bright" [@listStagger]>
+  <div class="container" *ngIf="qhse$ | async as q">
+    <p class="kicker text-brand">Our commitments</p>
+    <h2 class="section-title">Embedding quality and safety in every mobilization</h2>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <article *ngFor="let goal of q.goals; index as i" class="feature-card">
+        <span class="feature-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
+        <h3 class="feature-card__title">{{ goal }}</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" *ngIf="qhse$ | async as q" [@listStagger]>
+  <div class="container">
+    <p class="kicker text-brand">Training in action</p>
+    <h2 class="section-title">Hands-on drills & competency refreshers</h2>
+
+    <div class="masonry mt-8 columns-1 sm:columns-2 lg:columns-3" *ngIf="q.trainingImages?.length">
+      <figure *ngFor="let img of q.trainingImages" class="gallery-card">
+        <img [src]="img" alt="QHSE training" class="gallery-card__image">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy" *ngIf="qhse$ | async as q" @fadeIn>
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Certifications</p>
+      <h2 class="section-title text-white">Integrated management certificates & memberships</h2>
+      <p class="section-lede text-white/70">Our IMS certifications and industry memberships evidence the rigor we bring to safety, environmental stewardship and quality delivery.</p>
+    </div>
+
+    <aside class="insight-card">
+      <h3 class="insight-card__heading">Key documents</h3>
+      <ul class="insight-card__list">
+        <li>
+          <span class="insight-card__title">IMS Certificate</span>
+          <span class="insight-card__detail">Download the latest ISO certifications covering QHSE.</span>
+        </li>
+        <li>
+          <span class="insight-card__title">Training matrix</span>
+          <span class="insight-card__detail">Role-based competency and refresher schedules.</span>
+        </li>
+        <li>
+          <span class="insight-card__title">Emergency response plan</span>
+          <span class="insight-card__detail">Escalation pathways and 24/7 contact roster.</span>
+        </li>
+      </ul>
+      <div class="insight-card__cta mt-8">
+        <a [href]="q.pageUrls?.imsCertificates" target="_blank" rel="noopener" class="btn btn-primary w-full justify-center">Download IMS certificate</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<app-footer />
+

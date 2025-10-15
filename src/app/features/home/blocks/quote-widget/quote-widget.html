@@ -1,0 +1,37 @@
+<section class="section bg-brand text-white" @fadeIn>
+  <div class="container grid lg:grid-cols-[1fr,420px] gap-10 items-center">
+    <div>
+      <p class="kicker text-white/70">Quote</p>
+      <h3 class="text-2xl md:text-3xl font-bold">Provide quick — Tracking your cargo</h3>
+      <p class="text-white/80 mt-2">Pick a freight type, incoterms and extras; we’ll respond fast.</p>
+    </div>
+
+    <form class="card p-6 bg-white text-ink grid gap-3">
+      <label class="text-sm">Freight Type</label>
+      <select class="border rounded px-3 py-2">
+        <option>Truck</option>
+        <option>Ship</option>
+        <option>Plane</option>
+        <option>Train</option>
+      </select>
+
+      <label class="text-sm mt-2">Incoterms</label>
+      <select class="border rounded px-3 py-2">
+        <option>EXW</option>
+        <option>FCA</option>
+        <option>CPT</option>
+        <option>CIP</option>
+        <option>DAP</option>
+      </select>
+
+      <div class="grid grid-cols-2 gap-2 mt-2 text-sm text-ink">
+        <label class="inline-flex items-center gap-2"><input type="checkbox"> Fragile</label>
+        <label class="inline-flex items-center gap-2"><input type="checkbox"> Express delivery</label>
+        <label class="inline-flex items-center gap-2"><input type="checkbox"> Insurance</label>
+        <label class="inline-flex items-center gap-2"><input type="checkbox"> Packaging</label>
+      </div>
+
+      <button class="btn btn-primary mt-2">Request a quote</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+<app-header />
+
+<section class="page-hero page-hero--navy" @fadeIn>
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="page-hero__orb page-hero__orb--one"></div>
+  <div class="page-hero__orb page-hero__orb--two"></div>
+
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Contact</p>
+      <h1 class="page-hero__title">We&rsquor;re ready to support your next mobilization</h1>
+      <p class="page-hero__lede">
+        Reach our operations desks any time for project planning, equipment availability or shipment status. We mobilise fast across every major port, river terminal and industrial zone in Bangladesh.
+      </p>
+
+      <div class="page-hero__tags">
+        <span class="tag-chip">24/7 ops desk</span>
+        <span class="tag-chip">Dhaka HQ</span>
+        <span class="tag-chip">Chattagram office</span>
+      </div>
+
+      <div class="page-hero__actions">
+        <a href="tel:+88029562676" class="btn btn-primary btn--glow">Call +880-2-9552676</a>
+        <a href="mailto:info@shamolima.com" class="btn btn--light">Email info@shamolima.com</a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <article class="stat-card">
+        <div class="stat-card__value">4</div>
+        <p class="stat-card__label">Service locations</p>
+        <p class="stat-card__detail">Head office, operations, branch and Chattagram desks to keep coverage tight.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value">60+</div>
+        <p class="stat-card__label">Project professionals</p>
+        <p class="stat-card__detail">Supervisors, planners, permit specialists and coordinators on rotation.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value"><span>Live</span></div>
+        <p class="stat-card__label">Status updates</p>
+        <p class="stat-card__detail">Tracking dashboards, WhatsApp updates and daily reports for every move.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bright" [@listStagger]>
+  <div class="container grid gap-8 lg:grid-cols-2" *ngIf="contact$ | async as c">
+    <div class="grid gap-6">
+      <ng-container *ngFor="let office of offices(c)">
+        <article class="feature-card" *ngIf="office.data as info">
+          <span class="feature-card__badge">{{ office.badge }}</span>
+          <h3 class="feature-card__title">{{ office.title }}</h3>
+          <p class="feature-card__copy">
+            {{ info.address }}<br>
+            Phone: {{ info.phones.join(', ') }}<br>
+            Email: <a class="text-brand hover:underline" [href]="'mailto:' + info.email">{{ info.email }}</a>
+          </p>
+        </article>
+      </ng-container>
+    </div>
+
+    <div>
+      <form class="form-card grid gap-4" (ngSubmit)="submit()" #contactForm="ngForm">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input class="form-field" placeholder="Your name" [(ngModel)]="model.name" name="name" required>
+          <input class="form-field" placeholder="Email" type="email" [(ngModel)]="model.email" name="email" required>
+        </div>
+        <input class="form-field" placeholder="Phone (optional)" [(ngModel)]="model.phone" name="phone">
+        <input class="form-field" placeholder="Subject" [(ngModel)]="model.subject" name="subject">
+        <textarea class="form-field" rows="4" placeholder="Your message" [(ngModel)]="model.message" name="message"></textarea>
+        <button class="btn btn-primary btn--glow justify-center" type="submit">Send message</button>
+        <p class="text-xs text-slate-500">We respond within business hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section--gallery" @fadeIn>
+  <div class="container">
+    <p class="kicker text-brand">Visit us</p>
+    <h2 class="section-title">Find our offices across Dhaka and Chattagram</h2>
+    <div class="mt-8 card p-8 text-center text-slate-500">
+      Embed your interactive map here to showcase head office, operations, branch and port locations.
+    </div>
+  </div>
+</section>
+
+<app-footer />
+

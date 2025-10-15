@@ -1,0 +1,178 @@
+<app-header />
+
+<section class="page-hero page-hero--navy" @fadeIn>
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="page-hero__orb page-hero__orb--one"></div>
+  <div class="page-hero__orb page-hero__orb--two"></div>
+
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Work Activities</p>
+      <h1 class="page-hero__title">Logistics moves engineered for energy & infrastructure</h1>
+      <p class="page-hero__lede">
+        From refinery modules to oversized power assets, Shamolima crews deliver door-to-door logistics, engineered lifts and site installation with the precision clients know from the TransX experience.
+      </p>
+
+      <div class="page-hero__tags">
+        <span class="tag-chip">Heavy lift rigging</span>
+        <span class="tag-chip">Multimodal transport</span>
+        <span class="tag-chip">Route intelligence</span>
+        <span class="tag-chip">EPC partnerships</span>
+      </div>
+
+      <div class="page-hero__actions">
+        <a routerLink="/contact" class="btn btn-primary btn--glow">
+          Schedule a project walkdown
+        </a>
+        <a *ngIf="legacyUrl$ | async as url"
+           [href]="url"
+           target="_blank"
+           rel="noopener"
+           class="btn btn--light">
+          View legacy gallery
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <article *ngFor="let stat of stats" class="stat-card">
+        <div class="stat-card__value">{{ stat.value }}</div>
+        <p class="stat-card__label">{{ stat.label }}</p>
+        <p *ngIf="stat.detail" class="stat-card__detail">
+          {{ stat.detail }}
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bright" @fadeIn>
+  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+    <div>
+      <p class="kicker text-brand">Integrated project logistics</p>
+      <h2 class="section-title">Field-tested teams with engineered planning built-in</h2>
+      <p class="section-lede">
+        Every movement is custom engineered: feasibility studies, corridor readiness, lift plans, temporary works and final alignment. We own the gear, develop our crews and stay embedded until your cargo is commissioned.
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        <article *ngFor="let pillar of focusAreas" class="feature-card">
+          <span class="feature-card__badge">{{ pillar.badge }}</span>
+          <h3 class="feature-card__title">{{ pillar.title }}</h3>
+          <p class="feature-card__copy">{{ pillar.copy }}</p>
+        </article>
+      </div>
+    </div>
+
+    <aside class="insight-card">
+      <h3 class="insight-card__heading">Recent plays</h3>
+      <ul class="insight-card__list">
+        <li *ngFor="let item of milestoneList">
+          <span class="insight-card__title">{{ item.title }}</span>
+          <span class="insight-card__detail">{{ item.detail }}</span>
+        </li>
+      </ul>
+
+      <div *ngIf="contactEmail$ | async as email" class="insight-card__cta">
+        <p class="font-semibold">Planning a critical move?</p>
+        <p>Email our project desk at
+          <a class="text-brand hover:underline" [href]="'mailto:' + email">{{ email }}</a>.
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<ng-container *ngIf="(spotlight$ | async) as spotlight">
+  <section *ngIf="spotlight.length" class="section section--navy" @fadeIn>
+    <div class="container">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="kicker text-brand">Spotlight operations</p>
+          <h2 class="section-title text-white">What our crews are delivering right now</h2>
+        </div>
+        <p class="max-w-xl text-sm text-white/70">
+          A curated look at recent heavy haul, rigging and installation work led by Shamolima project teams across Bangladesh.
+        </p>
+      </div>
+
+      <div class="spotlight-carousel mt-10" *ngIf="spotlight as slides" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()">
+        <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous" (click)="prevSpotlight(slides.length)">&#10094;</button>
+        <div class="carousel__viewport">
+          <article *ngFor="let item of slides; let i = index; trackBy: trackByImage"
+                   class="spotlight-card"
+                   [class.is-active]="i === spotlightIndex"
+                   [hidden]="i !== spotlightIndex">
+            <img [src]="item.image"
+                 [alt]="item.caption"
+                 loading="lazy"
+                 class="spotlight-card__image">
+            <div class="spotlight-card__scrim"></div>
+            <div class="spotlight-card__content">
+              <span class="spotlight-card__badge">Featured move</span>
+              <h3 class="spotlight-card__title">{{ item.caption }}</h3>
+            </div>
+          </article>
+        </div>
+        <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next" (click)="nextSpotlight(slides.length)">&#10095;</button>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<section class="section" @fadeIn>
+  <div class="container">
+    <p class="kicker text-brand">How we execute</p>
+    <h2 class="section-title">Lifecycle support from feasibility to handover</h2>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      <article *ngFor="let phase of deliveryPhases; index as idx" class="phase-card">
+        <div class="phase-card__index">{{ idx + 1 }}</div>
+        <h3 class="phase-card__title">{{ phase.title }}</h3>
+        <p class="phase-card__copy">{{ phase.copy }}</p>
+        <ul class="phase-card__list">
+          <li *ngFor="let point of phase.points">{{ point }}</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--gallery" id="gallery" [@listStagger]>
+  <div class="container">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="kicker text-brand">Field execution gallery</p>
+        <h2 class="section-title">Highlights from our yards & job sites</h2>
+        <p class="section-lede">
+          Swipe through our archive of heavy lift, haulage and installation projects. Each image opens in high resolution for closer inspection.
+        </p>
+      </div>
+      <a *ngIf="legacyUrl$ | async as url"
+         [href]="url"
+         target="_blank"
+         rel="noopener"
+         class="gallery-link">
+        Browse full legacy archive &rarr;
+      </a>
+    </div>
+
+    <div *ngIf="archive$ | async as items" class="masonry mt-10 columns-1 sm:columns-2 lg:columns-3" data-gallery>
+      <figure *ngFor="let item of items; index as i; trackBy: trackByImage" class="gallery-card">
+        <img [src]="item.image"
+             [alt]="item.caption"
+             loading="lazy"
+             class="gallery-card__image">
+        <figcaption class="gallery-card__caption">
+          {{ item.caption }}
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="mt-6 text-xs text-slate-500">Images mirror our archived work activities for quick reference.</p>
+  </div>
+</section>
+
+<!-- Global overlay handles viewing; no local overlay here. -->
+
+<app-footer />

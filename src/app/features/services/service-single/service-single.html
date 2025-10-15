@@ -1,0 +1,125 @@
+<app-header />
+
+<section class="page-hero page-hero--navy" @fadeIn>
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="page-hero__orb page-hero__orb--one"></div>
+  <div class="page-hero__orb page-hero__orb--two"></div>
+
+  <ng-container *ngIf="item$ | async as item; else heroFallback">
+    <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
+      <div>
+        <p class="kicker text-brand">Service capability</p>
+        <h1 class="page-hero__title">{{ item.title }}</h1>
+        <p class="page-hero__lede">
+          Explore the Shamolima approach, references and deliverables sourced from our legacy portfolio for {{ item.title | lowercase }} projects.
+        </p>
+
+        <div class="page-hero__tags">
+          <span class="tag-chip">Engineering</span>
+          <span class="tag-chip">Execution</span>
+          <span class="tag-chip">Support</span>
+        </div>
+
+        <div class="page-hero__actions">
+          <a routerLink="/services" class="btn btn-primary btn--glow">Back to services</a>
+          <a *ngIf="item.url" [href]="item.url" target="_blank" rel="noopener" class="btn btn--light">
+            View legacy page
+          </a>
+        </div>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <article class="stat-card">
+          <div class="stat-card__value">Scope</div>
+          <p class="stat-card__label">Detailed deliverables</p>
+          <p class="stat-card__detail">Includes planning, execution and support notes drawn from previous engagements.</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-card__value">Gallery</div>
+          <p class="stat-card__label">Reference imagery</p>
+          <p class="stat-card__detail">High-resolution photos for mobilisation, heavy lifts and on-site works.</p>
+        </article>
+      </div>
+    </div>
+  </ng-container>
+</section>
+
+<ng-template #heroFallback>
+  <div class="container">
+    <p class="kicker text-brand">Service capability</p>
+    <h1 class="page-hero__title">Service</h1>
+  </div>
+</ng-template>
+
+<section class="section section--bright" [@listStagger]>
+  <div class="container grid gap-10 lg:grid-cols-[260px,1fr] items-start">
+    <aside class="insight-card">
+      <h3 class="insight-card__heading">On this page</h3>
+      <ul class="insight-card__list">
+        <li>
+          <a href="#overview" class="insight-card__title">Overview</a>
+          <span class="insight-card__detail">Service positioning and key outcomes.</span>
+        </li>
+        <li>
+          <a href="#gallery" class="insight-card__title">Gallery</a>
+          <span class="insight-card__detail">Legacy project references.</span>
+        </li>
+        <li *ngIf="(showShippingBullets$ | async)?.length">
+          <a href="#scope" class="insight-card__title">Scope highlights</a>
+          <span class="insight-card__detail">Additional notes for shipping & customs projects.</span>
+        </li>
+      </ul>
+      <div class="insight-card__cta mt-8">
+        <a routerLink="/quote" class="btn btn-primary w-full justify-center">Request a plan</a>
+      </div>
+    </aside>
+
+    <article class="space-y-10">
+      <section id="overview" class="feature-card" @fadeIn>
+        <span class="feature-card__badge">01</span>
+        <h2 class="feature-card__title">Overview</h2>
+        <p class="feature-card__copy">
+          Explore our <strong>{{ (item$ | async)?.title || 'service' }}</strong> capability with references, images and scope pulled directly from our legacy site content. Use the gallery below for mobilisation visuals and share the highlights with your stakeholders.
+        </p>
+      </section>
+
+      <section id="gallery" class="feature-card" @fadeIn>
+        <span class="feature-card__badge">02</span>
+        <h2 class="feature-card__title">Gallery references</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-gallery>
+          <figure *ngFor="let img of (images$ | async)!" class="gallery-card">
+            <img [src]="img" alt="{{ (item$ | async)?.title || 'Service' }} reference" class="gallery-card__image">
+          </figure>
+        </div>
+        <p class="text-xs text-slate-500 mt-4">Images are sourced from the legacy page for quick migration.</p>
+      </section>
+
+      <section id="scope" class="feature-card" *ngIf="(showShippingBullets$ | async) as bullets" @fadeIn>
+        <span class="feature-card__badge">03</span>
+        <h2 class="feature-card__title">Scope / highlights</h2>
+        <ul class="feature-card__copy list-disc pl-5 space-y-2">
+          <li *ngFor="let b of bullets">{{ b }}</li>
+        </ul>
+      </section>
+
+      <section class="insight-card" @fadeIn>
+        <h3 class="insight-card__heading">Need a tailored execution plan?</h3>
+        <div class="insight-card__list">
+          <div>
+            <span class="insight-card__title">Combine services</span>
+            <span class="insight-card__detail">Bundle transport, lifting, customs and site teams under one brief.</span>
+          </div>
+          <div>
+            <span class="insight-card__title">Share your scope</span>
+            <span class="insight-card__detail">Tell us about cargo, route windows and constraints for a rapid plan.</span>
+          </div>
+        </div>
+        <div class="insight-card__cta mt-8">
+          <a routerLink="/quote" class="btn btn-primary w-full justify-center">Request mobilisation plan</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</section>
+
+<app-footer />

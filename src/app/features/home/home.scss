@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero__image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 12s ease;
+  // image should be slightly blurred
+  filter: blur(3px) brightness(0.5);
+}
+
+.home-hero:hover .home-hero__image {
+  transform: scale(1.08);
+}
+
+.home-certificates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.home-certificates img {
+  height: 3rem;
+  width: auto;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 40px -18px rgba(14, 20, 40, 0.6);
+  padding: 0.35rem 0.5rem;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .home-hero__image {
+    filter: brightness(0.5);
+  }
+}

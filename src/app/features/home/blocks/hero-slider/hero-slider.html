@@ -1,0 +1,36 @@
+<section class="relative overflow-hidden">
+  <div class="relative h-[70vh] md:h-[78vh]">
+    <ng-container *ngFor="let s of slides; let i = index; trackBy: trackByIdx">
+      <img [src]="s.image"
+           class="hero-slide"
+           [class.hero-slide--active]="i === idx"
+           [attr.alt]="s.title"
+           [attr.aria-hidden]="i === idx ? 'false' : 'true'" />
+    </ng-container>
+    <div class="absolute inset-0 bg-black/45" aria-hidden="true"></div>
+
+    <div class="container relative z-10 h-full flex items-center">
+      <ng-container *ngIf="activeSlide as slide">
+        <div class="max-w-2xl text-white" @heroPop>
+          <span class="badge">TransX Layout</span>
+          <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">{{ slide.title }}</h1>
+          <p class="mt-4 text-white/85">{{ slide.sub }}</p>
+          <div class="mt-8 flex gap-3">
+            <a *ngFor="let c of (slide.cta ?? [])" [routerLink]="c.link" class="btn btn-primary">{{ c.text }}</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2" role="tablist" aria-label="Hero slides">
+      <button *ngFor="let _ of slides; let i = index; trackBy: trackByIdx"
+              type="button"
+              class="slider-dot"
+              [class.slider-dot--active]="i === idx"
+              (click)="go(i)"
+              [attr.aria-current]="i === idx"
+              [attr.aria-label]="'Go to slide ' + (i + 1)">
+      </button>
+    </div>
+  </div>
+</section>

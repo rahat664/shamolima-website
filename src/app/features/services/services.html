@@ -1,0 +1,115 @@
+<app-header />
+
+<section class="page-hero page-hero--navy" @fadeIn>
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="page-hero__orb page-hero__orb--one"></div>
+  <div class="page-hero__orb page-hero__orb--two"></div>
+
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Our Services</p>
+      <h1 class="page-hero__title">End-to-end logistics for complex projects</h1>
+      <p class="page-hero__lede">
+        From heavy haulage and engineered lifts to customs clearance and site mobilisation, Shamolima delivers the TransX-standard experience across Bangladesh.
+      </p>
+
+      <div class="page-hero__tags">
+        <span class="tag-chip">Heavy haulage</span>
+        <span class="tag-chip">SPMT & rigging</span>
+        <span class="tag-chip">Customs & ports</span>
+        <span class="tag-chip">Project support</span>
+      </div>
+
+      <div class="page-hero__actions">
+        <a routerLink="/quote" class="btn btn-primary btn--glow">Plan a move</a>
+        <a routerLink="/contact" class="btn btn--light">Talk to an expert</a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <article class="stat-card">
+        <div class="stat-card__value">7+</div>
+        <p class="stat-card__label">Service pillars</p>
+        <p class="stat-card__detail">Rental, transport, lifting, customs, site support and more under one license.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value">150T</div>
+        <p class="stat-card__label">Crawler capacity</p>
+        <p class="stat-card__detail">Fleet of cranes, SPMTs and hydraulic trailers ready for critical lifts.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value">24/7</div>
+        <p class="stat-card__label">Operations desks</p>
+        <p class="stat-card__detail">Live coordination across seaports, river terminals and project sites.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bright" [@listStagger]>
+  <div class="container">
+    <p class="kicker text-brand">Capabilities</p>
+    <h2 class="section-title">Choose a discipline to explore scope & references</h2>
+    <p class="section-lede">Each service links to legacy case studies, gallery references and typical execution scope.</p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <a *ngFor="let s of (services$ | async)!; index as i"
+         [routerLink]="['/services', s.slug]"
+         class="feature-card block">
+        <span class="feature-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
+        <h3 class="feature-card__title">{{ s.title }}</h3>
+        <p class="feature-card__copy">View scope, gallery and deliverables &rarr;</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy" @fadeIn>
+  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Why it matters</p>
+      <h2 class="section-title text-white">Integrated execution keeps complex moves predictable</h2>
+      <p class="section-lede text-white/70">
+        We handle permitting, equipment mobilisation, staffing, reporting and close-out under one project desk so your team focuses on critical milestones.
+      </p>
+    </div>
+
+    <aside class="insight-card">
+      <h3 class="insight-card__heading">Included with every engagement</h3>
+      <ul class="insight-card__list">
+        <li>
+          <span class="insight-card__title">Route & lift engineering</span>
+          <span class="insight-card__detail">Autodesk lift plans, stability checks and corridor readiness reports.</span>
+        </li>
+        <li>
+          <span class="insight-card__title">Certified crews & equipment</span>
+          <span class="insight-card__detail">Operators, riggers, escort pilots and maintenance teams on rotation.</span>
+        </li>
+        <li>
+          <span class="insight-card__title">24/7 reporting</span>
+          <span class="insight-card__detail">Progress dashboards, HSE tracking and client comms in real time.</span>
+        </li>
+      </ul>
+      <div class="insight-card__cta mt-8">
+        <p class="font-semibold">Need a bundled solution?</p>
+        <p>We can combine haulage, lifting, clearance and site services under one contract.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--gallery" @fadeIn>
+  <div class="container grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Get started</p>
+      <h2 class="section-title">Share your scope for a rapid mobilisation plan</h2>
+      <p class="section-lede">Tell us about cargo dimensions, pick-up / delivery points and timelines. Our project desk replies with recommended equipment, routing notes and a commercial overview.</p>
+    </div>
+    <div class="card form-card bg-white">
+      <a routerLink="/quote" class="btn btn-primary btn--glow w-full justify-center">Request a tailored quote</a>
+      <a routerLink="/contact" class="btn btn-outline w-full justify-center mt-3">Talk to operations</a>
+    </div>
+  </div>
+</section>
+
+<app-footer />

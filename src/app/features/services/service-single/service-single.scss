@@ -1,0 +1,15 @@
+:host { display: block; }
+
+/* Anchor offset so sticky header doesn't cover target sections */
+section[id] {
+  scroll-margin-top: 6.5rem; /* accommodate sticky header height */
+}
+
+/* Make sticky aside only on large screens to avoid overlap */
+@media (max-width: 1023px) {
+  .insight-card.sticky {
+    position: static;
+    top: auto;
+  }
+}
+

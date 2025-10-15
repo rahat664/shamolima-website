@@ -1,0 +1,9 @@
+/* Square corners for the contact form card only */
+.form-card {
+  border-radius: 0;
+}
+
+/* Optional: align input corners to match */
+.form-card .form-field {
+  border-radius: 0.375rem;
+}

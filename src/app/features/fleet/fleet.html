@@ -1,0 +1,89 @@
+<app-header />
+
+<section class="page-hero page-hero--navy" @fadeIn>
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="page-hero__orb page-hero__orb--one"></div>
+  <div class="page-hero__orb page-hero__orb--two"></div>
+
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Fleet</p>
+      <h1 class="page-hero__title">Right-sized vehicles for every haul</h1>
+      <p class="page-hero__lede">
+        From city pickups to heavy-duty covered trucks, Shamolima’s owned fleet moves cargo safely and efficiently while integrating with our heavy lift and rigging capability.
+      </p>
+
+      <div class="page-hero__tags">
+        <span class="tag-chip">Covered deck</span>
+        <span class="tag-chip">Permit ready</span>
+        <span class="tag-chip">GPS tracked</span>
+      </div>
+
+      <div class="page-hero__actions">
+        <a routerLink="/quote" class="btn btn-primary btn--glow">Request availability</a>
+        <a routerLink="/services/equipment-rental" class="btn btn--light">Explore equipment rental</a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <article class="stat-card">
+        <div class="stat-card__value">1&ndash;8T</div>
+        <p class="stat-card__label">Payload range</p>
+        <p class="stat-card__detail">Optimised for project cargo, sensitive equipment and last-mile delivery.</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-card__value">Nationwide</div>
+        <p class="stat-card__label">Coverage</p>
+        <p class="stat-card__detail">Dhaka, Chattagram, Khulna, Mongla and all major industrial corridors.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bright" [@listStagger]>
+  <div class="container">
+    <p class="kicker text-brand">Vehicle catalogue</p>
+    <h2 class="section-title">Standard deck sizes & capacities</h2>
+    <p class="section-lede">Every unit is maintained by in-house technicians and can be paired with escort pilots, rigging teams and temporary storage.</p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <article *ngFor="let truck of trucks" class="feature-card">
+        <span class="feature-card__badge">{{ truck.capacityTons }}T</span>
+        <h3 class="feature-card__title">{{ truck.name }}</h3>
+        <p class="feature-card__copy">Deck size: {{ truck.size }} · Max capacity: {{ truck.capacityTons }} ton</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy" @fadeIn>
+  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_340px] lg:items-center">
+    <div>
+      <p class="kicker text-brand">Need something specialised?</p>
+      <h2 class="section-title text-white">Combine pickups, covered trucks and heavy trailers in one brief</h2>
+      <p class="section-lede text-white/70">We can bundle forklifts, cranes, temporary storage, escort vehicles and manpower for turnarounds, shutdowns or project moves.</p>
+    </div>
+    <aside class="insight-card">
+      <h3 class="insight-card__heading">Talk to our dispatch</h3>
+      <ul class="insight-card__list">
+        <li>
+          <span class="insight-card__title">Daily availability sheets</span>
+          <span class="insight-card__detail">See which units are ready in Dhaka, Gazipur, Narayanganj and port zones.</span>
+        </li>
+        <li>
+          <span class="insight-card__title">Route advisory</span>
+          <span class="insight-card__detail">Identify restrictions, alternate corridors and staging yards.</span>
+        </li>
+        <li>
+          <span class="insight-card__title">Bundled staffing</span>
+          <span class="insight-card__detail">Drivers, riggers, operators and supervisors on a single roster.</span>
+        </li>
+      </ul>
+      <div class="insight-card__cta mt-8">
+        <a routerLink="/contact" class="btn btn-primary w-full justify-center">Speak with dispatch</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<app-footer />

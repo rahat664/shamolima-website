@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+/* Make gallery cards clickable */
+.gallery-card { cursor: zoom-in; break-inside: avoid; margin-bottom: 1rem; }
+.gallery-card__image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: var(--radius-card); }
+.gallery-card__caption { font-size: 0.8rem; color: var(--color-muted); margin-top: 0.35rem; }
+
+/* Global overlay used sitewide; no local overlay styles needed here. */
+
