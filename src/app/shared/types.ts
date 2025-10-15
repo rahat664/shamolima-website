@@ -48,6 +48,18 @@ export interface GalleryContent {
   items: GalleryItem[];
 }
 
+export interface RecentProject {
+  title: string;
+  description: string;
+  location: string;
+  keyEquipment: string[];
+}
+
+export interface Client {
+  name: string;
+  logo?: string;
+}
+
 export interface SiteContent {
   site: SiteInfo;
   home: HomeContent;
@@ -56,6 +68,8 @@ export interface SiteContent {
   qhse: QHSEContent;
   contact: ContactContent;
   gallery?: GalleryContent;
+  clients?: Client[];
+  recentProjects?: RecentProject[];
 }
 
 export interface Assets {
@@ -75,4 +89,6 @@ export interface SiteContent {
   contact: ContactContent;
   gallery?: GalleryContent;
   assets?: Assets; // <-- add
+  clients?: Client[];
+  recentProjects?: RecentProject[];
 }

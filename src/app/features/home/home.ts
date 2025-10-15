@@ -6,7 +6,7 @@ import { Header } from '../../core/components/header/header';
 import { Footer } from '../../core/components/footer/footer';
 import { ContentService } from '../../shared/content.service';
 import { fadeIn, listStagger } from '../../shared/animation';
-import { GalleryItem, HomeContent } from '../../shared/types';
+import { GalleryItem, HomeContent, Client, RecentProject } from '../../shared/types';
 
 interface Stat {
   value: string;
@@ -251,6 +251,10 @@ export class Home implements OnInit, OnDestroy {
     )
   );
 
+  // New: clients and recent projects
+  readonly clients$ = this.content.clients$; // Client[]
+  readonly recentProjects$ = this.content.recentProjects$; // RecentProject[]
+
   trackByFocus = (_: number, item: FocusArea) => item.badge;
 
   trackByHighlight = (_: number, item: Highlight) => item.title;
@@ -262,5 +266,8 @@ export class Home implements OnInit, OnDestroy {
   trackByImage = (_: number, item: GalleryItem) => item.image;
 
   trackByUrl = (_: number, url: string) => url;
+
+  trackByClient = (_: number, c: Client) => c.name;
+  trackByProject = (_: number, p: RecentProject) => p.title;
 }
 

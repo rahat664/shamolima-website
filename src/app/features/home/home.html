@@ -110,6 +110,25 @@
 
 <section class="section" @fadeIn>
   <div class="container">
+    <p class="kicker text-brand">Clients</p>
+    <h2 class="section-title">Trusted by operators &amp; EPCs</h2>
+    <div class="client-grid mt-6" *ngIf="clients$ | async as clients">
+      <ng-container *ngFor="let c of clients; trackBy: trackByClient">
+        <img *ngIf="c.logo; else nameChip"
+             class="client-logo"
+             [src]="c.logo"
+             [alt]="c.name"
+             loading="lazy">
+        <ng-template #nameChip>
+          <span class="client-chip">{{ c.name }}</span>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<section class="section" @fadeIn>
+  <div class="container">
     <p class="kicker text-brand">How we deliver</p>
     <h2 class="section-title">Lifecycle support from first brief to final handover</h2>
 
@@ -121,6 +140,24 @@
         <ul class="phase-card__list">
           <li *ngFor="let point of phase.points">{{ point }}</li>
         </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bright" @fadeIn>
+  <div class="container">
+    <p class="kicker text-brand">Recent projects</p>
+    <h2 class="section-title">Selected references</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <article *ngFor="let p of (recentProjects$ | async)!; trackBy: trackByProject" class="feature-card">
+        <span class="feature-card__badge">RP</span>
+        <h3 class="feature-card__title">{{ p.title }}</h3>
+        <p class="feature-card__copy">{{ p.description }}</p>
+        <p class="text-sm text-slate-500 mt-2"><strong>Location:</strong> {{ p.location }}</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="chip" *ngFor="let eq of p.keyEquipment">{{ eq }}</span>
+        </div>
       </article>
     </div>
   </div>
