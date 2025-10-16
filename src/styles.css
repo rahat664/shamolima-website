@@ -250,6 +250,28 @@
   }
 }
 
+/* Hide scrollbars globally (keeps scrolling functional) */
+html, body {
+  -ms-overflow-style: none; /* IE 10+ and Edge Legacy */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge (Chromium) */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 /* Stat cards */
 .stat-card {
   position: relative;
@@ -877,6 +899,11 @@ app-home {
   @apply transition-all duration-300;
 }
 
+/* Hide legacy per-route headers now that header lives in app shell */
+main app-header {
+  display: none;
+}
+
 
 .tx-navbar-inner {
   @apply flex h-18 items-center justify-between;
@@ -990,4 +1017,3 @@ app-home {
 .btn-primary:hover {
   @apply -translate-y-0.5 shadow-[0_8px_20px_-8px_rgba(0,0,0,0.15)];
 }
-

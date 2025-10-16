@@ -34,6 +34,8 @@ export interface ContactOffice {
   address: string;
   phones: string[];
   email: string;
+  lat?: number; // optional latitude for map
+  lng?: number; // optional longitude for map
 }
 export interface ContactContent {
   operationOffice: ContactOffice;

@@ -11,5 +11,6 @@ export const routes: Routes = [
   { path: 'quote', loadComponent: () => import('./features/quote/quote').then(m => m.Quote) },
   { path: 'contact', loadComponent: () => import('./features/contact/contact').then(m => m.Contact) },
   { path: 'work-activities', loadComponent: () => import('./features/work-activities/work-activities').then(m => m.WorkActivities) },
+  {path: 'logistics', loadComponent: () => import('./features/logistics/logistics').then(m => m.Logistics) },
   { path: '**', redirectTo: '' }
 ];

@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
-import { Footer } from '../../core/components/footer/footer';
-import { Header } from '../../core/components/header/header';
-import { AsyncPipe, DecimalPipe, NgForOf, NgIf } from '@angular/common';
-import { fadeIn, listStagger } from '../../shared/animation';
-import { ContentService } from '../../shared/content.service';
+import {Component, inject} from '@angular/core';
+import {Footer} from '../../core/components/footer/footer';
+import {Header} from '../../core/components/header/header';
+import {AsyncPipe, DecimalPipe, NgForOf, NgIf} from '@angular/common';
+import {fadeIn, listStagger} from '../../shared/animation';
+import {ContentService} from '../../shared/content.service';
 
 @Component({
   selector: 'app-qhse',
@@ -22,4 +22,15 @@ import { ContentService } from '../../shared/content.service';
 export class Qhse {
   private content = inject(ContentService);
   qhse$ = this.content.qhse$;
+
+  downloadCertificate(imsCertificates: string | undefined) {
+    if (imsCertificates) {
+      const link = document.createElement('a');
+      link.href = imsCertificates;
+      link.download = imsCertificates.split('/').pop() || 'certificate.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }
 }

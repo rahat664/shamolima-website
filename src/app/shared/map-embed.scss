@@ -1,0 +1,229 @@
+:host { display: block; }
+
+.map-embed {
+  position: relative;
+  padding-top: 56.25%; /* default 16:9; overridden via [ngStyle] */
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+.map-embed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* gradient border */
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(30,174,152,.5), rgba(0,91,172,.5));
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.map-embed__inner {
+  position: absolute;
+  inset: 0;
+}
+
+.map-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-ui {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  z-index: 2;
+}
+
+.map-ui--top {
+  top: .5rem;
+}
+
+.map-ui--bottom {
+  bottom: .5rem;
+}
+
+.map-title {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-ink);
+  font-weight: 600;
+  border-radius: .75rem;
+  padding: .35rem .6rem;
+}
+
+.map-toggle {
+  margin-left: auto;
+  display: inline-flex;
+  gap: .25rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-radius: .75rem;
+  padding: .2rem;
+}
+.toggle-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  font-weight: 600;
+  padding: .35rem .6rem;
+  border-radius: .6rem;
+  cursor: pointer;
+}
+.toggle-btn.is-active {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+.map-link {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-brand-dark);
+  font-weight: 600;
+  border-radius: .75rem;
+  padding: .35rem .6rem;
+  text-decoration: none;
+}
+
+.spacer { flex: 1; }
+
+.pager {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-radius: .75rem;
+  padding: .2rem .4rem;
+}
+.pager-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-weight: 700;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.pager-label {
+  font-size: .85rem;
+  color: var(--color-muted);
+}
+
+.map-skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(240,243,249,0.9), rgba(230,236,246,0.9), rgba(240,243,249,0.9));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Controls rendered below the map to avoid overlapping built-in map UI */
+.map-controls {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: .75rem;
+  padding: .5rem .75rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  flex-wrap: wrap;
+}
+
+/* Title in toolbar (non-overlay) */
+.map-controls .map-title {
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  margin-right: .25rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* Segmented provider toggle */
+.map-controls .map-toggle {
+  background: #f3f5f9;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 999px;
+  padding: .2rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+}
+.map-controls .toggle-btn {
+  color: var(--color-ink);
+  font-weight: 600;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.map-controls .toggle-btn:hover {
+  background: rgba(0,0,0,0.06);
+}
+.map-controls .toggle-btn:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+.map-controls .toggle-btn.is-active {
+  background: var(--color-brand);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+/* Pager styling in toolbar */
+.map-controls .pager {
+  background: #f3f5f9;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 999px;
+  padding: .2rem .5rem;
+}
+.map-controls .pager-btn {
+  color: var(--color-ink);
+  width: 1.8rem;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  border-radius: 999px;
+  transition: background-color .15s ease;
+}
+.map-controls .pager-btn:hover {
+  background: rgba(0,0,0,0.06);
+}
+.map-controls .pager-btn:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+.map-controls .pager-label {
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+@media (max-width: 520px) {
+  .map-controls {
+    gap: .5rem;
+    padding: .5rem;
+  }
+  .map-controls .map-title {
+    flex: 1 1 100%;
+  }
+}

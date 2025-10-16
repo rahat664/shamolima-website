@@ -4,6 +4,7 @@ import { Header } from '../../core/components/header/header';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
 import { AsyncPipe, DecimalPipe, NgForOf, NgIf } from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -13,7 +14,8 @@ import { AsyncPipe, DecimalPipe, NgForOf, NgIf } from '@angular/common';
     AsyncPipe,
     DecimalPipe,
     NgIf,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   animations: [fadeIn, listStagger],
   templateUrl: './about.html',

@@ -6,6 +6,7 @@ import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
 import { ContactContent } from '../../shared/types';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
+import { MapEmbed } from '../../shared/map-embed';
 
 @Component({
   selector: 'app-contact',
@@ -13,6 +14,7 @@ import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
     Footer,
     Header,
     FormsModule,
+    MapEmbed,
     AsyncPipe,
     NgForOf,
     NgIf
@@ -36,10 +38,22 @@ export class Contact {
   offices(contact: ContactContent) {
     return [
       { title: 'Head Office', badge: 'HQ', data: contact.headOffice },
-      { title: 'Operations Office', badge: 'OPS', data: contact.operationOffice },
+      { title: 'Corporate Office', badge: 'OPS', data: contact.operationOffice },
       { title: 'Branch Office', badge: 'BR', data: contact.branchOffice },
       { title: 'Chattagram Office', badge: 'CTG', data: contact.chattagramOffice }
     ].filter(office => !!office.data);
+  }
+
+  mapMarkers(c: ContactContent) {
+    const candidates = [
+      { label: 'Head Office', data: c.headOffice },
+      { label: 'Corporate Office', data: c.operationOffice },
+      { label: 'Branch Office', data: c.branchOffice },
+      { label: 'Chattagram Office', data: c.chattagramOffice }
+    ];
+    return candidates
+      .filter(x => !!x.data && (x.data as any).lat != null && (x.data as any).lng != null)
+      .map(x => ({ lat: (x.data as any).lat, lng: (x.data as any).lng, label: x.label }));
   }
 
   submit(): void {

@@ -1,0 +1,48 @@
+/* Basic styling for PDF canvas and controls */
+.pdf-viewer {
+  position: relative;
+  display: block;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-card, 12px);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-card, 0 12px 24px -16px rgba(0,0,0,.15));
+}
+
+.pdf-spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.7);
+  font-weight: 600;
+  color: var(--color-muted, #5F6C85);
+}
+
+.pdf-controls {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: .75rem;
+  padding: .5rem .75rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-card, 12px);
+  box-shadow: var(--shadow-card, 0 12px 24px -16px rgba(0,0,0,.15));
+}
+
+.pdf-btn {
+  appearance: none;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #f3f5f9;
+  color: var(--color-ink, #0E1428);
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pdf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.pdf-btn:hover:not(:disabled) { background: #e9edf5; }
+
+.pdf-page { color: var(--color-muted, #5F6C85); font-weight: 600; }

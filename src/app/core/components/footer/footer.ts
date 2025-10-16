@@ -25,7 +25,7 @@ export class Footer {
 
   offices(c: ContactContent): { title: string; data: ContactOffice }[] {
     const list = [
-      { title: 'Operations Office', data: c.operationOffice },
+      { title: 'Corporate Office', data: c.operationOffice },
       { title: 'Head Office', data: c.headOffice },
       { title: 'Chattagram Office', data: c.chattagramOffice ?? c.branchOffice! }
     ];

@@ -1,5 +1,3 @@
-<app-header />
-
 <ng-container *ngIf="home$ | async as home">
   <section class="page-hero page-hero--navy home-hero" @fadeIn>
     <div class="home-hero__image" [style.backgroundImage]="'url(' + home.hero.image + ')'" aria-hidden="true"></div>

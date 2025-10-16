@@ -1,0 +1,38 @@
+<div class="map-embed" *ngIf="hasCoords; else mapPlaceholder" [ngStyle]="containerStyle">
+  <div class="map-embed__inner">
+    <iframe
+      class="map-frame"
+      [src]="safeSrc"
+      [title]="activeLabel"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      (load)="onFrameLoad()">
+    </iframe>
+
+    <!-- Loading shimmer overlay -->
+    <div class="map-skeleton" *ngIf="!loaded"></div>
+  </div>
+  <div class="sr-only">Interactive map for {{ activeLabel }}</div>
+</div>
+
+<!-- Controls below the map so they don't overlap built-in map UI -->
+<div class="map-controls" *ngIf="hasCoords && showControls">
+  <div class="map-title">{{ activeLabel }}</div>
+  <div class="map-toggle">
+    <button type="button" class="toggle-btn" [class.is-active]="provider==='google'" (click)="setProvider('google')">Google</button>
+    <button type="button" class="toggle-btn" [class.is-active]="provider==='osm'" (click)="setProvider('osm')">OSM</button>
+  </div>
+  <div class="spacer"></div>
+  <div class="pager" *ngIf="(markers?.length || 0) > 1">
+    <button type="button" class="pager-btn" (click)="prev()" aria-label="Previous location">&#10094;</button>
+    <span class="pager-label">{{ activeIndex + 1 }} / {{ (markers?.length || 0) }}</span>
+    <button type="button" class="pager-btn" (click)="next()" aria-label="Next location">&#10095;</button>
+  </div>
+  
+</div>
+
+<ng-template #mapPlaceholder>
+  <div class="card p-8 text-center text-slate-500">
+    Map location will appear here once coordinates are provided.
+  </div>
+</ng-template>
