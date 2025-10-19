@@ -1,6 +1,18 @@
 <ng-container *ngIf="home$ | async as home">
   <section class="page-hero page-hero--navy home-hero" @fadeIn>
-    <div class="home-hero__image" [style.backgroundImage]="'url(' + home.hero.image + ')'" aria-hidden="true"></div>
+    <!-- Carousel Background Images -->
+    <div class="home-hero__carousel">
+      <div class="home-hero__slide" [class.active]="heroSlideIndex === 0">
+        <div class="home-hero__image" style="background-image: url('assets/images/fleet_yard.jpg')"></div>
+      </div>
+      <div class="home-hero__slide" [class.active]="heroSlideIndex === 1">
+        <div class="home-hero__image" style="background-image: url('assets/images/generator_transformer.jpg')"></div>
+      </div>
+      <div class="home-hero__slide" [class.active]="heroSlideIndex === 2">
+        <div class="home-hero__image" style="background-image: url('assets/images/project_equipment.jpg')"></div>
+      </div>
+    </div>
+
     <div class="page-hero__layer page-hero__layer--gradient"></div>
     <div class="page-hero__orb page-hero__orb--one"></div>
     <div class="page-hero__orb page-hero__orb--two"></div>
@@ -28,6 +40,16 @@
           <p *ngIf="stat.detail" class="stat-card__detail">{{ stat.detail }}</p>
         </article>
       </div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="hero-carousel-dots">
+      <button *ngFor="let i of [0,1,2]"
+              class="hero-carousel-dot"
+              [class.active]="heroSlideIndex === i"
+              (click)="setHeroSlide(i)"
+              [attr.aria-label]="'Go to slide ' + (i + 1)">
+      </button>
     </div>
   </section>
 </ng-container>

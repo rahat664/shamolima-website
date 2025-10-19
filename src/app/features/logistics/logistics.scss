@@ -4,9 +4,16 @@
   display: block;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--radius-card, 12px);
-  overflow: hidden;
+  overflow: auto;
   background: #fff;
   box-shadow: var(--shadow-card, 0 12px 24px -16px rgba(0,0,0,.15));
+  min-height: 600px;
+  max-height: 80vh;
+}
+
+.pdf-viewer canvas {
+  display: block;
+  margin: 0 auto;
 }
 
 .pdf-spinner {

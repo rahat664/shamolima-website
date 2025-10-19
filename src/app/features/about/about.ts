@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Footer } from '../../core/components/footer/footer';
 import { Header } from '../../core/components/header/header';
+import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
 import { AsyncPipe, DecimalPipe, NgForOf, NgIf } from '@angular/common';
@@ -10,7 +11,7 @@ import {RouterLink} from '@angular/router';
   selector: 'app-about',
   imports: [
     Footer,
-    Header,
+    PageHeroCarousel,
     AsyncPipe,
     DecimalPipe,
     NgIf,

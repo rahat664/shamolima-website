@@ -4,12 +4,13 @@ import {Header} from '../../core/components/header/header';
 import {AsyncPipe, DecimalPipe, NgForOf, NgIf} from '@angular/common';
 import {fadeIn, listStagger} from '../../shared/animation';
 import {ContentService} from '../../shared/content.service';
+import {PageHeroCarousel} from '../../shared/components/page-hero-carousel/page-hero-carousel';
 
 @Component({
   selector: 'app-qhse',
   imports: [
     Footer,
-    Header,
+    PageHeroCarousel,
     AsyncPipe,
     DecimalPipe,
     NgIf,

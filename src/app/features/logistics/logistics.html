@@ -1,12 +1,40 @@
-<div class="pdf-viewer">
-  <canvas #pdfCanvas class="w-full"></canvas>
-  <div class="pdf-spinner" *ngIf="loading || rendering">Loading…</div>
+<app-header />
+
+<div class="page-hero page-hero--navy">
+  <app-page-hero-carousel [images]="[
+    'assets/images/water_bath.jpg',
+    'assets/images/ecofilt.png',
+    'assets/images/hero-trade.png'
+  ]" />
+  <div class="page-hero__layer page-hero__layer--gradient"></div>
+  <div class="container">
+    <div class="page-hero__orb page-hero__orb--one"></div>
+    <div class="page-hero__orb page-hero__orb--two"></div>
+    <span class="kicker">Documentation</span>
+    <h1 class="page-hero__title">Logistics Capabilities</h1>
+    <p class="page-hero__lede">
+      View our comprehensive logistics documentation and service capabilities.
+    </p>
+  </div>
 </div>
 
-<div class="pdf-controls" *ngIf="!loading && total > 0">
-  <button type="button" class="pdf-btn" (click)="prev()" [disabled]="page<=1 || rendering">&#10094; Prev</button>
-  <span class="pdf-page">{{ page }} / {{ total }}</span>
-  <button type="button" class="pdf-btn" (click)="next()" [disabled]="page>=total || rendering">Next &#10095;</button>
-</div>
+<section class="section">
+  <div class="container">
+    <div *ngIf="error" class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+      {{ error }}
+    </div>
 
-<div *ngIf="error" class="mt-3 text-red-600 text-sm">{{ error }}</div>
+    <div class="pdf-viewer">
+      <canvas #pdfCanvas class="w-full"></canvas>
+      <div class="pdf-spinner" *ngIf="loading || rendering">Loading PDF…</div>
+    </div>
+
+    <div class="pdf-controls" *ngIf="!loading && total > 0">
+      <button type="button" class="pdf-btn" (click)="prev()" [disabled]="page<=1 || rendering">&#10094; Prev</button>
+      <span class="pdf-page">{{ page }} / {{ total }}</span>
+      <button type="button" class="pdf-btn" (click)="next()" [disabled]="page>=total || rendering">Next &#10095;</button>
+    </div>
+  </div>
+</section>
+
+<app-footer />

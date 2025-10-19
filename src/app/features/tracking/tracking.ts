@@ -4,11 +4,12 @@ import {Footer} from '../../core/components/footer/footer';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
 import {fadeIn} from '../../shared/animation';
+import {PageHeroCarousel} from '../../shared/components/page-hero-carousel/page-hero-carousel';
 
 @Component({
   selector: 'app-tracking',
   imports: [
-    Header,
+    PageHeroCarousel,
     Footer,
     FormsModule,
     NgIf

@@ -1,3 +1,133 @@
+:host { display: block; }
+
+/* Office Cards */
+.office-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+  box-shadow: 0 20px 45px -25px rgba(15, 24, 40, 0.18);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-brand), rgba(0, 91, 172, 0.9));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 65px -25px rgba(15, 24, 40, 0.28);
+    border-color: rgba(30, 174, 152, 0.15);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .office-card__icon {
+      background: linear-gradient(135deg, var(--color-brand), rgba(0, 91, 172, 0.9));
+      color: #fff;
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .office-card__badge {
+      background: var(--color-brand);
+      color: #fff;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.office-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.office-card__badge {
+  flex-shrink: 0;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(30, 174, 152, 0.1);
+  color: var(--color-brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.office-card__icon {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(30, 174, 152, 0.15), rgba(0, 91, 172, 0.15));
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.office-card__title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #101833;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+
+  .office-card:hover & {
+    color: var(--color-brand-dark);
+  }
+}
+
+.office-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.office-card__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #5f6c85;
+  line-height: 1.6;
+
+  svg {
+    flex-shrink: 0;
+    color: var(--color-brand);
+    opacity: 0.7;
+    margin-top: 0.125rem;
+  }
+
+  span, a {
+    flex: 1;
+  }
+}
+
 /* Square corners for the contact form card only */
 .form-card {
   border-radius: 0;
@@ -6,4 +136,51 @@
 /* Optional: align input corners to match */
 .form-card .form-field {
   border-radius: 0.375rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .office-card {
+    padding: 1.75rem;
+  }
+
+  .office-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .office-card {
+    padding: 1.5rem;
+  }
+
+  .office-card__header {
+    margin-bottom: 1rem;
+  }
+
+  .office-card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .office-card__badge {
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .office-card__detail-item {
+    font-size: 0.875rem;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
 }

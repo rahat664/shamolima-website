@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Header } from '../../../core/components/header/header';
+import { PageHeroCarousel } from '../../../shared/components/page-hero-carousel/page-hero-carousel';
 import { AsyncPipe, LowerCasePipe, NgForOf, NgIf } from '@angular/common';
 import { Footer } from '../../../core/components/footer/footer';
 import { fadeIn, listStagger, scaleIn } from '../../../shared/animation';
@@ -12,7 +13,7 @@ import { ServiceListItem } from '../../../shared/types';
   selector: 'app-service-single',
   imports: [
     RouterLink,
-    Header,
+    PageHeroCarousel,
     NgForOf,
     Footer,
     AsyncPipe,

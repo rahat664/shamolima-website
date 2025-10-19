@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Header } from '../../core/components/header/header';
+import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { Footer } from '../../core/components/footer/footer';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -10,6 +11,7 @@ import { fadeIn, listStagger, scaleIn } from '../../shared/animation';
   selector: 'app-quote',
   imports: [
     Header,
+    PageHeroCarousel,
     Footer,
     FormsModule,
     RouterLink,

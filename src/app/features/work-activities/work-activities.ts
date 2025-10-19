@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { Observable, combineLatest, map, shareReplay } from 'rxjs';
 import { Header } from '../../core/components/header/header';
+import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { Footer } from '../../core/components/footer/footer';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
@@ -18,7 +19,7 @@ type Phase = { title: string; copy: string; points: string[] };
 
 @Component({
   selector: 'app-work-activities',
-  imports: [Header, Footer, NgForOf, AsyncPipe, NgIf, RouterLink],
+  imports: [ Footer, NgForOf, AsyncPipe, NgIf, RouterLink, PageHeroCarousel],
   animations: [fadeIn, listStagger],
   templateUrl: './work-activities.html',
   styleUrl: './work-activities.scss'

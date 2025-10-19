@@ -1,4 +1,9 @@
 <section class="page-hero page-hero--navy" @fadeIn>
+  <app-page-hero-carousel [images]="[
+    'assets/images/project_equipment.jpg',
+    'assets/images/generator_transformer.jpg',
+    'assets/images/port-crane.png'
+  ]" />
   <div class="page-hero__layer page-hero__layer--gradient"></div>
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
@@ -53,10 +58,23 @@
     <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       <a *ngFor="let s of (services$ | async)!; index as i"
          [routerLink]="['/services', s.slug]"
-         class="feature-card block">
-        <span class="feature-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
-        <h3 class="feature-card__title">{{ s.title }}</h3>
-        <p class="feature-card__copy">View scope, gallery and deliverables &rarr;</p>
+         class="service-card group">
+        <div class="service-card__header">
+          <span class="service-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="service-card__title">{{ s.title }}</h3>
+        <p class="service-card__copy">View scope, gallery and deliverables</p>
+        <div class="service-card__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
       </a>
     </div>
   </div>

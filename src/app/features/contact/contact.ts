@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Footer } from '../../core/components/footer/footer';
 import { Header } from '../../core/components/header/header';
+import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { FormsModule } from '@angular/forms';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
@@ -12,7 +13,7 @@ import { MapEmbed } from '../../shared/map-embed';
   selector: 'app-contact',
   imports: [
     Footer,
-    Header,
+    PageHeroCarousel,
     FormsModule,
     MapEmbed,
     AsyncPipe,

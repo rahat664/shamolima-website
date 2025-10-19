@@ -1,15 +1,15 @@
 import {Component, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Header } from '../../core/components/header/header';
+import { Footer } from '../../core/components/footer/footer';
 import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import type { PDFDocumentProxy } from 'pdfjs-dist/types/src/display/api';
-// Point PDF.js to the worker shipped as an asset (configured in angular.json)
-const workerUrl = new URL('assets/pdfjs/pdf.worker.min.mjs', document.baseURI).toString();
-GlobalWorkerOptions.workerSrc = workerUrl;
+import {PageHeroCarousel} from '../../shared/components/page-hero-carousel/page-hero-carousel';
 
 @Component({
   selector: 'app-logistics',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, Header, Footer, PageHeroCarousel],
   templateUrl: './logistics.html',
   styleUrl: './logistics.scss'
 })
@@ -24,7 +24,17 @@ export class Logistics implements AfterViewInit {
   private scale = 1.5;
 
   async ngAfterViewInit() {
+    // Set worker before loading PDF
+    try {
+      const workerUrl = new URL('assets/pdfjs/pdf.worker.min.mjs', document.baseURI).toString();
+      GlobalWorkerOptions.workerSrc = workerUrl;
+      console.log('PDF.js worker set to:', workerUrl);
+    } catch (err) {
+      console.error('Failed to set PDF.js worker:', err);
+    }
+
     const url = new URL('logistics.pdf', document.baseURI).toString();
+    console.log('Loading PDF from:', url);
     await this.loadPdf(url);
   }
 

@@ -1,6 +1,11 @@
-<app-header />
+
 
 <section class="page-hero page-hero--navy" @fadeIn>
+  <app-page-hero-carousel [images]="[
+    'assets/images/fleet_yard.jpg',
+    'assets/images/truck-red.png',
+    'assets/images/container-yard.png'
+  ]" />
   <div class="page-hero__layer page-hero__layer--gradient"></div>
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
@@ -10,7 +15,7 @@
       <p class="kicker text-brand">Fleet</p>
       <h1 class="page-hero__title">Right-sized vehicles for every haul</h1>
       <p class="page-hero__lede">
-        From city pickups to heavy-duty covered trucks, Shamolima’s owned fleet moves cargo safely and efficiently while integrating with our heavy lift and rigging capability.
+        From city pickups to heavy-duty covered trucks, Shamolimaï¿½s owned fleet moves cargo safely and efficiently while integrating with our heavy lift and rigging capability.
       </p>
 
       <div class="page-hero__tags">
@@ -47,10 +52,41 @@
     <p class="section-lede">Every unit is maintained by in-house technicians and can be paired with escort pilots, rigging teams and temporary storage.</p>
 
     <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <article *ngFor="let truck of trucks" class="feature-card">
-        <span class="feature-card__badge">{{ truck.capacityTons }}T</span>
-        <h3 class="feature-card__title">{{ truck.name }}</h3>
-        <p class="feature-card__copy">Deck size: {{ truck.size }} · Max capacity: {{ truck.capacityTons }} ton</p>
+      <article *ngFor="let truck of trucks" class="fleet-card group">
+        <div class="fleet-card__header">
+          <span class="fleet-card__badge">{{ truck.capacityTons }}T</span>
+          <div class="fleet-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="fleet-card__title">{{ truck.name }}</h3>
+        <div class="fleet-card__details">
+          <div class="fleet-card__detail-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+            </svg>
+            <span>{{ truck.size }}</span>
+          </div>
+          <div class="fleet-card__detail-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span>Max: {{ truck.capacityTons }} ton</span>
+          </div>
+        </div>
+        <div class="fleet-card__arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
       </article>
     </div>
   </div>
@@ -85,5 +121,3 @@
     </aside>
   </div>
 </section>
-
-<app-footer />

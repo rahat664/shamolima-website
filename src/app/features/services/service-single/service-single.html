@@ -1,4 +1,9 @@
 <section class="page-hero page-hero--navy" @fadeIn>
+  <app-page-hero-carousel [images]="[
+    'assets/work-activities/24-1.jpg',
+    'assets/work-activities/3-1-scaled.jpg',
+    'assets/images/generator_transformer.jpg'
+  ]" />
   <div class="page-hero__layer page-hero__layer--gradient"></div>
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
@@ -20,22 +25,31 @@
 
         <div class="page-hero__actions">
           <a routerLink="/services" class="btn btn-primary btn--glow">Back to services</a>
-          <a *ngIf="item.url" [href]="item.url" target="_blank" rel="noopener" class="btn btn--light">
-            View legacy page
-          </a>
         </div>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
-        <article class="stat-card">
-          <div class="stat-card__value">Scope</div>
+        <article class="stat-card stat-card--icon">
+          <div class="stat-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="stat-card__value">Full Scope</div>
           <p class="stat-card__label">Detailed deliverables</p>
-          <p class="stat-card__detail">Includes planning, execution and support notes drawn from previous engagements.</p>
+          <p class="stat-card__detail">Planning, execution and support notes from previous engagements.</p>
         </article>
-        <article class="stat-card">
-          <div class="stat-card__value">Gallery</div>
-          <p class="stat-card__label">Reference imagery</p>
-          <p class="stat-card__detail">High-resolution photos for mobilisation, heavy lifts and on-site works.</p>
+        <article class="stat-card stat-card--icon">
+          <div class="stat-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <div class="stat-card__value">Visual References</div>
+          <p class="stat-card__label">Project imagery</p>
+          <p class="stat-card__detail">High-resolution photos from mobilisation, heavy lifts and on-site works.</p>
         </article>
       </div>
     </div>
@@ -51,45 +65,116 @@
 
 <section class="section section--bright" [@listStagger]>
   <div class="container grid gap-10 lg:grid-cols-[260px,1fr] items-start">
-    <aside class="insight-card">
-      <h3 class="insight-card__heading">On this page</h3>
-      <ul class="insight-card__list">
-        <li>
-          <a href="#overview" class="insight-card__title">Overview</a>
-          <span class="insight-card__detail">Service positioning and key outcomes.</span>
-        </li>
-        <li>
-          <a href="#gallery" class="insight-card__title">Gallery</a>
-          <span class="insight-card__detail">Legacy project references.</span>
-        </li>
-        <li *ngIf="(showShippingBullets$ | async)?.length">
-          <a href="#scope" class="insight-card__title">Scope highlights</a>
-          <span class="insight-card__detail">Additional notes for shipping & customs projects.</span>
-        </li>
-      </ul>
-      <div class="insight-card__cta mt-8">
-        <a routerLink="/quote" class="btn btn-primary w-full justify-center">Request a plan</a>
+    <aside class="service-sidebar">
+      <div class="insight-card sticky top-24">
+        <h3 class="insight-card__heading">📑 On this page</h3>
+        <ul class="insight-card__list">
+          <li>
+            <a href="#overview" class="insight-card__title hover:text-brand transition-colors">
+              <span class="inline-block w-6">📋</span> Overview
+            </a>
+            <span class="insight-card__detail">Service positioning and key outcomes.</span>
+          </li>
+          <li>
+            <a href="#gallery" class="insight-card__title hover:text-brand transition-colors">
+              <span class="inline-block w-6">🖼️</span> Gallery
+            </a>
+            <span class="insight-card__detail">Legacy project references.</span>
+          </li>
+          <li *ngIf="(showShippingBullets$ | async)?.length">
+            <a href="#scope" class="insight-card__title hover:text-brand transition-colors">
+              <span class="inline-block w-6">✓</span> Scope
+            </a>
+            <span class="insight-card__detail">Shipping & customs highlights.</span>
+          </li>
+        </ul>
+        <div class="insight-card__cta mt-8">
+          <a routerLink="/quote" class="btn btn-primary w-full justify-center">
+            <svg width="16" height="16" class="inline-block mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Request a plan
+          </a>
+        </div>
       </div>
     </aside>
 
     <article class="space-y-10">
-      <section id="overview" class="feature-card" @fadeIn>
-        <span class="feature-card__badge">01</span>
-        <h2 class="feature-card__title">Overview</h2>
-        <p class="feature-card__copy">
-          Explore our <strong>{{ (item$ | async)?.title || 'service' }}</strong> capability with references, images and scope pulled directly from our legacy site content. Use the gallery below for mobilisation visuals and share the highlights with your stakeholders.
-        </p>
+      <section id="overview" class="service-overview-card" @fadeIn>
+        <div class="flex items-start gap-4">
+          <div class="service-overview-card__badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h2 class="service-overview-card__title">Service Overview</h2>
+            <p class="service-overview-card__copy">
+              Explore our <strong class="text-brand-dark">{{ (item$ | async)?.title || 'service' }}</strong> capability with references, images and scope pulled directly from our legacy site content. Use the gallery below for mobilisation visuals and share the highlights with your stakeholders.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="service-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                Planning
+              </span>
+              <span class="service-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                </svg>
+                Execution
+              </span>
+              <span class="service-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+                Support
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="gallery" class="feature-card" @fadeIn>
-        <span class="feature-card__badge">02</span>
-        <h2 class="feature-card__title">Gallery references</h2>
+      <section id="gallery" class="service-gallery" @fadeIn>
+        <div class="service-section-header">
+          <div class="flex items-center gap-3">
+            <div class="service-section-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="service-section-title">Project Gallery</h2>
+              <p class="service-section-subtitle">Visual references from completed mobilisations</p>
+            </div>
+          </div>
+        </div>
         <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-gallery>
-          <figure *ngFor="let img of (images$ | async)!" class="gallery-card">
-            <img [src]="img" alt="{{ (item$ | async)?.title || 'Service' }} reference" class="gallery-card__image">
+          <figure *ngFor="let img of (images$ | async)!" class="gallery-card gallery-card--enhanced">
+            <img [src]="img" alt="{{ (item$ | async)?.title || 'Service' }} reference" class="gallery-card__image" loading="lazy">
+            <div class="gallery-card__overlay">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+                <path d="M11 8v6M8 11h6"/>
+              </svg>
+            </div>
           </figure>
         </div>
-        <p class="text-xs text-slate-500 mt-4">Images are sourced from the legacy page for quick migration.</p>
+        <p class="text-xs text-slate-400 mt-4 italic">
+          <svg width="14" height="14" class="inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+          Images sourced from legacy portfolio for reference
+        </p>
       </section>
 
       <section id="scope" class="feature-card" *ngIf="(showShippingBullets$ | async) as bullets" @fadeIn>

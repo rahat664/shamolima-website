@@ -1,0 +1,8 @@
+<div class="page-hero-carousel">
+  <div *ngFor="let image of images; let i = index"
+       class="page-hero-carousel__slide"
+       [class.active]="i === currentSlide">
+    <div class="page-hero-carousel__image"
+         [style.background-image]="'url(' + image + ')'"></div>
+  </div>
+</div>

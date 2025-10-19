@@ -1,0 +1,289 @@
+:host { display: block; }
+
+/* Capability Cards */
+.capability-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+  box-shadow: 0 20px 45px -25px rgba(15, 24, 40, 0.18);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: default;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-brand), rgba(0, 91, 172, 0.9));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 65px -25px rgba(15, 24, 40, 0.28);
+    border-color: rgba(30, 174, 152, 0.15);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .capability-card__icon {
+      background: linear-gradient(135deg, var(--color-brand), rgba(0, 91, 172, 0.9));
+      color: #fff;
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .capability-card__arrow {
+      transform: translateX(4px);
+      opacity: 1;
+    }
+
+    .capability-card__badge {
+      background: var(--color-brand);
+      color: #fff;
+    }
+  }
+}
+
+.capability-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.capability-card__badge {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: rgba(30, 174, 152, 0.1);
+  color: var(--color-brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.capability-card__icon {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(30, 174, 152, 0.15), rgba(0, 91, 172, 0.15));
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.capability-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #101833;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+  flex-grow: 1;
+
+  .capability-card:hover & {
+    color: var(--color-brand-dark);
+  }
+}
+
+.capability-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-brand);
+  opacity: 0.7;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+/* Leader Cards */
+.leader-card {
+  position: relative;
+  background: #fff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 45px -25px rgba(15, 24, 40, 0.18);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-brand), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 65px -25px rgba(15, 24, 40, 0.28);
+    border-color: rgba(30, 174, 152, 0.15);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .leader-card__avatar {
+      background: linear-gradient(135deg, var(--color-brand), rgba(0, 91, 172, 0.9));
+      transform: scale(1.05);
+    }
+
+    .leader-card__icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.leader-card__avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 1.5rem;
+}
+
+.leader-card__avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(30, 174, 152, 0.15), rgba(0, 91, 172, 0.15));
+  color: var(--color-brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px -8px rgba(30, 174, 152, 0.3);
+}
+
+.leader-card__icon {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(30, 174, 152, 0.2);
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.leader-card__name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #101833;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+
+  .leader-card:hover & {
+    color: var(--color-brand-dark);
+  }
+}
+
+.leader-card__role {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #5f6c85;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .capability-card,
+  .leader-card {
+    padding: 1.75rem;
+  }
+
+  .capability-card__title {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .capability-card {
+    padding: 1.5rem;
+  }
+
+  .capability-card__header {
+    margin-bottom: 1rem;
+  }
+
+  .capability-card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .capability-card__badge {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  .leader-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .leader-card__avatar {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.25rem;
+  }
+
+  .leader-card__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

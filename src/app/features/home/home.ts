@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { map, shareReplay } from 'rxjs';
 import { Header } from '../../core/components/header/header';
 import { Footer } from '../../core/components/footer/footer';
+import { HeroCarousel } from './components/hero-carousel/hero-carousel';
 import { ContentService } from '../../shared/content.service';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { GalleryItem, HomeContent, Client, RecentProject } from '../../shared/types';
@@ -34,7 +35,6 @@ interface Phase {
 @Component({
   selector: 'app-home',
   imports: [
-    Header,
     Footer,
     NgIf,
     NgForOf,
@@ -215,6 +215,10 @@ export class Home implements OnInit, OnDestroy {
     }, 5000);
   }
 
+  // Hero carousel
+  heroSlideIndex = 0;
+  private heroCarouselHandle: any = null;
+
   ngOnInit() {
     this.spotlightSub = this.spotlight$.subscribe(slides => {
       this.spotlightCount = slides?.length ?? 0;
@@ -225,6 +229,9 @@ export class Home implements OnInit, OnDestroy {
       }
       this.startAutoplay();
     });
+
+    // Start hero carousel
+    this.startHeroCarousel();
   }
 
   ngOnDestroy() {
@@ -236,6 +243,25 @@ export class Home implements OnInit, OnDestroy {
       clearInterval(this.autoplayHandle);
       this.autoplayHandle = null;
     }
+    if (this.heroCarouselHandle) {
+      clearInterval(this.heroCarouselHandle);
+      this.heroCarouselHandle = null;
+    }
+  }
+
+  setHeroSlide(index: number) {
+    this.heroSlideIndex = index;
+    // Reset autoplay when user manually changes slide
+    if (this.heroCarouselHandle) {
+      clearInterval(this.heroCarouselHandle);
+      this.startHeroCarousel();
+    }
+  }
+
+  private startHeroCarousel() {
+    this.heroCarouselHandle = setInterval(() => {
+      this.heroSlideIndex = (this.heroSlideIndex + 1) % 3;
+    }, 5000); // Change every 5 seconds
   }
 
   readonly legacyUrl$ = this.content.gallery$.pipe(

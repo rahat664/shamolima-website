@@ -1,4 +1,9 @@
 <section class="page-hero page-hero--navy" @fadeIn>
+  <app-page-hero-carousel [images]="[
+    'assets/work-activities/13.jpg',
+    'assets/work-activities/14-1.jpg',
+    'assets/work-activities/20220928_102317-scaled.jpg'
+  ]" />
   <div class="page-hero__layer page-hero__layer--gradient"></div>
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
@@ -54,10 +59,23 @@
       </p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        <article *ngFor="let pillar of focusAreas" class="feature-card">
-          <span class="feature-card__badge">{{ pillar.badge }}</span>
-          <h3 class="feature-card__title">{{ pillar.title }}</h3>
-          <p class="feature-card__copy">{{ pillar.copy }}</p>
+        <article *ngFor="let pillar of focusAreas" class="activity-card group">
+          <div class="activity-card__header">
+            <span class="activity-card__badge">{{ pillar.badge }}</span>
+            <div class="activity-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="activity-card__title">{{ pillar.title }}</h3>
+          <p class="activity-card__copy">{{ pillar.copy }}</p>
+          <div class="activity-card__arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </article>
       </div>
     </div>

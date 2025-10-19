@@ -1,4 +1,9 @@
 <section class="page-hero page-hero--navy" @fadeIn>
+  <app-page-hero-carousel [images]="[
+    'assets/work-activities/1-1-scaled.jpg',
+    'assets/work-activities/2-1-scaled.jpg',
+    'assets/work-activities/3-1-scaled.jpg'
+  ]" />
   <div class="page-hero__layer page-hero__layer--gradient"></div>
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
@@ -51,9 +56,21 @@
     <p class="section-lede">Our integrated offering covers consultancy, logistics, construction support and people services so complex projects stay on schedule.</p>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-      <article *ngFor="let item of about.whatWeDo; index as i" class="feature-card">
-        <span class="feature-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
-        <h3 class="feature-card__title">{{ item }}</h3>
+      <article *ngFor="let item of about.whatWeDo; index as i" class="capability-card group">
+        <div class="capability-card__header">
+          <span class="capability-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
+          <div class="capability-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="capability-card__title">{{ item }}</h3>
+        <div class="capability-card__arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
       </article>
     </div>
   </div>
@@ -64,10 +81,19 @@
     <p class="kicker text-brand">Leadership</p>
     <h2 class="section-title">Hands-on senior team with project pedigree</h2>
     <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <article *ngFor="let leader of about.leaders" class="card p-8 text-center">
-        <div class="mx-auto avatar-placeholder">{{ initials(leader) }}</div>
-        <h3 class="mt-4 text-lg font-semibold text-ink">{{ leader }}</h3>
-        <p class="text-sm text-slate-500 mt-2">Executive leadership overseeing operations, QHSE and client success.</p>
+      <article *ngFor="let leader of about.leaders" class="leader-card">
+        <div class="leader-card__avatar-wrapper">
+          <div class="leader-card__avatar">{{ initials(leader) }}</div>
+          <div class="leader-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="leader-card__name">{{ leader }}</h3>
+        <p class="leader-card__role">Executive leadership overseeing operations, QHSE and client success.</p>
       </article>
     </div>
   </div>

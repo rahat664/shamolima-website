@@ -1,0 +1,57 @@
+:host { display: block; }
+
+/* Enhanced form card for tracking page */
+.form-card {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-brand), rgba(0, 91, 172, 0.9));
+  }
+}
+
+.form-field {
+  transition: all 0.2s ease;
+
+  &:focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px rgba(30, 174, 152, 0.1);
+  }
+}
+
+/* Enhanced info card */
+.section--gallery .card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 45px -25px rgba(15, 24, 40, 0.18);
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-brand), transparent);
+    opacity: 0.5;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 65px -25px rgba(15, 24, 40, 0.28);
+    border-color: rgba(30, 174, 152, 0.15);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

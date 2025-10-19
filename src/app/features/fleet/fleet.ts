@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Header} from '../../core/components/header/header';
+import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import {Footer} from '../../core/components/footer/footer';
 import {CommonModule} from '@angular/common';
 import {listStagger} from '../../shared/animation';
@@ -13,8 +14,7 @@ class Truck {
 @Component({
   selector: 'app-fleet',
   imports: [
-    Header,
-    Footer,
+    PageHeroCarousel,
     CommonModule
   ],
   animations: [listStagger],

@@ -1,0 +1,63 @@
+<div class="hero-carousel" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()">
+  <!-- Slides -->
+  <div class="hero-carousel__slides">
+    <div *ngFor="let slide of slides; let i = index; trackBy: trackByIndex"
+         class="hero-carousel__slide"
+         [class.active]="i === currentSlide">
+      <!-- Background Image -->
+      <div class="hero-carousel__image"
+           [style.background-image]="'url(' + slide.image + ')'"></div>
+
+      <!-- Overlay -->
+      <div class="hero-carousel__overlay"></div>
+
+      <!-- Content -->
+      <div class="hero-carousel__content">
+        <div class="container">
+          <div class="hero-carousel__text">
+            <h2 class="hero-carousel__title" [class.active]="i === currentSlide">
+              {{ slide.title }}
+            </h2>
+            <p class="hero-carousel__subtitle" [class.active]="i === currentSlide">
+              {{ slide.subtitle }}
+            </p>
+            <a *ngIf="slide.cta && slide.ctaLink"
+               [routerLink]="slide.ctaLink"
+               class="hero-carousel__cta"
+               [class.active]="i === currentSlide">
+              {{ slide.cta }}
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button class="hero-carousel__nav hero-carousel__nav--prev"
+          (click)="prev()"
+          aria-label="Previous slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+
+  <button class="hero-carousel__nav hero-carousel__nav--next"
+          (click)="next()"
+          aria-label="Next slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
+
+  <!-- Indicators -->
+  <div class="hero-carousel__indicators">
+    <button *ngFor="let slide of slides; let i = index; trackBy: trackByIndex"
+            class="hero-carousel__indicator"
+            [class.active]="i === currentSlide"
+            (click)="goToSlide(i)"
+            [attr.aria-label]="'Go to slide ' + (i + 1)">
+    </button>
+  </div>
+</div>
