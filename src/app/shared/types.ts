@@ -19,8 +19,45 @@ export interface ServicesContent {
   };
 }
 export interface AboutContent {
+  hero: {
+    title: string;
+    description: string;
+    backgroundImage: string;
+  };
+  timeline: Array<{
+    year: string;
+    title: string;
+    description: string;
+  }>;
+  customsBrokerage: {
+    title: string;
+    tagline: string;
+    bullets: string[];
+  };
+  comprehensiveServices: Array<{
+    title: string;
+    description: string;
+  }>;
+  freightForwarding: {
+    title: string;
+    description: string;
+    services: Array<{
+      title: string;
+      description: string;
+    }>;
+  };
+  advantages: Array<{
+    title: string;
+    description: string;
+  }>;
   leaders: string[];
   whatWeDo: string[];
+  pageIntro?: string;
+  missionStatement?: string;
+  values?: Array<{
+    title: string;
+    description: string;
+  }>;
   organogramImage?: string | null;
   pageUrl?: string;
 }

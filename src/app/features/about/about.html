@@ -1,135 +1,174 @@
-<section class="page-hero page-hero--navy" @fadeIn>
-  <app-page-hero-carousel [images]="[
-    'assets/work-activities/1-1-scaled.jpg',
-    'assets/work-activities/2-1-scaled.jpg',
-    'assets/work-activities/3-1-scaled.jpg'
-  ]" />
-  <div class="page-hero__layer page-hero__layer--gradient"></div>
-  <div class="page-hero__orb page-hero__orb--one"></div>
-  <div class="page-hero__orb page-hero__orb--two"></div>
+<!-- Hero Section - Exact match to img.png layout -->
+<section class="about-hero" *ngIf="about$ | async as about" @fadeIn>
+  <div class="about-hero__bg" [style.background-image]="'url(' + about.hero.backgroundImage + ')'"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
-    <div>
-      <p class="kicker text-brand">About Shamolima</p>
-      <h1 class="page-hero__title">QHSE-first project logistics since 1984</h1>
-      <p class="page-hero__lede">
-        From consultancy and site mobilisation to heavy lift execution, Shamolima has supported Bangladesh�s energy and infrastructure growth with certified crews and ISO-driven governance.
-      </p>
+  <div class="container about-hero__container">
+    <div class="about-hero__grid">
+      <!-- Left: Teal box with content (45% width) -->
+      <div class="about-hero__content-box">
+        <p class="about-hero__brand">Shamolima Limited</p>
+        <h1 class="about-hero__title">Your Gateway to Seamless Global Trade and Logistics Excellence</h1>
+        <p class="about-hero__description">Since 1987, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.</p>
 
-      <div class="page-hero__tags">
-        <span class="tag-chip">Consultancy</span>
-        <span class="tag-chip">Heavy lift</span>
-        <span class="tag-chip">Crew services</span>
-        <span class="tag-chip">Coastal logistics</span>
+        <!-- Certificates -->
+        <div class="cert-badges" *ngIf="home$ | async as home">
+          <img *ngFor="let cert of home.certificates"
+               [src]="cert"
+               alt="Certification"
+               class="cert-badges__img" />
+        </div>
       </div>
 
-      <div class="page-hero__actions">
-        <a routerLink="/contact" class="btn btn-primary btn--glow">Connect with leadership</a>
-      </div>
-    </div>
+      <!-- Right: White timeline box (55% width) -->
+      <div class="about-hero__timeline-box">
+        <div class="timeline-box__content">
+          <article class="timeline-item">
+            <div class="timeline-item__year">1983</div>
+            <p class="timeline-item__text">Shamolima Limited started her journey in Chittagong in Project Support Services.</p>
+          </article>
 
-    <div class="grid gap-4 sm:grid-cols-2">
-      <article class="stat-card">
-        <div class="stat-card__value">1984</div>
-        <p class="stat-card__label">Year founded</p>
-        <p class="stat-card__detail">Four decades delivering logistics for energy and infrastructure.
-        </p>
-      </article>
-      <article class="stat-card">
-        <div class="stat-card__value">ISO</div>
-        <p class="stat-card__label">Integrated management</p>
-        <p class="stat-card__detail">Certified QHSE program with continuous training & audits.</p>
-      </article>
-      <article class="stat-card">
-        <div class="stat-card__value">24/7</div>
-        <p class="stat-card__label">Operations coverage</p>
-        <p class="stat-card__detail">Dedicated teams spanning ports, yards, river routes and project sites.</p>
-      </article>
+          <article class="timeline-item">
+            <div class="timeline-item__year">2015</div>
+            <p class="timeline-item__text">Got the IMS certification in Bangladesh</p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-item__year">1997</div>
+            <p class="timeline-item__text">Oil & Gas Sector, International Oil Companies (IOCs) such as Occidental, Unocal, Chevron, Shell etc.</p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-item__year">2017</div>
+            <p class="timeline-item__text">Purchased brand-new Goldhofer THPSL 12 with an Addrive street-wheel-free and Power Pack.</p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-item__year">2024</div>
+            <p class="timeline-item__text">Created a new company SNZ to continue the journey towards Sustainable Net Zero.</p>
+          </article>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section--bright" @fadeIn>
-  <div class="container" *ngIf="about$ | async as about">
-    <p class="kicker text-brand">What we deliver</p>
-    <h2 class="section-title">Multi-disciplinary services under one license</h2>
-    <p class="section-lede">Our integrated offering covers consultancy, logistics, construction support and people services so complex projects stay on schedule.</p>
-
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-      <article *ngFor="let item of about.whatWeDo; index as i" class="capability-card group">
-        <div class="capability-card__header">
-          <span class="capability-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
-          <div class="capability-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+<!-- Customs Brokerage Section -->
+<section class="customs-section" *ngIf="about$ | async as about" @fadeIn>
+  <div class="container">
+    <div class="customs-grid">
+      <!-- Left: Title and bullets -->
+      <div class="customs-content">
+        <h2 class="customs-content__title">{{ about.customsBrokerage.title }}</h2>
+        <ul class="customs-list">
+          <li *ngFor="let bullet of about.customsBrokerage.bullets" class="customs-list__item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
             </svg>
+            <span>{{ bullet }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Large title with images -->
+      <div class="customs-visual">
+        <h2 class="customs-visual__title">CUSTOMS BROKERAGE &<br>FREIGHT FORWARDING</h2>
+        <p class="customs-visual__tagline">{{ about.customsBrokerage.tagline }}</p>
+        <img src="assets/images/custom_broker.png"
+             alt="Logistics"
+             class="customs-visual__img"
+             onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comprehensive Services -->
+<section class="services-section" *ngIf="about$ | async as about" @fadeIn>
+  <div class="container">
+    <h2 class="section-title">Comprehensive Customs Brokerage Services</h2>
+    <p class="section-intro">Customized and expert customs brokerage is the foundation of our services.</p>
+
+    <div class="service-list">
+      <article *ngFor="let service of about.comprehensiveServices" class="service-item">
+        <h3 class="service-item__title">{{ service.title }}</h3>
+        <p class="service-item__description">{{ service.description }}</p>
+      </article>
+    </div>
+  </div>
+  
+</section>
+
+<!-- Expert Freight Forwarding -->
+<section class="freight-section" *ngIf="about$ | async as about" @fadeIn>
+  <div class="container">
+    <div class="freight-grid">
+      <div class="freight-visual">
+        <div class="freight-visual__devices">
+          <div class="freight-visual__laptop">
+            <div class="freight-visual__screen">
+              <div class="tracking-ui">
+                <div class="tracking-ui__header"></div>
+                <div class="tracking-ui__map"></div>
+                <div class="tracking-ui__timeline"></div>
+              </div>
+            </div>
+          </div>
+          <div class="freight-visual__mobile">
+            <div class="freight-visual__screen freight-visual__screen--mobile">
+              <div class="tracking-ui tracking-ui--mobile">
+                <div class="tracking-ui__header"></div>
+                <div class="tracking-ui__items"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <h3 class="capability-card__title">{{ item }}</h3>
-        <div class="capability-card__arrow">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" @fadeIn>
-  <div class="container" *ngIf="about$ | async as about">
-    <p class="kicker text-brand">Leadership</p>
-    <h2 class="section-title">Hands-on senior team with project pedigree</h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <article *ngFor="let leader of about.leaders" class="leader-card">
-        <div class="leader-card__avatar-wrapper">
-          <div class="leader-card__avatar">{{ initials(leader) }}</div>
-          <div class="leader-card__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-            </svg>
-          </div>
-        </div>
-        <h3 class="leader-card__name">{{ leader }}</h3>
-        <p class="leader-card__role">Executive leadership overseeing operations, QHSE and client success.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--navy" @fadeIn>
-  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
-    <div>
-      <p class="kicker text-brand">Why clients choose us</p>
-      <h2 class="section-title text-white">Local knowledge, global standards, proven crews</h2>
-      <p class="section-lede text-white/70">
-        Shamolima combines in-country routing intelligence with certified teams and specialised equipment fleets. We partner with EPCs, OEMs and operators to deliver safe, predictable outcomes.
-      </p>
-    </div>
-
-    <aside class="insight-card">
-      <h3 class="insight-card__heading">Ready for your project?</h3>
-      <ul class="insight-card__list">
-        <li>
-          <span class="insight-card__title">Own customs & shipping licenses</span>
-          <span class="insight-card__detail">Sea, inland, and air ports across Bangladesh.</span>
-        </li>
-        <li>
-          <span class="insight-card__title">Certified manpower & training</span>
-          <span class="insight-card__detail">Riggers, operators, supervisors and QHSE leads on rotation.</span>
-        </li>
-        <li>
-          <span class="insight-card__title">24/7 coordination desks</span>
-          <span class="insight-card__detail">Live updates, route status and compliance reporting.</span>
-        </li>
-      </ul>
-      <div class="insight-card__cta mt-8">
-        <p class="font-semibold">Need a company profile or references?</p>
-        <p>Email <a class="text-brand hover:underline" href="mailto:info@shamolima.com">info@shamolima.com</a> and we'll share a tailored pack.</p>
       </div>
-    </aside>
+
+      <div class="freight-content">
+        <h2 class="freight-content__title">{{ about.freightForwarding.title }}</h2>
+        <p class="freight-content__description">{{ about.freightForwarding.description }}</p>
+
+        <div class="freight-services">
+          <article *ngFor="let service of about.freightForwarding.services" class="freight-service">
+            <h4 class="freight-service__title">{{ service.title }}</h4>
+            <p class="freight-service__description">{{ service.description }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Container Image Section -->
+<section class="container-image-section" @fadeIn>
+  <img src="assets/images/port_image.jpg"
+       alt="Container operations"
+       class="container-image-section__img" />
+</section>
+
+<!-- Commitment & Advantages -->
+<section class="advantages-section" *ngIf="about$ | async as about" @fadeIn>
+  <div class="container">
+    <h2 class="section-title">Our Commitment & Advantages</h2>
+    <p class="section-subtitle">We combine technology, professionalism and client focus to deliver outstanding service</p>
+
+    <div class="advantage-list">
+      <article *ngFor="let advantage of about.advantages" class="advantage-item">
+        <h3 class="advantage-item__title">{{ advantage.title }}</h3>
+        <p class="advantage-item__description">{{ advantage.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Footer CTA Section (text strip) -->
+<section class="footer-cta-section footer-cta-section--minimal" @fadeIn>
+  <div class="footer-cta__bg" style="background-image: url('assets/images/port-crane.png')"></div>
+  <div class="footer-cta__overlay"></div>
+  <div class="container footer-cta__container footer-cta__container--narrow">
+    <p class="footer-cta__lede">Enhance your competitive edge in international trade with Shamolima — trusted, experienced, and technologically advanced customs brokerage and freight forwarding services.</p>
+    <p class="footer-cta__lede">We deliver agile solutions across complex logistics challenges and ensure outstanding results.</p>
+    <p class="footer-cta__contact">Contact us today for a personalized consultation and a detailed quotation.</p>
   </div>
 </section>
 

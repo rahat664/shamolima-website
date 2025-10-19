@@ -1,19 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Footer } from '../../core/components/footer/footer';
-import { Header } from '../../core/components/header/header';
-import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
-import { AsyncPipe, DecimalPipe, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-about',
   imports: [
     Footer,
-    PageHeroCarousel,
     AsyncPipe,
-    DecimalPipe,
     NgIf,
     NgForOf,
     RouterLink
@@ -25,6 +21,7 @@ import {RouterLink} from '@angular/router';
 export class About {
   private content = inject(ContentService);
   about$ = this.content.about$;
+  home$ = this.content.home$;
 
   initials(name: string | null | undefined): string {
     if (!name) {

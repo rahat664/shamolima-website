@@ -52,7 +52,7 @@ export class Home implements OnInit, OnDestroy {
 
   readonly stats: ReadonlyArray<Stat> = [
     {
-      value: '1984',
+      value: '1983',
       label: 'Year founded',
       detail: 'Four decades shaping Bangladesh project logistics and industrial support.'
     },
