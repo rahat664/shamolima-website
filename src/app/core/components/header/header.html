@@ -4,12 +4,11 @@
       <!-- Brand -->
       <a routerLink="/" class="tx-nav-brand">
         <ng-container *ngIf="logo$ | async as logo; else dot">
-          <img [src]="logo"
+          <img [ngSrc]="logo"
+               width="180" height="64"
                [alt]="(site$|async)?.name || 'Logo'"
                class="h-16 w-auto site-logo"
-               loading="eager"
-               decoding="async"
-               fetchpriority="high" />
+               priority>
         </ng-container>
         <ng-template #dot>
           <span class="inline-block h-10 w-10 rounded-full bg-brand"></span>

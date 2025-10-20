@@ -1,12 +1,12 @@
 import {Component, HostListener, inject} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {NavigationEnd, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {ContentService} from '../../../shared/content.service';
 import {filter} from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, NgOptimizedImage, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })

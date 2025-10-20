@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { NgForOf, NgIf } from '@angular/common';
+import { NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ContentService } from '../../../../shared/content.service';
@@ -17,6 +17,7 @@ export type Slide = {
   imports: [
     NgIf,
     NgForOf,
+    NgOptimizedImage,
     RouterLink
   ],
   animations: [heroPop],

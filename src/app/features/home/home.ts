@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, AfterViewInit, inject } from '@angular/core';
-import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { map, shareReplay } from 'rxjs';
 import { Header } from '../../core/components/header/header';
@@ -45,7 +45,8 @@ interface Phase {
     RouterLink,
     TypewriterDirective,
     AnimateCounterDirective,
-    RevealOnScroll
+    RevealOnScroll,
+    NgOptimizedImage
   ],
   animations: [fadeIn, listStagger],
   templateUrl: './home.html',

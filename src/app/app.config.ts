@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import {provideAnimations, provideNoopAnimations} from '@angular/platform-browser/animations';
 import {provideHttpClient, withFetch} from '@angular/common/http';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,6 @@ export const appConfig: ApplicationConfig = {
       {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled'}
     )),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()), provideClientHydration(withEventReplay())
   ]
 };
