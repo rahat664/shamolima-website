@@ -15,7 +15,11 @@
   const applyAll = () => Array.from(document.images).forEach(setLazy);
   // Wait for DOMContentLoaded to let the app render, then apply laziness in idle time
   const onReady = () => {
-    (window.requestIdleCallback || setTimeout)(applyAll, 50);
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(() => applyAll(), { timeout: 100 });
+    } else {
+      setTimeout(applyAll, 0);
+    }
   };
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', onReady, { once: true });
