@@ -19,13 +19,15 @@ export class Header {
   serviceList$ = this.content.serviceList$;
 
   servicesMenuOpen = false;
-  
+  mobileMenuOpen = false;
+
 
   constructor(){
-    // Close submenu on navigation
+    // Close menus on navigation
     this.router.events.pipe(filter(e => e instanceof NavigationEnd))
       .subscribe(() => {
         this.servicesMenuOpen = false;
+        this.mobileMenuOpen = false;
       });
   }
 
@@ -40,12 +42,23 @@ export class Header {
     this.servicesMenuOpen = false;
   }
 
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     // Close menu when clicking outside
     const target = event.target as HTMLElement;
     if (!target.closest('.tx-nav-item')) {
       this.servicesMenuOpen = false;
+    }
+    if (!target.closest('.tx-mobile-menu-container') && !target.closest('.tx-burger')) {
+      this.mobileMenuOpen = false;
     }
   }
 }

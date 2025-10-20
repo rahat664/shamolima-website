@@ -29,25 +29,55 @@
         <a routerLink="/work-activities" routerLinkActive="tx-nav-link-active" class="tx-nav-link">Work Activities</a>
       </nav>
 
-      <!-- Mobile -->
-      <details class="relative">
-        <summary class="tx-burger" aria-label="Open menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <rect x="3" y="6" width="18" height="2" rx="1" fill="currentColor"/>
-            <rect x="3" y="11" width="18" height="2" rx="1" fill="currentColor"/>
-            <rect x="3" y="16" width="18" height="2" rx="1" fill="currentColor"/>
-          </svg>
-          <span class="sr-only">Menu</span>
-        </summary>
-        <div class="tx-drawer">
-          <a routerLink="/">Home</a>
-          <a routerLink="/services">Services</a>
-          <a routerLink="/about">About</a>
-          <a routerLink="/qhse">QHSE</a>
-          <a routerLink="/contact">Contact</a>
-          <a routerLink="/quote" class="mt-1 bg-brand text-white px-4 py-2 rounded-lg block text-center">Get a Quote</a>
+      <!-- Mobile Menu -->
+      <div class="tx-mobile-menu-container">
+        <button
+          class="tx-burger"
+          (click)="toggleMobileMenu()"
+          [class.tx-burger--active]="mobileMenuOpen"
+          aria-label="Toggle menu"
+          [attr.aria-expanded]="mobileMenuOpen">
+          <span class="tx-burger-line"></span>
+          <span class="tx-burger-line"></span>
+          <span class="tx-burger-line"></span>
+        </button>
+
+        <div class="tx-drawer" [class.tx-drawer--open]="mobileMenuOpen">
+          <nav class="tx-drawer-nav">
+            <a routerLink="/" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" [routerLinkActiveOptions]="{exact:true}" class="tx-drawer-link">
+              <span class="tx-drawer-link-icon">🏠</span>
+              <span>Home</span>
+            </a>
+            <a routerLink="/services" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
+              <span class="tx-drawer-link-icon">⚙️</span>
+              <span>Services</span>
+            </a>
+            <a routerLink="/about" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
+              <span class="tx-drawer-link-icon">ℹ️</span>
+              <span>About</span>
+            </a>
+            <a routerLink="/qhse" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
+              <span class="tx-drawer-link-icon">🛡️</span>
+              <span>QHSE</span>
+            </a>
+            <a routerLink="/contact" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
+              <span class="tx-drawer-link-icon">📞</span>
+              <span>Contact</span>
+            </a>
+            <a routerLink="/work-activities" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
+              <span class="tx-drawer-link-icon">📸</span>
+              <span>Work Activities</span>
+            </a>
+          </nav>
         </div>
-      </details>
+
+        <!-- Backdrop -->
+        <div
+          class="tx-drawer-backdrop"
+          [class.tx-drawer-backdrop--visible]="mobileMenuOpen"
+          (click)="closeMobileMenu()">
+        </div>
+      </div>
     </div>
   </div>
 </header>

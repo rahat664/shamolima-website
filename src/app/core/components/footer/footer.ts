@@ -4,10 +4,11 @@ import { fadeIn } from '../../../shared/animation';
 import { ContentService } from '../../../shared/content.service';
 import { AsyncPipe, NgIf, NgForOf } from '@angular/common';
 import { ContactContent, ContactOffice } from '../../../shared/types';
+import { RevealOnScroll } from '../../../shared/directives/reveal-on-scroll';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink, AsyncPipe, NgIf, NgForOf],
+  imports: [RouterLink, AsyncPipe, NgIf, NgForOf, RevealOnScroll],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
   animations: [fadeIn]
