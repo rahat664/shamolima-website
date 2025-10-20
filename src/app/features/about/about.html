@@ -16,7 +16,7 @@
         <p class="hero-company-name">Shamolima Limited</p>
         <h1 class="hero-title">Your Gateway to<br>Seamless Global Trade<br>and Logistics Excellence</h1>
         <p class="hero-text">
-          Since 1987, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil, and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.
+          Since 1983, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil, and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.
         </p>
       </div>
       <!-- Right: White Timeline Box -->
@@ -50,6 +50,20 @@
     </div>
   </section>
 
+  <!-- Leadership Section -->
+  <section class="section">
+    <div class="container" *ngIf="about$ | async as about">
+      <p class="kicker text-brand">Board of directors</p>
+      <h2 class="section-title"></h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <article *ngFor="let leader of about.leaders" class="card p-8 text-center">
+          <div class="mx-auto avatar-placeholder">{{ initials(leader) }}</div>
+          <h3 class="mt-4 text-lg font-semibold text-ink">{{ leader }}</h3>
+          <p class="text-sm text-slate-500 mt-2">Executive leadership overseeing operations, QHSE and client success.</p>
+        </article>
+      </div>
+    </div>
+  </section>
   <!-- Customs Brokerage Section (Dark) -->
   <section class="customs-section" *ngIf="about$ | async as about">
     <div class="customs-wrapper">
