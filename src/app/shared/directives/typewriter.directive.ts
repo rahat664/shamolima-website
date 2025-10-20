@@ -17,17 +17,30 @@ export class TypewriterDirective implements OnInit, OnDestroy {
   @Input() typewriterCursor = true;
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId) && this.appTypewriter) {
-      this.cleanup = typewriterEffect(
-        this.elementRef.nativeElement,
-        this.appTypewriter,
-        {
-          speed: this.typewriterSpeed,
-          startDelay: this.typewriterDelay,
-          showCursor: this.typewriterCursor
-        }
-      );
+    if (!isPlatformBrowser(this.platformId) || !this.appTypewriter) return;
+
+    const prefersReduced = (() => {
+      try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return false; }
+    })();
+    const smallScreen = (() => {
+      try { return window.matchMedia('(max-width: 480px)').matches; } catch { return false; }
+    })();
+
+    if (prefersReduced || smallScreen) {
+      const el: HTMLElement = this.elementRef.nativeElement;
+      el.textContent = this.appTypewriter;
+      return; // no animation on low-motion or small screens
     }
+
+    this.cleanup = typewriterEffect(
+      this.elementRef.nativeElement,
+      this.appTypewriter,
+      {
+        speed: this.typewriterSpeed,
+        startDelay: this.typewriterDelay,
+        showCursor: this.typewriterCursor
+      }
+    );
   }
 
   ngOnDestroy(): void {

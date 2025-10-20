@@ -3,13 +3,37 @@
     <!-- Carousel Background Images -->
     <div class="home-hero__carousel">
       <div class="home-hero__slide" [class.active]="heroSlideIndex === 0">
-        <div class="home-hero__image" style="background-image: url('assets/images/fleet_yard.jpg')"></div>
+        <picture>
+          <source srcset="assets/images/webp/fleet_yard.webp" type="image/webp">
+          <img class="home-hero__image"
+               src="assets/images/fleet_yard.jpg"
+               alt=""
+               [attr.loading]="heroSlideIndex === 0 ? 'eager' : 'lazy'"
+               decoding="async"
+               [attr.fetchpriority]="heroSlideIndex === 0 ? 'high' : 'auto'">
+        </picture>
       </div>
       <div class="home-hero__slide" [class.active]="heroSlideIndex === 1">
-        <div class="home-hero__image" style="background-image: url('assets/images/generator_transformer.jpg')"></div>
+        <picture>
+          <source srcset="assets/images/webp/generator_transformer.webp" type="image/webp">
+          <img class="home-hero__image"
+               src="assets/images/generator_transformer.jpg"
+               alt=""
+               [attr.loading]="heroSlideIndex === 1 ? 'eager' : 'lazy'"
+               decoding="async"
+               [attr.fetchpriority]="heroSlideIndex === 1 ? 'high' : 'auto'">
+        </picture>
       </div>
       <div class="home-hero__slide" [class.active]="heroSlideIndex === 2">
-        <div class="home-hero__image" style="background-image: url('assets/images/project_equipment.jpg')"></div>
+        <picture>
+          <source srcset="assets/images/webp/project_equipment.webp" type="image/webp">
+          <img class="home-hero__image"
+               src="assets/images/project_equipment.jpg"
+               alt=""
+               [attr.loading]="heroSlideIndex === 2 ? 'eager' : 'lazy'"
+               decoding="async"
+               [attr.fetchpriority]="heroSlideIndex === 2 ? 'high' : 'auto'">
+        </picture>
       </div>
     </div>
 

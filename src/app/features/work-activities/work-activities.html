@@ -113,7 +113,7 @@
                    [class.is-active]="i === spotlightIndex"
                    [hidden]="i !== spotlightIndex">
             <img [src]="thumbFor(item.image)"
-                 [attr.data-fullsrc]="item.image"
+                 [attr.data-fullsrc]="fullFor(item.image)"
                  [alt]="item.caption"
                  loading="lazy"
                  decoding="async"
@@ -164,7 +164,7 @@
     <div *ngIf="archive$ | async as items" class="masonry mt-10 columns-1 sm:columns-2 lg:columns-3" data-gallery>
       <figure *ngFor="let item of items; index as i; trackBy: trackByImage" class="gallery-card" appRevealOnScroll="zoom" [delay]="i * 10" [threshold]="0.05">
         <img [src]="thumbFor(item.image)"
-             [attr.data-fullsrc]="item.image"
+             [attr.data-fullsrc]="fullFor(item.image)"
              [alt]="item.caption"
              loading="lazy"
              decoding="async"

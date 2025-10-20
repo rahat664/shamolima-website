@@ -2,7 +2,14 @@
   <div *ngFor="let image of images; let i = index"
        class="page-hero-carousel__slide"
        [class.active]="i === currentSlide">
-    <div class="page-hero-carousel__image"
-         [style.background-image]="'url(' + image + ')'"></div>
+    <picture>
+      <source [attr.srcset]="toWebp(image)" type="image/webp">
+      <img class="page-hero-carousel__image"
+           [src]="image"
+           alt=""
+           [attr.loading]="i === currentSlide ? 'eager' : 'lazy'"
+           decoding="async"
+           [attr.fetchpriority]="i === currentSlide ? 'high' : 'auto'">
+    </picture>
   </div>
 </div>

@@ -265,9 +265,10 @@ export class Home implements OnInit, OnDestroy {
   }
 
   private startHeroCarousel() {
+    if (this.prefersReducedMotion() || this.isSmallScreen()) return;
     this.heroCarouselHandle = setInterval(() => {
       this.heroSlideIndex = (this.heroSlideIndex + 1) % 3;
-    }, 5000); // Change every 5 seconds
+    }, 7000); // Longer interval, less CPU
   }
 
 
@@ -312,5 +313,12 @@ export class Home implements OnInit, OnDestroy {
       return `${m2[1]}/thumbs/${base}.webp`;
     }
     return url;
+  }
+
+  private prefersReducedMotion(): boolean {
+    try { return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return false; }
+  }
+  private isSmallScreen(): boolean {
+    try { return typeof window !== 'undefined' && window.matchMedia('(max-width: 480px)').matches; } catch { return false; }
   }
 }

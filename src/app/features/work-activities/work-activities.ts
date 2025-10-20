@@ -199,6 +199,16 @@ export class WorkActivities implements OnInit, OnDestroy {
     return url;
   }
 
+  fullFor(url: string): string {
+    if (!url) return url;
+    const m1 = url.match(/^(assets\/(?:work-activities|images))\/(.+)$/i);
+    if (m1) {
+      const base = m1[2].replace(/\.[^.]+$/,'');
+      return `${m1[1]}/webp/${base}.webp`;
+    }
+    return url;
+  }
+
   // Global lightbox handles image viewing sitewide.
 
   // Spotlight carousel state

@@ -75,6 +75,7 @@ export class HeroSlider {
     if (this.slides.length <= 1) {
       return;
     }
+    if (this.prefersReducedMotion() || this.isSmallScreen()) return;
     this.timer = setInterval(() => {
       this.idx = (this.idx + 1) % this.slides.length;
     }, 5000);
@@ -85,5 +86,20 @@ export class HeroSlider {
       clearInterval(this.timer);
       this.timer = undefined;
     }
+  }
+
+  toWebp(src: string): string {
+    if (!src) return src;
+    const m = src.match(/^(assets\/(?:images|work-activities))\/(.+)$/i);
+    if (!m) return '';
+    const base = m[2].replace(/\.[^.]+$/, '');
+    return `${m[1]}/webp/${base}.webp`;
+  }
+
+  private prefersReducedMotion(): boolean {
+    try { return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return false; }
+  }
+  private isSmallScreen(): boolean {
+    try { return typeof window !== 'undefined' && window.matchMedia('(max-width: 480px)').matches; } catch { return false; }
   }
 }

@@ -40,4 +40,13 @@ export class PageHeroCarousel implements OnInit, OnDestroy {
       this.autoplayInterval = null;
     }
   }
+
+  toWebp(src: string): string {
+    if (!src) return src;
+    // Map assets/images/* or assets/work-activities/* to their webp outputs
+    const m = src.match(/^(assets\/(?:images|work-activities))\/(.+)$/i);
+    if (!m) return '';
+    const base = m[2].replace(/\.[^.]+$/, '');
+    return `${m[1]}/webp/${base}.webp`;
+  }
 }
