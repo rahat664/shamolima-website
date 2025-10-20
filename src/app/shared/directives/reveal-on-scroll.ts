@@ -1,4 +1,5 @@
-import {Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import {Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2, Inject, PLATFORM_ID} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appRevealOnScroll]',
@@ -10,12 +11,22 @@ export class RevealOnScroll implements OnInit, OnDestroy{
   @Input() threshold = 0.12;
   private observer?: IntersectionObserver;
 
-  constructor(private el: ElementRef<HTMLElement>, private r: Renderer2) {}
+  constructor(
+    private el: ElementRef<HTMLElement>,
+    private r: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
     const node = this.el.nativeElement;
     this.r.addClass(node, 'reveal');
     this.r.addClass(node, this.direction);
+
+    // On the server (SSR), IntersectionObserver is unavailable; reveal immediately to avoid errors
+    if (!isPlatformBrowser(this.platformId)) {
+      this.r.addClass(node, 'is-revealed');
+      return;
+    }
 
     this.observer = new IntersectionObserver(
       entries => {
