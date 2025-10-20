@@ -11,7 +11,7 @@ import { ContentService } from '../../shared/content.service';
 import { GalleryItem } from '../../shared/types';
 import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
-type LegacyGalleryItem = { src?: string; caption?: string | null };
+type WorkImageItem = { src?: string; caption?: string | null };
 
 type Stat = { value: string; label: string; detail?: string };
 type FocusArea = { badge: string; title: string; copy: string };
@@ -134,7 +134,7 @@ export class WorkActivities implements OnInit, OnDestroy {
   ];
 
   archive$: Observable<GalleryItem[]> = this.http
-    .get<LegacyGalleryItem[]>('assets/data/work-activities.gallery.json')
+    .get<WorkImageItem[]>('assets/data/work-activities.gallery.json')
     .pipe(
       map(items => {
         const seen = new Set<string>();

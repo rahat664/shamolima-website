@@ -373,7 +373,7 @@ body {
 
 /* Hide scrollbars globally (keeps scrolling functional) */
 html, body {
-  -ms-overflow-style: none; /* IE 10+ and Edge Legacy */
+  -ms-overflow-style: none; /* IE 10+ and legacy Edge */
 }
 
 /* Firefox */
@@ -1414,7 +1414,7 @@ app-home {
   @apply transition-all duration-300;
 }
 
-/* Hide legacy per-route headers now that header lives in app shell */
+/* Hide per-route headers now that header lives in app shell */
 main app-header {
   display: none;
 }

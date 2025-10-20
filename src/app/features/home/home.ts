@@ -270,9 +270,6 @@ export class Home implements OnInit, OnDestroy {
     }, 5000); // Change every 5 seconds
   }
 
-  readonly legacyUrl$ = this.content.gallery$.pipe(
-    map(gallery => gallery?.workActivitiesPage ?? null)
-  );
 
   readonly contactEmail$ = this.content.contact$.pipe(
     map(contact =>
@@ -302,4 +299,3 @@ export class Home implements OnInit, OnDestroy {
   trackByClient = (_: number, c: Client) => c.name;
   trackByProject = (_: number, p: RecentProject) => p.title;
 }
-
