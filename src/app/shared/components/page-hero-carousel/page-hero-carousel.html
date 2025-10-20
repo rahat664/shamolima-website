@@ -1,15 +1,16 @@
 <div class="page-hero-carousel">
-  <div *ngFor="let image of images; let i = index"
-       class="page-hero-carousel__slide"
-       *ngIf="i === currentSlide"
-       [class.active]="true">
-    <picture>
-      <source [attr.srcset]="toWebp(image)" type="image/webp">
-      <img class="page-hero-carousel__image"
-           [ngSrc]="image"
-           fill
-           [priority]="i === currentSlide"
-           alt="">
-    </picture>
-  </div>
+  <ng-container *ngFor="let image of images; let i = index">
+    <div class="page-hero-carousel__slide"
+         *ngIf="i === currentSlide"
+         [class.active]="true">
+      <picture>
+        <source [attr.srcset]="toWebp(image)" type="image/webp">
+        <img class="page-hero-carousel__image"
+             [ngSrc]="image"
+             fill
+             [priority]="i === currentSlide"
+             alt="">
+      </picture>
+    </div>
+  </ng-container>
 </div>
