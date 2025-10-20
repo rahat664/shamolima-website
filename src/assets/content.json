@@ -128,7 +128,7 @@
   "about": {
     "hero": {
       "title": "Your Gateway to Seamless Global Trade and Logistics Excellence",
-      "description": "Since 1983, Shamolima has been pioneering global trade with unparalleled shipping services, combining state-of-the-art technology with decades of expertise. We streamline customs, freight forwarding, and logistics to deliver faster borders and smarter solutions—committed to excellence in every journey from origin to destination.",
+      "description": "Since 1983, Shamolima has been pioneering global trade with unparalleled shipping services, combining state-of-the-art technology with decades of expertise. We streamline customs, freight forwarding, and logistics to deliver faster borders and smarter solutionsï¿½committed to excellence in every journey from origin to destination.",
       "backgroundImage": "assets/images/about_us.png"
     },
     "timeline": [
@@ -215,7 +215,7 @@
         },
         {
           "title": "Shipment Tracking \u0026 Communication",
-          "description": "Utilize our advanced tracking systems and dedicated support teams to monitor cargo movement in real time. We provide regular updates on vessel arrivals, port handling, customs status, and land transport—ensuring transparency, accountability, and peace of mind throughout the journey."
+          "description": "Utilize our advanced tracking systems and dedicated support teams to monitor cargo movement in real time. We provide regular updates on vessel arrivals, port handling, customs status, and land transportï¿½ensuring transparency, accountability, and peace of mind throughout the journey."
         },
         {
           "title": "Fleet \u0026 Transportation",
@@ -230,7 +230,7 @@
       },
       {
         "title": "Value-Added Services",
-        "description": "Beyond basic logistics, we offer warehousing, packaging, labeling, insurance coordination, and cargo consolidation—streamlining your supply chain in one integrated solution."
+        "description": "Beyond basic logistics, we offer warehousing, packaging, labeling, insurance coordination, and cargo consolidationï¿½streamlining your supply chain in one integrated solution."
       },
       {
         "title": "Responsive Teams",
@@ -389,7 +389,7 @@
   },
   "contact": {
     "operationOffice": {
-      "address": "House #56/C, 6th Floor, Road #132, Gulshan-1, Dhaka-1212, Bangladesh",
+      "address": "Commercial Cove,House 56/C, Lift 6, Road 132,Gulshan 1, Dhaka 1212",
       "phones": [
         "+88-01913504850",
         "+880-2-58810602",
@@ -402,7 +402,7 @@
       "lng": "90.41777361211004"
     },
     "headOffice": {
-      "address": "21, Dilkusha Commercial Area, Naseem Chamber (3rd Floor), Dhaka-1000, Bangladesh",
+      "address": "Naseem Chamber, 3rd Floor 21, Dilkusha Commercial Area,Dhaka 1000",
       "phones": [
         "+880-2-9552676",
         "+880-2-9550444",
@@ -413,7 +413,7 @@
       "lng": "90.41815638327252"
     },
     "chattagramOffice": {
-      "address": "IIUC Tower (6th Floor), 9 Agrabad C/A, Sk. Mujib Road, Chittagong, Bangladesh",
+      "address": "IIUC Tower, 6th Floor,9, Agrabad C/A, Sk. Mujib Road,Chattogram 4100",
       "phones": [
         "+880-31-2522598"
       ],
@@ -502,7 +502,7 @@
     },
     {
       "title": "Bangla Trac 100 MW Power Project",
-      "description": "Handled unloading from mother vessel to jetty, preparation, placement, and installation of 8×220 t engines with accessories using indigenous heavy-lifting methods.",
+      "description": "Handled unloading from mother vessel to jetty, preparation, placement, and installation of 8ï¿½220 t engines with accessories using indigenous heavy-lifting methods.",
       "location": "Noapara, Jessore",
       "keyEquipment": [
         "Gantry cranes",
@@ -511,7 +511,7 @@
       ]
     },
     {
-      "title": "EPV 115 MW Project – Thakurgaon",
+      "title": "EPV 115 MW Project ï¿½ Thakurgaon",
       "description": "Managed barge and road transport logistics, engine assembly and placement using gantry cranes and skidding systems for over 900 t of machinery.",
       "location": "Thakurgaon, Bangladesh",
       "keyEquipment": [
