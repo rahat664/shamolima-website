@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { NgFor, NgClass, NgOptimizedImage } from '@angular/common';
+import {NgFor, NgClass, NgOptimizedImage, CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-page-hero-carousel',
   standalone: true,
-  imports: [NgFor, NgOptimizedImage],
+  imports: [ NgOptimizedImage, CommonModule],
   templateUrl: './page-hero-carousel.html',
   styleUrl: './page-hero-carousel.scss'
 })
