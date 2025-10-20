@@ -108,11 +108,14 @@ export class GalleryOverlay {
     const img = target as HTMLImageElement;
     if (this.shouldIgnore(img)) return;
 
-    const container = this.findGroupContainer(img);
+            const container = this.findGroupContainer(img);
     const all = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
     const filtered = all
       .filter(el => !this.shouldIgnore(el))
-      .map(el => ({ src: el.currentSrc || el.src, caption: this.captionFor(el) }))
+      .map(el => {
+        const full = el.getAttribute('data-fullsrc') || el.currentSrc || el.src;
+        return { src: full, caption: this.captionFor(el) } as GalleryItem;
+      })
       .filter(item => !!item.src);
 
     // Deduplicate by src and compute index
@@ -122,7 +125,8 @@ export class GalleryOverlay {
     for (const it of filtered) {
       const key = it.src;
       if (seen.has(key)) continue;
-      if (key === (img.currentSrc || img.src)) index = items.length;
+      const current = img.getAttribute('data-fullsrc') || img.currentSrc || img.src;
+      if (key === current) index = items.length;
       seen.add(key);
       items.push(it);
     }
@@ -169,4 +173,3 @@ export class GalleryOverlay {
     return cleaned || 'Image';
   }
 }
-

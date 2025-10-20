@@ -44,4 +44,19 @@ export class ServiceSingle {
   showShippingBullets$ = combineLatest([this.item$, this.shippingBullets$]).pipe(
     map(([it, bullets]) => (it?.slug === 'shipping-customs' && bullets.length > 0) ? bullets : [])
   );
+
+  thumbFor(url: string): string {
+    if (!url) return url;
+    const m1 = url.match(/^(assets\/work-activities)\/(.+)$/i);
+    if (m1) {
+      const base = m1[2].replace(/\.[^.]+$/,'');
+      return `${m1[1]}/thumbs/${base}.webp`;
+    }
+    const m2 = url.match(/^(assets\/images)\/(.+)$/i);
+    if (m2) {
+      const base = m2[2].replace(/\.[^.]+$/,'');
+      return `${m2[1]}/thumbs/${base}.webp`;
+    }
+    return url;
+  }
 }

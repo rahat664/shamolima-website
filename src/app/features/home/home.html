@@ -197,7 +197,7 @@
 
     <div *ngIf="(galleryItems$ | async) as items" class="masonry mt-10 columns-1 sm:columns-2 lg:columns-3" data-gallery>
       <figure *ngFor="let item of items; trackBy: trackByImage; let i = index" class="gallery-card" appRevealOnScroll="zoom" [delay]="i * 50" [threshold]="0.05">
-        <img [src]="item.image" [alt]="item.caption" loading="lazy" class="gallery-card__image">
+        <img [src]="thumbFor(item.image)" [attr.data-fullsrc]="item.image" [alt]="item.caption" loading="lazy" decoding="async" class="gallery-card__image">
         <figcaption class="gallery-card__caption">{{ item.caption }}</figcaption>
       </figure>
     </div>
