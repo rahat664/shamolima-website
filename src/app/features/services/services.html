@@ -11,37 +11,37 @@
   <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
     <div>
       <p class="kicker text-brand">Our Services</p>
-      <h1 class="page-hero__title">End-to-end logistics for complex projects</h1>
-      <p class="page-hero__lede">
-        From heavy haulage and engineered lifts to customs clearance and site mobilisation, Shamolima delivers the TransX-standard experience across Bangladesh.
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">End-to-end logistics for complex projects</h1>
+      <p class="page-hero__lede" appRevealOnScroll="fade" [delay]="300">
+        From heavy haulage and engineered lifts to customs clearance and site mobilisation, Shamolima delivers the Shamolima Limited-standard experience across Bangladesh.
       </p>
 
-      <div class="page-hero__tags">
+      <div class="page-hero__tags" appRevealOnScroll="up" [delay]="500">
         <span class="tag-chip">Heavy haulage</span>
         <span class="tag-chip">SPMT & rigging</span>
         <span class="tag-chip">Customs & ports</span>
         <span class="tag-chip">Project support</span>
       </div>
 
-      <div class="page-hero__actions">
+      <div class="page-hero__actions" appRevealOnScroll="up" [delay]="700">
         <a routerLink="/quote" class="btn btn-primary btn--glow">Plan a move</a>
         <a routerLink="/contact" class="btn btn--light">Talk to an expert</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
-      <article class="stat-card">
-        <div class="stat-card__value">7+</div>
+      <article class="stat-card" appRevealOnScroll="zoom" [delay]="0">
+        <div class="stat-card__value" [appAnimateCounter]="'7+'" [counterDuration]="2000" [counterDelay]="200"></div>
         <p class="stat-card__label">Service pillars</p>
         <p class="stat-card__detail">Rental, transport, lifting, customs, site support and more under one license.</p>
       </article>
-      <article class="stat-card">
-        <div class="stat-card__value">150T</div>
+      <article class="stat-card" appRevealOnScroll="zoom" [delay]="150">
+        <div class="stat-card__value" [appAnimateCounter]="'150'" [counterDuration]="2000" [counterDelay]="350"></div>
         <p class="stat-card__label">Crawler capacity</p>
         <p class="stat-card__detail">Fleet of cranes, SPMTs and hydraulic trailers ready for critical lifts.</p>
       </article>
-      <article class="stat-card">
-        <div class="stat-card__value">24/7</div>
+      <article class="stat-card" appRevealOnScroll="zoom" [delay]="300">
+        <div class="stat-card__value" [appAnimateCounter]="'24/7'" [counterDuration]="2000" [counterDelay]="500"></div>
         <p class="stat-card__label">Operations desks</p>
         <p class="stat-card__detail">Live coordination across seaports, river terminals and project sites.</p>
       </article>
@@ -51,14 +51,16 @@
 
 <section class="section section--bright" [@listStagger]>
   <div class="container">
-    <p class="kicker text-brand">Capabilities</p>
-    <h2 class="section-title">Choose a discipline to explore scope & references</h2>
-    <p class="section-lede">Each service links to legacy case studies, gallery references and typical execution scope.</p>
+    <p class="kicker text-brand" appRevealOnScroll="fade">Capabilities</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Choose a discipline to explore scope & references</h2>
+    <p class="section-lede" appRevealOnScroll="fade" [delay]="200">Each service links to legacy case studies, gallery references and typical execution scope.</p>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       <a *ngFor="let s of (services$ | async)!; index as i"
          [routerLink]="['/services', s.slug]"
-         class="service-card group">
+         class="service-card group"
+         appRevealOnScroll="up"
+         [delay]="i * 100">
         <div class="service-card__header">
           <span class="service-card__badge">{{ (i + 1) | number: '2.0-0' }}</span>
           <div class="service-card__icon">
@@ -83,14 +85,14 @@
 <section class="section section--navy" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
     <div>
-      <p class="kicker text-brand">Why it matters</p>
-      <h2 class="section-title text-white">Integrated execution keeps complex moves predictable</h2>
-      <p class="section-lede text-white/70">
+      <p class="kicker text-brand" appRevealOnScroll="fade">Why it matters</p>
+      <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">Integrated execution keeps complex moves predictable</h2>
+      <p class="section-lede text-white/70" appRevealOnScroll="fade" [delay]="200">
         We handle permitting, equipment mobilisation, staffing, reporting and close-out under one project desk so your team focuses on critical milestones.
       </p>
     </div>
 
-    <aside class="insight-card">
+    <aside class="insight-card" appRevealOnScroll="left" [delay]="200">
       <h3 class="insight-card__heading">Included with every engagement</h3>
       <ul class="insight-card__list">
         <li>
@@ -117,11 +119,11 @@
 <section class="section section--gallery" @fadeIn>
   <div class="container grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
     <div>
-      <p class="kicker text-brand">Get started</p>
-      <h2 class="section-title">Share your scope for a rapid mobilisation plan</h2>
-      <p class="section-lede">Tell us about cargo dimensions, pick-up / delivery points and timelines. Our project desk replies with recommended equipment, routing notes and a commercial overview.</p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">Get started</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Share your scope for a rapid mobilisation plan</h2>
+      <p class="section-lede" appRevealOnScroll="fade" [delay]="200">Tell us about cargo dimensions, pick-up / delivery points and timelines. Our project desk replies with recommended equipment, routing notes and a commercial overview.</p>
     </div>
-    <div class="card form-card bg-white">
+    <div class="card form-card bg-white" appRevealOnScroll="zoom" [delay]="200">
       <a routerLink="/quote" class="btn btn-primary btn--glow w-full justify-center">Request a tailored quote</a>
       <a routerLink="/contact" class="btn btn-outline w-full justify-center mt-3">Talk to operations</a>
     </div>

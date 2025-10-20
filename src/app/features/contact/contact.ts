@@ -8,6 +8,7 @@ import { ContentService } from '../../shared/content.service';
 import { ContactContent } from '../../shared/types';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { MapEmbed } from '../../shared/map-embed';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 @Component({
   selector: 'app-contact',
@@ -18,7 +19,8 @@ import { MapEmbed } from '../../shared/map-embed';
     MapEmbed,
     AsyncPipe,
     NgForOf,
-    NgIf
+    NgIf,
+    RevealOnScroll
   ],
   animations: [listStagger, fadeIn],
   templateUrl: './contact.html',

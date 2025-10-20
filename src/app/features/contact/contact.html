@@ -10,8 +10,8 @@
 
   <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
     <div>
-      <p class="kicker text-brand">Contact</p>
-      <h1 class="page-hero__title">We&rsquor;re ready to support your next mobilization</h1>
+      <p class="kicker text-brand" appRevealOnScroll="fade">Contact</p>
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">We&rsquor;re ready to support your next mobilization</h1>
       <p class="page-hero__lede">
         Reach our operations desks any time for project planning, equipment availability or shipment status. We mobilise fast across every major port, river terminal and industrial zone in Bangladesh.
       </p>
@@ -30,7 +30,7 @@
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card">
-        <div class="stat-card__value">4</div>
+        <div class="stat-card__value">3</div>
         <p class="stat-card__label">Service locations</p>
         <p class="stat-card__detail">Head office, operations, branch and Chattagram desks to keep coverage tight.</p>
       </article>
@@ -107,8 +107,8 @@
 
 <section class="section section--gallery" @fadeIn>
   <div class="container">
-    <p class="kicker text-brand">Visit us</p>
-    <h2 class="section-title">Find our offices across Dhaka and Chattagram</h2>
+    <p class="kicker text-brand" appRevealOnScroll="fade">Visit us</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Find our offices across Dhaka and Chattagram</h2>
     <div class="mt-8" *ngIf="contact$ | async as c">
       <app-map-embed
         [markers]="mapMarkers(c)"

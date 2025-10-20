@@ -9,6 +9,7 @@ import { Footer } from '../../core/components/footer/footer';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
 import { GalleryItem } from '../../shared/types';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 type LegacyGalleryItem = { src?: string; caption?: string | null };
 
@@ -19,7 +20,7 @@ type Phase = { title: string; copy: string; points: string[] };
 
 @Component({
   selector: 'app-work-activities',
-  imports: [ Footer, NgForOf, AsyncPipe, NgIf, RouterLink, PageHeroCarousel],
+  imports: [ Footer, NgForOf, AsyncPipe, NgIf, RouterLink, PageHeroCarousel, RevealOnScroll],
   animations: [fadeIn, listStagger],
   templateUrl: './work-activities.html',
   styleUrl: './work-activities.scss'

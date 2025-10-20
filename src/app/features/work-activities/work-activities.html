@@ -10,10 +10,10 @@
 
   <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
     <div>
-      <p class="kicker text-brand">Work Activities</p>
-      <h1 class="page-hero__title">Logistics moves engineered for energy & infrastructure</h1>
+      <p class="kicker text-brand" appRevealOnScroll="fade">Work Activities</p>
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">Logistics moves engineered for energy & infrastructure</h1>
       <p class="page-hero__lede">
-        From refinery modules to oversized power assets, Shamolima crews deliver door-to-door logistics, engineered lifts and site installation with the precision clients know from the TransX experience.
+        From refinery modules to oversized power assets, Shamolima crews deliver door-to-door logistics, engineered lifts and site installation with the precision clients know from the Shamolima Limited experience.
       </p>
 
       <div class="page-hero__tags">
@@ -38,7 +38,7 @@
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
-      <article *ngFor="let stat of stats" class="stat-card">
+      <article *ngFor="let stat of stats; let i = index" class="stat-card" appRevealOnScroll="zoom" [delay]="i * 150">
         <div class="stat-card__value">{{ stat.value }}</div>
         <p class="stat-card__label">{{ stat.label }}</p>
         <p *ngIf="stat.detail" class="stat-card__detail">
@@ -52,14 +52,14 @@
 <section class="section section--bright" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
     <div>
-      <p class="kicker text-brand">Integrated project logistics</p>
-      <h2 class="section-title">Field-tested teams with engineered planning built-in</h2>
+      <p class="kicker text-brand" appRevealOnScroll="fade">Integrated project logistics</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Field-tested teams with engineered planning built-in</h2>
       <p class="section-lede">
         Every movement is custom engineered: feasibility studies, corridor readiness, lift plans, temporary works and final alignment. We own the gear, develop our crews and stay embedded until your cargo is commissioned.
       </p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        <article *ngFor="let pillar of focusAreas" class="activity-card group">
+        <article *ngFor="let pillar of focusAreas; let i = index" class="activity-card group" appRevealOnScroll="up" [delay]="i * 100">
           <div class="activity-card__header">
             <span class="activity-card__badge">{{ pillar.badge }}</span>
             <div class="activity-card__icon">
@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <aside class="insight-card">
+    <aside class="insight-card" appRevealOnScroll="left" [delay]="200">
       <h3 class="insight-card__heading">Recent plays</h3>
       <ul class="insight-card__list">
         <li *ngFor="let item of milestoneList">
@@ -104,8 +104,8 @@
     <div class="container">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p class="kicker text-brand">Spotlight operations</p>
-          <h2 class="section-title text-white">What our crews are delivering right now</h2>
+          <p class="kicker text-brand" appRevealOnScroll="fade">Spotlight operations</p>
+          <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">What our crews are delivering right now</h2>
         </div>
         <p class="max-w-xl text-sm text-white/70">
           A curated look at recent heavy haul, rigging and installation work led by Shamolima project teams across Bangladesh.
@@ -138,11 +138,11 @@
 
 <section class="section" @fadeIn>
   <div class="container">
-    <p class="kicker text-brand">How we execute</p>
-    <h2 class="section-title">Lifecycle support from feasibility to handover</h2>
+    <p class="kicker text-brand" appRevealOnScroll="fade">How we execute</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Lifecycle support from feasibility to handover</h2>
 
     <div class="mt-10 grid gap-8 md:grid-cols-2">
-      <article *ngFor="let phase of deliveryPhases; index as idx" class="phase-card">
+      <article *ngFor="let phase of deliveryPhases; index as idx" class="phase-card" appRevealOnScroll="up" [delay]="idx * 150">
         <div class="phase-card__index">{{ idx + 1 }}</div>
         <h3 class="phase-card__title">{{ phase.title }}</h3>
         <p class="phase-card__copy">{{ phase.copy }}</p>
@@ -158,8 +158,8 @@
   <div class="container">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p class="kicker text-brand">Field execution gallery</p>
-        <h2 class="section-title">Highlights from our yards & job sites</h2>
+        <p class="kicker text-brand" appRevealOnScroll="fade">Field execution gallery</p>
+        <h2 class="section-title" appRevealOnScroll="up" [delay]="10">Highlights from our yards & job sites</h2>
         <p class="section-lede">
           Swipe through our archive of heavy lift, haulage and installation projects. Each image opens in high resolution for closer inspection.
         </p>
@@ -167,7 +167,7 @@
     </div>
 
     <div *ngIf="archive$ | async as items" class="masonry mt-10 columns-1 sm:columns-2 lg:columns-3" data-gallery>
-      <figure *ngFor="let item of items; index as i; trackBy: trackByImage" class="gallery-card">
+      <figure *ngFor="let item of items; index as i; trackBy: trackByImage" class="gallery-card" appRevealOnScroll="zoom" [delay]="i * 10" [threshold]="0.05">
         <img [src]="item.image"
              [alt]="item.caption"
              loading="lazy"

@@ -4,6 +4,7 @@ import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/pag
 import {Footer} from '../../core/components/footer/footer';
 import {CommonModule} from '@angular/common';
 import {listStagger} from '../../shared/animation';
+import {RevealOnScroll} from '../../shared/directives/reveal-on-scroll';
 
 class Truck {
   name: string | undefined;
@@ -15,7 +16,8 @@ class Truck {
   selector: 'app-fleet',
   imports: [
     PageHeroCarousel,
-    CommonModule
+    CommonModule,
+    RevealOnScroll
   ],
   animations: [listStagger],
   templateUrl: './fleet.html',

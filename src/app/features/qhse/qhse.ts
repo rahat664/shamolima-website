@@ -5,6 +5,7 @@ import {AsyncPipe, DecimalPipe, NgForOf, NgIf} from '@angular/common';
 import {fadeIn, listStagger} from '../../shared/animation';
 import {ContentService} from '../../shared/content.service';
 import {PageHeroCarousel} from '../../shared/components/page-hero-carousel/page-hero-carousel';
+import {RevealOnScroll} from '../../shared/directives/reveal-on-scroll';
 
 @Component({
   selector: 'app-qhse',
@@ -14,7 +15,8 @@ import {PageHeroCarousel} from '../../shared/components/page-hero-carousel/page-
     AsyncPipe,
     DecimalPipe,
     NgIf,
-    NgForOf
+    NgForOf,
+    RevealOnScroll
   ],
   animations: [fadeIn, listStagger],
   templateUrl: './qhse.html',
