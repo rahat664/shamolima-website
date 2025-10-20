@@ -27,13 +27,6 @@
         <a routerLink="/contact" class="btn btn-primary btn--glow">
           Schedule a project walkdown
         </a>
-        <a *ngIf="legacyUrl$ | async as url"
-           [href]="url"
-           target="_blank"
-           rel="noopener"
-           class="btn btn--light">
-          View legacy gallery
-        </a>
       </div>
     </div>
 

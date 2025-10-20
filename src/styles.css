@@ -40,6 +40,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Respect reduced motion preferences and lighten animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Layout helpers */
 .container {
   margin-inline: auto;
@@ -481,6 +490,12 @@ html, body {
 
 .section--gallery {
   background: #f5f7fb;
+}
+
+/* Performance: avoid offscreen rendering cost for large galleries */
+.section--gallery {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
 }
 
 .section-title {

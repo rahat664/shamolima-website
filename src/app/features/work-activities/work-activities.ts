@@ -170,7 +170,7 @@ export class WorkActivities implements OnInit, OnDestroy {
     shareReplay(1)
   );
 
-  legacyUrl$ = this.content.gallery$.pipe(map(gallery => gallery?.workActivitiesPage ?? null));
+  // Removed legacy site link
 
   contactEmail$ = this.content.contact$.pipe(
     map(contact =>

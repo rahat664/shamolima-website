@@ -44,15 +44,8 @@ export class ContentService {
   }));
   recentProjects$ = this.content$.pipe(map(c => {
     const rp = (c as any).recentProjects as any[] | undefined;
-    if (Array.isArray(rp)) { return rp as any as { title:string; description:string; location:string; keyEquipment:string[] }[]; }
-    const legacy = (c as any).recent_projects as any[] | undefined;
-    if (Array.isArray(legacy)) {
-      return legacy.map(p => ({
-        title: p.title,
-        description: p.description,
-        location: p.location,
-        keyEquipment: p.key_equipment ?? []
-      }));
+    if (Array.isArray(rp)) {
+      return rp as any as { title: string; description: string; location: string; keyEquipment: string[] }[];
     }
     return [] as any[];
   }));

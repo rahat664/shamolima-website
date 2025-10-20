@@ -5,6 +5,9 @@
            class="hero-slide"
            [class.hero-slide--active]="i === idx"
            [attr.alt]="s.title"
+           [attr.loading]="i === idx ? 'eager' : 'lazy'"
+           [attr.decoding]="i === idx ? 'sync' : 'async'"
+           [attr.fetchpriority]="i === idx ? 'high' : 'auto'"
            [attr.aria-hidden]="i === idx ? 'false' : 'true'" />
     </ng-container>
     <div class="absolute inset-0 bg-black/45" aria-hidden="true"></div>
