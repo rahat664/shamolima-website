@@ -41,7 +41,7 @@
     <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
       <div>
         <p class="kicker text-brand">Shamolima Limited</p>
-        <h1 class="page-hero__title" [appTypewriter]="home.hero.headline" [typewriterSpeed]="40" [typewriterDelay]="300"></h1>
+        <h1 class="page-hero__title">{{ home.hero.headline }}</h1>
         <p class="page-hero__lede" appRevealOnScroll="fade" [delay]="800">{{ home.hero.subhead }}</p>
 
         <div class="page-hero__tags" role="list" appRevealOnScroll="up" [delay]="1000">
