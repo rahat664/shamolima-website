@@ -641,6 +641,108 @@ html, body {
   font-size: 0.9rem;
 }
 
+/* Activity cards */
+.activity-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 20px 50px -28px rgba(15, 24, 40, 0.22);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.activity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand) 0%, rgba(0, 91, 172, 0.6) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px -25px rgba(15, 24, 40, 0.3);
+  border-color: rgba(30, 174, 152, 0.15);
+}
+
+.activity-card:hover::before {
+  transform: scaleX(1);
+}
+
+.activity-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.activity-card__badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(30, 174, 152, 0.1) 0%, rgba(0, 91, 172, 0.08) 100%);
+  color: var(--color-brand);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.activity-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(30, 174, 152, 0.08) 0%, rgba(0, 91, 172, 0.06) 100%);
+  color: var(--color-brand);
+  transition: all 0.3s ease;
+}
+
+.activity-card:hover .activity-card__icon {
+  background: linear-gradient(135deg, var(--color-brand) 0%, rgba(0, 91, 172, 0.9) 100%);
+  color: #fff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.activity-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #101833;
+  margin-bottom: 0.65rem;
+  line-height: 1.4;
+}
+
+.activity-card__copy {
+  font-size: 0.92rem;
+  color: #5f6c85;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.activity-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-brand);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.activity-card:hover .activity-card__arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
 /* Spotlight carousel */
 .spotlight-carousel {
   position: relative;
@@ -1051,6 +1153,128 @@ app-home {
   }
 }
 
+/* ===== Reveal on Scroll Animations ===== */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-down {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes reveal-flip {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateX(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.up.is-revealed {
+  animation: reveal-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.reveal.down.is-revealed {
+  animation: reveal-down 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.reveal.left.is-revealed {
+  animation: reveal-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.reveal.right.is-revealed {
+  animation: reveal-right 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.reveal.fade.is-revealed {
+  animation: reveal-fade 0.8s ease-in forwards;
+}
+
+.reveal.zoom.is-revealed {
+  animation: reveal-zoom 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.reveal.flip.is-revealed {
+  animation: reveal-flip 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===== Typewriter Cursor ===== */
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--color-brand, #1eae98);
+  font-weight: 300;
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .floaty {
   animation: floaty 6s ease-in-out infinite;
 }
@@ -1111,11 +1335,11 @@ app-home {
   }
 }
 
-/* ==== TransX-new tokens ==== */
+/* ==== Shamolima Limited-new tokens ==== */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  /* Brand (TransX uses warm orange accent on dark/navy) */
+  /* Brand (Shamolima Limited uses warm orange accent on dark/navy) */
   --color-brand-700: #0F8C79;
 
   /* Dark/nav */
@@ -1126,7 +1350,7 @@ app-home {
   --color-cardBg: #FFFFFF;
   --color-heroOverlay: rgba(12, 20, 36, .58);
 
-  --radius-card: 1rem; /* ~16px feels like TransX rounded */
+  --radius-card: 1rem; /* ~16px feels like Shamolima Limited rounded */
 
   /* Brand */
   --color-brand: #1EAE98;
@@ -1166,7 +1390,7 @@ app-home {
   }
 }
 
-/* === NAVBAR (TransX) === */
+/* === NAVBAR (Shamolima Limited) === */
 .tx-navbar {
   /* Ensure sticky works even if Tailwind @apply is not processed */
   position: sticky;

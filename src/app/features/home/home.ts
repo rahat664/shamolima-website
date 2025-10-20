@@ -8,6 +8,9 @@ import { HeroCarousel } from './components/hero-carousel/hero-carousel';
 import { ContentService } from '../../shared/content.service';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { GalleryItem, HomeContent, Client, RecentProject } from '../../shared/types';
+import { TypewriterDirective } from '../../shared/directives/typewriter.directive';
+import { AnimateCounterDirective } from '../../shared/directives/animate-counter.directive';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
 interface Stat {
   value: string;
@@ -39,7 +42,10 @@ interface Phase {
     NgIf,
     NgForOf,
     AsyncPipe,
-    RouterLink
+    RouterLink,
+    TypewriterDirective,
+    AnimateCounterDirective,
+    RevealOnScroll
   ],
   animations: [fadeIn, listStagger],
   templateUrl: './home.html',

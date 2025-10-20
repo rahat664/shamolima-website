@@ -8,6 +8,8 @@ import { fadeIn, listStagger } from '../../shared/animation';
 import { Observable } from 'rxjs';
 import { ServiceListItem } from '../../shared/types';
 import { ContentService } from '../../shared/content.service';
+import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
+import { AnimateCounterDirective } from '../../shared/directives/animate-counter.directive';
 
 @Component({
   selector: 'app-services',
@@ -17,7 +19,9 @@ import { ContentService } from '../../shared/content.service';
     RouterLink,
     NgForOf,
     AsyncPipe,
-    DecimalPipe
+    DecimalPipe,
+    RevealOnScroll,
+    AnimateCounterDirective
   ],
   animations: [fadeIn, listStagger],
   templateUrl: './services.html',
