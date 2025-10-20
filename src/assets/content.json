@@ -1,531 +1,493 @@
 {
-    "site":  {
-                 "name":  "Shamolima",
-                 "baseUrl":  "https://shamolima.com/"
-             },
-    "home":  {
-                 "hero":  {
-                              "headline":  "Project Support Logistics \u0026 Transportation",
-                              "subhead":  "End-to-end support including equipment rentals, oil \u0026 gas services, shipping, and customs clearance for major projects across Bangladesh.",
-                              "image":  "assets/images/water_bath.jpg"
-                          },
-                 "heroTags":  [
-                                  "Project Support",
-                                  "Heavy Material Transport",
-                                  "Shipping \u0026 Customs",
-                                  "Since 1983"
-                              ],
-                 "stats":  [
-                               {
-                                   "value":  "35+",
-                                   "label":  "Years in Operation",
-                                   "detail":  "Pioneering logistics since 1983."
-                               },
-                               {
-                                   "value":  "200+",
-                                   "label":  "Core Fleet Assets",
-                                   "detail":  "Cranes, trailers, and barges."
-                               },
-                               {
-                                   "value":  "1.5M+",
-                                   "label":  "Freight Tonnes Moved",
-                                   "detail":  "Across diverse and complex projects."
-                               },
-                               {
-                                   "value":  "99%",
-                                   "label":  "Safety Incident Rating",
-                                   "detail":  "Committed to zero-harm operations."
-                               }
-                           ],
-                 "aboutSnippet":  "SHAMOLIMA has been providing comprehensive Project Support Services in Bangladesh since 1983. The company specializes in logistics, engineering, and project materials support for industries including oil and gas, power, energy, telecommunications, and infrastructure. It delivers high-quality professional consultancy, equipment rentals, transportation, shipping, customs clearance, and manpower solutions throughout Bangladesh.",
-                 "focusAreas":  [
-                                    {
-                                        "badge":  "Fleet",
-                                        "title":  "Equipment Rentals",
-                                        "copy":  "Certified Cranes, Trailers, Forklifts, and a wide range of heavy equipment to support any project requirement."
-                                    },
-                                    {
-                                        "badge":  "Sectors",
-                                        "title":  "Oil, Gas \u0026 Power",
-                                        "copy":  "Extensive knowledge and experience in moving Rigs, drilling equipment, and supporting the energy sector."
-                                    },
-                                    {
-                                        "badge":  "Logistics",
-                                        "title":  "Shipping \u0026 Customs",
-                                        "copy":  "Actively engaged in Shipping, Freight Forwarding, and Customs Clearance for infrastructure and development projects."
-                                    },
-                                    {
-                                        "badge":  "Support",
-                                        "title":  "Complete Site Services",
-                                        "copy":  "Includes warehousing, crew handling, and certified manpower to ensure seamless on-site operations."
-                                    }
-                                ],
-                 "highlights":  [
-                                    {
-                                        "title":  "Professional \u0026 Safe Support",
-                                        "detail":  "We provide support with certified equipment and trained manpower, ensuring you can relax while we manage your project."
-                                    },
-                                    {
-                                        "title":  "Commitment to Quality",
-                                        "detail":  "Firmly committed to achieving client satisfaction by fulfilling various needs through excellence, innovation, and continual improvement."
-                                    },
-                                    {
-                                        "title":  "Focus on QHSE",
-                                        "detail":  "We are committed to preventing injury and ill health by providing a healthy working environment and minimizing all risks."
-                                    },
-                                    {
-                                        "title":  "Regulatory Compliance",
-                                        "detail":  "We are determined to comply with all applicable regulatory and legal requirements related to our products and services."
-                                    }
-                                ],
-                 "phases":  [
-                                {
-                                    "title":  "Planning \u0026 Engineering",
-                                    "copy":  "We begin every project with a deep dive into the scope, conducting feasibility studies and creating robust operational plans.",
-                                    "points":  [
-                                                   "Route \u0026 Site Surveys",
-                                                   "Transport \u0026 Lift Engineering",
-                                                   "Risk Assessment \u0026 Method Statements"
-                                               ]
-                                },
-                                {
-                                    "title":  "Mobilisation \u0026 Execution",
-                                    "copy":  "Our field teams, led by experienced supervisors, execute the plan with precision, adhering to the highest safety standards.",
-                                    "points":  [
-                                                   "Asset Deployment",
-                                                   "On-site Supervision",
-                                                   "Real-time Progress Tracking"
-                                               ]
-                                },
-                                {
-                                    "title":  "Project Management",
-                                    "copy":  "A dedicated project manager serves as your single point of contact, ensuring seamless communication and coordination.",
-                                    "points":  [
-                                                   "Customs \u0026 Port Formalities",
-                                                   "Stakeholder Coordination",
-                                                   "Compliance \u0026 Reporting"
-                                               ]
-                                },
-                                {
-                                    "title":  "Completion \u0026 Handover",
-                                    "copy":  "We conclude with a comprehensive handover, providing full documentation and ensuring all project objectives have been met.",
-                                    "points":  [
-                                                   "Demobilisation of Assets",
-                                                   "Final Project Reporting",
-                                                   "Client Sign-off \u0026 Feedback"
-                                               ]
-                                }
-                            ],
-                 "certificates":  [
-                                  ],
-                 "testimonialsImages":  [
-                                            "https://shamolima.com/old/wp-content/uploads/2020/12/01-scaled.jpg"
-                                        ]
-             },
-    "about":  {
-                  "hero":  {
-                               "title":  "Your Gateway to Seamless Global Trade and Logistics Excellence",
-                               "description":  "Since 1983, Shamolima has been pioneering global trade with unparalleled shipping services, combining state-of-the-art technology with decades of expertise. We streamline customs, freight forwarding, and logistics to deliver faster borders and smarter solutions committed to excellence in every journey from origin to destination.",
-                               "backgroundImage":  "assets/images/about_us.png"
-                           },
-                  "timeline":  [
-                                   {
-                                       "year":  "1983",
-                                       "title":  "Foundation",
-                                       "description":  "Shamolima was founded to fill a critical gap in specialized logistics services."
-                                   },
-                                   {
-                                       "year":  "1997",
-                                       "title":  "Expansion",
-                                       "description":  "Expanded fleet and services to support growing energy sector needs."
-                                   },
-                                   {
-                                       "year":  "2010",
-                                       "title":  "ISO Certification",
-                                       "description":  "Achieved ISO certification for quality management systems."
-                                   },
-                                   {
-                                       "year":  "2017",
-                                       "title":  "Digital Transformation",
-                                       "description":  "Implemented advanced tracking and logistics management systems."
-                                   },
-                                   {
-                                       "year":  "2019",
-                                       "title":  "Regional Growth",
-                                       "description":  "Expanded operations across multiple regions in Bangladesh."
-                                   },
-                                   {
-                                       "year":  "2024",
-                                       "title":  "Industry Leader",
-                                       "description":  "Recognized as one of Bangladesh\u0027s leading project logistics providers."
-                                   }
-                               ],
-                  "customsBrokerage":  {
-                                           "title":  "Customs Brokerage \u0026 Freight Forwarding",
-                                           "tagline":  "SEAMLESS BORDERS. SEAMLESS LOGISTICS.",
-                                           "bullets":  [
-                                                           "Customs clearance and compliance management",
-                                                           "Freight forwarding (sea, air, inland)",
-                                                           "Import/export documentation and tariff classification",
-                                                           "Barge operations and jetty handling",
-                                                           "Warehousing and distribution",
-                                                           "Real-time shipment tracking"
-                                                       ]
-                                       },
-                  "comprehensiveServices":  [
-                                                {
-                                                    "title":  "Industry Expertise",
-                                                    "description":  "Decades of specialized experience in handling complex project cargo for energy, infrastructure, telecommunications, and industrial sectors."
-                                                },
-                                                {
-                                                    "title":  "Tariff Classification",
-                                                    "description":  "Expert classification services aligned with international Harmonized System codes to ensure accurate duties and regulatory compliance."
-                                                },
-                                                {
-                                                    "title":  "Import/Export Customs Management",
-                                                    "description":  "End-to-end customs brokerage covering documentation, declaration filing, duty payment, and compliance with all local and international regulations."
-                                                },
-                                                {
-                                                    "title":  "Post-liquidation Handling",
-                                                    "description":  "Comprehensive support for post-clearance audits, refunds, amendments, and dispute resolution to protect your interests and ensure compliance."
-                                                },
-                                                {
-                                                    "title":  "Regulatory Compliance \u0026 Risk Management",
-                                                    "description":  "Proactive monitoring of trade regulations, risk assessment, and strategic planning to minimize delays and ensure seamless border crossing."
-                                                }
-                                            ],
-                  "freightForwarding":  {
-                                            "title":  "Expert Freight Forwarding Services",
-                                            "description":  "We offer industry-leading logistics tailored for project cargo, ensuring safe, timely, and cost-effective delivery across all modes of transport.",
-                                            "services":  [
-                                                             {
-                                                                 "title":  "Multimodal Freight Management",
-                                                                 "description":  "We offer end-to-end multimodal logistics for global and local project cargo. Our expertise spans air, sea, inland waterways, and road transport, ensuring seamless coordination from mother vessel to final destination, backed by our own shipping and customs licenses."
-                                                             },
-                                                             {
-                                                                 "title":  "Cargo Handling Expertise",
-                                                                 "description":  "With decades of experience, we expertly manage heavy lift, oversized, and sensitive cargo. Our trained teams and specialized equipment ensure safe handling, reducing risk and project downtime. From lashing to final positioning, we prioritize safety and precision at every step."
-                                                             },
-                                                             {
-                                                                 "title":  "Freight Position \u0026 Negotiation",
-                                                                 "description":  "Leveraging our long-standing relationships with global carriers and inland providers, we negotiate competitive freight rates and secure priority positioning. This enables cost-effective logistics planning and better project budgeting."
-                                                             },
-                                                             {
-                                                                 "title":  "Shipment Tracking \u0026 Communication",
-                                                                 "description":  "Utilize our advanced tracking systems and dedicated support teams to monitor cargo movement in real time. We provide regular updates on vessel arrivals, port handling, customs status, and land transport ensuring transparency, accountability, and peace of mind throughout the journey."
-                                                             },
-                                                             {
-                                                                 "title":  "Fleet \u0026 Transportation",
-                                                                 "description":  "We operate a fleet of over 200 assets including hydraulic trailers, lowbed trailers, forklifts, cranes, and barges. Our vessels are maintained to the highest standards and staffed by certified operators, ready to handle diverse cargo across challenging terrains and waterways."
-                                                             }
-                                                         ]
-                                        },
-                  "advantages":  [
-                                     {
-                                         "title":  "Licensed Professionals",
-                                         "description":  "Our team comprises licensed customs brokers, certified freight forwarders, and industry experts committed to delivering compliant, high-quality service."
-                                     },
-                                     {
-                                         "title":  "Value-Added Services",
-                                         "description":  "Beyond basic logistics, we offer warehousing, packaging, labeling, insurance coordination, and cargo consolidation streamlining your supply chain in one integrated solution."
-                                     },
-                                     {
-                                         "title":  "Responsive Teams",
-                                         "description":  "With 24/7 operations and dedicated account managers, we are always ready to respond, troubleshoot, and adapt to urgent project needs and shifting requirements."
-                                     },
-                                     {
-                                         "title":  "Cutting-Edge Technology",
-                                         "description":  "We leverage modern TMS platforms, digital tracking tools, and data analytics to optimize routes, predict delays, and deliver actionable insights that enhance project efficiency."
-                                     },
-                                     {
-                                         "title":  "Efficient Processes",
-                                         "description":  "Streamlined workflows, pre-approved templates, and SOPs reduce paperwork and bureaucracy, helping you clear customs faster and get cargo on-site ahead of schedule."
-                                     },
-                                     {
-                                         "title":  "Global Trade Compliance",
-                                         "description":  "Constant legal and regulatory monitoring ensures we stay current with ever-changing trade rules. We proactively guide clients through sanctions, tariffs, and regulatory frameworks."
-                                     },
-                                     {
-                                         "title":  "Personalized Client Service",
-                                         "description":  "We build tailored solutions and dedicated project coordination, ensuring each client gets the exact support and communication style that suits their workflow and culture."
-                                     },
-                                     {
-                                         "title":  "Sustainable Practices",
-                                         "description":  "Committed to minimizing environmental impact, we optimize routes to reduce emissions, engage in responsible waste management, and pursue green certifications and partnerships."
-                                     }
-                                 ],
-                  "pageIntro":  "Since 1983, Shamolima Limited has been a pioneering force in integrated project logistics and support across Bangladesh. With decades of unparalleled experience, we specialize in delivering complex solutions for energy, infrastructure, and industrial sectors.",
-                  "missionStatement":  "Our mission is to provide safe, efficient, and reliable project support services that exceed client expectations, leveraging our specialized fleet, expert team, and deep local knowledge.",
-                  "values":  [
-                                 {
-                                     "title":  "Safety First",
-                                     "description":  "Unwavering commitment to QHSE (Quality, Health, Safety, Environment) across all operations, ensuring zero harm."
-                                 },
-                                 {
-                                     "title":  "Client-Centric",
-                                     "description":  "Tailored solutions and dedicated project management to meet unique client needs and foster long-term partnerships."
-                                 },
-                                 {
-                                     "title":  "Integrity \u0026 Transparency",
-                                     "description":  "Operating with the highest ethical standards, ensuring clear communication and trustworthy service."
-                                 },
-                                 {
-                                     "title":  "Innovation",
-                                     "description":  "Continuously adopting best practices and technologies to enhance efficiency and problem-solving."
-                                 },
-                                 {
-                                     "title":  "Local Expertise",
-                                     "description":  "Leveraging profound local knowledge to navigate complexities and deliver optimal results in Bangladesh."
-                                 }
-                             ],
-                  "leaders":  [
-                                  "Nasim Ali (Chairman)",
-                                  "Shahid I Chowdhury (CEO)",
-                                  "Masood Ali (MD)"
-                              ],
-                  "whatWeDo":  [
-                                   "Project materials supply and logistics",
-                                   "Engineering, construction, and erection services",
-                                   "Oil \u0026 Gas and power-plant support equipment",
-                                   "Heavy transport from mother vessel to site using own shipping and customs license",
-                                   "Telecom equipment and service integration",
-                                   "Catering, housekeeping, and warehousing support",
-                                   "Crew handling and sign-on/off at all ports and airports",
-                                   "Certified manpower supply and management",
-                                   "Meet \u0026 greet services for international and local clients"
-                               ],
-                  "organogramImage":  null,
-                  "pageUrl":  "https://shamolima.com/old/about-us/"
-              },
-    "services":  {
-                     "list":  [
-                                  {
-                                      "title":  "Equipment Rental",
-                                      "slug":  "equipment-rental",
-                                      "url":  "https://shamolima.com/old/equipment-rental/"
-                                  },
-                                  {
-                                      "title":  "Door to Door Transportation",
-                                      "slug":  "door-to-door-transportation",
-                                      "url":  "https://shamolima.com/old/door-to-door-transportation/"
-                                  },
-                                  {
-                                      "title":  "Power Plant Material Handling",
-                                      "slug":  "power-plant-material-handling",
-                                      "url":  "https://shamolima.com/old/power-plant-material-handling/"
-                                  },
-                                  {
-                                      "title":  "LNG Project",
-                                      "slug":  "lng-project",
-                                      "url":  "https://shamolima.com/old/lng-project/"
-                                  },
-                                  {
-                                      "title":  "Oil \u0026 Gas",
-                                      "slug":  "oil-gas",
-                                      "url":  "https://shamolima.com/old/oil-gas/"
-                                  },
-                                  {
-                                      "title":  "Shipping \u0026 Customs",
-                                      "slug":  "shipping-customs",
-                                      "url":  "https://shamolima.com/old/shipping-customs/"
-                                  },
-                                  {
-                                      "title":  "Others",
-                                      "slug":  "others",
-                                      "url":  "https://shamolima.com/old/others/"
-                                  }
-                              ],
-                     "shippingCustomsBullets":  [
-                                                    "Own Customs Clearing Licenses of all major Sea Port, Inland Port \u0026 Air Port.",
-                                                    "Own Shipping Licenses of all major Sea Port, Inland Port \u0026 Air Port.",
-                                                    "Shipping agency, freight forwarding, and chartering services",
-                                                    "Customs clearance for import/export of project cargo",
-                                                    "Barge operations and jetty handling from mother vessel to jetty and site",
-                                                    "Warehousing, packaging, and documentation support",
-                                                    "Integrated logistics solutions for infrastructure development projects"
-                                                ],
-                     "images":  {
-                                    "equipmentRental":  [
-                                                            "https://shamolima.com/old/wp-content/uploads/2023/01/20220928_102317-scaled.jpg"
-                                                        ],
-                                    "d2d":  [
-
-                                            ],
-                                    "powerPlant":  [
-                                                       "https://shamolima.com/old/wp-content/uploads/2023/01/IMG-20221116-WA0006.jpg"
-                                                   ],
-                                    "lng":  [
-
-                                            ],
-                                    "oilGas":  [
-
-                                               ],
-                                    "genericFleet":  [
-                                                         "https://shamolima.com/old/wp-content/uploads/2023/01/Pic3.jpg",
-                                                         "https://shamolima.com/old/wp-content/uploads/2023/01/WhatsApp-Image-2022-02-05-at-4.42.12-PM.jpeg"
-                                                     ]
-                                }
-                 },
-    "qhse":  {
-                 "goals":  [
-                               "Ensure client satisfaction through quality services and continuous improvement.",
-                               "Prevent pollution and conduct environmentally friendly operations.",
-                               "Prevent injury and ill health by maintaining a safe and healthy working environment.",
-                               "Engage employees and subcontractors in HSE consultation and participation.",
-                               "Prepare and maintain effective emergency arrangements and response procedures.",
-                               "Comply with all applicable legal and regulatory requirements.",
-                               "Continuously train personnel to improve awareness, competence, and performance."
-                           ],
-                 "trainingImages":  [
-                                        "https://shamolima.com/old/wp-content/uploads/2021/03/IMG-20160824-WA0001.jpg",
-                                        "https://shamolima.com/old/wp-content/uploads/2021/03/DSC00646.jpg"
-                                    ],
-                 "imsCertificateImage":  "assets/images/iso_certificate.jpg",
-                 "pageUrls":  {
-                                  "goals":  "https://shamolima.com/old/qhse-goals/",
-                                  "training":  "https://shamolima.com/old/qhse-training/",
-                                  "imsCertificates":  "assets/images/iso_certificate.jpg"
-                              }
-             },
-    "contact":  {
-                    "operationOffice":  {
-                                            "address":  "Commercial Cove,House 56/C, Lift 6, Road 132,Gulshan 1, Dhaka 1212",
-                                            "phones":  [
-                                                           "+88-01913504850",
-                                                           "+880-2-58810602",
-                                                           "+880-2-58810635",
-                                                           "+880-2-9563988",
-                                                           "+880-2-9847609"
-                                                       ],
-                                            "email":  "info@shamolima.com",
-                                            "lat":  "23.78143558578915",
-                                            "lng":  "90.41777361211004"
-                                        },
-                    "headOffice":  {
-                                       "address":  "Naseem Chamber, 3rd Floor 21, Dilkusha Commercial Area,Dhaka 1000",
-                                       "phones":  [
-                                                      "+880-2-9552676",
-                                                      "+880-2-9550444",
-                                                      "+880-2-9587492-93"
-                                                  ],
-                                       "email":  "info@shamolima.com",
-                                       "lat":  "23.72701047635275",
-                                       "lng":  "90.41815638327252"
-                                   },
-                    "chattagramOffice":  {
-                                             "address":  "IIUC Tower, 6th Floor,9, Agrabad C/A, Sk. Mujib Road,Chattogram 4100",
-                                             "phones":  [
-                                                            "+880-31-2522598"
-                                                        ],
-                                             "email":  "info@shamolima.com",
-                                             "lat":  "22.323037653509534",
-                                             "lng":  "91.81157671626481"
-                                         },
-                    "pageUrl":  "https://shamolima.com/old/contact-us/"
-                },
-    "gallery":  {
-                    "workActivitiesPage":  "https://shamolima.com/old/work-activities/",
-                    "items":  [
-                                  {
-                                      "caption":  "Water Bath Heater for Gas Plant loaded onto Trailer by 150 Ton Crawler Crane.",
-                                      "image":  "assets/images/water_bath.jpg"
-                                  },
-                                  {
-                                      "caption":  "80 Ton Capacity Trailer transporting Heat Exchanger to the site.",
-                                      "image":  "assets/images/heat_exchanger.jpeg"
-                                  },
-                                  {
-                                      "caption":  "Project equipment transported by Trailers.",
-                                      "image":  "assets/images/project_equipment.jpg"
-                                  },
-                                  {
-                                      "caption":  "Fleet yard (mobile cranes \u0026 equipment).",
-                                      "image":  "assets/images/fleet_yard.jpg"
-                                  },
-                                  {
-                                      "caption":  "Generator/transformer handling on SPMT at project site.",
-                                      "image":  "assets/images/generator_transformer.jpg"
-                                  }
-                              ]
-                },
-    "clients":  [
-                    "Chevron Bangladesh",
-                    "Cairn Energy",
-                    "Halliburton",
-                    "Niko Resources",
-                    "Weatherford",
-                    "KCA Deutag",
-                    "Diamond Drilling",
-                    "Larsen \u0026 Toubro",
-                    "Mitsui E\u0026S",
-                    "BAT Bangladesh",
-                    "Summit Power",
-                    "UNOCAL Bangladesh",
-                    "Siemens Bangladesh",
-                    "Toshiba",
-                    "Desh Energy",
-                    "Beximco",
-                    "Bangla Trac",
-                    "Marubeni Corporation"
-                ],
-    "recentProjects":  [
-                           {
-                               "title":  "Chevron Master Contracts",
-                               "description":  "Two master contracts with Chevron for Customs Clearance \u0026 Transportation and Heavy Equipment Rental, covering long-term project support for onshore operations.",
-                               "location":  "Bibiyana and Moulvibazar gas fields, Bangladesh",
-                               "keyEquipment":  [
-                                                    "Trailers",
-                                                    "Cranes",
-                                                    "Forklifts",
-                                                    "Prime movers"
-                                                ]
-                           },
-                           {
-                               "title":  "400 MW Bibiyana-III Combined Cycle Power Plant Project",
-                               "description":  "Provided heavy equipment rentals including cranes, trailers, and forklifts for installation and logistics support.",
-                               "location":  "Sylhet, Bangladesh",
-                               "keyEquipment":  [
-                                                    "Crawler cranes",
-                                                    "Low-bed trailers",
-                                                    "Forklifts"
-                                                ]
-                           },
-                           {
-                               "title":  "335 MW and 718 MW Projects (Siddhirganj \u0026 Meghnaghat)",
-                               "description":  "Long-term rental of heavy lifting and transport equipment for multiple EPC contractors.",
-                               "location":  "Narayanganj and Meghnaghat",
-                               "keyEquipment":  [
-                                                    "Trailers",
-                                                    "Cranes",
-                                                    "Forklifts"
-                                                ]
-                           },
-                           {
-                               "title":  "Bangla Trac 100 MW Power Project",
-                               "description":  "Handled unloading from mother vessel to jetty, preparation, placement, and installation of 8 220 t engines with accessories using indigenous heavy-lifting methods.",
-                               "location":  "Noapara, Jessore",
-                               "keyEquipment":  [
-                                                    "Gantry cranes",
-                                                    "Barges",
-                                                    "Multi-axle trailers"
-                                                ]
-                           },
-                           {
-                               "title":  "EPV 115 MW Project   Thakurgaon",
-                               "description":  "Managed barge and road transport logistics, engine assembly and placement using gantry cranes and skidding systems for over 900 t of machinery.",
-                               "location":  "Thakurgaon, Bangladesh",
-                               "keyEquipment":  [
-                                                    "Barges",
-                                                    "Skidding systems",
-                                                    "Gantry cranes"
-                                                ]
-                           }
-                       ],
-    "assets":  {
-                   "logo":  "assets/logo/shamolima.png",
-                   "darkLogo":  "assets/logo/logo_dark.png",
-                   "imsBadge":  "assets/images/ims_badge.jpg",
-                   "opcaCertificate":  "assets/images/opca.jpg",
-                   "isoCertificate":  "assets/images/iso_certificate.jpg"
-               }
+  "site": {
+    "name": "Shamolima",
+    "baseUrl": "https://shamolima.com/"
+  },
+  "home": {
+    "hero": {
+      "headline": "Project Support Logistics \u0026 Transportation",
+      "subhead": "End-to-end support including equipment rentals, oil \u0026 gas services, shipping, and customs clearance for major projects across Bangladesh.",
+      "image": "assets/images/water_bath.jpg"
+    },
+    "heroTags": [
+      "Project Support",
+      "Heavy Material Transport",
+      "Shipping \u0026 Customs",
+      "Since 1983"
+    ],
+    "stats": [
+      {
+        "value": "35+",
+        "label": "Years in Operation",
+        "detail": "Pioneering logistics since 1983."
+      },
+      {
+        "value": "200+",
+        "label": "Core Fleet Assets",
+        "detail": "Cranes, trailers, and barges."
+      },
+      {
+        "value": "1.5M+",
+        "label": "Freight Tonnes Moved",
+        "detail": "Across diverse and complex projects."
+      },
+      {
+        "value": "99%",
+        "label": "Safety Incident Rating",
+        "detail": "Committed to zero-harm operations."
+      }
+    ],
+    "aboutSnippet": "SHAMOLIMA has been providing comprehensive Project Support Services in Bangladesh since 1983. The company specializes in logistics, engineering, and project materials support for industries including oil and gas, power, energy, telecommunications, and infrastructure. It delivers high-quality professional consultancy, equipment rentals, transportation, shipping, customs clearance, and manpower solutions throughout Bangladesh.",
+    "focusAreas": [
+      {
+        "badge": "Fleet",
+        "title": "Equipment Rentals",
+        "copy": "Certified Cranes, Trailers, Forklifts, and a wide range of heavy equipment to support any project requirement."
+      },
+      {
+        "badge": "Sectors",
+        "title": "Oil, Gas \u0026 Power",
+        "copy": "Extensive knowledge and experience in moving Rigs, drilling equipment, and supporting the energy sector."
+      },
+      {
+        "badge": "Logistics",
+        "title": "Shipping \u0026 Customs",
+        "copy": "Actively engaged in Shipping, Freight Forwarding, and Customs Clearance for infrastructure and development projects."
+      },
+      {
+        "badge": "Support",
+        "title": "Complete Site Services",
+        "copy": "Includes warehousing, crew handling, and certified manpower to ensure seamless on-site operations."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Professional \u0026 Safe Support",
+        "detail": "We provide support with certified equipment and trained manpower, ensuring you can relax while we manage your project."
+      },
+      {
+        "title": "Commitment to Quality",
+        "detail": "Firmly committed to achieving client satisfaction by fulfilling various needs through excellence, innovation, and continual improvement."
+      },
+      {
+        "title": "Focus on QHSE",
+        "detail": "We are committed to preventing injury and ill health by providing a healthy working environment and minimizing all risks."
+      },
+      {
+        "title": "Regulatory Compliance",
+        "detail": "We are determined to comply with all applicable regulatory and legal requirements related to our products and services."
+      }
+    ],
+    "phases": [
+      {
+        "title": "Planning \u0026 Engineering",
+        "copy": "We begin every project with a deep dive into the scope, conducting feasibility studies and creating robust operational plans.",
+        "points": [
+          "Route \u0026 Site Surveys",
+          "Transport \u0026 Lift Engineering",
+          "Risk Assessment \u0026 Method Statements"
+        ]
+      },
+      {
+        "title": "Mobilisation \u0026 Execution",
+        "copy": "Our field teams, led by experienced supervisors, execute the plan with precision, adhering to the highest safety standards.",
+        "points": [
+          "Asset Deployment",
+          "On-site Supervision",
+          "Real-time Progress Tracking"
+        ]
+      },
+      {
+        "title": "Project Management",
+        "copy": "A dedicated project manager serves as your single point of contact, ensuring seamless communication and coordination.",
+        "points": [
+          "Customs \u0026 Port Formalities",
+          "Stakeholder Coordination",
+          "Compliance \u0026 Reporting"
+        ]
+      },
+      {
+        "title": "Completion \u0026 Handover",
+        "copy": "We conclude with a comprehensive handover, providing full documentation and ensuring all project objectives have been met.",
+        "points": [
+          "Demobilisation of Assets",
+          "Final Project Reporting",
+          "Client Sign-off \u0026 Feedback"
+        ]
+      }
+    ],
+    "certificates": [
+    ],
+    "testimonialsImages": [
+    ]
+  },
+  "about": {
+    "hero": {
+      "title": "Your Gateway to Seamless Global Trade and Logistics Excellence",
+      "description": "Since 1983, Shamolima has been pioneering global trade with unparalleled shipping services, combining state-of-the-art technology with decades of expertise. We streamline customs, freight forwarding, and logistics to deliver faster borders and smarter solutions committed to excellence in every journey from origin to destination.",
+      "backgroundImage": "assets/images/about_us.png"
+    },
+    "timeline": [
+      {
+        "year": "1983",
+        "title": "Foundation",
+        "description": "Shamolima was founded to fill a critical gap in specialized logistics services."
+      },
+      {
+        "year": "1997",
+        "title": "Expansion",
+        "description": "Expanded fleet and services to support growing energy sector needs."
+      },
+      {
+        "year": "2010",
+        "title": "ISO Certification",
+        "description": "Achieved ISO certification for quality management systems."
+      },
+      {
+        "year": "2017",
+        "title": "Digital Transformation",
+        "description": "Implemented advanced tracking and logistics management systems."
+      },
+      {
+        "year": "2019",
+        "title": "Regional Growth",
+        "description": "Expanded operations across multiple regions in Bangladesh."
+      },
+      {
+        "year": "2024",
+        "title": "Industry Leader",
+        "description": "Recognized as one of Bangladesh\u0027s leading project logistics providers."
+      }
+    ],
+    "customsBrokerage": {
+      "title": "Customs Brokerage \u0026 Freight Forwarding",
+      "tagline": "SEAMLESS BORDERS. SEAMLESS LOGISTICS.",
+      "bullets": [
+        "Customs clearance and compliance management",
+        "Freight forwarding (sea, air, inland)",
+        "Import/export documentation and tariff classification",
+        "Barge operations and jetty handling",
+        "Warehousing and distribution",
+        "Real-time shipment tracking"
+      ]
+    },
+    "comprehensiveServices": [
+      {
+        "title": "Industry Expertise",
+        "description": "Decades of specialized experience in handling complex project cargo for energy, infrastructure, telecommunications, and industrial sectors."
+      },
+      {
+        "title": "Tariff Classification",
+        "description": "Expert classification services aligned with international Harmonized System codes to ensure accurate duties and regulatory compliance."
+      },
+      {
+        "title": "Import/Export Customs Management",
+        "description": "End-to-end customs brokerage covering documentation, declaration filing, duty payment, and compliance with all local and international regulations."
+      },
+      {
+        "title": "Post-liquidation Handling",
+        "description": "Comprehensive support for post-clearance audits, refunds, amendments, and dispute resolution to protect your interests and ensure compliance."
+      },
+      {
+        "title": "Regulatory Compliance \u0026 Risk Management",
+        "description": "Proactive monitoring of trade regulations, risk assessment, and strategic planning to minimize delays and ensure seamless border crossing."
+      }
+    ],
+    "freightForwarding": {
+      "title": "Expert Freight Forwarding Services",
+      "description": "We offer industry-leading logistics tailored for project cargo, ensuring safe, timely, and cost-effective delivery across all modes of transport.",
+      "services": [
+        {
+          "title": "Multimodal Freight Management",
+          "description": "We offer end-to-end multimodal logistics for global and local project cargo. Our expertise spans air, sea, inland waterways, and road transport, ensuring seamless coordination from mother vessel to final destination, backed by our own shipping and customs licenses."
+        },
+        {
+          "title": "Cargo Handling Expertise",
+          "description": "With decades of experience, we expertly manage heavy lift, oversized, and sensitive cargo. Our trained teams and specialized equipment ensure safe handling, reducing risk and project downtime. From lashing to final positioning, we prioritize safety and precision at every step."
+        },
+        {
+          "title": "Freight Position \u0026 Negotiation",
+          "description": "Leveraging our long-standing relationships with global carriers and inland providers, we negotiate competitive freight rates and secure priority positioning. This enables cost-effective logistics planning and better project budgeting."
+        },
+        {
+          "title": "Shipment Tracking \u0026 Communication",
+          "description": "Utilize our advanced tracking systems and dedicated support teams to monitor cargo movement in real time. We provide regular updates on vessel arrivals, port handling, customs status, and land transport ensuring transparency, accountability, and peace of mind throughout the journey."
+        },
+        {
+          "title": "Fleet \u0026 Transportation",
+          "description": "We operate a fleet of over 200 assets including hydraulic trailers, lowbed trailers, forklifts, cranes, and barges. Our vessels are maintained to the highest standards and staffed by certified operators, ready to handle diverse cargo across challenging terrains and waterways."
+        }
+      ]
+    },
+    "advantages": [
+      {
+        "title": "Licensed Professionals",
+        "description": "Our team comprises licensed customs brokers, certified freight forwarders, and industry experts committed to delivering compliant, high-quality service."
+      },
+      {
+        "title": "Value-Added Services",
+        "description": "Beyond basic logistics, we offer warehousing, packaging, labeling, insurance coordination, and cargo consolidation streamlining your supply chain in one integrated solution."
+      },
+      {
+        "title": "Responsive Teams",
+        "description": "With 24/7 operations and dedicated account managers, we are always ready to respond, troubleshoot, and adapt to urgent project needs and shifting requirements."
+      },
+      {
+        "title": "Cutting-Edge Technology",
+        "description": "We leverage modern TMS platforms, digital tracking tools, and data analytics to optimize routes, predict delays, and deliver actionable insights that enhance project efficiency."
+      },
+      {
+        "title": "Efficient Processes",
+        "description": "Streamlined workflows, pre-approved templates, and SOPs reduce paperwork and bureaucracy, helping you clear customs faster and get cargo on-site ahead of schedule."
+      },
+      {
+        "title": "Global Trade Compliance",
+        "description": "Constant legal and regulatory monitoring ensures we stay current with ever-changing trade rules. We proactively guide clients through sanctions, tariffs, and regulatory frameworks."
+      },
+      {
+        "title": "Personalized Client Service",
+        "description": "We build tailored solutions and dedicated project coordination, ensuring each client gets the exact support and communication style that suits their workflow and culture."
+      },
+      {
+        "title": "Sustainable Practices",
+        "description": "Committed to minimizing environmental impact, we optimize routes to reduce emissions, engage in responsible waste management, and pursue green certifications and partnerships."
+      }
+    ],
+    "pageIntro": "Since 1983, Shamolima Limited has been a pioneering force in integrated project logistics and support across Bangladesh. With decades of unparalleled experience, we specialize in delivering complex solutions for energy, infrastructure, and industrial sectors.",
+    "missionStatement": "Our mission is to provide safe, efficient, and reliable project support services that exceed client expectations, leveraging our specialized fleet, expert team, and deep local knowledge.",
+    "values": [
+      {
+        "title": "Safety First",
+        "description": "Unwavering commitment to QHSE (Quality, Health, Safety, Environment) across all operations, ensuring zero harm."
+      },
+      {
+        "title": "Client-Centric",
+        "description": "Tailored solutions and dedicated project management to meet unique client needs and foster long-term partnerships."
+      },
+      {
+        "title": "Integrity \u0026 Transparency",
+        "description": "Operating with the highest ethical standards, ensuring clear communication and trustworthy service."
+      },
+      {
+        "title": "Innovation",
+        "description": "Continuously adopting best practices and technologies to enhance efficiency and problem-solving."
+      },
+      {
+        "title": "Local Expertise",
+        "description": "Leveraging profound local knowledge to navigate complexities and deliver optimal results in Bangladesh."
+      }
+    ],
+    "leaders": [
+      "Nasim Ali (Chairman)",
+      "Shahid I Chowdhury (CEO)",
+      "Masood Ali (MD)"
+    ],
+    "whatWeDo": [
+      "Project materials supply and logistics",
+      "Engineering, construction, and erection services",
+      "Oil \u0026 Gas and power-plant support equipment",
+      "Heavy transport from mother vessel to site using own shipping and customs license",
+      "Telecom equipment and service integration",
+      "Catering, housekeeping, and warehousing support",
+      "Crew handling and sign-on/off at all ports and airports",
+      "Certified manpower supply and management",
+      "Meet \u0026 greet services for international and local clients"
+    ],
+    "organogramImage": null
+  },
+  "services": {
+    "list": [
+      {
+        "title": "Equipment Rental",
+        "slug": "equipment-rental"
+      },
+      {
+        "title": "Door to Door Transportation",
+        "slug": "door-to-door-transportation"
+      },
+      {
+        "title": "Power Plant Material Handling",
+        "slug": "power-plant-material-handling"
+      },
+      {
+        "title": "LNG Project",
+        "slug": "lng-project"
+      },
+      {
+        "title": "Oil \u0026 Gas",
+        "slug": "oil-gas"
+      },
+      {
+        "title": "Shipping \u0026 Customs",
+        "slug": "shipping-customs"
+      },
+      {
+        "title": "Others",
+        "slug": "others"
+      }
+    ],
+    "shippingCustomsBullets": [
+      "Own Customs Clearing Licenses of all major Sea Port, Inland Port \u0026 Air Port.",
+      "Own Shipping Licenses of all major Sea Port, Inland Port \u0026 Air Port.",
+      "Shipping agency, freight forwarding, and chartering services",
+      "Customs clearance for import/export of project cargo",
+      "Barge operations and jetty handling from mother vessel to jetty and site",
+      "Warehousing, packaging, and documentation support",
+      "Integrated logistics solutions for infrastructure development projects"
+    ]
+  },
+  "qhse": {
+    "goals": [
+      "Ensure client satisfaction through quality services and continuous improvement.",
+      "Prevent pollution and conduct environmentally friendly operations.",
+      "Prevent injury and ill health by maintaining a safe and healthy working environment.",
+      "Engage employees and subcontractors in HSE consultation and participation.",
+      "Prepare and maintain effective emergency arrangements and response procedures.",
+      "Comply with all applicable legal and regulatory requirements.",
+      "Continuously train personnel to improve awareness, competence, and performance."
+    ],
+    "imsCertificateImage": "assets/images/iso_certificate.jpg",
+    "pageUrls": {
+      "imsCertificates": "assets/images/iso_certificate.jpg"
+    }
+  },
+  "contact": {
+    "operationOffice": {
+      "address": "Commercial Cove,House 56/C, Lift 6, Road 132,Gulshan 1, Dhaka 1212",
+      "phones": [
+        "+88-01913504850",
+        "+880-2-58810602",
+        "+880-2-58810635",
+        "+880-2-9563988",
+        "+880-2-9847609"
+      ],
+      "email": "info@shamolima.com",
+      "lat": "23.78143558578915",
+      "lng": "90.41777361211004"
+    },
+    "headOffice": {
+      "address": "Naseem Chamber, 3rd Floor 21, Dilkusha Commercial Area,Dhaka 1000",
+      "phones": [
+        "+880-2-9552676",
+        "+880-2-9550444",
+        "+880-2-9587492-93"
+      ],
+      "email": "info@shamolima.com",
+      "lat": "23.72701047635275",
+      "lng": "90.41815638327252"
+    },
+    "chattagramOffice": {
+      "address": "IIUC Tower, 6th Floor,9, Agrabad C/A, Sk. Mujib Road,Chattogram 4100",
+      "phones": [
+        "+880-31-2522598"
+      ],
+      "email": "info@shamolima.com",
+      "lat": "22.323037653509534",
+      "lng": "91.81157671626481"
+    }
+  },
+  "gallery": {
+    "items": [
+      {
+        "caption": "Water Bath Heater for Gas Plant loaded onto Trailer by 150 Ton Crawler Crane.",
+        "image": "assets/images/water_bath.jpg"
+      },
+      {
+        "caption": "80 Ton Capacity Trailer transporting Heat Exchanger to the site.",
+        "image": "assets/images/heat_exchanger.jpeg"
+      },
+      {
+        "caption": "Project equipment transported by Trailers.",
+        "image": "assets/images/project_equipment.jpg"
+      },
+      {
+        "caption": "Fleet yard (mobile cranes \u0026 equipment).",
+        "image": "assets/images/fleet_yard.jpg"
+      },
+      {
+        "caption": "Generator/transformer handling on SPMT at project site.",
+        "image": "assets/images/generator_transformer.jpg"
+      }
+    ]
+  },
+  "clients": [
+    "Chevron Bangladesh",
+    "Cairn Energy",
+    "Halliburton",
+    "Niko Resources",
+    "Weatherford",
+    "KCA Deutag",
+    "Diamond Drilling",
+    "Larsen \u0026 Toubro",
+    "Mitsui E\u0026S",
+    "BAT Bangladesh",
+    "Summit Power",
+    "UNOCAL Bangladesh",
+    "Siemens Bangladesh",
+    "Toshiba",
+    "Desh Energy",
+    "Beximco",
+    "Bangla Trac",
+    "Marubeni Corporation"
+  ],
+  "recentProjects": [
+    {
+      "title": "Chevron Master Contracts",
+      "description": "Two master contracts with Chevron for Customs Clearance \u0026 Transportation and Heavy Equipment Rental, covering long-term project support for onshore operations.",
+      "location": "Bibiyana and Moulvibazar gas fields, Bangladesh",
+      "keyEquipment": [
+        "Trailers",
+        "Cranes",
+        "Forklifts",
+        "Prime movers"
+      ]
+    },
+    {
+      "title": "400 MW Bibiyana-III Combined Cycle Power Plant Project",
+      "description": "Provided heavy equipment rentals including cranes, trailers, and forklifts for installation and logistics support.",
+      "location": "Sylhet, Bangladesh",
+      "keyEquipment": [
+        "Crawler cranes",
+        "Low-bed trailers",
+        "Forklifts"
+      ]
+    },
+    {
+      "title": "335 MW and 718 MW Projects (Siddhirganj \u0026 Meghnaghat)",
+      "description": "Long-term rental of heavy lifting and transport equipment for multiple EPC contractors.",
+      "location": "Narayanganj and Meghnaghat",
+      "keyEquipment": [
+        "Trailers",
+        "Cranes",
+        "Forklifts"
+      ]
+    },
+    {
+      "title": "Bangla Trac 100 MW Power Project",
+      "description": "Handled unloading from mother vessel to jetty, preparation, placement, and installation of 8 220 t engines with accessories using indigenous heavy-lifting methods.",
+      "location": "Noapara, Jessore",
+      "keyEquipment": [
+        "Gantry cranes",
+        "Barges",
+        "Multi-axle trailers"
+      ]
+    },
+    {
+      "title": "EPV 115 MW Project   Thakurgaon",
+      "description": "Managed barge and road transport logistics, engine assembly and placement using gantry cranes and skidding systems for over 900 t of machinery.",
+      "location": "Thakurgaon, Bangladesh",
+      "keyEquipment": [
+        "Barges",
+        "Skidding systems",
+        "Gantry cranes"
+      ]
+    }
+  ],
+  "assets": {
+    "logo": "assets/logo/shamolima.png",
+    "darkLogo": "assets/logo/logo_dark.png",
+    "imsBadge": "assets/images/ims_badge.jpg",
+    "opcaCertificate": "assets/images/opca.jpg",
+    "isoCertificate": "assets/images/iso_certificate.jpg"
+  }
 }

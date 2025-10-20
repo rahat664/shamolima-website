@@ -13,15 +13,23 @@
   };
 
   const applyAll = () => Array.from(document.images).forEach(setLazy);
+  // Wait for DOMContentLoaded to let the app render, then apply laziness in idle time
+  const onReady = () => {
+    (window.requestIdleCallback || setTimeout)(applyAll, 50);
+  };
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyAll, { once: true });
+    document.addEventListener('DOMContentLoaded', onReady, { once: true });
   } else {
-    applyAll();
+    onReady();
   }
 
-  // Observe added images
+  // Observe new images and src changes
   const mo = new MutationObserver((mutations) => {
     for (const m of mutations) {
+      if (m.type === 'attributes' && m.target instanceof HTMLImageElement) {
+        setLazy(m.target);
+        continue;
+      }
       for (const n of m.addedNodes) {
         if (n instanceof HTMLImageElement) setLazy(n);
         if (n.nodeType === 1) {
@@ -31,6 +39,5 @@
       }
     }
   });
-  mo.observe(document.documentElement, { childList: true, subtree: true });
+  mo.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
 })();
-

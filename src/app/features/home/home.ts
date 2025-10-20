@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, AfterViewInit, inject } from '@angular/core';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { map, shareReplay } from 'rxjs';
@@ -51,7 +51,7 @@ interface Phase {
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export class Home implements OnInit, OnDestroy {
+export class Home implements OnInit, AfterViewInit, OnDestroy {
   private readonly content = inject(ContentService);
 
   readonly home$ = this.content.home$;
@@ -233,11 +233,14 @@ export class Home implements OnInit, OnDestroy {
       } else {
         this.spotlightIndex = 0;
       }
-      this.startAutoplay();
+      setTimeout(() => this.startAutoplay());
     });
 
-    // Start hero carousel
-    this.startHeroCarousel();
+    // Start hero carousel after view init
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => this.startHeroCarousel());
   }
 
   ngOnDestroy() {

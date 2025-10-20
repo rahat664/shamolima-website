@@ -40,8 +40,8 @@ export class HeroSlider {
           { title: 'Deliver Packages in any Way', sub: home.hero.subhead, image: hero, cta: [{ text: 'Get a Quote', link: '/quote' }] },
           { title: 'Transportation Services around the Country', sub: home.hero.subhead, image: hero, cta: [{ text: 'Track Shipment', link: '/tracking' }] }
         ];
-        this.idx = 0;
-        this.restartTimer();
+        // Keep idx default 0; start timer after first render to avoid ExpressionChanged errors
+        setTimeout(() => this.restartTimer());
       });
   }
 
