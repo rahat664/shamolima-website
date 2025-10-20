@@ -1,0 +1,118 @@
+<div class="about-mobile-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-box" appRevealOnScroll="up" [delay]="100">
+        <p class="hero-company-name">Shamolima Limited</p>
+        <h1 class="hero-title">Your Gateway to Seamless Global Trade and Logistics Excellence</h1>
+        <p class="hero-text">
+          Since 1987, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil, and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.
+        </p>
+      </div>
+
+      <!-- Timeline Section -->
+      <div class="timeline-box" appRevealOnScroll="fade" [delay]="200">
+        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="300" [threshold]="0.1">
+          <div class="timeline-year">1983</div>
+          <p class="timeline-text">Shamolima Limited started her journey in Chittagong in Project Support Services.</p>
+        </div>
+        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="350" [threshold]="0.1">
+          <div class="timeline-year">1997</div>
+          <p class="timeline-text">Oil & Gas sector entry — First handled international VOCs (Vessels of Convenience).</p>
+        </div>
+        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="400" [threshold]="0.1">
+          <div class="timeline-year">2015</div>
+          <p class="timeline-text">We became authorized to act as Customs Agent.</p>
+        </div>
+        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="450" [threshold]="0.1">
+          <div class="timeline-year">2017</div>
+          <p class="timeline-text">Purchased brand-new offshore Thrust-12 winch.</p>
+        </div>
+        <div class="timeline-item timeline-logo" appRevealOnScroll="zoom" [delay]="500" [threshold]="0.1">
+          <img src="assets/images/ims_badge.jpg" alt="IMS Certified" class="ims-logo" />
+        </div>
+        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="550" [threshold]="0.1">
+          <div class="timeline-year">2024</div>
+          <p class="timeline-text">Created SNZ to move toward Sustainable Net Zero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customs Brokerage Section -->
+  <section class="customs-section" *ngIf="about$ | async as about">
+    <div class="customs-content" appRevealOnScroll="up" [delay]="100">
+      <h2 class="customs-title">Customs Brokerage & Freight Forwarding</h2>
+      <ul class="customs-list">
+        <li *ngFor="let bullet of about.customsBrokerage.bullets">{{ bullet }}</li>
+      </ul>
+      <div class="customs-image" appRevealOnScroll="zoom" [delay]="300">
+        <img src="assets/images/custom_broker.png" alt="Logistics" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Services Section -->
+  <section class="services-section" *ngIf="about$ | async as about">
+    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">Comprehensive Customs Brokerage Services</h2>
+    <div class="services-grid">
+      <div *ngFor="let service of about.comprehensiveServices; let i = index" class="service-card" appRevealOnScroll="up" [delay]="i * 100">
+        <h4 class="service-title">{{ service.title }}</h4>
+        <p class="service-desc">{{ service.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expert Freight Section -->
+  <section class="freight-section" *ngIf="about$ | async as about">
+    <div class="freight-content">
+      <div class="freight-image" appRevealOnScroll="zoom" [delay]="100">
+        <img src="assets/images/mobile_laptop_mobile.PNG" alt="Freight Services" />
+      </div>
+      <div class="freight-text" appRevealOnScroll="up" [delay]="300">
+        <h2 class="freight-title">Expert Freight Forwarding Services</h2>
+        <p class="freight-desc">{{ about.freightForwarding.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Details Grid -->
+  <section class="details-section" *ngIf="about$ | async as about">
+    <div class="details-grid">
+      <div *ngFor="let service of about.freightForwarding.services; let i = index" class="detail-card" appRevealOnScroll="zoom" [delay]="i * 100" [threshold]="0.05">
+        <h4 class="detail-title">{{ service.title }}</h4>
+        <p class="detail-desc">{{ service.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Port Image Section -->
+  <section class="port-section">
+    <img src="assets/images/port_image.jpg" alt="Port Operations" class="port-image" appRevealOnScroll="zoom" [threshold]="0.1" />
+  </section>
+
+  <!-- Commitment & Advantages Section -->
+  <section class="commitment-section" *ngIf="about$ | async as about">
+    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">Our Commitment & Advantages</h2>
+    <p class="section-subheading" appRevealOnScroll="fade" [delay]="200">Shamolima delivers excellence across the entire customs brokerage and freight forwarding value chain</p>
+    <div class="commitment-grid">
+      <div *ngFor="let advantage of about.advantages; let i = index" class="commitment-card" appRevealOnScroll="flip" [delay]="i * 100" [threshold]="0.05">
+        <h4 class="commitment-title">{{ advantage.title }}</h4>
+        <p class="commitment-desc">{{ advantage.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA Section -->
+  <section class="footer-cta-section">
+    <div class="cta-overlay" appRevealOnScroll="up" [delay]="100" [threshold]="0.2">
+      <p class="cta-text">
+        Enhance your competitive edge in international trade with Shamolima — trusted, experienced, and technologically advanced customs brokerage and freight forwarding solutions.
+      </p>
+      <p class="cta-text-sub">Contact us today for a personalized consultation and a detailed quotation.</p>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>

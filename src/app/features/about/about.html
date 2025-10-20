@@ -1,175 +1,131 @@
-<!-- Hero Section - Exact match to img.png layout -->
-<section class="about-hero" *ngIf="about$ | async as about" @fadeIn>
-  <div class="about-hero__bg" [style.background-image]="'url(' + about.hero.backgroundImage + ')'"></div>
+<!-- Mobile Version (< 768px) -->
+@if (isMobile()) {
+  <app-about-mobile></app-about-mobile>
+}
 
-  <div class="container about-hero__container">
-    <div class="about-hero__grid">
-      <!-- Left: Teal box with content (45% width) -->
-      <div class="about-hero__content-box">
-        <p class="about-hero__brand">Shamolima Limited</p>
-        <h1 class="about-hero__title">Your Gateway to Seamless Global Trade and Logistics Excellence</h1>
-        <p class="about-hero__description">Since 1987, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.</p>
+<!-- Desktop Version (>= 768px) -->
+@if (!isMobile()) {
+<div class="about-page">
+  <!-- Hero Section with Background Image -->
+  <section class="hero-section">
+    <div class="hero-bg"></div>
 
-        <!-- Certificates -->
-        <div class="cert-badges" *ngIf="home$ | async as home">
-          <img *ngFor="let cert of home.certificates"
-               [src]="cert"
-               alt="Certification"
-               class="cert-badges__img" />
-        </div>
+    <div class="hero-content-wrapper absolute -top-32">
+      <!-- Left: Teal Box -->
+      <div class="hero-left-box" appRevealOnScroll="right" [delay]="100">
+        <p class="hero-company-name">Shamolima Limited</p>
+        <h1 class="hero-title">Your Gateway to<br>Seamless Global Trade<br>and Logistics Excellence</h1>
+        <p class="hero-text">
+          Since 1987, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil, and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.
+        </p>
       </div>
-
-      <!-- Right: White timeline box (55% width) -->
-      <div class="about-hero__timeline-box">
-        <div class="timeline-box__content">
-          <article class="timeline-item">
-            <div class="timeline-item__year">1983</div>
-            <p class="timeline-item__text">Shamolima Limited started her journey in Chittagong in Project Support Services.</p>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__year">2015</div>
-            <p class="timeline-item__text">Got the IMS certification in Bangladesh</p>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__year">1997</div>
-            <p class="timeline-item__text">Oil & Gas Sector, International Oil Companies (IOCs) such as Occidental, Unocal, Chevron, Shell etc.</p>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__year">2017</div>
-            <p class="timeline-item__text">Purchased brand-new Goldhofer THPSL 12 with an Addrive street-wheel-free and Power Pack.</p>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-item__year">2024</div>
-            <p class="timeline-item__text">Created a new company SNZ to continue the journey towards Sustainable Net Zero.</p>
-          </article>
+      <!-- Right: White Timeline Box -->
+      <div class="hero-right-box" appRevealOnScroll="left" [delay]="200">
+        <div class="timeline-grid">
+          <div class="timeline-item" appRevealOnScroll="zoom" [delay]="300">
+            <div class="timeline-year">1983</div>
+            <p class="timeline-text">Shamolima Limited started her journey in Chittagong in Project Support Services.</p>
+          </div>
+          <div class="timeline-item" appRevealOnScroll="zoom" [delay]="400">
+            <div class="timeline-year">2015</div>
+            <p class="timeline-text">We became authorized to act as Customs Agent.</p>
+          </div>
+          <div class="timeline-item" appRevealOnScroll="zoom" [delay]="500">
+            <div class="timeline-year">1997</div>
+            <p class="timeline-text">Oil & Gas sector entry — First handled international VOCs (Vessels of Convenience).</p>
+          </div>
+          <div class="timeline-item" appRevealOnScroll="zoom" [delay]="600">
+            <div class="timeline-year">2017</div>
+            <p class="timeline-text">Purchased brand-new offshore Thrust-12 winch.</p>
+          </div>
+          <div class="timeline-item timeline-logo" appRevealOnScroll="zoom" [delay]="700">
+            <img src="assets/images/ims_badge.jpg" alt="IMS Certified" class="ims-logo" />
+          </div>
+          <div class="timeline-item" appRevealOnScroll="zoom" [delay]="800">
+            <div class="timeline-year">2024</div>
+            <p class="timeline-text">Created SNZ to move toward Sustainable Net Zero.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Customs Brokerage Section -->
-<section class="customs-section" *ngIf="about$ | async as about" @fadeIn>
-  <div class="container">
-    <div class="customs-grid">
-      <!-- Left: Title and bullets -->
-      <div class="customs-content">
-        <h2 class="customs-content__title">{{ about.customsBrokerage.title }}</h2>
+  <!-- Customs Brokerage Section (Dark) -->
+  <section class="customs-section" *ngIf="about$ | async as about">
+    <div class="customs-wrapper">
+      <div class="customs-left" appRevealOnScroll="right" [delay]="100">
+        <h2 class="customs-title">Customs Brokerage &<br>Freight Forwarding</h2>
         <ul class="customs-list">
-          <li *ngFor="let bullet of about.customsBrokerage.bullets" class="customs-list__item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span>{{ bullet }}</span>
-          </li>
+          <li *ngFor="let bullet of about.customsBrokerage.bullets">{{ bullet }}</li>
         </ul>
       </div>
-
-      <!-- Right: Large title with images -->
-      <div class="customs-visual">
-        <h2 class="customs-visual__title">CUSTOMS BROKERAGE &<br>FREIGHT FORWARDING</h2>
-        <p class="customs-visual__tagline">{{ about.customsBrokerage.tagline }}</p>
-        <img src="assets/images/custom_broker.png"
-             alt="Logistics"
-             class="customs-visual__img"
-             onerror="this.style.display='none'" />
+      <div class="customs-right" >
+          <img src="assets/images/custom_broker.png" alt="Logistics" class="banner-img" />
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Comprehensive Services -->
-<section class="services-section" *ngIf="about$ | async as about" @fadeIn>
-  <div class="container">
-    <h2 class="section-title">Comprehensive Customs Brokerage Services</h2>
-    <p class="section-intro">Customized and expert customs brokerage is the foundation of our services.</p>
-
-    <div class="service-list">
-      <article *ngFor="let service of about.comprehensiveServices" class="service-item">
-        <h3 class="service-item__title">{{ service.title }}</h3>
-        <p class="service-item__description">{{ service.description }}</p>
-      </article>
-    </div>
-  </div>
-  
-</section>
-
-<!-- Expert Freight Forwarding -->
-<section class="freight-section" *ngIf="about$ | async as about" @fadeIn>
-  <div class="container">
-    <div class="freight-grid">
-      <div class="freight-visual">
-        <div class="freight-visual__devices">
-          <div class="freight-visual__laptop">
-            <div class="freight-visual__screen">
-              <div class="tracking-ui">
-                <div class="tracking-ui__header"></div>
-                <div class="tracking-ui__map"></div>
-                <div class="tracking-ui__timeline"></div>
-              </div>
-            </div>
-          </div>
-          <div class="freight-visual__mobile">
-            <div class="freight-visual__screen freight-visual__screen--mobile">
-              <div class="tracking-ui tracking-ui--mobile">
-                <div class="tracking-ui__header"></div>
-                <div class="tracking-ui__items"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Comprehensive Services Section (White) -->
+  <section class="services-section" *ngIf="about$ | async as about">
+    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">Comprehensive Customs Brokerage Services</h2>
+    <div class="services-grid">
+      <div *ngFor="let service of about.comprehensiveServices; let i = index" class="service-card" appRevealOnScroll="up" [delay]="i * 100">
+        <h4 class="service-title">{{ service.title }}</h4>
+        <p class="service-desc">{{ service.description }}</p>
       </div>
+    </div>
+  </section>
 
-      <div class="freight-content">
-        <h2 class="freight-content__title">{{ about.freightForwarding.title }}</h2>
-        <p class="freight-content__description">{{ about.freightForwarding.description }}</p>
-
-        <div class="freight-services">
-          <article *ngFor="let service of about.freightForwarding.services" class="freight-service">
-            <h4 class="freight-service__title">{{ service.title }}</h4>
-            <p class="freight-service__description">{{ service.description }}</p>
-          </article>
+  <!-- Expert Freight Section with Mockup Image -->
+  <section class="freight-section" *ngIf="about$ | async as about">
+    <div class="freight-wrapper relative">
+      <div class="h-[675px] w-full relative" appRevealOnScroll="fade">
+        <img src="assets/images/mobile_laptop.png" alt="Freight Services" class="h-full" />
+        <div class="absolute top-1/2 right-0 w-[488px] -translate-y-1/2 freight-text-box p-8" appRevealOnScroll="left" [delay]="300">
+          <h2 class="freight-title">Expert Freight<br>Forwarding Services</h2>
+          <p class="freight-desc">{{ about.freightForwarding.description }}</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Container Image Section -->
-<section class="container-image-section" @fadeIn>
-  <img src="assets/images/port_image.jpg"
-       alt="Container operations"
-       class="container-image-section__img" />
-</section>
-
-<!-- Commitment & Advantages -->
-<section class="advantages-section" *ngIf="about$ | async as about" @fadeIn>
-  <div class="container">
-    <h2 class="section-title">Our Commitment & Advantages</h2>
-    <p class="section-subtitle">We combine technology, professionalism and client focus to deliver outstanding service</p>
-
-    <div class="advantage-list">
-      <article *ngFor="let advantage of about.advantages" class="advantage-item">
-        <h3 class="advantage-item__title">{{ advantage.title }}</h3>
-        <p class="advantage-item__description">{{ advantage.description }}</p>
-      </article>
+  <!-- Services Details Grid -->
+  <section class="details-section" *ngIf="about$ | async as about">
+    <div class="details-grid">
+      <div *ngFor="let service of about.freightForwarding.services; let i = index" class="detail-card" appRevealOnScroll="zoom" [delay]="i * 100">
+        <h4 class="detail-title">{{ service.title }}</h4>
+        <p class="detail-desc">{{ service.description }}</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer CTA Section (text strip) -->
-<section class="footer-cta-section footer-cta-section--minimal" @fadeIn>
-  <div class="footer-cta__bg" style="background-image: url('assets/images/port-crane.png')"></div>
-  <div class="footer-cta__overlay"></div>
-  <div class="container footer-cta__container footer-cta__container--narrow">
-    <p class="footer-cta__lede">Enhance your competitive edge in international trade with Shamolima — trusted, experienced, and technologically advanced customs brokerage and freight forwarding services.</p>
-    <p class="footer-cta__lede">We deliver agile solutions across complex logistics challenges and ensure outstanding results.</p>
-    <p class="footer-cta__contact">Contact us today for a personalized consultation and a detailed quotation.</p>
-  </div>
-</section>
+  <!-- Port Image Section -->
+  <section class="port-section">
+    <img src="assets/images/port_image.jpg" alt="Port Operations" class="port-image" appRevealOnScroll="zoom" />
+  </section>
 
-<app-footer />
+  <!-- Commitment & Advantages Section -->
+  <section class="commitment-section" *ngIf="about$ | async as about">
+    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">Our Commitment & Advantages</h2>
+    <p class="section-subheading" appRevealOnScroll="fade" [delay]="200">Shamolima delivers excellence across the entire customs brokerage and freight forwarding value chain</p>
+    <div class="commitment-grid">
+      <div *ngFor="let advantage of about.advantages; let i = index" class="commitment-card" appRevealOnScroll="flip" [delay]="i * 100">
+        <h4 class="commitment-title">{{ advantage.title }}</h4>
+        <p class="commitment-desc">{{ advantage.description }}</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer CTA Section (Dark with Image) -->
+  <section style="background-image: url('assets/images/port-crane.png');" class="footer-cta-section">
+    <div class="cta-overlay" appRevealOnScroll="up" [delay]="100">
+      <p class="cta-text">
+        Enhance your competitive edge in international trade with Shamolima — trusted, experienced, and technologically advanced customs brokerage and freight forwarding solutions.
+      </p>
+      <p class="cta-text-sub">Contact us today for a personalized consultation and a detailed quotation.</p>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</div>
+}
