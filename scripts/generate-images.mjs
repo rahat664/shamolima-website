@@ -41,7 +41,8 @@ async function processFile(file) {
   if (!IMAGE_EXTS.has(ext)) return { skipped: true };
 
   const dir = path.dirname(file);
-  const base = path.basename(file, ext);
+  // Strip extension in a case-insensitive way
+  const base = path.basename(file).replace(/\.[^.]+$/,'');
   const thumbsDir = path.join(dir, 'thumbs');
   const webpDir = path.join(dir, 'webp');
   const thumbOut = path.join(thumbsDir, `${base}.webp`);
@@ -105,4 +106,3 @@ main().catch(err => {
   console.error(err);
   process.exit(1);
 });
-
