@@ -1,11 +1,13 @@
 import {Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
-  selector: '[appRevealOnScroll]'
+  selector: '[appRevealOnScroll]',
+  standalone: true
 })
 export class RevealOnScroll implements OnInit, OnDestroy{
-  @Input('appRevealOnScroll') direction: 'up' | 'right' | 'fade' = 'up';
+  @Input('appRevealOnScroll') direction: 'up' | 'right' | 'left' | 'down' | 'fade' | 'zoom' | 'flip' = 'up';
   @Input() delay = 0; // ms
+  @Input() threshold = 0.12;
   private observer?: IntersectionObserver;
 
   constructor(private el: ElementRef<HTMLElement>, private r: Renderer2) {}
@@ -25,7 +27,7 @@ export class RevealOnScroll implements OnInit, OnDestroy{
           }
         });
       },
-      { root: null, threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      { root: null, threshold: this.threshold, rootMargin: '0px 0px -8% 0px' }
     );
 
     this.observer.observe(node);

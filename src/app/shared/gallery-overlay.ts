@@ -9,14 +9,50 @@ import { GalleryService, GalleryItem } from './gallery.service';
   template: `
     <ng-container *ngIf="service.open$ | async">
       <div class="global-lightbox" role="dialog" aria-modal="true" (click)="service.close()">
+        <div class="global-lightbox__backdrop"></div>
         <div class="global-lightbox__inner" (click)="$event.stopPropagation()">
-          <button class="global-lightbox__close" type="button" aria-label="Close" (click)="service.close()">&times;</button>
-          <button class="global-lightbox__nav global-lightbox__nav--prev" type="button" aria-label="Previous" (click)="service.prev()">&#10094;</button>
-          <img class="global-lightbox__image"
-               [src]="current()?.src"
-               [alt]="current()?.caption || 'Gallery image'">
-          <div class="global-lightbox__caption">{{ current()?.caption }}</div>
-          <button class="global-lightbox__nav global-lightbox__nav--next" type="button" aria-label="Next" (click)="service.next()">&#10095;</button>
+          <button class="global-lightbox__close" type="button" aria-label="Close" (click)="service.close()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+
+          <div class="global-lightbox__counter" *ngIf="totalItems() > 1">
+            {{ currentIndex() + 1 }} / {{ totalItems() }}
+          </div>
+
+          <div class="global-lightbox__content">
+            <button class="global-lightbox__nav global-lightbox__nav--prev"
+                    type="button"
+                    aria-label="Previous"
+                    (click)="service.prev()"
+                    *ngIf="totalItems() > 1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+
+            <div class="global-lightbox__image-wrapper">
+              <img class="global-lightbox__image"
+                   [src]="current()?.src"
+                   [alt]="current()?.caption || 'Gallery image'"
+                   loading="eager">
+            </div>
+
+            <button class="global-lightbox__nav global-lightbox__nav--next"
+                    type="button"
+                    aria-label="Next"
+                    (click)="service.next()"
+                    *ngIf="totalItems() > 1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="global-lightbox__caption" *ngIf="current()?.caption">
+            {{ current()?.caption }}
+          </div>
         </div>
       </div>
     </ng-container>
@@ -32,6 +68,14 @@ export class GalleryOverlay {
     const items = this.service.items$.value;
     const index = this.service.index$.value;
     return items[index];
+  }
+
+  currentIndex(): number {
+    return this.service.index$.value;
+  }
+
+  totalItems(): number {
+    return this.service.items$.value.length;
   }
 
   @HostListener('window:keydown', ['$event'])
