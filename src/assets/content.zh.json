@@ -1,0 +1,802 @@
+{
+  "site": {
+    "name": "夏莫利玛",
+    "baseUrl": "https://shamolima.com/"
+  },
+  "ui": {
+    "nav": {
+      "home": "首页",
+      "services": "服务",
+      "about": "关于我们",
+      "qhse": "QHSE",
+      "contact": "联系我们",
+      "workActivities": "工作实绩",
+      "fleet": "车队",
+      "tracking": "追踪",
+      "quote": "获取报价"
+    },
+    "buttons": {
+      "learnMore": "了解更多",
+      "viewAll": "查看全部",
+      "contactUs": "联系我们",
+      "getQuote": "获取报价",
+      "viewGallery": "查看相册",
+      "readMore": "阅读更多",
+      "submitQuote": "提交报价",
+      "trackShipment": "追踪货物"
+    },
+    "common": {
+      "email": "电子邮件",
+      "phone": "电话",
+      "address": "地址",
+      "location": "位置",
+      "name": "姓名",
+      "message": "留言",
+      "send": "发送",
+      "close": "关闭",
+      "next": "下一个",
+      "previous": "上一个",
+      "loading": "加载中...",
+      "language": "语言"
+    },
+    "footer": {
+      "tagline": "欢迎与专业物流和项目支持运营团队以及QHSE团队合作。",
+      "callUs": "致电我们",
+      "emailUs": "发送邮件",
+      "company": "公司",
+      "support": "支持",
+      "services": "服务",
+      "getQuote": "获取报价",
+      "allRightsReserved": "保留所有权利"
+    },
+    "pages": {
+      "workActivities": {
+        "hero": {
+          "title": "一线现场的综合物流",
+          "lede": "每一次移动均为定制工程：可行性研究、通道整备、起重方案、临时工程以及最终对位。我们自有设备、自有团队，直至货物完成交付与投用。"
+        },
+        "tags": [
+          "重型吊装",
+          "多式联运",
+          "路线情报",
+          "EPC 合作"
+        ],
+        "stats": [
+          { "value": "25+", "label": "在孟加拉从事重型吊装与运输的年数", "detail": "覆盖港口、炼厂、LNG 终端与电网升级。" },
+          { "value": "420+", "label": "完成的复杂吊装与运输项目", "detail": "动员履带吊、龙门架、SPMT 与液压拖车。" },
+          { "value": "1,200 km+", "label": "完成的路线勘察与通道整备", "detail": "道路加固、驳船研究与多式联运由内部工程完成。" },
+          { "value": "24/7", "label": "现场监督与维保覆盖", "detail": "维修、索具与合规团队轮班支持执行。" }
+        ],
+        "focusAreas": [
+          { "badge": "01", "title": "项目前情报", "copy": "可行性、走廊评估与数字孪生，降低动员前风险。" },
+          { "badge": "02", "title": "起重工程", "copy": "Autodesk 起重方案、索具计算与 SPMT 核算，经持证工程师签批。" },
+          { "badge": "03", "title": "一体化运输", "copy": "重型拖车、驳船、集结场与通关联动执行。" },
+          { "badge": "04", "title": "现场执行", "copy": "据位、校准与试运转，直至完成交付。" }
+        ],
+        "milestones": [
+          { "title": "水浴加热器安装", "detail": "150T 履带吊吊装、接管（纳拉扬甘杰）。" },
+          { "title": "换热器运输", "detail": "多轴拖车 + 护送的门到门运输（80T）。" },
+          { "title": "变压器转运", "detail": "SPMT 滚装卸载与精确就位（北部变电站扩建）。" },
+          { "title": "LNG 码头模块", "detail": "码头至现场的水陆联运，含驳船、场地与最终对位。" }
+        ],
+        "phases": [
+          { "title": "范围与设计", "copy": "针对货物包络开展可行性、通道信息与起重工程。", "points": ["方案、风险台账与协同会议", "关键起重图纸、索具与稳定性校核", "许可路线图与通道整备并与主管机构沟通"] },
+          { "title": "动员与准备", "copy": "布置设备、人员与备件，同步许可、临时工程与 HSE 演练。", "points": ["运输许可、港口窗口与护送协调", "临时桥、垫木、鞍座与钢构制作", "班前会、能力复训与应急演练"] },
+          { "title": "执行与监控", "copy": "用看板、遥测、HSE 关口与路况引导把控执行。", "points": ["起重指挥与现场主管通信联动", "遥测、气象与载荷实时监控", "带可视化与KPI的客户更新"] },
+          { "title": "收尾与交付", "copy": "完成恢复、文档与后续工作准备。", "points": ["竣工资料与影像记录", "线路恢复、第三方检验与问题清单关闭", "撤场与后续范围准备"] }
+        ],
+        "recentPlaysHeading": "近期作业",
+        "planningCtaTitle": "正在规划关键运输？",
+        "planningCtaTextPrefix": "请发送邮件至项目台："
+      },
+      "services": {
+        "hero": { "kicker": "我们的服务", "title": "面向复杂项目的端到端物流", "description": "从重型运输与起重，到通关、港口与现场动员，Shamolima 在孟加拉全境提供一致的高标准体验。" },
+        "tags": { "heavyHaulage": "重型运输", "spmtRigging": "SPMT 与索具", "customsPorts": "通关与港口", "projectSupport": "项目支援" },
+        "actions": { "planMove": "规划行动", "talkExpert": "咨询专家" },
+        "stats": {
+          "pillars": { "label": "服务支柱", "detail": "租赁、运输、起重、通关与现场支援于一体。" },
+          "crawlerCapacity": { "label": "起重能力", "detail": "起重机、SPMT 与液压拖车车队随时待命。" },
+          "operationsDesks": { "label": "运营值班台", "detail": "港口、河运码头与现场之间的实时协同。" }
+        },
+        "capabilities": { "kicker": "能力", "title": "选择专业以查看范围与参考", "lede": "每项服务附带案例、图库与典型执行范围。", "cardCopy": "查看范围、图库与交付物" },
+        "whyItMatters": { "kicker": "为什么重要", "title": "一体化执行让复杂运输可控", "lede": "许可、设备动员、人员、报告与收尾由单一项目台统筹，您可专注关键里程碑。" },
+        "included": {
+          "heading": "每次合作均包含",
+          "routeLift": { "title": "路线与起重工程", "detail": "Autodesk 起重方案、稳定性校核与通道整备报告。" },
+          "certified": { "title": "持证团队与设备", "detail": "操作手、索具工、护送与维保团队轮班支持。" },
+          "reporting": { "title": "7×24 报告", "detail": "进度看板、HSE 跟踪与实时沟通。" }
+        },
+        "bundled": { "title": "需要打包方案吗？", "text": "可将运输、起重、通关与现场服务合并为单一合同。" },
+        "getStarted": { "kicker": "开始", "title": "分享范围以获得快速动员计划", "lede": "请提供货物尺寸、提送点与时间线。我们将反馈推荐设备、路线提示与商务概览。", "ctas": { "requestQuote": "请求定制报价", "talkOps": "联系运营" } }
+      },
+      "fleet": {
+        "hero": { "kicker": "车队", "title": "适配每次运输的合规车辆", "description": "从城市提送到覆盖式重型卡车，自有车队安全高效运输，并与重型吊装与索具联动。" },
+        "tags": { "coveredDeck": "覆盖货箱", "permitReady": "许可齐备", "gpsTracked": "GPS 追踪" },
+        "actions": { "requestAvailability": "询问空车", "exploreEquipmentRental": "查看设备租赁" },
+        "stats": {
+          "payloadRange": { "label": "载重范围", "detail": "面向项目货、精密设备与最后一公里优化。" },
+          "coverage": { "label": "覆盖范围", "detail": "达卡、吉大港、库尔纳、蒙格拉及主要工业走廊。" }
+        },
+        "catalogue": { "kicker": "车辆目录", "title": "标准车厢尺寸与能力", "lede": "自有维保可与护送、索具与临时仓储组合。" },
+        "trucks": [
+          { "name": "Mini (7 ft)",    "size": "7x5 ft",   "capacityTons": 1.0 },
+          { "name": "Pickup (8 ft)",  "size": "8x5 ft",   "capacityTons": 1.5 },
+          { "name": "Small (10 ft)",  "size": "10x6 ft",  "capacityTons": 2.0 },
+          { "name": "Medium (14 ft)", "size": "14x7 ft",  "capacityTons": 3.0 },
+          { "name": "Large (17 ft)",  "size": "17x7.5 ft","capacityTons": 5.0 },
+          { "name": "Covered (20 ft)","size": "20x8 ft",  "capacityTons": 8.0 }
+        ],
+        "needSpecialised": { "kicker": "需要特殊组合？", "title": "皮卡、覆盖车与重型拖车一并安排", "lede": "可打包叉车、起重机、临时存储、护送车辆与人力用于检修与大型项目。" },
+        "dispatch": {
+          "heading": "联系调度",
+          "dailyAvailability": { "title": "每日空车表", "detail": "查看达卡、加济布尔、纳拉扬甘杰与港区的可用车辆。" },
+          "routeAdvisory": { "title": "路线建议", "detail": "识别限宽限高、替代通道与集结场。" },
+          "bundledStaffing": { "title": "人员打包", "detail": "司机、索具工、操作手与主管集中排班。" },
+          "cta": "与调度沟通"
+        }
+      },
+      "qhse": {
+        "hero": { "kicker": "QHSE", "title": "质量、健康、安全与环境毫不妥协", "description": "Shamolima 的一体化管理体系推动零伤害、规范执行与持续改进。" },
+        "tags": { "iso": "ISO 认证", "training": "培训", "audits": "审核", "compliance": "合规" },
+        "actions": { "viewGoals": "查看 QHSE 目标", "trainingFramework": "培训框架" },
+        "stats": {
+          "zero": { "label": "零事故愿景", "detail": "每日班前会、审核与停工权。" },
+          "ims": { "label": "一体化管理体系", "detail": "基于 ISO 的质量、安全与环境流程。" },
+          "monitoring": { "label": "监控", "detail": "许可、设备状态、天气与通道风险实时监控。" }
+        },
+        "commitments": { "kicker": "我们的承诺", "title": "将质量与安全融入每一次动员" },
+        "training": { "kicker": "培训在行动", "title": "实操演练与能力复训" },
+        "certifications": { "kicker": "认证", "title": "一体化管理的证书与会员资格", "lede": "我们的 IMS 认证与行业会员体现对安全、环境与质量的严格要求。" },
+        "documents": {
+          "heading": "关键文件",
+          "ims": { "title": "IMS 证书", "detail": "下载涵盖 QHSE 的最新 ISO 认证。" },
+          "matrix": { "title": "培训矩阵", "detail": "基于岗位的能力与再培训安排。" },
+          "erp": { "title": "应急响应预案", "detail": "升级通道与 7×24 联系人。" },
+          "downloadIMS": "下载 IMS 证书"
+        }
+      },
+      "logistics": {
+        "hero": { "kicker": "文档", "title": "物流能力", "description": "查看我们的物流文档与服务能力。" },
+        "viewer": { "loading": "正在加载 PDF…", "prev": "上一页", "next": "下一页" }
+      },
+      "serviceSingle": {
+        "heroKicker": "服务能力",
+        "heroLedePrefix": "介绍 Shamolima 的方法、参考与交付物，来自我们",
+        "heroLedeSuffix": "项目组合。",
+        "heroTags": { "engineering": "工程", "execution": "执行", "support": "支援" },
+        "backToServices": "返回服务列表",
+        "stats": {
+          "fullScope": { "value": "完整范围", "label": "详细交付物", "detail": "基于既往项目的计划、执行与支援要点。" },
+          "visualRefs": { "value": "可视化参考", "label": "项目影像", "detail": "动员、重型吊装与现场作业的高清照片。" }
+        },
+        "sidebar": {
+          "onThisPage": "本页包含",
+          "overview": { "title": "概览", "detail": "服务定位与关键成果。" },
+          "gallery": { "title": "图库", "detail": "项目参考。" },
+          "scope": { "title": "范围", "detail": "清关与通关要点。" },
+          "cta": "请求计划"
+        },
+        "overview": {
+          "title": "服务概览",
+          "copyPrefix": "了解我们的",
+          "copySuffix": "能力：附带案例、图像与近期范围。下方图库可用于分享动员画面。",
+          "tags": { "planning": "计划", "execution": "执行", "support": "支援" }
+        },
+        "gallery": { "title": "项目图库", "subtitle": "来自已完成动员的可视化参考", "note": "图片仅供参考" },
+        "scope": { "title": "范围 / 要点" },
+        "insight": {
+          "heading": "需要定制的执行计划？",
+          "combine": { "title": "组合服务", "detail": "将运输、吊装、通关与现场团队合并为单一简报。" },
+          "share": { "title": "分享范围", "detail": "告知货物、路线窗口与限制，以便快速方案。" },
+          "cta": "请求动员计划"
+        }
+      },
+      "home": {
+        "kicker": "Shamolima有限公司",
+        "heroButtons": {
+          "startBrief": "开始项目简介",
+          "exploreServices": "探索服务"
+        },
+        "stats": {
+          "yearsExperience": { "value": "40+", "label": "运营年限", "detail": "自1983年以来的物流先驱" },
+          "projectsCompleted": { "value": "1.5M+", "label": "货运吨位", "detail": "涵盖多样化和复杂的项目" },
+          "fleetSize": { "value": "200+", "label": "核心车队资产", "detail": "起重机、拖车和驳船" },
+          "teamSize": { "value": "99%", "label": "安全事故评级", "detail": "致力于零伤害运营" }
+        },
+        "sections": {
+          "integratedLogistics": { "kicker": "综合项目物流", "title": "为能源、基础设施和工业搬迁提供端到端支持" },
+          "whyChoose": "为什么团队选择Shamolima",
+          "video": { "kicker": "观看我们的故事", "title": "Shamolima在行动", "description": "了解我们如何在孟加拉国全境提供综合物流解决方案 — 从重型运输到最终调试。" },
+          "spotlight": { "kicker": "聚焦行动", "title": "我们的团队目前正在交付的内容", "description": "在孟加拉国全境执行的最新重型运输、起重和现场支持。每次搬运都体现了我们综合的Shamolima有限公司方法。", "badge": "特色搬运" },
+          "clients": { "kicker": "客户", "title": "受到运营商和EPC的信赖" },
+          "howWeDeliver": { "kicker": "我们如何交付", "title": "从首次简介到最终交付的全生命周期支持" },
+          "recentProjects": { "kicker": "最近的项目", "title": "精选参考", "badge": "RP" },
+          "gallery": { "kicker": "现场执行画廊", "title": "来自我们场地和工地的亮点", "description": "探索Shamolima团队执行的多式联运项目、工程起重和调试支持的精选照片。", "note": "图片来自Shamolima最近的工作活动，供快速参考。" }
+        },
+        "certifications": "认证和会员资格",
+        "needExpertise": "需要动员专业知识？",
+        "emailPrefix": "电子邮件"
+      },
+      "quote": {
+        "kicker": "请求报价",
+        "title": "分享您的货物详情以获得快速动员计划",
+        "description": "我们将在几小时内回复推荐的设备、许可证、护送、交货时间和商业条款。告诉我们您的路线、时间表和限制条件，剩下的交给我们。",
+        "tags": { "heavyLift": "重型起重", "multimodal": "多式联运", "customsPorts": "海关和港口" },
+        "buttons": { "callDesk": "致电项目服务台", "viewCatalogue": "查看服务目录" },
+        "stats": {
+          "responseTime": { "value": "2小时", "label": "平均响应时间", "detail": "在达卡和吉大港设有专用服务台，可快速确定项目范围。" },
+          "coverage": { "value": "360°", "label": "支持覆盖范围", "detail": "路线勘察、起重计划、海关、护送和现场执行。" }
+        },
+        "form": {
+          "namePlaceholder": "您的姓名",
+          "emailPlaceholder": "电子邮件",
+          "phonePlaceholder": "电话",
+          "pickupPlaceholder": "取货地点",
+          "dropoffPlaceholder": "送货地点",
+          "datePlaceholder": "首选日期",
+          "cargoPlaceholder": "货物（例如：10英尺滑橇，12吨）",
+          "notesPlaceholder": "备注/限制条件",
+          "submitButton": "提交请求",
+          "disclaimer": "提交即表示您同意我们的数据处理和响应政策。"
+        },
+        "howItWorks": {
+          "title": "工作原理",
+          "preferCall": "更喜欢电话联系？",
+          "reachText": "联系项目服务台"
+        },
+        "afterSubmission": {
+          "kicker": "提交后",
+          "title": "Shamolima团队的期望",
+          "description": "我们会发布包含设备、许可证、暂存、HSE里程碑和计费的动员计划，然后指派一名项目协调员在整个执行过程中与您同在。",
+          "deliverables": {
+            "title": "包含的交付成果",
+            "route": { "title": "路线和起重评估", "detail": "初步工程、走廊说明和许可证路线图。" },
+            "equipment": { "title": "设备阵容", "detail": "根据您的货物量身定制的车队、索具和人力矩阵。" },
+            "timeline": { "title": "执行时间表", "detail": "动员、运输、现场工作和撤离时间表。" }
+          }
+        }
+      },
+      "contact": {
+        "kicker": "联系我们",
+        "title": "我们已准备好支持您的下一次动员",
+        "description": "随时联系我们的运营服务台，了解项目规划、设备可用性或货运状态。我们可以在孟加拉国的每个主要港口、河流码头和工业区快速动员。",
+        "tags": { "opsDesk": "公司总部", "dhakaHQ": "达卡总部", "chattagramOffice": "吉大港办事处" },
+        "stats": {
+          "locations": { "value": "3", "label": "服务地点", "detail": "总部、运营、分支机构和吉大港服务台，保持紧密覆盖。" },
+          "professionals": { "value": "60+", "label": "项目专业人员", "detail": "主管、规划师、许可专家和协调员轮流值班。" },
+          "statusUpdates": { "value": "实时", "label": "状态更新", "detail": "每次搬运都有跟踪仪表板、WhatsApp更新和每日报告。" }
+        },
+        "form": {
+          "namePlaceholder": "您的姓名",
+          "emailPlaceholder": "电子邮件",
+          "phonePlaceholder": "电话（可选）",
+          "subjectPlaceholder": "主题",
+          "messagePlaceholder": "您的留言",
+          "submitButton": "发送消息",
+          "responseNote": "我们会在工作时间内回复。"
+        },
+        "visitUs": { "kicker": "访问我们", "title": "在达卡和吉大港找到我们的办事处" }
+      },
+      "tracking": {
+        "kicker": "追踪",
+        "title": "实时跟踪您的货运",
+        "description": "输入您的Shamolima参考号以查看最新状态、检查点和预计到达时间。如果您需要额外的更新，我们的运营服务台24/7全天候可用。",
+        "tags": { "desk": "24/7服务台", "alerts": "短信/WhatsApp提醒", "visibility": "路线可见性" },
+        "stats": {
+          "status": { "value": "实时", "label": "状态刷新", "detail": "直接从我们的运营控制塔获取。" },
+          "hotline": { "value": "热线", "label": "+880-2-9552676", "detail": "与值班协调员交谈以获得优先更新。" }
+        },
+        "form": {
+          "trackingIdPlaceholder": "追踪ID",
+          "submitButton": "追踪货运",
+          "helpText": "需要帮助查找您的参考号？查看预订确认电子邮件或致电我们的运营服务台。"
+        },
+        "assistance": {
+          "title": "需要额外的帮助？",
+          "email": { "title": "电子邮件更新", "detail": "发送至opsdesk@shamolima.com获取路线快照和POD副本。" },
+          "whatsapp": { "title": "WhatsApp提醒", "detail": "选择接收自动检查点和ETA更改。" },
+          "exception": { "title": "异常处理", "detail": "为关键货物提供专门的主管升级。" }
+        },
+        "dashboards": {
+          "kicker": "项目仪表板",
+          "title": "升级到主要动员的完全可见性",
+          "description": "我们为停工、EPC项目和关键重型起重作业提供结合GPS、许可证状态、船员名册和现场准备情况的定制仪表板。",
+          "cta": "询问我们的团队有关为您的项目量身定制的企业追踪门户。"
+        }
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "项目支持物流与运输",
+      "subhead": "为孟加拉国主要项目提供端到端支持，包括设备租赁、油气服务、海运和清关。",
+      "image": "assets/images/water_bath.jpg"
+    },
+    "heroTags": [
+      "项目支持",
+      "重型物料运输",
+      "海运与清关",
+      "始于1983年"
+    ],
+    "stats": [
+      {
+        "value": "40+",
+        "label": "运营年限",
+        "detail": "自1983年以来的物流先驱。"
+      },
+      {
+        "value": "200+",
+        "label": "核心车队资产",
+        "detail": "起重机、拖车和驳船。"
+      },
+      {
+        "value": "1.5M+",
+        "label": "货运吨位",
+        "detail": "跨越多样化和复杂的项目。"
+      },
+      {
+        "value": "99%",
+        "label": "安全事故评级",
+        "detail": "致力于零伤害运营。"
+      }
+    ],
+    "aboutSnippet": "夏莫利玛自1983年以来一直在孟加拉国提供全面的项目支持服务。公司专门从事物流、工程和项目材料支持，服务于石油和天然气、电力、能源、电信和基础设施等行业。在孟加拉国各地提供高质量的专业咨询、设备租赁、运输、海运、清关和人力解决方案。",
+    "focusAreas": [
+      {
+        "badge": "车队",
+        "title": "设备租赁",
+        "copy": "认证起重机、拖车、叉车以及满足任何项目需求的各种重型设备。"
+      },
+      {
+        "badge": "领域",
+        "title": "油气与电力",
+        "copy": "在移动钻机、钻探设备和支持能源行业方面拥有丰富的知识和经验。"
+      },
+      {
+        "badge": "物流",
+        "title": "海运与清关",
+        "copy": "积极参与基础设施和发展项目的海运、货运代理和清关。"
+      },
+      {
+        "badge": "支持",
+        "title": "完整的现场服务",
+        "copy": "包括仓储、船员管理和认证人力，确保无缝的现场运营。"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "专业与安全的支持",
+        "detail": "我们提供认证设备和训练有素的人力支持，确保您在我们管理项目期间可以放心。"
+      },
+      {
+        "title": "对质量的承诺",
+        "detail": "坚定致力于通过卓越、创新和持续改进来满足各种需求，实现客户满意度。"
+      },
+      {
+        "title": "聚焦QHSE",
+        "detail": "我们致力于通过提供健康的工作环境和最小化所有风险来预防伤害和疾病。"
+      },
+      {
+        "title": "合规监管",
+        "detail": "我们决心遵守与我们的产品和服务相关的所有适用法规和法律要求。"
+      }
+    ],
+    "phases": [
+      {
+        "title": "规划与工程",
+        "copy": "我们从深入了解范围开始每个项目，进行可行性研究并创建稳健的运营计划。",
+        "points": [
+          "路线与现场调查",
+          "运输与吊装工程",
+          "风险评估与方法声明"
+        ]
+      },
+      {
+        "title": "动员与执行",
+        "copy": "我们的现场团队在经验丰富的监督员带领下，精确执行计划，遵守最高安全标准。",
+        "points": [
+          "资产部署",
+          "现场监督",
+          "实时进度跟踪"
+        ]
+      },
+      {
+        "title": "项目管理",
+        "copy": "专职项目经理作为您的单一联系点，确保无缝沟通和协调。",
+        "points": [
+          "清关与港口手续",
+          "利益相关者协调",
+          "合规与报告"
+        ]
+      },
+      {
+        "title": "完成与交接",
+        "copy": "我们通过全面的交接结束，提供完整的文档并确保所有项目目标已实现。",
+        "points": [
+          "资产撤场",
+          "最终项目报告",
+          "客户签收与反馈"
+        ]
+      }
+    ],
+    "certificates": [
+    ],
+    "testimonialsImages": [
+    ]
+  },
+  "about": {
+    "hero": {
+      "title": "您通向无缝全球贸易和物流卓越的门户",
+      "description": "自1983年以来，夏莫利玛凭借无与伦比的海运服务开拓全球贸易，结合最先进的技术和数十年的专业知识。我们简化清关、货运代理和物流，提供更快的边境通关和更智能的解决方案，致力于从起点到目的地的每个旅程的卓越。",
+      "backgroundImage": "assets/images/about_us.png"
+    },
+    "timeline": [
+      {
+        "year": "1997",
+        "title": "扩张",
+        "description": "扩大车队和服务以支持不断增长的能源行业需求。"
+      },
+      {
+        "year": "2010",
+        "title": "ISO认证",
+        "description": "获得质量管理系统的ISO认证。"
+      },
+      {
+        "year": "2017",
+        "title": "数字化转型",
+        "description": "实施先进的跟踪和物流管理系统。"
+      },
+      {
+        "year": "2019",
+        "title": "区域增长",
+        "description": "在孟加拉国多个地区扩展运营。"
+      },
+      {
+        "year": "2024",
+        "title": "行业领袖",
+        "description": "被认可为孟加拉国领先的项目物流提供商之一。"
+      }
+    ],
+    "customsBrokerage": {
+      "title": "清关代理与货运代理",
+      "tagline": "无缝边境。无缝物流。",
+      "bullets": [
+        "清关和合规管理",
+        "货运代理（海运、空运、内陆）",
+        "进出口文件和关税分类",
+        "驳船运营和码头装卸",
+        "仓储和配送",
+        "实时货物跟踪"
+      ]
+    },
+    "comprehensiveServices": [
+      {
+        "title": "行业专业知识",
+        "description": "在处理能源、基础设施、电信和工业领域的复杂项目货物方面拥有数十年的专业经验。"
+      },
+      {
+        "title": "关税分类",
+        "description": "符合国际协调制度代码的专业分类服务，确保准确的关税和法规合规。"
+      },
+      {
+        "title": "进出口清关管理",
+        "description": "涵盖文件、申报提交、关税支付以及遵守所有本地和国际法规的端到端清关代理。"
+      },
+      {
+        "title": "清算后处理",
+        "description": "为清关后审计、退款、修改和争议解决提供全面支持，以保护您的利益并确保合规。"
+      },
+      {
+        "title": "法规合规与风险管理",
+        "description": "主动监控贸易法规、风险评估和战略规划，以最大限度地减少延误并确保无缝的边境通关。"
+      }
+    ],
+    "freightForwarding": {
+      "title": "专业货运代理服务",
+      "description": "我们提供为项目货物量身定制的行业领先物流，确保所有运输方式的安全、及时和具有成本效益的交付。",
+      "services": [
+        {
+          "title": "多式联运货物管理",
+          "description": "我们为全球和本地项目货物提供端到端的多式联运物流。我们的专业知识涵盖空运、海运、内陆水路和公路运输，确保从母船到最终目的地的无缝协调，并得到我们自己的海运和清关许可证的支持。"
+        },
+        {
+          "title": "货物装卸专业知识",
+          "description": "凭借数十年的经验，我们熟练管理重型、超大和敏感货物。我们训练有素的团队和专业设备确保安全装卸，降低风险和项目停机时间。从捆扎到最终定位，我们在每一步都优先考虑安全和精度。"
+        },
+        {
+          "title": "货运定位与谈判",
+          "description": "利用我们与全球承运人和内陆提供商的长期关系，我们谈判有竞争力的运费并确保优先定位。这使得物流规划更具成本效益，项目预算更好。"
+        },
+        {
+          "title": "货物跟踪与沟通",
+          "description": "利用我们先进的跟踪系统和专职支持团队实时监控货物移动。我们提供有关船舶到达、港口装卸、清关状态和陆路运输的定期更新，确保整个旅程的透明度、问责制和安心。"
+        },
+        {
+          "title": "车队与运输",
+          "description": "我们运营着一支拥有200多项资产的车队，包括液压拖车、低平板拖车、叉车、起重机和驳船。我们的船舶按照最高标准维护，并配备认证操作员，随时准备处理跨越具有挑战性地形和水路的各种货物。"
+        }
+      ]
+    },
+    "advantages": [
+      {
+        "title": "持证专业人员",
+        "description": "我们的团队由持证清关代理、认证货运代理和致力于提供合规、高质量服务的行业专家组成。"
+      },
+      {
+        "title": "增值服务",
+        "description": "除了基本物流外，我们还提供仓储、包装、标签、保险协调和货物整合，在一个集成解决方案中简化您的供应链。"
+      },
+      {
+        "title": "响应迅速的团队",
+        "description": "凭借24/7运营和专职客户经理，我们始终准备好响应、解决问题并适应紧急项目需求和不断变化的要求。"
+      },
+      {
+        "title": "尖端技术",
+        "description": "我们利用现代TMS平台、数字跟踪工具和数据分析来优化路线、预测延误并提供增强项目效率的可操作洞察。"
+      },
+      {
+        "title": "高效流程",
+        "description": "简化的工作流程、预先批准的模板和标准操作程序减少了文书工作和官僚作风，帮助您更快地通过清关并提前将货物运送到现场。"
+      },
+      {
+        "title": "全球贸易合规",
+        "description": "持续的法律和法规监控确保我们与不断变化的贸易规则保持同步。我们主动引导客户通过制裁、关税和法规框架。"
+      },
+      {
+        "title": "个性化客户服务",
+        "description": "我们构建定制解决方案和专职项目协调，确保每个客户获得适合其工作流程和文化的精确支持和沟通方式。"
+      },
+      {
+        "title": "可持续实践",
+        "description": "致力于最大限度地减少环境影响，我们优化路线以减少排放，参与负责任的废物管理，并追求绿色认证和合作伙伴关系。"
+      }
+    ],
+    "pageIntro": "自1983年以来，夏莫利玛有限公司一直是孟加拉国综合项目物流和支持的先驱力量。凭借数十年无与伦比的经验，我们专门为能源、基础设施和工业领域提供复杂的解决方案。",
+    "missionStatement": "我们的使命是利用我们的专业车队、专家团队和深厚的本地知识，提供超越客户期望的安全、高效和可靠的项目支持服务。",
+    "values": [
+      {
+        "title": "安全第一",
+        "description": "在所有运营中对QHSE（质量、健康、安全、环境）的坚定承诺，确保零伤害。"
+      },
+      {
+        "title": "以客户为中心",
+        "description": "定制解决方案和专职项目管理，以满足独特的客户需求并培养长期合作伙伴关系。"
+      },
+      {
+        "title": "诚信与透明",
+        "description": "以最高道德标准运营，确保清晰的沟通和值得信赖的服务。"
+      },
+      {
+        "title": "创新",
+        "description": "持续采用最佳实践和技术以提高效率和解决问题。"
+      },
+      {
+        "title": "本地专业知识",
+        "description": "利用深厚的本地知识来应对复杂性并在孟加拉国提供最佳结果。"
+      }
+    ],
+    "leaders": [
+      "纳西姆·阿里（董事长）",
+      "沙希德·I·乔杜里（首席执行官）",
+      "马苏德·阿里（董事总经理）"
+    ],
+    "whatWeDo": [
+      "项目材料供应和物流",
+      "工程、建筑和安装服务",
+      "油气和电厂支持设备",
+      "使用自己的海运和清关许可证从母船到现场的重型运输",
+      "电信设备和服务集成",
+      "餐饮、客房服务和仓储支持",
+      "在所有港口和机场的船员处理和签到/签退",
+      "认证人力供应和管理",
+      "为国际和本地客户提供迎接服务"
+    ],
+    "organogramImage": null
+  },
+  "services": {
+    "list": [
+      {
+        "title": "设备租赁",
+        "slug": "equipment-rental"
+      },
+      {
+        "title": "门到门运输",
+        "slug": "door-to-door-transportation"
+      },
+      {
+        "title": "电厂物料装卸",
+        "slug": "power-plant-material-handling"
+      },
+      {
+        "title": "LNG项目",
+        "slug": "lng-project"
+      },
+      {
+        "title": "油气",
+        "slug": "oil-gas"
+      },
+      {
+        "title": "海运与清关",
+        "slug": "shipping-customs"
+      },
+      {
+        "title": "其他",
+        "slug": "others"
+      }
+    ],
+    "shippingCustomsBullets": [
+      "拥有所有主要海港、内陆港口和机场的清关许可证。",
+      "拥有所有主要海港、内陆港口和机场的海运许可证。",
+      "海运代理、货运代理和租船服务",
+      "项目货物进出口清关",
+      "从母船到码头和现场的驳船运营和码头装卸",
+      "仓储、包装和文件支持",
+      "基础设施开发项目的综合物流解决方案"
+    ]
+  },
+  "qhse": {
+    "goals": [
+      "通过质量服务和持续改进确保客户满意度。",
+      "防止污染并进行环保运营。",
+      "通过维护安全健康的工作环境来预防伤害和疾病。",
+      "让员工和分包商参与HSE咨询和参与。",
+      "准备和维护有效的应急安排和响应程序。",
+      "遵守所有适用的法律和法规要求。",
+      "持续培训人员以提高意识、能力和绩效。"
+    ],
+    "trainingImages": [
+      "assets/work-activities/10-1.jpg",
+      "assets/work-activities/11-1.jpg",
+      "assets/work-activities/12-1.jpg",
+      "assets/work-activities/IMG-20221117-WA0003.jpg",
+      "assets/work-activities/IMG-20221116-WA0000.jpg",
+      "assets/work-activities/20220928_102317.jpg",
+      "assets/work-activities/IMG-20210906-WA0015.jpg",
+      "assets/work-activities/IMG-20210906-WA0016.jpg",
+      "assets/work-activities/IMG-20210912-WA0027.jpg"
+    ],
+    "imsCertificateImage": "assets/images/iso_certificate.jpg",
+    "pageUrls": {
+      "imsCertificates": "assets/images/iso_certificate.jpg"
+    }
+  },
+  "contact": {
+    "operationOffice": {
+      "address": "Commercial Cove, House 56/C, Lift 6, Road 132, Gulshan 1, Dhaka 1212",
+      "phones": [
+        "+88-01913504850",
+        "+880-2-58810602",
+        "+880-2-58810635",
+        "+880-2-9563988",
+        "+880-2-9847609"
+      ],
+      "email": "info@shamolima.com",
+      "lat": "23.78143558578915",
+      "lng": "90.41777361211004"
+    },
+    "headOffice": {
+      "address": "Naseem Chamber, 3rd Floor 21, Dilkusha Commercial Area, Dhaka 1000",
+      "phones": [
+        "+880-2-9552676",
+        "+880-2-9550444",
+        "+880-2-9587492-93"
+      ],
+      "email": "info@shamolima.com",
+      "lat": "23.72701047635275",
+      "lng": "90.41815638327252"
+    },
+    "chattagramOffice": {
+      "address": "IIUC Tower, 6th Floor, 9, Agrabad C/A, Sk. Mujib Road, Chattogram 4100",
+      "phones": [
+        "+880-31-2522598"
+      ],
+      "email": "info@shamolima.com",
+      "lat": "22.323037653509534",
+      "lng": "91.81157671626481"
+    }
+  },
+  "gallery": {
+    "items": [
+      {
+        "caption": "用于天然气厂的水浴加热器，由150吨履带起重机装载到拖车上。",
+        "image": "assets/images/water_bath.jpg"
+      },
+      {
+        "caption": "80吨容量拖车将热交换器运送到现场。",
+        "image": "assets/images/heat_exchanger.jpeg"
+      },
+      {
+        "caption": "用拖车运输的项目设备。",
+        "image": "assets/images/project_equipment.jpg"
+      },
+      {
+        "caption": "车队停放场（移动式起重机和设备）。",
+        "image": "assets/images/fleet_yard.jpg"
+      },
+      {
+        "caption": "在项目现场使用SPMT处理发电机/变压器。",
+        "image": "assets/images/generator_transformer.jpg"
+      }
+    ]
+  },
+  "clients": [
+    "雪佛龙孟加拉",
+    "凯恩能源",
+    "哈里伯顿",
+    "尼科资源",
+    "威德福",
+    "KCA德塔格",
+    "钻石钻探",
+    "拉森特博洛",
+    "三井造船",
+    "英美烟草孟加拉",
+    "峰会电力",
+    "优尼科孟加拉",
+    "西门子孟加拉",
+    "东芝",
+    "德什能源",
+    "贝克西姆科",
+    "孟加拉特拉克",
+    "丸红株式会社"
+  ],
+  "recentProjects": [
+    {
+      "title": "雪佛龙主合同",
+      "description": "与雪佛龙签订的两项主合同，涵盖清关与运输以及重型设备租赁，为陆上作业提供长期项目支持。",
+      "location": "孟加拉国比比亚纳和莫尔维巴扎尔气田",
+      "keyEquipment": [
+        "拖车",
+        "起重机",
+        "叉车",
+        "主驱动车"
+      ]
+    },
+    {
+      "title": "400兆瓦比比亚纳III联合循环发电厂项目",
+      "description": "提供重型设备租赁，包括用于安装和物流支持的起重机、拖车和叉车。",
+      "location": "孟加拉国锡尔赫特",
+      "keyEquipment": [
+        "履带起重机",
+        "低平板拖车",
+        "叉车"
+      ]
+    },
+    {
+      "title": "335兆瓦和718兆瓦项目（锡迪尔贡杰与梅格纳加特）",
+      "description": "为多个EPC承包商长期租赁重型起重和运输设备。",
+      "location": "纳拉扬甘杰和梅格纳加特",
+      "keyEquipment": [
+        "拖车",
+        "起重机",
+        "叉车"
+      ]
+    },
+    {
+      "title": "孟加拉特拉克100兆瓦发电项目",
+      "description": "使用本地重型起重方法处理从母船到码头的卸货、准备、安置和8台220吨发动机及配件的安装。",
+      "location": "孟加拉国杰索尔诺阿帕拉",
+      "keyEquipment": [
+        "龙门起重机",
+        "驳船",
+        "多轴拖车"
+      ]
+    },
+    {
+      "title": "EPV 115兆瓦项目 塔库尔冈",
+      "description": "管理驳船和公路运输物流，使用龙门起重机和滑动系统组装和放置超过900吨的机械设备。",
+      "location": "孟加拉国塔库尔冈",
+      "keyEquipment": [
+        "驳船",
+        "滑动系统",
+        "龙门起重机"
+      ]
+    }
+  ],
+  "assets": {
+    "logo": "assets/logo/shamolima.png",
+    "darkLogo": "assets/logo/logo_dark.png",
+    "imsBadge": "assets/images/ims_badge.jpg",
+    "opcaCertificate": "assets/images/opca.jpg",
+    "isoCertificate": "assets/images/iso_certificate.jpg"
+  }
+}

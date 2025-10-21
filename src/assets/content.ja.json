@@ -1,0 +1,536 @@
+{
+  "site": {
+    "name": "シャモリマ",
+    "baseUrl": "https://shamolima.com/"
+  },
+  "ui": {
+    "nav": {
+      "home": "ホーム",
+      "services": "サービス",
+      "about": "会社情報",
+      "qhse": "QHSE",
+      "contact": "お問い合わせ",
+      "workActivities": "作業実績",
+      "fleet": "車両・機材",
+      "tracking": "追跡",
+      "quote": "見積依頼"
+    },
+    "buttons": {
+      "learnMore": "詳しく見る",
+      "viewAll": "すべて表示",
+      "contactUs": "お問い合わせ",
+      "getQuote": "見積依頼",
+      "viewGallery": "ギャラリーを見る",
+      "readMore": "続きを読む",
+      "submitQuote": "見積を送信",
+      "trackShipment": "配送を追跡",
+      "startProjectBrief": "案件ブリーフを開始",
+      "exploreServices": "サービスを見る",
+      "callProjectDesk": "プロジェクト窓口に電話",
+      "viewServiceCatalogue": "サービス一覧を見る",
+      "submitRequest": "リクエストを送信",
+      "sendMessage": "メッセージを送信",
+      "explorCapabilities": "提供能力を見る",
+      "contactOperations": "オペレーションへ連絡"
+    },
+    "common": {
+      "email": "メール",
+      "phone": "電話",
+      "address": "住所",
+      "location": "所在地",
+      "name": "氏名",
+      "message": "メッセージ",
+      "send": "送信",
+      "close": "閉じる",
+      "next": "次へ",
+      "previous": "前へ",
+      "loading": "読み込み中...",
+      "language": "言語"
+    },
+    "footer": {
+      "tagline": "プロの物流とプロジェクト支援業務、QHSE チームと共に安心・安全のオペレーションを提供します。",
+      "callUs": "お電話",
+      "emailUs": "メール",
+      "company": "会社",
+      "support": "サポート",
+      "services": "サービス",
+      "getQuote": "見積依頼",
+      "allRightsReserved": "All rights reserved"
+    },
+    "pages": {
+      "workActivities": {
+        "hero": {
+          "title": "フィールドでの統合ロジスティクス",
+          "lede": "すべての移動は個別設計です。可行性調査、コリドー整備、リフト計画、仮設工事、最終アラインメントまで。自社機材と自社クルーで、貨物の据付完了まで伴走します。"
+        },
+        "tags": [
+          "重量物玉掛け・組立",
+          "マルチモーダル輸送",
+          "ルートインテリジェンス",
+          "EPCパートナーシップ"
+        ],
+        "stats": [
+          { "value": "25+", "label": "バングラデシュでの重量物リフト・輸送のリーダー年数", "detail": "港湾、製油所、LNG、送電網などでの豊富な実績。" },
+          { "value": "420+", "label": "実行した複雑なリギング・輸送件数", "detail": "クローラークレーン、ガントリー、SPMT、油圧トレーラを動員。" },
+          { "value": "1,200 km+", "label": "実施した経路調査・コリドー整備距離", "detail": "道路補強、バージ検討、マルチモーダル設計を内製。" },
+          { "value": "24/7", "label": "現場監督・整備のカバレッジ", "detail": "整備士、リガー、コンプライアンス担当がローテーションで支援。" }
+        ],
+        "focusAreas": [
+          { "badge": "01", "title": "事前調査・インテリジェンス", "copy": "可行性、コリドー評価、デジタルツインで動員前のリスクを低減。" },
+          { "badge": "02", "title": "リフトエンジニアリング", "copy": "Autodeskリフト計画、リギング検討、SPMT計算を有資格エンジニアが承認。" },
+          { "badge": "03", "title": "統合輸送", "copy": "重量トレーラ、バージ、ヤード、通関を一体でオーケストレーション。" },
+          { "badge": "04", "title": "現場実行", "copy": "据付・アライメント・試運転まで、現場常駐でハンドオーバーを支援。" }
+        ],
+        "milestones": [
+          { "title": "ウォーターバスヒーター据付", "detail": "150Tクローラーによる据付・接続作業（ナラヤンガンジ）。" },
+          { "title": "熱交換器輸送", "detail": "多軸トレーラと護送でドアツードア搬送（80T）。" },
+          { "title": "変圧器移設", "detail": "SPMTロールオフと精密据付（北部変電所増強）。" },
+          { "title": "LNGターミナルモジュール", "detail": "バージ荷役、ヤード中継、最終アライメントまでの複合輸送。" }
+        ],
+        "phases": [
+          { "title": "スコープ策定・設計", "copy": "可行性、コリドー情報、リフト検討を貨物に応じて設計します。", "points": ["概念検討・リスク登録・ステークホルダー調整", "重要リフトの図面・荷重計算・安定検討", "許認可計画とコリドー整備計画の当局調整"] },
+          { "title": "モビライズ・準備", "copy": "機材・人員・予備品の配置と、許認可・仮設・HSE訓練を実施。", "points": ["輸送許可、港湾ハンドリング、護送手配", "仮設橋、ストゥーリング、鞍・鋼材の製作", "TBM、再教育、緊急対応訓練"] },
+          { "title": "実行・監視", "copy": "ダッシュボード、テレメトリ、HSEチェックで統制して実行。", "points": ["リフトディレクターと監督が無線で統括", "テレメトリ、気象監視、荷重モニタリング24/7", "可視化とKPIでクライアントへ報告"] },
+          { "title": "クローズアウト・引渡し", "copy": "復旧、文書化、次工程への備えまで確実に完了。", "points": ["As-built資料、写真記録、QA提出", "経路復旧、第三者検査、パンチリスト解消", "撤収計画と次スコープの準備"] }
+        ],
+        "recentPlaysHeading": "最近の実績",
+        "planningCtaTitle": "重要輸送をご計画ですか？",
+        "planningCtaTextPrefix": "プロジェクトデスクへメール："
+      },
+      "services": {
+        "hero": { "kicker": "サービス", "title": "複雑なプロジェクトのためのエンドツーエンド物流", "description": "重量物輸送や起重機作業から通関・港湾、現場動員まで、Shamolimaはバングラデシュ全域で一貫品質を提供します。" },
+        "tags": { "heavyHaulage": "重量物輸送", "spmtRigging": "SPMT・リギング", "customsPorts": "通関・港湾", "projectSupport": "プロジェクト支援" },
+        "actions": { "planMove": "計画を立てる", "talkExpert": "専門家に相談" },
+        "stats": {
+          "pillars": { "label": "サービス柱", "detail": "レンタル・輸送・揚重・通関・現場支援などを単一ライセンスで提供。" },
+          "crawlerCapacity": { "label": "起重機能力", "detail": "クレーン、SPMT、油圧トレーラのフリートで重要リフトに対応。" },
+          "operationsDesks": { "label": "運用デスク", "detail": "港湾・河川ターミナル・現場を横断したライブ連携。" }
+        },
+        "capabilities": { "kicker": "ケイパビリティ", "title": "分野を選んで範囲と実績を確認", "lede": "各サービスは事例・ギャラリー・典型的な実行範囲にリンクします。", "cardCopy": "範囲・ギャラリー・成果物を見る" },
+        "whyItMatters": { "kicker": "なぜ重要か", "title": "統合実行で複雑な移送を確実に", "lede": "許認可、機材動員、人員、レポーティング、クローズアウトまで一つの窓口で管理し、重要マイルストーンに集中できます。" },
+        "included": {
+          "heading": "すべての案件に含まれるもの",
+          "routeLift": { "title": "ルート・リフトエンジニアリング", "detail": "Autodeskリフト計画、安定性検討、コリドー整備レポート。" },
+          "certified": { "title": "有資格クルー・機材", "detail": "オペレーター、リガー、護送、整備チームをローテーション配置。" },
+          "reporting": { "title": "24/7レポーティング", "detail": "進捗ダッシュボード、HSEトラッキング、リアルタイムコミュニケーション。" }
+        },
+        "bundled": { "title": "バンドル提案は必要ですか？", "text": "輸送、揚重、通関、現場支援を単一契約でまとめられます。" },
+        "getStarted": { "kicker": "はじめに", "title": "スコープ共有で迅速な動員計画", "lede": "貨物寸法、集荷・配送地点、タイムラインをお知らせください。推奨機材、ルート注意点、商流概要を返答します。", "ctas": { "requestQuote": "見積を依頼", "talkOps": "オペレーションに連絡" } }
+      },
+      "fleet": {
+        "hero": { "kicker": "車両", "title": "あらゆる輸送に最適な車両", "description": "市内集配送からカバー付き大型まで、自社車両で安全・効率的に輸送。重量揚重・リギングとも連携します。" },
+        "tags": { "coveredDeck": "カバー付きデッキ", "permitReady": "許可取得済み", "gpsTracked": "GPS追跡" },
+        "actions": { "requestAvailability": "空車状況を問い合わせる", "exploreEquipmentRental": "機材レンタルを見る" },
+        "stats": {
+          "payloadRange": { "label": "積載レンジ", "detail": "プロジェクト貨物・精密機器・ラストワンマイルに最適化。" },
+          "coverage": { "label": "カバレッジ", "detail": "ダッカ、チッタゴン、クルナ、モングラなど主要工業コリドー。" }
+        },
+        "catalogue": { "kicker": "車両カタログ", "title": "標準荷台サイズと能力", "lede": "自社整備で常時稼働。護送・リギング・一時保管と組み合わせ可能。" },
+        "trucks": [
+          { "name": "Mini (7 ft)",    "size": "7×5 ft",   "capacityTons": 1.0 },
+          { "name": "Pickup (8 ft)",  "size": "8×5 ft",   "capacityTons": 1.5 },
+          { "name": "Small (10 ft)",  "size": "10×6 ft",  "capacityTons": 2.0 },
+          { "name": "Medium (14 ft)", "size": "14×7 ft",  "capacityTons": 3.0 },
+          { "name": "Large (17 ft)",  "size": "17×7.5 ft","capacityTons": 5.0 },
+          { "name": "Covered (20 ft)","size": "20×8 ft",  "capacityTons": 8.0 }
+        ],
+        "needSpecialised": { "kicker": "特殊なご要件ですか？", "title": "ピックアップ・カバー車・重量トレーラを一括手配", "lede": "フォークリフト、クレーン、仮置き、護送、人員手配まで、シャットダウンや大型案件に最適化。" },
+        "dispatch": {
+          "heading": "ディスパッチに相談",
+          "dailyAvailability": { "title": "日次アベイラビリティ", "detail": "ダッカ、ガジプール、ナラヤンガンジ、港湾での準備車両を確認。" },
+          "routeAdvisory": { "title": "ルート助言", "detail": "制限・代替コリドー・集結ヤードを提案。" },
+          "bundledStaffing": { "title": "人員バンドル", "detail": "ドライバー、リガー、オペレーター、監督を一括アサイン。" },
+          "cta": "ディスパッチと話す"
+        }
+      },
+      "qhse": {
+        "hero": { "kicker": "QHSE", "title": "品質・安全・環境を妥協なく", "description": "Shamolimaの統合マネジメントシステムはゼロハームと規律ある実行、継続的改善を推進します。" },
+        "tags": { "iso": "ISO認証", "training": "訓練", "audits": "監査", "compliance": "コンプライアンス" },
+        "actions": { "viewGoals": "QHSE目標を見る", "trainingFramework": "訓練フレームワーク" },
+        "stats": {
+          "zero": { "label": "ゼロ事故の目標", "detail": "ツールボックストーク、監査、ストップワーク権限を徹底。" },
+          "ims": { "label": "統合マネジメントシステム", "detail": "品質・安全・環境をカバーするISOベースのプロセス。" },
+          "monitoring": { "label": "モニタリング", "detail": "許認可、機材状態、気象、コリドーリスクをライブ監視。" }
+        },
+        "commitments": { "kicker": "私たちのコミットメント", "title": "あらゆる動員に品質と安全を組み込む" },
+        "training": { "kicker": "トレーニング実践", "title": "ハンズオン演習と再教育" },
+        "certifications": { "kicker": "認証", "title": "統合マネジメントの認証と会員資格", "lede": "IMS認証と業界会員資格により、安全・環境・品質への厳格さを証明。" },
+        "documents": {
+          "heading": "主要ドキュメント",
+          "ims": { "title": "IMS証明書", "detail": "QHSEをカバーする最新のISO認証をダウンロード。" },
+          "matrix": { "title": "トレーニングマトリクス", "detail": "職務別の能力・再教育スケジュール。" },
+          "erp": { "title": "緊急対応計画", "detail": "エスカレーション経路と24/7の連絡先。" },
+          "downloadIMS": "IMS証明書をダウンロード"
+        }
+      },
+      "logistics": {
+        "hero": { "kicker": "ドキュメント", "title": "物流ケイパビリティ", "description": "当社の物流ドキュメントとサービス能力を確認できます。" },
+        "viewer": { "loading": "PDFを読み込み中…", "prev": "前へ", "next": "次へ" }
+      },
+      "serviceSingle": {
+        "heroKicker": "サービス能力",
+        "heroLedePrefix": "Shamolimaのアプローチ、参照事例、成果物をご紹介します。弊社の",
+        "heroLedeSuffix": "プロジェクトのポートフォリオから抜粋。",
+        "heroTags": { "engineering": "エンジニアリング", "execution": "実行", "support": "支援" },
+        "backToServices": "サービス一覧へ戻る",
+        "stats": {
+          "fullScope": { "value": "フルスコープ", "label": "詳細な成果物", "detail": "計画・実行・支援ノートを過去案件から抜粋。" },
+          "visualRefs": { "value": "ビジュアルリファレンス", "label": "プロジェクト画像", "detail": "動員・重量物揚重・現場作業の高解像度写真。" }
+        },
+        "sidebar": {
+          "onThisPage": "このページの内容",
+          "overview": { "title": "概要", "detail": "サービスの位置付けと成果。" },
+          "gallery": { "title": "ギャラリー", "detail": "プロジェクトリファレンス。" },
+          "scope": { "title": "スコープ", "detail": "シッピング・通関のハイライト。" },
+          "cta": "計画を依頼"
+        },
+        "overview": {
+          "title": "サービス概要",
+          "copyPrefix": "弊社の",
+          "copySuffix": "能力を事例・画像・範囲でご紹介。以下のギャラリーで動員の様子を共有いただけます。",
+          "tags": { "planning": "計画", "execution": "実行", "support": "支援" }
+        },
+        "gallery": { "title": "プロジェクトギャラリー", "subtitle": "完了済み動員からのビジュアル", "note": "画像は参考用です" },
+        "scope": { "title": "スコープ / ハイライト" },
+        "insight": {
+          "heading": "最適化された実行計画が必要ですか？",
+          "combine": { "title": "サービスを組み合わせ", "detail": "輸送・揚重・通関・現場チームを一括ブリーフ。" },
+          "share": { "title": "スコープを共有", "detail": "貨物・ルートウィンドウ・制約を共有いただければ迅速に計画します。" },
+          "cta": "動員計画を依頼"
+        }
+      },
+      "home": {
+        "kicker": "シャモリマ・リミテッド",
+        "heroButtons": {
+          "startBrief": "案件ブリーフを開始",
+          "exploreServices": "サービスを見る"
+        },
+        "stats": {
+          "yearsExperience": { "value": "40+", "label": "操業年数", "detail": "1983年から物流を牽引。" },
+          "projectsCompleted": { "value": "150万+", "label": "輸送トン数", "detail": "多様で複雑な案件を遂行。" },
+          "fleetSize": { "value": "200+", "label": "保有機材", "detail": "クレーン、トレーラー、バージ等。" },
+          "teamSize": { "value": "99%", "label": "安全達成率", "detail": "ゼロハームにコミット。" }
+        },
+        "sections": {
+          "integratedLogistics": { "kicker": "統合プロジェクト物流", "title": "エネルギー・インフラ・産業向けにエンドツーエンドで支援" },
+          "whyChoose": "シャモリマが選ばれる理由",
+          "video": { "kicker": "私たちのストーリーを見る", "title": "シャモリマの活動", "description": "バングラデシュ全土で統合ロジスティクスソリューションを提供する様子をご覧ください — 重量物輸送から最終試運転まで。" },
+          "spotlight": { "kicker": "スポットライト", "title": "現場で今まさに実行中の作業", "description": "バングラデシュ各地での重量物輸送、揚重、現場支援の一部をご紹介。シャモリマの統合アプローチを体現した事例です。", "badge": "特集" },
+          "clients": { "kicker": "取引先", "title": "オペレーター・EPCからの信頼" },
+          "howWeDeliver": { "kicker": "提供プロセス", "title": "ブリーフから引き渡しまでのライフサイクル支援" },
+          "recentProjects": { "kicker": "最近の案件", "title": "主なリファレンス", "badge": "RP" },
+          "gallery": { "kicker": "現場ギャラリー", "title": "ヤードと作業現場のハイライト", "description": "マルチモーダル輸送、エンジニアードリフト、据付支援の様子を抜粋で掲載。", "note": "写真は最近の作業実績から抜粋しています。" }
+        },
+        "certifications": "認証・会員",
+        "needExpertise": "動員の専門支援が必要ですか？",
+        "emailPrefix": "メール"
+      },
+      "quote": {
+        "kicker": "見積依頼",
+        "title": "迅速な動員計画のため貨物情報をご共有ください",
+        "description": "推奨機材、許可・警 escort、リードタイム、費用目安を数時間内にご回答します。ルート・スケジュール・制約条件をご提示ください。",
+        "tags": { "heavyLift": "重量物揚重", "multimodal": "複合輸送", "customsPorts": "通関・港湾" },
+        "buttons": { "callDesk": "プロジェクト窓口に電話", "viewCatalogue": "サービス一覧を見る" },
+        "stats": {
+          "responseTime": { "value": "2h", "label": "平均応答時間", "detail": "ダッカとチッタゴンの専用デスクが迅速に対応。" },
+          "coverage": { "value": "360°", "label": "対応範囲", "detail": "ルート調査、揚重計画、通関、エスコート、現場実行まで。" }
+        },
+        "form": {
+          "namePlaceholder": "お名前",
+          "emailPlaceholder": "メール",
+          "phonePlaceholder": "電話",
+          "pickupPlaceholder": "引取場所",
+          "dropoffPlaceholder": "納入場所",
+          "datePlaceholder": "希望日",
+          "cargoPlaceholder": "貨物（例：10ft スキッド、12t など）",
+          "notesPlaceholder": "備考 / 制約条件",
+          "submitButton": "リクエストを送信",
+          "disclaimer": "送信により、当社のデータ取扱いと回答ポリシーに同意したものとみなします。"
+        },
+        "howItWorks": {
+          "title": "手続きの流れ",
+          "preferCall": "お電話をご希望ですか？",
+          "reachText": "プロジェクト窓口は <a class=\"text-brand hover:underline\" href=\"tel:+88029562676\">+880-2-9552676</a> または <a class=\"text-brand hover:underline\" href=\"mailto:info@shamolima.com\">info@shamolima.com</a> まで。"
+        },
+        "afterSubmission": {
+          "kicker": "送信後のご案内",
+          "title": "シャモリマからのご提供内容",
+          "description": "機材、許可、段取り、QHSE マイルストーン、請求等を含む動員計画を発行し、専任コーディネーターが実行まで伴走します。",
+          "deliverables": {
+            "title": "提供ドキュメント",
+            "route": { "title": "ルート・揚重評価", "detail": "予備エンジニアリング、コリドーノート、許可取得のロードマップ。" },
+            "equipment": { "title": "機材編成", "detail": "貨物に合わせたフリート・リギング・人員マトリクス。" },
+            "timeline": { "title": "実行タイムライン", "detail": "動員・輸送・現場作業・撤収までの工程表。" }
+          }
+        },
+        "howItWorksSteps": [
+          { "title": "ルート情報の共有", "text": "引取・納入・時間窓・制約をお知らせください。" },
+          { "title": "計画立案", "text": "機材、許可、エスコート、安全計画を策定。" },
+          { "title": "納入", "text": "ライブ更新と証憑提出。" }
+        ]
+      },
+      "contact": {
+        "kicker": "お問い合わせ",
+        "title": "次の動員に向けて、すぐに支援します",
+        "description": "計画、機材の空き、配送状況など、いつでもオペレーションデスクへ。主要港・河川ターミナル・工業地帯に迅速動員。",
+        "tags": { "opsDesk": "企業本社", "dhakaHQ": "ダッカ本社", "chattagramOffice": "チッタゴン支店" },
+        "stats": {
+          "locations": { "value": "3", "label": "サービス拠点", "detail": "本社、オペレーション、チッタゴンなど。" },
+          "professionals": { "value": "60+", "label": "プロジェクト人員", "detail": "監督、計画、許可、コーディネーターが常時待機。" },
+          "statusUpdates": { "value": "Live", "label": "ステータス更新", "detail": "ダッシュボード、WhatsApp 更新、日次レポート。" }
+        },
+        "form": {
+          "namePlaceholder": "お名前",
+          "emailPlaceholder": "メール",
+          "phonePlaceholder": "電話（任意）",
+          "subjectPlaceholder": "件名",
+          "messagePlaceholder": "お問い合わせ内容",
+          "submitButton": "メッセージを送信",
+          "responseNote": "営業時間内にご返信します。"
+        },
+        "visitUs": { "kicker": "アクセス", "title": "ダッカ／チッタゴンの各拠点" }
+      },
+      "tracking": {
+        "kicker": "追跡",
+        "title": "配送をリアルタイムで追跡",
+        "description": "シャモリマの参照番号を入力すると最新ステータス、チェックポイント、到着見込みを表示。追加情報は 24/7 のオペレーションデスクへ。",
+        "tags": { "desk": "24/7 デスク", "alerts": "SMS / WhatsApp 通知", "visibility": "ルート可視化" },
+        "stats": {
+          "status": { "value": "Live", "label": "更新状況", "detail": "オペレーション管制から直接取得。" },
+          "hotline": { "value": "ホットライン", "label": "+880-2-9552676", "detail": "当番コーディネーターが優先対応。" }
+        },
+        "form": {
+          "trackingIdPlaceholder": "追跡ID",
+          "submitButton": "配送を追跡",
+          "helpText": "参照番号は予約確認メールをご確認いただくか、オペレーションへお問い合わせください。"
+        },
+        "assistance": {
+          "title": "追加サポート",
+          "email": { "title": "メール更新", "detail": "ルートスナップショットやPODの提供：opsdesk@shamolima.com" },
+          "whatsapp": { "title": "WhatsApp 通知", "detail": "自動チェックポイントやETA変更を配信。" },
+          "exception": { "title": "例外対応", "detail": "重要貨物はスーパーバイザーへ即時エスカレーション。" }
+        },
+        "dashboards": {
+          "kicker": "プロジェクトダッシュボード",
+          "title": "大型動員向けに完全可視化を提供",
+          "description": "GPS、許可状況、クルー名簿、現場準備度などを統合したダッシュボードを提供します。",
+          "cta": "案件専用のトラッキングポータルについてお問い合わせください。"
+        }
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "プロジェクト支援物流と輸送",
+      "subhead": "機材レンタル、石油・ガス支援、海運・通関までエンドツーエンドで対応",
+      "image": "assets/images/water_bath.jpg"
+    },
+    "heroTags": ["プロジェクト支援", "重量物輸送", "海運・通関", "1983年創業"],
+    "stats": [
+      { "value": "40+", "label": "操業年数", "detail": "1983年から物流を牽引。" },
+      { "value": "200+", "label": "保有機材", "detail": "クレーン、トレーラー、バージ等。" },
+      { "value": "150万+", "label": "輸送トン数", "detail": "多様で複雑な案件を遂行。" },
+      { "value": "99%", "label": "安全達成率", "detail": "ゼロハームにコミット。" }
+    ],
+    "aboutSnippet": "シャモリマは1983年の創業以来、バングラデシュで統合プロジェクト物流と現場支援を提供してきました。物流、エンジニアリング、資材支援に強みを持ち、石油・ガス、電力、インフラなど幅広い産業に対応します。",
+    "focusAreas": [
+      { "badge": "Fleet", "title": "機材レンタル", "copy": "認定クレーン、トレーラー、フォークリフト等、幅広い重量機材を提供。" },
+      { "badge": "Sectors", "title": "石油・ガス・電力", "copy": "リグや掘削機器の移送などエネルギー分野の実績が豊富。" },
+      { "badge": "Logistics", "title": "海運・通関", "copy": "海運、フォワーディング、通関をインフラ案件で多数実行。" },
+      { "badge": "Support", "title": "現場支援", "copy": "倉庫、クルー支援、認定人員で現場を円滑化。" }
+    ],
+    "highlights": [
+      { "title": "全国対応", "detail": "港湾・河川ターミナル・工業地帯にヤードを展開。" },
+      { "title": "エネルギー案件", "detail": "LNG・送電網・精製所の案件を一貫で実行。" },
+      { "title": "フリート即応", "detail": "多軸トレーラー、クレーン、支援機材を自社整備。" },
+      { "title": "信頼のパートナー", "detail": "EPC・OEM・オペレーターに選ばれる実行力。" }
+    ],
+    "phases": [
+      { "title": "計画・エンジニアリング", "copy": "範囲把握、実現可能性調査、堅牢な運用計画を策定。", "points": ["ルート・現場調査", "輸送・揚重設計", "リスクアセスメント・手順書"] },
+      { "title": "動員・実行", "copy": "経験豊富な現場チームが最高水準の安全で計画を遂行。", "points": ["機材展開", "現場監督", "進捗トラッキング"] },
+      { "title": "管理・連携", "copy": "単一窓口のPMが連絡と調整を一元化。", "points": ["通関・港湾手続き", "ステークホルダー調整", "コンプライアンス・報告"] },
+      { "title": "完了・引渡し", "copy": "ドキュメントを揃え、目標到達を確認して引渡し。", "points": ["機材撤収", "最終レポート", "クライアント承認"] }
+    ],
+    "certificates": [],
+    "testimonialsImages": []
+  },
+  "about": {
+    "hero": {
+      "title": "グローバル貿易と物流の確かなパートナー",
+      "description": "シャモリマは最先端のテクノロジーと数十年の経験を掛け合わせ、通関・フォワーディング・物流をシームレスに提供します。",
+      "backgroundImage": "assets/images/about_us.png"
+    },
+    "timeline": [
+      { "year": "1997", "title": "拡大", "description": "エネルギー分野の需要増に合わせフリートとサービスを拡充。" },
+      { "year": "2010", "title": "ISO 認証", "description": "品質マネジメントでISO認証を取得。" },
+      { "year": "2017", "title": "デジタル化", "description": "高度な追跡と管理システムを導入。" },
+      { "year": "2019", "title": "地域拡大", "description": "バングラデシュ各地に展開。" },
+      { "year": "2024", "title": "業界リーダー", "description": "プロジェクト物流の主要企業として認知。" }
+    ],
+    "customsBrokerage": {
+      "title": "通関・フォワーディング",
+      "tagline": "SEAMLESS BORDERS. SEAMLESS LOGISTICS.",
+      "bullets": [
+        "通関手続きとコンプライアンス",
+        "フォワーディング（海・空・内陸）",
+        "輸出入書類と分類",
+        "バージ運用と桟橋ハンドリング",
+        "倉庫・配送",
+        "リアルタイム追跡"
+      ]
+    },
+    "comprehensiveServices": [
+      { "title": "産業知見", "description": "エネルギー・インフラ・通信・産業分野の重量貨物を長年取り扱い。" },
+      { "title": "分類・タリフ", "description": "HS コードに沿った正確な分類で法令順守を支援。" },
+      { "title": "輸出入通関管理", "description": "書類、申告、納付、各種規制への準拠まで一気通貫で対応。" },
+      { "title": "事後処理支援", "description": "精算後の監査、返金、訂正、異議申し立てまで包括支援。" },
+      { "title": "規制遵守・リスク管理", "description": "貿易規則を継続監視し、遅延最小化と円滑な国境通過を実現。" }
+    ],
+    "freightForwarding": {
+      "title": "フォワーディングのエキスパート",
+      "description": "プロジェクト貨物に特化した高品質ロジスティクスをモード横断で提供。",
+      "services": [
+        { "title": "マルチモーダル輸送", "description": "海・空・内陸水路・道路を組み合わせ、母船から最終地点まで一貫輸送。" },
+        { "title": "貨物ハンドリング", "description": "重量・大型・精密貨物を訓練チームと専用機材で安全に取り扱い。" },
+        { "title": "スペース確保・交渉", "description": "キャリアとの長年の関係性で有利な運賃と優先枠を確保。" },
+        { "title": "トラッキング・連絡", "description": "入港、港湾処理、通関、陸送まで定期更新で透明性と安心を提供。" },
+        { "title": "フリート・輸送", "description": "油圧トレーラー、低床車、フォークリフト、クレーン、バージを保有・運用。" }
+      ]
+    },
+    "advantages": [
+      { "title": "有資格プロフェッショナル", "description": "通関・フォワーディングの有資格者と業界の専門家が対応。" },
+      { "title": "付加価値サービス", "description": "倉庫、梱包、保険手配、混載などでサプライチェーンを最適化。" },
+      { "title": "即応チーム", "description": "24/7 体制と専任担当で緊急案件にも柔軟対応。" },
+      { "title": "先端テクノロジー", "description": "TMS・デジタル追跡・分析で遅延予測と最適化を実現。" },
+      { "title": "効率的なプロセス", "description": "SOPと承認済みテンプレートで書類と手続を簡素化。" },
+      { "title": "貿易コンプライアンス", "description": "制裁・関税・規制対応をプロアクティブに支援。" },
+      { "title": "顧客志向", "description": "個別に最適化したコーディネーションとコミュニケーションを提供。" },
+      { "title": "サステナブル", "description": "排出削減・廃棄物管理・グリーン認証の追求。" }
+    ],
+    "leaders": ["Nasim Ali (Chairman)", "Shahid I Chowdhury (CEO)", "Masood Ali (MD)"],
+    "leadersTitle": "取締役会",
+    "leadersDescription": "オペレーション、QHSE、顧客成功を統括する経営陣。",
+    "advantagesTitle": "私たちのコミットメントと優位性",
+    "advantagesSubheading": "通関・フォワーディングのバリューチェーン全体で卓越した価値を提供します",
+    "footerCta": {
+      "title": "国際物流での競争力を強化。経験豊富で先進的な通関・フォワーディングのシャモリマにお任せください。",
+      "subtitle": "ご相談やお見積はお気軽にお問い合わせください。",
+      "buttonLabel": "お問い合わせ"
+    },
+    "whatWeDo": [
+      "プロジェクト資材の供給・物流",
+      "エンジニアリング・建設・据付",
+      "石油・ガス・発電プラント支援機材",
+      "自社の海運・通関ライセンスによる母船から現場までの重量輸送",
+      "通信機器とサービス統合",
+      "ケータリング・清掃・倉庫支援",
+      "港・空港でのクルー対応（搭乗・下船）",
+      "認定人員の提供・管理",
+      "海外・国内顧客向けミート＆グリート"
+    ],
+    "organogramImage": null
+  },
+  "services": {
+    "list": [
+      { "title": "機材レンタル", "slug": "equipment-rental" },
+      { "title": "ドア・ツー・ドア輸送", "slug": "door-to-door-transportation" },
+      { "title": "発電プラント資材ハンドリング", "slug": "power-plant-material-handling" },
+      { "title": "LNG プロジェクト", "slug": "lng-project" },
+      { "title": "石油・ガス", "slug": "oil-gas" },
+      { "title": "海運・通関", "slug": "shipping-customs" },
+      { "title": "その他", "slug": "others" }
+    ],
+    "shippingCustomsBullets": [
+      "主要港・内陸港・空港の通関クリアランスライセンスを保有",
+      "主要港・内陸港・空港の海運ライセンスを保有",
+      "海運代理店、フォワーディング、チャータリング",
+      "プロジェクト貨物の輸出入通関",
+      "母船から桟橋・現場までのバージ運用と桟橋作業",
+      "倉庫・梱包・書類サポート",
+      "インフラ開発向け統合物流ソリューション"
+    ]
+  },
+  "qhse": {
+    "goals": [
+      "品質と継続的改善で顧客満足を実現",
+      "環境負荷の低減と環境に優しい運用",
+      "安全で健康的な職場を維持し傷病を防止",
+      "従業員・協力会社のHSE参画",
+      "有効な緊急対応体制の整備・維持",
+      "適用法令・規制の遵守",
+      "継続的な教育訓練で能力と成果を向上"
+    ],
+    "trainingImages": [
+      "assets/work-activities/10-1.jpg",
+      "assets/work-activities/11-1.jpg",
+      "assets/work-activities/12-1.jpg",
+      "assets/work-activities/IMG-20221117-WA0003.jpg",
+      "assets/work-activities/IMG-20221116-WA0000.jpg",
+      "assets/work-activities/20220928_102317.jpg",
+      "assets/work-activities/IMG-20210906-WA0015.jpg",
+      "assets/work-activities/IMG-20210906-WA0016.jpg",
+      "assets/work-activities/IMG-20210912-WA0027.jpg"
+    ],
+    "imsCertificateImage": "assets/images/iso_certificate.jpg",
+    "pageUrls": { "imsCertificates": "assets/images/iso_certificate.jpg" }
+  },
+  "contact": {
+    "operationOffice": {
+      "address": "Commercial Cove,House 56/C, Lift 6, Road 132,Gulshan 1, Dhaka 1212",
+      "phones": ["+88-01913504850", "+880-2-58810602", "+880-2-58810635", "+880-2-9563988", "+880-2-9847609"],
+      "email": "info@shamolima.com",
+      "lat": 23.78143558578915,
+      "lng": 90.41777361211004
+    },
+    "headOffice": {
+      "address": "Naseem Chamber, 3rd Floor 21, Dilkusha Commercial Area,Dhaka 1000",
+      "phones": ["+880-2-9552676", "+880-2-9550444", "+880-2-9587492-93"],
+      "email": "info@shamolima.com",
+      "lat": 23.72701047635275,
+      "lng": 90.41815638327252
+    },
+    "chattagramOffice": {
+      "address": "IIUC Tower, 6th Floor,9, Agrabad C/A, Sk. Mujib Road,Chattogram 4100",
+      "phones": ["+880-31-2522598"],
+      "email": "info@shamolima.com",
+      "lat": 22.323037653509534,
+      "lng": 91.81157671626481
+    }
+  },
+  "gallery": {
+    "items": [
+      { "caption": "ガスプラント向けウォーターバスヒーターを150tクローラーで積載", "image": "assets/images/water_bath.jpg" },
+      { "caption": "80t級トレーラーで熱交換器を現場へ輸送", "image": "assets/images/heat_exchanger.jpeg" },
+      { "caption": "プロジェクト機材のトレーラー輸送", "image": "assets/images/project_equipment.jpg" },
+      { "caption": "フリートヤード（クレーン・機材）", "image": "assets/images/fleet_yard.jpg" },
+      { "caption": "発電機／変圧器のSPMT据付作業", "image": "assets/images/generator_transformer.jpg" }
+    ]
+  },
+  "clients": [
+    "Chevron Bangladesh", "Cairn Energy", "Halliburton", "Niko Resources", "Weatherford",
+    "KCA Deutag", "Diamond Drilling", "Larsen & Toubro", "Mitsui E&S", "BAT Bangladesh",
+    "Summit Power", "UNOCAL Bangladesh", "Siemens Bangladesh", "Toshiba", "Desh Energy",
+    "Beximco", "Bangla Trac", "Marubeni Corporation"
+  ],
+  "recentProjects": [
+    {
+      "title": "シェブロン マスター契約",
+      "description": "通関・輸送、重量機材レンタルの長期契約を締結し、陸上オペレーションを支援。",
+      "location": "ビビヤナ／モウルビバザール（バングラデシュ）",
+      "keyEquipment": ["トレーラー", "クレーン", "フォークリフト", "プライムムーバー"]
+    },
+    {
+      "title": "400MW ビビヤナIII コンバインドサイクル発電所",
+      "description": "クレーン、トレーラー、フォークリフト等の重量機材レンタルと据付・物流支援を提供。",
+      "location": "シレット（バングラデシュ）",
+      "keyEquipment": ["クローラークレーン", "ローベッドトレーラー", "フォークリフト"]
+    }
+  ],
+  "assets": {
+    "logo": "assets/logo/shamolima.png",
+    "darkLogo": "assets/logo/logo_dark.png",
+    "imsBadge": "assets/images/ims_badge.jpg",
+    "opcaCertificate": "assets/images/opca.jpg",
+    "isoCertificate": "assets/images/iso_certificate.jpg"
+  }
+}
