@@ -312,6 +312,7 @@ export interface AboutContent {
     description: string;
   }>;
   leadersTitle?: string;
+  leadersHeading?: string;
   leadersDescription?: string;
   customsBrokerage: {
     title: string;

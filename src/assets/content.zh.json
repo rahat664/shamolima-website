@@ -576,10 +576,20 @@
       }
     ],
     "leaders": [
-      "纳西姆·阿里（董事长）",
-      "沙希德·I·乔杜里（首席执行官）",
-      "马苏德·阿里（董事总经理）"
+      "Nasim Ali (Chairman)",
+      "Shahid I Chowdhury (CEO)",
+      "Masood Ali (MD)"
     ],
+    "leadersTitle": "董事会",
+    "leadersHeading": "领导团队",
+    "leadersDescription": "负责运营、QHSE和客户成功的执行领导层。",
+    "advantagesTitle": "我们的承诺与优势",
+    "advantagesSubheading": "Shamolima在整个报关和货运代理价值链中提供卓越服务",
+    "footerCta": {
+      "title": "通过Shamolima提升国际贸易竞争力——值得信赖、经验丰富、技术先进的报关和货运代理解决方案。",
+      "subtitle": "立即联系我们，获取个性化咨询和详细报价。",
+      "buttonLabel": "联系我们"
+    },
     "whatWeDo": [
       "项目材料供应和物流",
       "工程、建筑和安装服务",

@@ -34,15 +34,21 @@
   </section>
 
   <!-- Leadership Section -->
-  <section class="section">
-    <div class="container" *ngIf="about$ | async as about">
-      <p class="kicker text-brand">{{ about.leadersTitle || 'Board of directors' }}</p>
-      <h2 class="section-title"></h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <article *ngFor="let leader of about.leaders" class="card p-8 text-center">
-          <div class="mx-auto avatar-placeholder">{{ initials(leader) }}</div>
-          <h3 class="mt-4 text-lg font-semibold text-ink">{{ leader }}</h3>
-          <p class="text-sm text-slate-500 mt-2">{{ about.leadersDescription }}</p>
+  <section class="leadership-section" *ngIf="about$ | async as about">
+    <div class="leadership-wrapper">
+      <div class="leadership-header" appRevealOnScroll="up" [delay]="100">
+        <p class="leadership-kicker">{{ about.leadersTitle || 'Board of directors' }}</p>
+        <h2 class="leadership-title">{{ about.leadersHeading || 'Leadership Team' }}</h2>
+      </div>
+      <div class="leadership-grid">
+        <article *ngFor="let leader of about.leaders; let i = index" class="leadership-card" appRevealOnScroll="zoom" [delay]="i * 100">
+          <div class="leadership-avatar">
+            <span class="leadership-initials">{{ initials(leader) }}</span>
+          </div>
+          <div class="leadership-info">
+            <h3 class="leadership-name">{{ leader }}</h3>
+            <p class="leadership-role">{{ about.leadersDescription }}</p>
+          </div>
         </article>
       </div>
     </div>

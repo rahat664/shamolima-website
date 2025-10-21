@@ -28,7 +28,7 @@
     <div class="leadership-wrapper">
       <div class="leadership-header" appRevealOnScroll="up" [delay]="100">
         <p class="leadership-kicker">{{ about.leadersTitle || 'Board of directors' }}</p>
-        <h2 class="leadership-title">Leadership Team</h2>
+        <h2 class="leadership-title">{{ about.leadersHeading || 'Leadership Team' }}</h2>
       </div>
       <div class="leadership-grid">
         <article *ngFor="let leader of about.leaders; let i = index" class="leadership-card" appRevealOnScroll="zoom" [delay]="i * 100" [threshold]="0.1">
