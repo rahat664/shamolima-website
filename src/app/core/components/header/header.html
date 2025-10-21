@@ -16,21 +16,56 @@
       </a>
 
       <!-- Links -->
-      <nav class="tx-nav-links">
+      <nav class="tx-nav-links" *ngIf="ui$ | async as ui">
         <a routerLink="/" [routerLinkActiveOptions]="{exact:true}"
-           routerLinkActive="tx-nav-link-active" class="tx-nav-link">Home</a>
+           routerLinkActive="tx-nav-link-active" class="tx-nav-link">{{ ui.nav.home }}</a>
         <div class="tx-nav-item">
-          <a routerLink="/services" routerLinkActive="tx-nav-link-active" class="tx-nav-link" aria-haspopup="true" aria-expanded="false">Services</a>
+          <a routerLink="/services" routerLinkActive="tx-nav-link-active" class="tx-nav-link" aria-haspopup="true" aria-expanded="false">{{ ui.nav.services }}</a>
           <div class="tx-submenu" *ngIf="serviceList$ | async as services" role="menu">
             <a *ngFor="let s of services" [routerLink]="['/services', s.slug]" class="tx-submenu__link" role="menuitem">
               {{ s.title }}
             </a>
           </div>
         </div>
-        <a routerLink="/about" routerLinkActive="tx-nav-link-active" class="tx-nav-link">About</a>
-        <a routerLink="/qhse" routerLinkActive="tx-nav-link-active" class="tx-nav-link">QHSE</a>
-        <a routerLink="/contact" routerLinkActive="tx-nav-link-active" class="tx-nav-link">Contact</a>
-        <a routerLink="/work-activities" routerLinkActive="tx-nav-link-active" class="tx-nav-link">Work Activities</a>
+        <a routerLink="/about" routerLinkActive="tx-nav-link-active" class="tx-nav-link">{{ ui.nav.about }}</a>
+        <a routerLink="/qhse" routerLinkActive="tx-nav-link-active" class="tx-nav-link">{{ ui.nav.qhse }}</a>
+        <a routerLink="/contact" routerLinkActive="tx-nav-link-active" class="tx-nav-link">{{ ui.nav.contact }}</a>
+        <a routerLink="/work-activities" routerLinkActive="tx-nav-link-active" class="tx-nav-link">{{ ui.nav.workActivities }}</a>
+
+        <!-- Language Toggle -->
+        <div class="tx-lang-toggle">
+          <button
+            class="tx-lang-btn"
+            (click)="toggleLanguageMenu($event)"
+            [attr.aria-expanded]="languageMenuOpen"
+            aria-label="Select language">
+            <img [src]="languageService.currentLanguageOption().flagUrl"
+                 [alt]="languageService.currentLanguageOption().name + ' flag'"
+                 class="tx-lang-flag-img">
+            <span class="tx-lang-code">{{ languageService.currentLanguageOption().code | uppercase }}</span>
+            <svg class="tx-lang-arrow" [class.tx-lang-arrow--open]="languageMenuOpen" width="12" height="8" viewBox="0 0 12 8" fill="none">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="tx-lang-menu" [class.tx-lang-menu--open]="languageMenuOpen">
+            <button
+              *ngFor="let lang of languageService.languages"
+              class="tx-lang-option"
+              [class.tx-lang-option--active]="lang.code === languageService.currentLanguage()"
+              (click)="selectLanguage(lang.code)">
+              <img [src]="lang.flagUrl"
+                   [alt]="lang.name + ' flag'"
+                   class="tx-lang-option-flag-img">
+              <div class="tx-lang-option-text">
+                <span class="tx-lang-option-native">{{ lang.nativeName }}</span>
+                <span class="tx-lang-option-name">{{ lang.name }}</span>
+              </div>
+              <svg *ngIf="lang.code === languageService.currentLanguage()" class="tx-lang-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </nav>
 
       <!-- Mobile Menu -->
@@ -47,31 +82,52 @@
         </button>
 
         <div class="tx-drawer" [class.tx-drawer--open]="mobileMenuOpen">
-          <nav class="tx-drawer-nav">
+          <nav class="tx-drawer-nav" *ngIf="ui$ | async as ui">
             <a routerLink="/" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" [routerLinkActiveOptions]="{exact:true}" class="tx-drawer-link">
               <span class="tx-drawer-link-icon">🏠</span>
-              <span>Home</span>
+              <span>{{ ui.nav.home }}</span>
             </a>
             <a routerLink="/services" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
               <span class="tx-drawer-link-icon">⚙️</span>
-              <span>Services</span>
+              <span>{{ ui.nav.services }}</span>
             </a>
             <a routerLink="/about" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
               <span class="tx-drawer-link-icon">ℹ️</span>
-              <span>About</span>
+              <span>{{ ui.nav.about }}</span>
             </a>
             <a routerLink="/qhse" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
               <span class="tx-drawer-link-icon">🛡️</span>
-              <span>QHSE</span>
+              <span>{{ ui.nav.qhse }}</span>
             </a>
             <a routerLink="/contact" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
               <span class="tx-drawer-link-icon">📞</span>
-              <span>Contact</span>
+              <span>{{ ui.nav.contact }}</span>
             </a>
             <a routerLink="/work-activities" (click)="closeMobileMenu()" routerLinkActive="tx-drawer-link--active" class="tx-drawer-link">
               <span class="tx-drawer-link-icon">📸</span>
-              <span>Work Activities</span>
+              <span>{{ ui.nav.workActivities }}</span>
             </a>
+
+            <!-- Language selector in mobile menu -->
+            <div class="tx-drawer-divider"></div>
+            <div class="tx-drawer-lang-label">{{ ui.common.language }} / 言語 / 语言</div>
+            <button
+              *ngFor="let lang of languageService.languages"
+              class="tx-drawer-lang-option"
+              [class.tx-drawer-lang-option--active]="lang.code === languageService.currentLanguage()"
+              (click)="selectLanguage(lang.code)">
+              <img [src]="lang.flagUrl"
+                   [alt]="lang.name + ' flag'"
+                   class="tx-drawer-lang-flag-img">
+              <div class="tx-drawer-lang-text">
+                <span class="tx-drawer-lang-native">{{ lang.nativeName }}</span>
+                <span class="tx-drawer-lang-name">{{ lang.name }}</span>
+              </div>
+              <svg *ngIf="lang.code === languageService.currentLanguage()" class="tx-drawer-lang-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </nav>
         </div>
 

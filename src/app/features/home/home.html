@@ -38,24 +38,24 @@
     <div class="page-hero__orb page-hero__orb--one"></div>
     <div class="page-hero__orb page-hero__orb--two"></div>
 
-    <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
+    <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center" *ngIf="ui$ | async as ui">
       <div>
-        <p class="kicker text-brand">Shamolima Limited</p>
+        <p class="kicker text-brand">{{ ui.pages.home.kicker }}</p>
         <h1 class="page-hero__title">{{ home.hero.headline }}</h1>
         <p class="page-hero__lede" appRevealOnScroll="fade" [delay]="800">{{ home.hero.subhead }}</p>
 
         <div class="page-hero__tags" role="list" appRevealOnScroll="up" [delay]="1000">
-          <span class="tag-chip" *ngFor="let tag of heroTags; trackBy: trackByTag" role="listitem">{{ tag }}</span>
+          <span class="tag-chip" *ngFor="let tag of home.heroTags; trackBy: trackByTag" role="listitem">{{ tag }}</span>
         </div>
 
         <div class="page-hero__actions" appRevealOnScroll="up" [delay]="1200">
-          <a routerLink="/quote" class="btn btn-primary btn--glow">Start a project brief</a>
-          <a routerLink="/services" class="btn btn--light">Explore services</a>
+          <a routerLink="/quote" class="btn btn-primary btn--glow">{{ ui.pages.home.heroButtons.startBrief }}</a>
+          <a routerLink="/services" class="btn btn--light">{{ ui.pages.home.heroButtons.exploreServices }}</a>
         </div>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
-        <article *ngFor="let stat of stats; let i = index" class="stat-card" appRevealOnScroll="zoom" [delay]="i * 150">
+        <article *ngFor="let stat of home.stats; let i = index" class="stat-card" appRevealOnScroll="zoom" [delay]="i * 150">
           <div class="stat-card__value" [appAnimateCounter]="stat.value" [counterDuration]="2000" [counterDelay]="400 + (i * 150)"></div>
           <p class="stat-card__label">{{ stat.label }}</p>
           <p *ngIf="stat.detail" class="stat-card__detail">{{ stat.detail }}</p>
@@ -75,15 +75,40 @@
   </section>
 </ng-container>
 
+<!-- Video Section -->
+<section class="section section--video" @fadeIn>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <div class="text-center mb-8">
+      <p class="kicker kicker--light" appRevealOnScroll="fade">{{ ui.pages.home.sections.video.kicker }}</p>
+      <h2 class="section-title section-title--light" appRevealOnScroll="up" [delay]="100">
+        {{ ui.pages.home.sections.video.title }}
+      </h2>
+      <p class="section-lede section-lede--light max-w-3xl mx-auto" appRevealOnScroll="fade" [delay]="200">
+        {{ ui.pages.home.sections.video.description }}
+      </p>
+    </div>
+    <div class="video-container" appRevealOnScroll="zoom" [delay]="300">
+      <video
+        class="promo-video"
+        controls
+        preload="metadata"
+        poster="assets/images/fleet_yard.jpg">
+        <source src="assets/videos/shamolima_promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
 <section class="section section--bright" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-    <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Integrated project logistics</p>
-      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">End-to-end support for energy, infrastructure and industrial moves</h2>
+    <div *ngIf="ui$ | async as ui">
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.integratedLogistics.kicker }}</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.integratedLogistics.title }}</h2>
       <p class="section-lede" appRevealOnScroll="fade" [delay]="200">{{ aboutSnippet$ | async }}</p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        <article *ngFor="let pillar of focusAreas; trackBy: trackByFocus; let i = index" class="feature-card" appRevealOnScroll="up" [delay]="i * 100">
+        <article *ngFor="let pillar of (home$ | async)?.focusAreas; trackBy: trackByFocus; let i = index" class="feature-card" appRevealOnScroll="up" [delay]="i * 100">
           <span class="feature-card__badge">{{ pillar.badge }}</span>
           <h3 class="feature-card__title">{{ pillar.title }}</h3>
           <p class="feature-card__copy">{{ pillar.copy }}</p>
@@ -91,17 +116,17 @@
       </div>
     </div>
 
-    <aside class="insight-card" appRevealOnScroll="left" [delay]="200">
-      <h3 class="insight-card__heading">Why teams choose Shamolima</h3>
+    <aside class="insight-card" appRevealOnScroll="left" [delay]="200" *ngIf="ui$ | async as ui">
+      <h3 class="insight-card__heading">{{ ui.pages.home.sections.whyChoose }}</h3>
       <ul class="insight-card__list">
-        <li *ngFor="let item of highlights; trackBy: trackByHighlight">
+        <li *ngFor="let item of (home$ | async)?.highlights; trackBy: trackByHighlight">
           <span class="insight-card__title">{{ item.title }}</span>
           <span class="insight-card__detail">{{ item.detail }}</span>
         </li>
       </ul>
 
       <div class="insight-card__cta" *ngIf="(certificates$ | async) as certificates">
-        <p class="font-semibold">Certifications & memberships</p>
+        <p class="font-semibold">{{ ui.pages.home.certifications }}</p>
         <div class="home-certificates">
           <img *ngFor="let cert of certificates; trackBy: trackByUrl" [src]="cert" alt="Certification" loading="lazy">
         </div>
@@ -117,7 +142,7 @@
 
 <ng-container *ngIf="(spotlight$ | async) as spotlight">
   <section *ngIf="spotlight.length" class="section section--navy" @fadeIn>
-    <div class="container">
+    <div class="container" *ngIf="ui$ | async as ui">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p class="kicker text-brand" appRevealOnScroll="fade">Spotlight operations</p>
@@ -129,7 +154,7 @@
       </div>
 
       <div class="spotlight-carousel mt-10" *ngIf="spotlight as slides" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()">
-        <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous" (click)="prevSpotlight(slides.length)">&#10094;</button>
+        <button class="carousel__nav carousel__nav--prev" type="button" aria-label="{{ ui.common.previous }}" (click)="prevSpotlight(slides.length)">&#10094;</button>
         <div class="carousel__viewport">
           <article *ngFor="let item of slides; let i = index; trackBy: trackByImage"
                    class="spotlight-card"
@@ -138,21 +163,21 @@
             <img [src]="item.image" [alt]="item.caption" loading="lazy" class="spotlight-card__image">
             <div class="spotlight-card__scrim"></div>
             <div class="spotlight-card__content">
-              <span class="spotlight-card__badge">Featured move</span>
+              <span class="spotlight-card__badge">{{ ui.pages.home.sections.spotlight.badge }}</span>
               <h3 class="spotlight-card__title">{{ item.caption }}</h3>
             </div>
           </article>
         </div>
-        <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next" (click)="nextSpotlight(slides.length)">&#10095;</button>
+        <button class="carousel__nav carousel__nav--next" type="button" aria-label="{{ ui.common.next }}" (click)="nextSpotlight(slides.length)">&#10095;</button>
       </div>
     </div>
   </section>
 </ng-container>
 
 <section class="section" @fadeIn>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Clients</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Trusted by operators &amp; EPCs</h2>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.clients.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.clients.title }}</h2>
     <div class="client-grid mt-6" *ngIf="clients$ | async as clients" appRevealOnScroll="zoom" [delay]="200">
       <ng-container *ngFor="let c of clients; trackBy: trackByClient">
         <img *ngIf="c.logo; else nameChip"
@@ -169,12 +194,12 @@
 </section>
 
 <section class="section" @fadeIn>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">How we deliver</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Lifecycle support from first brief to final handover</h2>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.howWeDeliver.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.howWeDeliver.title }}</h2>
 
     <div class="mt-10 grid gap-8 md:grid-cols-2">
-      <article *ngFor="let phase of phases; trackBy: trackByPhase; index as idx" class="phase-card" appRevealOnScroll="flip" [delay]="idx * 150">
+      <article *ngFor="let phase of (home$ | async)?.phases; trackBy: trackByPhase; index as idx" class="phase-card" appRevealOnScroll="flip" [delay]="idx * 150">
         <div class="phase-card__index">{{ idx + 1 }}</div>
         <h3 class="phase-card__title">{{ phase.title }}</h3>
         <p class="phase-card__copy">{{ phase.copy }}</p>
@@ -187,15 +212,15 @@
 </section>
 
 <section class="section section--bright" @fadeIn>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Recent projects</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Selected references</h2>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.recentProjects.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.recentProjects.title }}</h2>
     <div class="mt-8 grid gap-6 md:grid-cols-2">
       <article *ngFor="let p of (recentProjects$ | async)!; trackBy: trackByProject; let i = index" class="feature-card" appRevealOnScroll="up" [delay]="i * 100">
-        <span class="feature-card__badge">RP</span>
+        <span class="feature-card__badge">{{ ui.pages.home.sections.recentProjects.badge }}</span>
         <h3 class="feature-card__title">{{ p.title }}</h3>
         <p class="feature-card__copy">{{ p.description }}</p>
-        <p class="text-sm text-slate-500 mt-2"><strong>Location:</strong> {{ p.location }}</p>
+        <p class="text-sm text-slate-500 mt-2"><strong>{{ ui.common.location }}:</strong> {{ p.location }}</p>
         <div class="mt-2 flex flex-wrap gap-2">
           <span class="chip" *ngFor="let eq of p.keyEquipment">{{ eq }}</span>
         </div>
@@ -205,14 +230,12 @@
 </section>
 
 <section class="section section--gallery" id="gallery" [@listStagger]>
-  <div class="container">
+  <div class="container" *ngIf="ui$ | async as ui">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p class="kicker text-brand" appRevealOnScroll="fade">Field execution gallery</p>
-        <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Highlights from our yards & job sites</h2>
-        <p class="section-lede" appRevealOnScroll="fade" [delay]="200">
-          Explore select shots from multimodal projects, engineered lifts and commissioning support executed by Shamolima teams.
-        </p>
+        <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.gallery.kicker }}</p>
+        <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.gallery.title }}</h2>
+        <p class="section-lede" appRevealOnScroll="fade" [delay]="200">{{ ui.pages.home.sections.gallery.description }}</p>
       </div>
     </div>
 
@@ -223,7 +246,7 @@
       </figure>
     </div>
 
-    <p class="mt-6 text-xs text-slate-500" appRevealOnScroll="fade">Images are curated from recent Shamolima work activities for quick reference.</p>
+    <p class="mt-6 text-xs text-slate-500" appRevealOnScroll="fade">{{ ui.pages.home.sections.gallery.note }}</p>
   </div>
 </section>
 

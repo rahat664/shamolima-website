@@ -25,6 +25,21 @@ import {RevealOnScroll} from '../../shared/directives/reveal-on-scroll';
 export class Qhse {
   private content = inject(ContentService);
   qhse$ = this.content.qhse$;
+  ui$ = this.content.ui$;
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 100; // Offset for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 
   downloadCertificate(imsCertificates: string | undefined) {
     if (imsCertificates) {

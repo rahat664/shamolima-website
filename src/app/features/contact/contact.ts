@@ -29,6 +29,7 @@ import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 export class Contact {
   private content = inject(ContentService);
   contact$ = this.content.contact$;
+  ui$ = this.content.ui$;
 
   model = {
     name: '',
@@ -38,21 +39,23 @@ export class Contact {
     message: ''
   };
 
-  offices(contact: ContactContent) {
+  offices(contact: ContactContent, ui?: any) {
+    const tags = ui?.pages?.contact?.tags || {};
     return [
-      { title: 'Head Office', badge: 'HQ', data: contact.headOffice },
-      { title: 'Corporate Office', badge: 'OPS', data: contact.operationOffice },
+      { title: tags.dhakaHQ || 'Head Office', badge: 'HQ', data: contact.headOffice },
+      { title: tags.opsDesk || 'Operations Desk', badge: 'COR', data: contact.operationOffice },
       { title: 'Branch Office', badge: 'BR', data: contact.branchOffice },
-      { title: 'Chattagram Office', badge: 'CTG', data: contact.chattagramOffice }
+      { title: tags.chattagramOffice || 'Chattagram Office', badge: 'CTG', data: contact.chattagramOffice }
     ].filter(office => !!office.data);
   }
 
-  mapMarkers(c: ContactContent) {
+  mapMarkers(c: ContactContent, ui?: any) {
+    const tags = ui?.pages?.contact?.tags || {};
     const candidates = [
-      { label: 'Head Office', data: c.headOffice },
-      { label: 'Corporate Office', data: c.operationOffice },
+      { label: tags.dhakaHQ || 'Head Office', data: c.headOffice },
+      { label: tags.opsDesk || 'Operations Desk', data: c.operationOffice },
       { label: 'Branch Office', data: c.branchOffice },
-      { label: 'Chattagram Office', data: c.chattagramOffice }
+      { label: tags.chattagramOffice || 'Chattagram Office', data: c.chattagramOffice }
     ];
     return candidates
       .filter(x => !!x.data && (x.data as any).lat != null && (x.data as any).lng != null)

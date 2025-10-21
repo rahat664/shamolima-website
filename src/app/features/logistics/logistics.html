@@ -7,14 +7,12 @@
     'assets/images/hero-trade.png'
   ]" />
   <div class="page-hero__layer page-hero__layer--gradient"></div>
-  <div class="container">
+  <div class="container" *ngIf="(ui$ | async) as ui">
     <div class="page-hero__orb page-hero__orb--one"></div>
     <div class="page-hero__orb page-hero__orb--two"></div>
-    <span class="kicker">Documentation</span>
-    <h1 class="page-hero__title">Logistics Capabilities</h1>
-    <p class="page-hero__lede">
-      View our comprehensive logistics documentation and service capabilities.
-    </p>
+    <span class="kicker">{{ ui.pages.logistics.hero.kicker }}</span>
+    <h1 class="page-hero__title">{{ ui.pages.logistics.hero.title }}</h1>
+    <p class="page-hero__lede">{{ ui.pages.logistics.hero.description }}</p>
   </div>
 </div>
 
@@ -24,15 +22,15 @@
       {{ error }}
     </div>
 
-    <div class="pdf-viewer">
+    <div class="pdf-viewer" *ngIf="(ui$ | async) as ui">
       <canvas #pdfCanvas class="w-full"></canvas>
-      <div class="pdf-spinner" *ngIf="loading || rendering">Loading PDF…</div>
+      <div class="pdf-spinner" *ngIf="loading || rendering">{{ ui.pages.logistics.viewer.loading }}</div>
     </div>
 
-    <div class="pdf-controls" *ngIf="!loading && total > 0">
-      <button type="button" class="pdf-btn" (click)="prev()" [disabled]="page<=1 || rendering">&#10094; Prev</button>
+    <div class="pdf-controls" *ngIf="!loading && total > 0 && (ui$ | async) as ui">
+      <button type="button" class="pdf-btn" (click)="prev()" [disabled]="page<=1 || rendering">&#10094; {{ ui.pages.logistics.viewer.prev }}</button>
       <span class="pdf-page">{{ page }} / {{ total }}</span>
-      <button type="button" class="pdf-btn" (click)="next()" [disabled]="page>=total || rendering">Next &#10095;</button>
+      <button type="button" class="pdf-btn" (click)="next()" [disabled]="page>=total || rendering">{{ ui.pages.logistics.viewer.next }} &#10095;</button>
     </div>
   </div>
 </section>

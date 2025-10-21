@@ -8,30 +8,23 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Work Activities</p>
-      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">Logistics moves engineered for energy & infrastructure</h1>
-      <p class="page-hero__lede">
-        From refinery modules to oversized power assets, Shamolima crews deliver door-to-door logistics, engineered lifts and site installation with the precision clients know from the Shamolima Limited experience.
-      </p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.nav.workActivities }}</p>
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.workActivities.hero.title }}</h1>
+      <p class="page-hero__lede">{{ ui.pages.workActivities.hero.lede }}</p>
 
       <div class="page-hero__tags">
-        <span class="tag-chip">Heavy lift rigging</span>
-        <span class="tag-chip">Multimodal transport</span>
-        <span class="tag-chip">Route intelligence</span>
-        <span class="tag-chip">EPC partnerships</span>
+        <span class="tag-chip" *ngFor="let tag of (ui.pages.workActivities.tags || [])">{{ tag }}</span>
       </div>
 
       <div class="page-hero__actions">
-        <a routerLink="/contact" class="btn btn-primary btn--glow">
-          Schedule a project walkdown
-        </a>
+        <a routerLink="/contact" class="btn btn-primary btn--glow">{{ ui.buttons.contactUs }}</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
-      <article *ngFor="let stat of stats; let i = index" class="stat-card" appRevealOnScroll="zoom" [delay]="i * 150">
+      <article *ngFor="let stat of (ui.pages.workActivities.stats || []); let i = index" class="stat-card" appRevealOnScroll="zoom" [delay]="i * 150">
         <div class="stat-card__value">{{ stat.value }}</div>
         <p class="stat-card__label">{{ stat.label }}</p>
         <p *ngIf="stat.detail" class="stat-card__detail">
@@ -43,16 +36,14 @@
 </section>
 
 <section class="section section--bright" @fadeIn>
-  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Integrated project logistics</p>
-      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Field-tested teams with engineered planning built-in</h2>
-      <p class="section-lede">
-        Every movement is custom engineered: feasibility studies, corridor readiness, lift plans, temporary works and final alignment. We own the gear, develop our crews and stay embedded until your cargo is commissioned.
-      </p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.integratedLogistics.kicker }}</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.integratedLogistics.title }}</h2>
+      <p class="section-lede">{{ ui.pages.workActivities.hero.lede }}</p>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
-        <article *ngFor="let pillar of focusAreas; let i = index" class="activity-card group" appRevealOnScroll="up" [delay]="i * 100">
+        <article *ngFor="let pillar of (ui.pages.workActivities.focusAreas || []); let i = index" class="activity-card group" appRevealOnScroll="up" [delay]="i * 100">
           <div class="activity-card__header">
             <span class="activity-card__badge">{{ pillar.badge }}</span>
             <div class="activity-card__icon">
@@ -74,17 +65,17 @@
     </div>
 
     <aside class="insight-card" appRevealOnScroll="left" [delay]="200">
-      <h3 class="insight-card__heading">Recent plays</h3>
+      <h3 class="insight-card__heading">{{ ui.pages.workActivities.recentPlaysHeading }}</h3>
       <ul class="insight-card__list">
-        <li *ngFor="let item of milestoneList">
+        <li *ngFor="let item of (ui.pages.workActivities.milestones || [])">
           <span class="insight-card__title">{{ item.title }}</span>
           <span class="insight-card__detail">{{ item.detail }}</span>
         </li>
       </ul>
 
       <div *ngIf="contactEmail$ | async as email" class="insight-card__cta">
-        <p class="font-semibold">Planning a critical move?</p>
-        <p>Email our project desk at
+        <p class="font-semibold">{{ ui.pages.workActivities.planningCtaTitle }}</p>
+        <p>{{ ui.pages.workActivities.planningCtaTextPrefix }}
           <a class="text-brand hover:underline" [href]="'mailto:' + email">{{ email }}</a>.
         </p>
       </div>
@@ -94,11 +85,11 @@
 
 <ng-container *ngIf="(spotlight$ | async) as spotlight">
   <section *ngIf="spotlight.length" class="section section--navy" @fadeIn>
-    <div class="container">
+    <div class="container" *ngIf="ui$ | async as ui">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p class="kicker text-brand" appRevealOnScroll="fade">Spotlight operations</p>
-          <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">What our crews are delivering right now</h2>
+          <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.spotlight.kicker }}</p>
+          <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.spotlight.title }}</h2>
         </div>
         <p class="max-w-xl text-sm text-white/70">
           A curated look at recent heavy haul, rigging and installation work led by Shamolima project teams across Bangladesh.
@@ -106,7 +97,7 @@
       </div>
 
       <div class="spotlight-carousel mt-10" *ngIf="spotlight as slides" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()">
-        <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous" (click)="prevSpotlight(slides.length)">&#10094;</button>
+        <button class="carousel__nav carousel__nav--prev" type="button" [attr.aria-label]="ui.common.previous" (click)="prevSpotlight(slides.length)">&#10094;</button>
         <div class="carousel__viewport">
           <article *ngFor="let item of slides; let i = index; trackBy: trackByImage"
                    class="spotlight-card"
@@ -120,24 +111,24 @@
                  class="spotlight-card__image">
             <div class="spotlight-card__scrim"></div>
             <div class="spotlight-card__content">
-              <span class="spotlight-card__badge">Featured move</span>
+              <span class="spotlight-card__badge">{{ ui.pages.home.sections.spotlight.badge }}</span>
               <h3 class="spotlight-card__title">{{ item.caption }}</h3>
             </div>
           </article>
         </div>
-        <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next" (click)="nextSpotlight(slides.length)">&#10095;</button>
+        <button class="carousel__nav carousel__nav--next" type="button" [attr.aria-label]="ui.common.next" (click)="nextSpotlight(slides.length)">&#10095;</button>
       </div>
     </div>
   </section>
 </ng-container>
 
 <section class="section" @fadeIn>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">How we execute</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Lifecycle support from feasibility to handover</h2>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.howWeDeliver.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.howWeDeliver.title }}</h2>
 
     <div class="mt-10 grid gap-8 md:grid-cols-2">
-      <article *ngFor="let phase of deliveryPhases; index as idx" class="phase-card" appRevealOnScroll="up" [delay]="idx * 150">
+      <article *ngFor="let phase of (ui.pages.workActivities.phases || []); index as idx" class="phase-card" appRevealOnScroll="up" [delay]="idx * 150">
         <div class="phase-card__index">{{ idx + 1 }}</div>
         <h3 class="phase-card__title">{{ phase.title }}</h3>
         <p class="phase-card__copy">{{ phase.copy }}</p>
@@ -150,14 +141,12 @@
 </section>
 
 <section class="section section--gallery" id="gallery" [@listStagger]>
-  <div class="container">
+  <div class="container" *ngIf="ui$ | async as ui">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p class="kicker text-brand" appRevealOnScroll="fade">Field execution gallery</p>
-        <h2 class="section-title" appRevealOnScroll="up" [delay]="10">Highlights from our yards & job sites</h2>
-        <p class="section-lede">
-          Swipe through our archive of heavy lift, haulage and installation projects. Each image opens in high resolution for closer inspection.
-        </p>
+        <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.gallery.kicker }}</p>
+        <h2 class="section-title" appRevealOnScroll="up" [delay]="10">{{ ui.pages.home.sections.gallery.title }}</h2>
+        <p class="section-lede">{{ ui.pages.home.sections.gallery.description }}</p>
       </div>
     </div>
 
@@ -175,7 +164,7 @@
       </figure>
     </div>
 
-    <p class="mt-6 text-xs text-slate-500">Images mirror our archived work activities for quick reference.</p>
+    <p class="mt-6 text-xs text-slate-500">{{ ui.pages.home.sections.gallery.note }}</p>
   </div>
 </section>
 

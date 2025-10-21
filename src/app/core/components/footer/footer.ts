@@ -18,6 +18,7 @@ export class Footer {
   private content = inject(ContentService);
   darkLogo$ = this.content.darkLogo$;
   site$ = this.content.site$;
+  ui$ = this.content.ui$;
   contact$ = this.content.contact$;
   logoBroken = false;
   assets$ = this.content.assets$;

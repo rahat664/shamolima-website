@@ -2,6 +2,7 @@ import {Component, HostListener, inject} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {NavigationEnd, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {ContentService} from '../../../shared/content.service';
+import {LanguageService, Language} from '../../../shared/language.service';
 import {filter} from 'rxjs';
 
 @Component({
@@ -13,13 +14,16 @@ import {filter} from 'rxjs';
 export class Header {
   private router = inject(Router);
   private content = inject(ContentService);
+  protected languageService = inject(LanguageService);
 
   logo$ = this.content.logo$;
   site$ = this.content.site$;
+  ui$ = this.content.ui$;
   serviceList$ = this.content.serviceList$;
 
   servicesMenuOpen = false;
   mobileMenuOpen = false;
+  languageMenuOpen = false;
 
 
   constructor(){
@@ -50,6 +54,22 @@ export class Header {
     this.mobileMenuOpen = false;
   }
 
+  toggleLanguageMenu(event?: MouseEvent) {
+    if (event) {
+      event.stopPropagation();
+    }
+    this.languageMenuOpen = !this.languageMenuOpen;
+  }
+
+  closeLanguageMenu() {
+    this.languageMenuOpen = false;
+  }
+
+  selectLanguage(lang: Language) {
+    this.languageService.setLanguage(lang);
+    this.closeLanguageMenu();
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     // Close menu when clicking outside
@@ -59,6 +79,9 @@ export class Header {
     }
     if (!target.closest('.tx-mobile-menu-container') && !target.closest('.tx-burger')) {
       this.mobileMenuOpen = false;
+    }
+    if (!target.closest('.tx-lang-toggle')) {
+      this.languageMenuOpen = false;
     }
   }
 }

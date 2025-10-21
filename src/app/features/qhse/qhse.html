@@ -8,51 +8,51 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center" *ngIf="(ui$ | async) as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">QHSE</p>
-      <h1 class="page-hero__title">Quality, Health, Safety & Environment without compromise</h1>
-      <p class="page-hero__lede">
-        Shamolima' integrated management system drives zero harm, disciplined execution and continual improvement across every project stage.
-      </p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.qhse.hero.kicker }}</p>
+      <h1 class="page-hero__title">{{ ui.pages.qhse.hero.title }}</h1>
+      <p class="page-hero__lede">{{ ui.pages.qhse.hero.description }}</p>
 
       <div class="page-hero__tags">
-        <span class="tag-chip">ISO certification</span>
-        <span class="tag-chip">Training</span>
-        <span class="tag-chip">Audits</span>
-        <span class="tag-chip">Compliance</span>
+        <span class="tag-chip">{{ ui.pages.qhse.tags.iso }}</span>
+        <span class="tag-chip">{{ ui.pages.qhse.tags.training }}</span>
+        <span class="tag-chip">{{ ui.pages.qhse.tags.audits }}</span>
+        <span class="tag-chip">{{ ui.pages.qhse.tags.compliance }}</span>
       </div>
 
       <div class="page-hero__actions" *ngIf="qhse$ | async as q">
-        <a [href]="q.pageUrls?.goals" target="_blank" rel="noopener" class="btn btn-primary btn--glow">View QHSE goals</a>
-        <a [href]="q.pageUrls?.training" target="_blank" rel="noopener" class="btn btn--light">Training framework</a>
+        <a (click)="scrollToSection('goals')" class="btn btn-primary btn--glow cursor-pointer">{{ ui.pages.qhse.actions.viewGoals }}</a>
+        <a (click)="scrollToSection('training')" class="btn btn--light cursor-pointer">{{ ui.pages.qhse.actions.trainingFramework }}</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card">
         <div class="stat-card__value">Zero</div>
-        <p class="stat-card__label">Incident ambition</p>
-        <p class="stat-card__detail">Daily toolbox talks, audits and stop-work authority across all crews.</p>
+        <p class="stat-card__label">{{ ui.pages.qhse.stats.zero.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.qhse.stats.zero.detail }}</p>
       </article>
       <article class="stat-card">
         <div class="stat-card__value">IMS</div>
-        <p class="stat-card__label">Integrated management system</p>
-        <p class="stat-card__detail">ISO-driven processes covering quality, health, safety and environment.</p>
+        <p class="stat-card__label">{{ ui.pages.qhse.stats.ims.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.qhse.stats.ims.detail }}</p>
       </article>
       <article class="stat-card">
         <div class="stat-card__value">24/7</div>
-        <p class="stat-card__label">Monitoring</p>
-        <p class="stat-card__detail">Live tracking of permits, equipment condition, weather and corridor risk.</p>
+        <p class="stat-card__label">{{ ui.pages.qhse.stats.monitoring.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.qhse.stats.monitoring.detail }}</p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section section--bright" [@listStagger]>
+<section id="goals" class="section section--bright" [@listStagger]>
   <div class="container" *ngIf="qhse$ | async as q">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Our commitments</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Embedding quality and safety in every mobilization</h2>
+    <ng-container *ngIf="(ui$ | async) as ui">
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.qhse.commitments.kicker }}</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.qhse.commitments.title }}</h2>
+    </ng-container>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       <article *ngFor="let goal of q.goals; index as i" class="qhse-goal-card group">
@@ -76,10 +76,10 @@
   </div>
 </section>
 
-<section class="section" *ngIf="qhse$ | async as q" [@listStagger]>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Training in action</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Hands-on drills & competency refreshers</h2>
+<section id="training" class="section" *ngIf="qhse$ | async as q" [@listStagger]>
+  <div class="container" *ngIf="(ui$ | async) as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.qhse.training.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.qhse.training.title }}</h2>
 
     <div class="masonry mt-8 columns-1 sm:columns-2 lg:columns-3" *ngIf="q.trainingImages?.length">
       <figure *ngFor="let img of q.trainingImages" class="gallery-card">
@@ -91,34 +91,33 @@
 
 <section class="section section--navy" *ngIf="qhse$ | async as q" @fadeIn>
   <div class="container grid gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center">
-    <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Certifications</p>
-      <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">Integrated management certificates & memberships</h2>
-      <p class="section-lede text-white/70">Our IMS certifications and industry memberships evidence the rigor we bring to safety, environmental stewardship and quality delivery.</p>
+    <div *ngIf="(ui$ | async) as ui">
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.qhse.certifications.kicker }}</p>
+      <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">{{ ui.pages.qhse.certifications.title }}</h2>
+      <p class="section-lede text-white/70">{{ ui.pages.qhse.certifications.lede }}</p>
     </div>
 
-    <aside class="insight-card">
-      <h3 class="insight-card__heading">Key documents</h3>
+    <aside class="insight-card" *ngIf="(ui$ | async) as ui">
+      <h3 class="insight-card__heading">{{ ui.pages.qhse.documents.heading }}</h3>
       <ul class="insight-card__list">
         <li>
-          <span class="insight-card__title">IMS Certificate</span>
-          <span class="insight-card__detail">Download the latest ISO certifications covering QHSE.</span>
+          <span class="insight-card__title">{{ ui.pages.qhse.documents.ims.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.qhse.documents.ims.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Training matrix</span>
-          <span class="insight-card__detail">Role-based competency and refresher schedules.</span>
+          <span class="insight-card__title">{{ ui.pages.qhse.documents.matrix.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.qhse.documents.matrix.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Emergency response plan</span>
-          <span class="insight-card__detail">Escalation pathways and 24/7 contact roster.</span>
+          <span class="insight-card__title">{{ ui.pages.qhse.documents.erp.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.qhse.documents.erp.detail }}</span>
         </li>
       </ul>
       <div class="insight-card__cta mt-8">
-        <a (click)="downloadCertificate(q.pageUrls?.imsCertificates)" target="_blank" rel="noopener" class="btn btn-primary w-full justify-center cursor-pointer">Download IMS certificate</a>
+        <a (click)="downloadCertificate(q.pageUrls?.imsCertificates)" target="_blank" rel="noopener" class="btn btn-primary w-full justify-center cursor-pointer">{{ ui.pages.qhse.documents.downloadIMS }}</a>
       </div>
     </aside>
   </div>
 </section>
 
 <app-footer />
-

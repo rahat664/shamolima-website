@@ -2,12 +2,14 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
-import { Observable, combineLatest, map, shareReplay } from 'rxjs';
+import { Observable, combineLatest, map, shareReplay, switchMap } from 'rxjs';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { Header } from '../../core/components/header/header';
 import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { Footer } from '../../core/components/footer/footer';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { ContentService } from '../../shared/content.service';
+import { LanguageService } from '../../shared/language.service';
 import { GalleryItem } from '../../shared/types';
 import { RevealOnScroll } from '../../shared/directives/reveal-on-scroll';
 
@@ -28,6 +30,8 @@ type Phase = { title: string; copy: string; points: string[] };
 export class WorkActivities implements OnInit, OnDestroy {
   private http = inject(HttpClient);
   private content = inject(ContentService);
+  private languageService = inject(LanguageService);
+  ui$ = this.content.ui$;
 
   readonly stats: ReadonlyArray<Stat> = [
     {
@@ -133,30 +137,35 @@ export class WorkActivities implements OnInit, OnDestroy {
     }
   ];
 
-  archive$: Observable<GalleryItem[]> = this.http
-    .get<WorkImageItem[]>('assets/data/work-activities.gallery.json')
-    .pipe(
-      map(items => {
-        const seen = new Set<string>();
-        return items
-          .map(item => {
-            const image = (item.src ?? '').trim();
-            const caption = (item.caption ?? '').trim();
-            return { image, caption: caption || fileNameFromPath(image) } as GalleryItem;
-          })
-          .filter(({ image }) => {
-            if (!image) {
-              return false;
-            }
-            if (seen.has(image)) {
-              return false;
-            }
-            seen.add(image);
-            return true;
-          });
-      }),
-      shareReplay(1)
-    );
+  // Observable that emits when language changes
+  private currentLanguage$ = toObservable(this.languageService.currentLanguage);
+
+  archive$: Observable<GalleryItem[]> = this.currentLanguage$.pipe(
+    switchMap(() => {
+      const fileName = this.languageService.getWorkActivitiesFileName();
+      return this.http.get<WorkImageItem[]>(`assets/data/${fileName}`);
+    }),
+    map(items => {
+      const seen = new Set<string>();
+      return items
+        .map(item => {
+          const image = (item.src ?? '').trim();
+          const caption = (item.caption ?? '').trim();
+          return { image, caption: caption || fileNameFromPath(image) } as GalleryItem;
+        })
+        .filter(({ image }) => {
+          if (!image) {
+            return false;
+          }
+          if (seen.has(image)) {
+            return false;
+          }
+          seen.add(image);
+          return true;
+        });
+    }),
+    shareReplay(1)
+  );
 
   spotlight$: Observable<GalleryItem[]> = combineLatest([
     this.content.gallery$,
@@ -285,7 +294,7 @@ function fileNameFromPath(path: string): string {
     .replace(/\s+/g, ' ')
     .trim();
   if (!cleaned) {
-    return 'Work activity';
+    return '作業記録';
   }
   return cleaned.replace(/\b(\w)/g, (_, char: string) => char.toUpperCase());
 }

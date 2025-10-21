@@ -8,31 +8,29 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand">Tracking</p>
-      <h1 class="page-hero__title">Track your shipment in real time</h1>
-      <p class="page-hero__lede">
-        Enter your Shamolima reference to view the latest status, checkpoints and estimated arrival. Our operations desk is available 24/7 if you need additional updates.
-      </p>
+      <p class="kicker text-brand">{{ ui.pages.tracking.kicker }}</p>
+      <h1 class="page-hero__title">{{ ui.pages.tracking.title }}</h1>
+      <p class="page-hero__lede">{{ ui.pages.tracking.description }}</p>
 
       <div class="page-hero__tags">
-        <span class="tag-chip">24/7 desk</span>
-        <span class="tag-chip">SMS / WhatsApp alerts</span>
-        <span class="tag-chip">Route visibility</span>
+        <span class="tag-chip">{{ ui.pages.tracking.tags.desk }}</span>
+        <span class="tag-chip">{{ ui.pages.tracking.tags.alerts }}</span>
+        <span class="tag-chip">{{ ui.pages.tracking.tags.visibility }}</span>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card">
-        <div class="stat-card__value">Live</div>
-        <p class="stat-card__label">Status refresh</p>
-        <p class="stat-card__detail">Pulls directly from our operations control tower.</p>
+        <div class="stat-card__value">{{ ui.pages.tracking.stats.status.value }}</div>
+        <p class="stat-card__label">{{ ui.pages.tracking.stats.status.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.tracking.stats.status.detail }}</p>
       </article>
       <article class="stat-card">
-        <div class="stat-card__value">Hotline</div>
-        <p class="stat-card__label">+880-2-9552676</p>
-        <p class="stat-card__detail">Speak with the duty coordinator for priority updates.</p>
+        <div class="stat-card__value">{{ ui.pages.tracking.stats.hotline.value }}</div>
+        <p class="stat-card__label">{{ ui.pages.tracking.stats.hotline.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.tracking.stats.hotline.detail }}</p>
       </article>
     </div>
   </div>
@@ -40,45 +38,45 @@
 
 <section class="section section--bright" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] items-start">
-    <form class="form-card grid gap-4" (ngSubmit)="search()">
-      <input class="form-field" placeholder="Tracking ID" [(ngModel)]="id" name="id" required>
-      <button class="btn btn-primary btn--glow justify-center" type="submit">Track shipment</button>
-      <p class="text-xs text-slate-500">Need help finding your reference? Check the booking confirmation email or call our operations desk.</p>
+    <form class="form-card grid gap-4" (ngSubmit)="search()" *ngIf="ui$ | async as ui">
+      <input class="form-field" [placeholder]="ui.pages.tracking.form.trackingIdPlaceholder" [(ngModel)]="id" name="id" required>
+      <button class="btn btn-primary btn--glow justify-center" type="submit">{{ ui.pages.tracking.form.submitButton }}</button>
+      <p class="text-xs text-slate-500">{{ ui.pages.tracking.form.helpText }}</p>
       <div *ngIf="result" class="card mt-2 p-6">{{ result }}</div>
     </form>
 
-    <aside class="insight-card">
-      <h3 class="insight-card__heading">Need extra assistance?</h3>
+    <aside class="insight-card" *ngIf="ui$ | async as ui">
+      <h3 class="insight-card__heading">{{ ui.pages.tracking.assistance.title }}</h3>
       <ul class="insight-card__list">
         <li>
-          <span class="insight-card__title">Email updates</span>
-          <span class="insight-card__detail">opsdesk@shamolima.com for route snapshots and POD copies.</span>
+          <span class="insight-card__title">{{ ui.pages.tracking.assistance.email.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.tracking.assistance.email.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">WhatsApp alerts</span>
-          <span class="insight-card__detail">Opt in for automated checkpoints and ETA changes.</span>
+          <span class="insight-card__title">{{ ui.pages.tracking.assistance.whatsapp.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.tracking.assistance.whatsapp.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Exception handling</span>
-          <span class="insight-card__detail">Dedicated supervisor escalation for critical cargo.</span>
+          <span class="insight-card__title">{{ ui.pages.tracking.assistance.exception.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.tracking.assistance.exception.detail }}</span>
         </li>
       </ul>
       <div class="insight-card__cta mt-8">
-        <a routerLink="/contact" class="btn btn-outline w-full justify-center">Contact operations</a>
+        <a routerLink="/contact" class="btn btn-outline w-full justify-center">{{ ui.buttons?.contactOperations || 'Contact operations' }}</a>
       </div>
     </aside>
   </div>
 </section>
 
 <section class="section section--gallery" @fadeIn>
-  <div class="container grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center">
+  <div class="container grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand">Project dashboards</p>
-      <h2 class="section-title">Upgrade to full visibility for major mobilisations</h2>
-      <p class="section-lede">We provide customised dashboards combining GPS, permit status, crew rosters and site readiness for shutdowns, EPC projects and critical heavy lift operations.</p>
+      <p class="kicker text-brand">{{ ui.pages.tracking.dashboards.kicker }}</p>
+      <h2 class="section-title">{{ ui.pages.tracking.dashboards.title }}</h2>
+      <p class="section-lede">{{ ui.pages.tracking.dashboards.description }}</p>
     </div>
     <div class="card p-8 text-center text-slate-500">
-      Ask our team about enterprise tracking portals tailored to your project.
+      {{ ui.pages.tracking.dashboards.cta }}
     </div>
   </div>
 </section>

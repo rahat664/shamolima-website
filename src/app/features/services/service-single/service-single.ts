@@ -27,6 +27,7 @@ import { ServiceListItem } from '../../../shared/types';
 export class ServiceSingle {
   private route = inject(ActivatedRoute);
   private content = inject(ContentService);
+  ui$ = this.content.ui$;
 
   slug$ = this.route.paramMap.pipe(
     map(params => params.get('slug') ?? ''),

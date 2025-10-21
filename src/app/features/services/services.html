@@ -8,52 +8,52 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center" *ngIf="(ui$ | async) as ui">
     <div>
-      <p class="kicker text-brand">Our Services</p>
-      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">End-to-end logistics for complex projects</h1>
-      <p class="page-hero__lede" appRevealOnScroll="fade" [delay]="300">
-        From heavy haulage and engineered lifts to customs clearance and site mobilisation, Shamolima delivers the Shamolima Limited-standard experience across Bangladesh.
-      </p>
+      <p class="kicker text-brand">{{ ui.pages.services.hero.kicker }}</p>
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.services.hero.title }}</h1>
+      <p class="page-hero__lede" appRevealOnScroll="fade" [delay]="300">{{ ui.pages.services.hero.description }}</p>
 
       <div class="page-hero__tags" appRevealOnScroll="up" [delay]="500">
-        <span class="tag-chip">Heavy haulage</span>
-        <span class="tag-chip">SPMT & rigging</span>
-        <span class="tag-chip">Customs & ports</span>
-        <span class="tag-chip">Project support</span>
+        <span class="tag-chip">{{ ui.pages.services.tags.heavyHaulage }}</span>
+        <span class="tag-chip">{{ ui.pages.services.tags.spmtRigging }}</span>
+        <span class="tag-chip">{{ ui.pages.services.tags.customsPorts }}</span>
+        <span class="tag-chip">{{ ui.pages.services.tags.projectSupport }}</span>
       </div>
 
       <div class="page-hero__actions" appRevealOnScroll="up" [delay]="700">
-        <a routerLink="/quote" class="btn btn-primary btn--glow">Plan a move</a>
-        <a routerLink="/contact" class="btn btn--light">Talk to an expert</a>
+        <a routerLink="/quote" class="btn btn-primary btn--glow">{{ ui.pages.services.actions.planMove }}</a>
+        <a routerLink="/contact" class="btn btn--light">{{ ui.pages.services.actions.talkExpert }}</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card" appRevealOnScroll="zoom" [delay]="0">
         <div class="stat-card__value" [appAnimateCounter]="'7+'" [counterDuration]="2000" [counterDelay]="200"></div>
-        <p class="stat-card__label">Service pillars</p>
-        <p class="stat-card__detail">Rental, transport, lifting, customs, site support and more under one license.</p>
+        <p class="stat-card__label">{{ ui.pages.services.stats.pillars.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.services.stats.pillars.detail }}</p>
       </article>
       <article class="stat-card" appRevealOnScroll="zoom" [delay]="150">
         <div class="stat-card__value" [appAnimateCounter]="'150'" [counterDuration]="2000" [counterDelay]="350"></div>
-        <p class="stat-card__label">Crawler capacity</p>
-        <p class="stat-card__detail">Fleet of cranes, SPMTs and hydraulic trailers ready for critical lifts.</p>
+        <p class="stat-card__label">{{ ui.pages.services.stats.crawlerCapacity.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.services.stats.crawlerCapacity.detail }}</p>
       </article>
       <article class="stat-card" appRevealOnScroll="zoom" [delay]="300">
         <div class="stat-card__value" [appAnimateCounter]="'24/7'" [counterDuration]="2000" [counterDelay]="500"></div>
-        <p class="stat-card__label">Operations desks</p>
-        <p class="stat-card__detail">Live coordination across seaports, river terminals and project sites.</p>
+        <p class="stat-card__label">{{ ui.pages.services.stats.operationsDesks.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.services.stats.operationsDesks.detail }}</p>
       </article>
     </div>
   </div>
 </section>
 
 <section class="section section--bright" [@listStagger]>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Capabilities</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Choose a discipline to explore scope & references</h2>
-    <p class="section-lede" appRevealOnScroll="fade" [delay]="200">Each service links to case studies, gallery references and typical execution scope.</p>
+  <div class="container" *ngIf="(ui$ | async) as ui">
+    <div>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.services.capabilities.kicker }}</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.services.capabilities.title }}</h2>
+      <p class="section-lede" appRevealOnScroll="fade" [delay]="200">{{ ui.pages.services.capabilities.lede }}</p>
+    </div>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       <a *ngFor="let s of (services$ | async)!; index as i"
@@ -71,7 +71,7 @@
           </div>
         </div>
         <h3 class="service-card__title">{{ s.title }}</h3>
-        <p class="service-card__copy">View scope, gallery and deliverables</p>
+        <p class="service-card__copy">{{ ui.pages.services.capabilities.cardCopy }}</p>
         <div class="service-card__arrow">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -85,47 +85,47 @@
 <section class="section section--navy" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Why it matters</p>
-      <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">Integrated execution keeps complex moves predictable</h2>
-      <p class="section-lede text-white/70" appRevealOnScroll="fade" [delay]="200">
-        We handle permitting, equipment mobilisation, staffing, reporting and close-out under one project desk so your team focuses on critical milestones.
-      </p>
+      <div *ngIf="(ui$ | async) as ui">
+        <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.services.whyItMatters.kicker }}</p>
+        <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">{{ ui.pages.services.whyItMatters.title }}</h2>
+        <p class="section-lede text-white/70" appRevealOnScroll="fade" [delay]="200">{{ ui.pages.services.whyItMatters.lede }}</p>
+      </div>
     </div>
 
-    <aside class="insight-card" appRevealOnScroll="left" [delay]="200">
-      <h3 class="insight-card__heading">Included with every engagement</h3>
+    <aside class="insight-card" appRevealOnScroll="left" [delay]="200" *ngIf="(ui$ | async) as ui">
+      <h3 class="insight-card__heading">{{ ui.pages.services.included.heading }}</h3>
       <ul class="insight-card__list">
         <li>
-          <span class="insight-card__title">Route & lift engineering</span>
-          <span class="insight-card__detail">Autodesk lift plans, stability checks and corridor readiness reports.</span>
+          <span class="insight-card__title">{{ ui.pages.services.included.routeLift.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.services.included.routeLift.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Certified crews & equipment</span>
-          <span class="insight-card__detail">Operators, riggers, escort pilots and maintenance teams on rotation.</span>
+          <span class="insight-card__title">{{ ui.pages.services.included.certified.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.services.included.certified.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">24/7 reporting</span>
-          <span class="insight-card__detail">Progress dashboards, HSE tracking and client comms in real time.</span>
+          <span class="insight-card__title">{{ ui.pages.services.included.reporting.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.services.included.reporting.detail }}</span>
         </li>
       </ul>
       <div class="insight-card__cta mt-8">
-        <p class="font-semibold">Need a bundled solution?</p>
-        <p>We can combine haulage, lifting, clearance and site services under one contract.</p>
+        <p class="font-semibold">{{ ui.pages.services.bundled.title }}</p>
+        <p>{{ ui.pages.services.bundled.text }}</p>
       </div>
     </aside>
   </div>
 </section>
 
 <section class="section section--gallery" @fadeIn>
-  <div class="container grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center">
+  <div class="container grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_360px] lg:items-center" *ngIf="(ui$ | async) as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Get started</p>
-      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Share your scope for a rapid mobilisation plan</h2>
-      <p class="section-lede" appRevealOnScroll="fade" [delay]="200">Tell us about cargo dimensions, pick-up / delivery points and timelines. Our project desk replies with recommended equipment, routing notes and a commercial overview.</p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.services.getStarted.kicker }}</p>
+      <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.services.getStarted.title }}</h2>
+      <p class="section-lede" appRevealOnScroll="fade" [delay]="200">{{ ui.pages.services.getStarted.lede }}</p>
     </div>
     <div class="card form-card bg-white" appRevealOnScroll="zoom" [delay]="200">
-      <a routerLink="/quote" class="btn btn-primary btn--glow w-full justify-center">Request a tailored quote</a>
-      <a routerLink="/contact" class="btn btn-outline w-full justify-center mt-3">Talk to operations</a>
+      <a routerLink="/quote" class="btn btn-primary btn--glow w-full justify-center">{{ ui.pages.services.getStarted.ctas.requestQuote }}</a>
+      <a routerLink="/contact" class="btn btn-outline w-full justify-center mt-3">{{ ui.pages.services.getStarted.ctas.talkOps }}</a>
     </div>
   </div>
 </section>

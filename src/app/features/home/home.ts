@@ -43,7 +43,6 @@ interface Phase {
     NgForOf,
     AsyncPipe,
     RouterLink,
-    TypewriterDirective,
     AnimateCounterDirective,
     RevealOnScroll,
     NgOptimizedImage
@@ -56,6 +55,7 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   private readonly content = inject(ContentService);
 
   readonly home$ = this.content.home$;
+  readonly ui$ = this.content.ui$;
 
   readonly stats: ReadonlyArray<Stat> = [
     {

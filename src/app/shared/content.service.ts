@@ -1,6 +1,7 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, shareReplay } from 'rxjs';
+import { Observable, forkJoin, map, shareReplay, switchMap } from 'rxjs';
+import { toObservable } from '@angular/core/rxjs-interop';
 import {
   SiteContent,
   HomeContent,
@@ -13,18 +14,37 @@ import {
   Assets,
   Client
 } from './types';
+import { LanguageService } from './language.service';
 
 @Injectable({ providedIn: 'root' })
 export class ContentService {
   private http = inject(HttpClient);
+  private languageService = inject(LanguageService);
 
+  // Observable that emits when language changes
+  private currentLanguage$ = toObservable(this.languageService.currentLanguage);
 
-  // Load once & cache
-  private content$: Observable<SiteContent> = this.http
-    .get<SiteContent>('assets/content.json', { withCredentials: false })
-    .pipe(shareReplay(1));
+  // Load content based on current language
+  private content$: Observable<SiteContent> = this.currentLanguage$.pipe(
+    switchMap(() => {
+      const langFile = this.languageService.getContentFileName();
+      const enFile = 'content.json';
+      if (langFile === enFile) {
+        return this.http.get<SiteContent>(`assets/${enFile}`, { withCredentials: false }).pipe(shareReplay(1));
+      }
+      return forkJoin([
+        this.http.get<SiteContent>(`assets/${enFile}`, { withCredentials: false }),
+        this.http.get<SiteContent>(`assets/${langFile}`, { withCredentials: false })
+      ]).pipe(
+        map(([en, lang]) => deepMerge(en, lang) as SiteContent),
+        shareReplay(1)
+      );
+    }),
+    shareReplay(1)
+  );
 
   site$       = this.content$.pipe(map(c => c.site));
+  ui$         = this.content$.pipe(map(c => c.ui));
   home$       = this.content$.pipe(map(c => c.home as HomeContent));
   about$      = this.content$.pipe(map(c => c.about as AboutContent));
   services$   = this.content$.pipe(map(c => c.services as ServicesContent));
@@ -79,4 +99,25 @@ export class ContentService {
   shippingCustomsBullets(): Observable<string[]> {
     return this.services$.pipe(map(s => s.shippingCustomsBullets ?? []));
   }
+}
+
+function isObject(item: any): item is Record<string, any> {
+  return item && typeof item === 'object' && !Array.isArray(item);
+}
+
+function deepMerge<T>(target: T, source: any): T {
+  if (isObject(target) && isObject(source)) {
+    const out: any = Array.isArray(target) ? [...(target as any)] : { ...target };
+    for (const key of Object.keys(source)) {
+      const srcVal = (source as any)[key];
+      const tgtVal = (out as any)[key];
+      if (isObject(srcVal) && isObject(tgtVal)) {
+        (out as any)[key] = deepMerge(tgtVal, srcVal);
+      } else {
+        (out as any)[key] = srcVal;
+      }
+    }
+    return out as T;
+  }
+  return source as T;
 }

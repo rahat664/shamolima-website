@@ -1,55 +1,44 @@
-<div class="about-mobile-page">
+﻿<div class="about-mobile-page">
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="hero-box" appRevealOnScroll="up" [delay]="100">
+      <div class="hero-box" appRevealOnScroll="up" [delay]="100" *ngIf="about$ | async as about">
         <p class="hero-company-name">Shamolima Limited</p>
-        <h1 class="hero-title">Your Gateway to Seamless Global Trade and Logistics Excellence</h1>
-        <p class="hero-text">
-          Since 1983, Shamolima has been powering global trade with precision, speed, and compliance. From customs clearance to freight forwarding, we've moved everything from oversized machinery to dangerous goods — trusted by leaders like Chevron, Tullow Oil, and Petrofac. Based in Bangladesh, backed by a worldwide partner network, we deliver smooth, transparent, and reliable logistics tailored to your business needs.
-        </p>
+        <h1 class="hero-title">{{ about.hero.title }}</h1>
+        <p class="hero-text">{{ about.hero.description }}</p>
       </div>
 
-      <!-- Timeline Section -->
-      <div class="timeline-box" appRevealOnScroll="fade" [delay]="200">
-        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="300" [threshold]="0.1">
-          <div class="timeline-year">1983</div>
-          <p class="timeline-text">Shamolima Limited started her journey in Chittagong in Project Support Services.</p>
-        </div>
-        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="350" [threshold]="0.1">
-          <div class="timeline-year">1997</div>
-          <p class="timeline-text">Oil & Gas sector entry — First handled international VOCs (Vessels of Convenience).</p>
-        </div>
-        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="400" [threshold]="0.1">
-          <div class="timeline-year">2015</div>
-          <p class="timeline-text">We became authorized to act as Customs Agent.</p>
-        </div>
-        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="450" [threshold]="0.1">
-          <div class="timeline-year">2017</div>
-          <p class="timeline-text">Purchased brand-new offshore Thrust-12 winch.</p>
+      <div class="timeline-box" appRevealOnScroll="fade" [delay]="200" *ngIf="about$ | async as about">
+        <div class="timeline-item" *ngFor="let item of about.timeline; let i = index" appRevealOnScroll="zoom"
+             [delay]="300 + (i * 50)" [threshold]="0.1">
+          <div class="timeline-year">{{ item.year }}</div>
+          <p class="timeline-text">{{ item.title }}</p>
+          <p class="timeline-text">{{ item.description }}</p>
         </div>
         <div class="timeline-item timeline-logo" appRevealOnScroll="zoom" [delay]="500" [threshold]="0.1">
-          <img src="assets/images/ims_badge.jpg" alt="IMS Certified" class="ims-logo" />
-        </div>
-        <div class="timeline-item" appRevealOnScroll="zoom" [delay]="550" [threshold]="0.1">
-          <div class="timeline-year">2024</div>
-          <p class="timeline-text">Created SNZ to move toward Sustainable Net Zero.</p>
+          <img src="assets/images/ims_badge.jpg" alt="IMS Certified" class="ims-logo"/>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Leadership Section -->
-  <section class="section">
-    <div class="container" *ngIf="about$ | async as about">
-      <p class="kicker text-brand">Board of directors</p>
-      <h2 class="section-title"></h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <article *ngFor="let leader of about.leaders" class="card p-8 text-center">
-          <div class="mx-auto avatar-placeholder">{{ initials(leader) }}</div>
-          <h3 class="mt-4 text-lg font-semibold text-ink">{{ leader }}</h3>
-          <p class="text-sm text-slate-500 mt-2">Executive leadership overseeing operations, QHSE and client success.</p>
+  <section class="leadership-section" *ngIf="about$ | async as about">
+    <div class="leadership-wrapper">
+      <div class="leadership-header" appRevealOnScroll="up" [delay]="100">
+        <p class="leadership-kicker">{{ about.leadersTitle || 'Board of directors' }}</p>
+        <h2 class="leadership-title">Leadership Team</h2>
+      </div>
+      <div class="leadership-grid">
+        <article *ngFor="let leader of about.leaders; let i = index" class="leadership-card" appRevealOnScroll="zoom" [delay]="i * 100" [threshold]="0.1">
+          <div class="leadership-avatar">
+            <span class="leadership-initials">{{ initials(leader) }}</span>
+          </div>
+          <div class="leadership-info">
+            <h3 class="leadership-name">{{ leader }}</h3>
+            <p class="leadership-role">{{ about.leadersDescription }}</p>
+          </div>
         </article>
       </div>
     </div>
@@ -58,21 +47,22 @@
   <!-- Customs Brokerage Section -->
   <section class="customs-section" *ngIf="about$ | async as about">
     <div class="customs-content" appRevealOnScroll="up" [delay]="100">
-      <h2 class="customs-title">Customs Brokerage & Freight Forwarding</h2>
+      <h2 class="customs-title">{{ about.customsBrokerage.title }}</h2>
       <ul class="customs-list">
         <li *ngFor="let bullet of about.customsBrokerage.bullets">{{ bullet }}</li>
       </ul>
       <div class="customs-image" appRevealOnScroll="zoom" [delay]="300">
-        <img src="assets/images/custom_broker.png" alt="Logistics" />
+        <img src="assets/images/custom_broker.png" alt="Logistics"/>
       </div>
     </div>
   </section>
 
   <!-- Comprehensive Services Section -->
   <section class="services-section" *ngIf="about$ | async as about">
-    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">Comprehensive Customs Brokerage Services</h2>
+    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">{{ about.customsBrokerage.title }}</h2>
     <div class="services-grid">
-      <div *ngFor="let service of about.comprehensiveServices; let i = index" class="service-card" appRevealOnScroll="up" [delay]="i * 100">
+      <div *ngFor="let service of about.comprehensiveServices; let i = index" class="service-card"
+           appRevealOnScroll="up" [delay]="i * 100">
         <h4 class="service-title">{{ service.title }}</h4>
         <p class="service-desc">{{ service.description }}</p>
       </div>
@@ -82,12 +72,12 @@
   <!-- Expert Freight Section -->
   <section class="freight-section" *ngIf="about$ | async as about">
     <div class="freight-content">
-      <div class="freight-image" appRevealOnScroll="zoom" [delay]="100">
-        <img src="assets/images/mobile_laptop_mobile.PNG" alt="Freight Services" />
+      <div class="freight-header" appRevealOnScroll="up" [delay]="100">
+        <h2 class="freight-main-title">{{ about.freightForwarding.title }}</h2>
+        <p class="freight-main-desc">{{ about.freightForwarding.description }}</p>
       </div>
-      <div class="freight-text" appRevealOnScroll="up" [delay]="300">
-        <h2 class="freight-title">Expert Freight Forwarding Services</h2>
-        <p class="freight-desc">{{ about.freightForwarding.description }}</p>
+      <div class="freight-image-container" appRevealOnScroll="zoom" [delay]="200">
+        <img src="assets/images/mobile_laptop_mobile.png" alt="Freight Services" class="freight-mockup-img"/>
       </div>
     </div>
   </section>
@@ -95,24 +85,50 @@
   <!-- Services Details Grid -->
   <section class="details-section" *ngIf="about$ | async as about">
     <div class="details-grid">
-      <div *ngFor="let service of about.freightForwarding.services; let i = index" class="detail-card" appRevealOnScroll="zoom" [delay]="i * 100" [threshold]="0.05">
-        <h4 class="detail-title">{{ service.title }}</h4>
-        <p class="detail-desc">{{ service.description }}</p>
+      <div *ngFor="let service of about.freightForwarding.services; let i = index"
+           class="detail-card group"
+           appRevealOnScroll="zoom"
+           [delay]="i * 100"
+           [threshold]="0.05">
+        <div class="detail-card-inner">
+          <div class="detail-icon-wrapper">
+            <svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h4 class="detail-title">{{ service.title }}</h4>
+          @if (service.description.includes('\n')) {
+            <div class="detail-desc-list">
+              <p class="detail-desc-main">{{ service.description.split('\n')[0].replace('/n', '') }}</p>
+              <ul class="detail-bullets">
+                @for (line of service.description.split('\n').slice(1); track line) {
+                  @if (line.trim()) {
+                    <li>{{ line.trim() }}</li>
+                  }
+                }
+              </ul>
+            </div>
+          } @else {
+            <p class="detail-desc">{{ service.description }}</p>
+          }
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Port Image Section -->
   <section class="port-section">
-    <img src="assets/images/port_image.jpg" alt="Port Operations" class="port-image" appRevealOnScroll="zoom" [threshold]="0.1" />
+    <img src="assets/images/port_image.jpg" alt="Port Operations" class="port-image" appRevealOnScroll="zoom"
+         [threshold]="0.1"/>
   </section>
 
   <!-- Commitment & Advantages Section -->
-  <section class="commitment-section" *ngIf="about$ | async as about">
-    <h2 class="section-heading" appRevealOnScroll="up" [delay]="100">Our Commitment & Advantages</h2>
-    <p class="section-subheading" appRevealOnScroll="fade" [delay]="200">Shamolima delivers excellence across the entire customs brokerage and freight forwarding value chain</p>
+  <section class="commitment-section" *ngIf="about$ | async as about"><h2 class="section-heading" appRevealOnScroll="up"
+                                                                          [delay]="100">{{ about.advantagesTitle || "Our Commitment & Advantages" }}</h2>
+     <p class="section-subheading" appRevealOnScroll="fade" [delay]="200">{{ about.advantagesSubheading }}</p>
     <div class="commitment-grid">
-      <div *ngFor="let advantage of about.advantages; let i = index" class="commitment-card" appRevealOnScroll="flip" [delay]="i * 100" [threshold]="0.05">
+      <div *ngFor="let advantage of about.advantages; let i = index" class="commitment-card" appRevealOnScroll="flip"
+           [delay]="i * 100" [threshold]="0.05">
         <h4 class="commitment-title">{{ advantage.title }}</h4>
         <p class="commitment-desc">{{ advantage.description }}</p>
       </div>
@@ -122,13 +138,15 @@
   <!-- Footer CTA Section -->
   <section class="footer-cta-section">
     <div class="cta-overlay" appRevealOnScroll="up" [delay]="100" [threshold]="0.2">
-      <p class="cta-text">
-        Enhance your competitive edge in international trade with Shamolima — trusted, experienced, and technologically advanced customs brokerage and freight forwarding solutions.
-      </p>
-      <p class="cta-text-sub">Contact us today for a personalized consultation and a detailed quotation.</p>
-      <a href="/contact" class="btn btn--light mt-4">Get in Touch</a>
+      <ng-container *ngIf="about$ | async as about"><p class="cta-text">{{ about.footerCta?.title }}</p>
+        <p class="cta-text-sub">{{ about.footerCta?.subtitle }}</p>
+        <a href="/contact" class="btn btn--light mt-4">{{ about.footerCta?.buttonLabel || "Get in Touch" }}</a>
+      </ng-container>
     </div>
   </section>
 
   <app-footer></app-footer>
 </div>
+
+
+

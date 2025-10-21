@@ -1,7 +1,686 @@
-{
+﻿{
   "site": {
     "name": "Shamolima",
     "baseUrl": "https://shamolima.com/"
+  },
+  "ui": {
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About",
+      "qhse": "QHSE",
+      "contact": "Contact",
+      "workActivities": "Work Activities",
+      "fleet": "Fleet",
+      "tracking": "Tracking",
+      "quote": "Get Quote"
+    },
+    "buttons": {
+      "learnMore": "Learn More",
+      "viewAll": "View All",
+      "contactUs": "Contact Us",
+      "getQuote": "Get Quote",
+      "viewGallery": "View Gallery",
+      "readMore": "Read More",
+      "submitQuote": "Submit Quote",
+      "trackShipment": "Track Shipment"
+    },
+    "common": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "location": "Location",
+      "name": "Name",
+      "message": "Message",
+      "send": "Send",
+      "close": "Close",
+      "next": "Next",
+      "previous": "Previous",
+      "loading": "Loading...",
+      "language": "Language"
+    },
+    "footer": {
+      "tagline": "Welcome to work with professional logistics & Project Support Operation along with QHSE team.",
+      "callUs": "Call us",
+      "emailUs": "Email us",
+      "company": "Company",
+      "support": "Support",
+      "services": "Services",
+      "getQuote": "Get a Quote",
+      "allRightsReserved": "All rights reserved"
+    },
+    "pages": {
+      "home": {
+        "kicker": "Shamolima Limited",
+        "heroButtons": {
+          "startBrief": "Start a project brief",
+          "exploreServices": "Explore services"
+        },
+        "stats": {
+          "yearsExperience": {
+            "value": "40+",
+            "label": "Years in Operation",
+            "detail": "Pioneering logistics since 1983."
+          },
+          "projectsCompleted": {
+            "value": "1.5M+",
+            "label": "Freight Tonnes Moved",
+            "detail": "Across diverse and complex projects."
+          },
+          "fleetSize": {
+            "value": "200+",
+            "label": "Core Fleet Assets",
+            "detail": "Cranes, trailers, and barges."
+          },
+          "teamSize": {
+            "value": "99%",
+            "label": "Safety Incident Rating",
+            "detail": "Committed to zero-harm operations."
+          }
+        },
+        "sections": {
+          "integratedLogistics": {
+            "kicker": "Integrated project logistics",
+            "title": "End-to-end support for energy, infrastructure and industrial moves"
+          },
+          "whyChoose": "Why teams choose Shamolima",
+          "video": {
+            "kicker": "Watch our story",
+            "title": "Shamolima in Action",
+            "description": "Discover how we deliver integrated logistics solutions across Bangladesh — from heavy haul to final commissioning."
+          },
+          "spotlight": {
+            "kicker": "Spotlight operations",
+            "title": "What our crews are delivering right now",
+            "description": "Recent heavy haul, lifting and site support executed across Bangladesh. Each move reflects our integrated Shamolima Limited approach.",
+            "badge": "Featured move"
+          },
+          "clients": {
+            "kicker": "Clients",
+            "title": "Trusted by operators & EPCs"
+          },
+          "howWeDeliver": {
+            "kicker": "How we deliver",
+            "title": "Lifecycle support from first brief to final handover"
+          },
+          "recentProjects": {
+            "kicker": "Recent projects",
+            "title": "Selected references",
+            "badge": "RP"
+          },
+          "gallery": {
+            "kicker": "Field execution gallery",
+            "title": "Highlights from our yards & job sites",
+            "description": "Explore select shots from multimodal projects, engineered lifts and commissioning support executed by Shamolima teams.",
+            "note": "Images are curated from recent Shamolima work activities for quick reference."
+          }
+        },
+        "certifications": "Certifications & memberships",
+        "needExpertise": "Need mobilisation expertise?",
+        "emailPrefix": "Email"
+      },
+      "quote": {
+        "kicker": "Request a quote",
+        "title": "Share your cargo details for a rapid mobilisation plan",
+        "description": "We reply with recommended equipment, permits, escorts, lead time and commercials within hours. Tell us your route, timeline and constraints and we'll take it from there.",
+        "tags": {
+          "heavyLift": "Heavy lift",
+          "multimodal": "Multimodal",
+          "customsPorts": "Customs & ports"
+        },
+        "buttons": {
+          "callDesk": "Call our project desk",
+          "viewCatalogue": "View service catalogue"
+        },
+        "stats": {
+          "responseTime": {
+            "value": "2h",
+            "label": "Average response time",
+            "detail": "Dedicated desks in Dhaka & Chattagram to scope projects quickly."
+          },
+          "coverage": {
+            "value": "360Â°",
+            "label": "Support coverage",
+            "detail": "Route surveys, lift plans, customs, escorts and site execution."
+          }
+        },
+        "form": {
+          "namePlaceholder": "Your name",
+          "emailPlaceholder": "Email",
+          "phonePlaceholder": "Phone",
+          "pickupPlaceholder": "Pickup location",
+          "dropoffPlaceholder": "Drop-off location",
+          "datePlaceholder": "Preferred date",
+          "cargoPlaceholder": "Cargo (e.g., 10 ft skid, 12 ton)",
+          "notesPlaceholder": "Notes / constraints",
+          "submitButton": "Submit request",
+          "disclaimer": "By submitting you agree to our data processing and response policy."
+        },
+        "howItWorks": {
+          "title": "How it works",
+          "preferCall": "Prefer a call instead?",
+          "reachText": "Reach the project desk on"
+        },
+        "afterSubmission": {
+          "kicker": "After submission",
+          "title": "What to expect from the Shamolima team",
+          "description": "We issue a mobilisation plan with equipment, permits, staging, HSE milestones and billing, then assign a project coordinator to stay with you through execution.",
+          "deliverables": {
+            "title": "Included deliverables",
+            "route": {
+              "title": "Route & lift assessments",
+              "detail": "Preliminary engineering, corridor notes and permit roadmap."
+            },
+            "equipment": {
+              "title": "Equipment lineup",
+              "detail": "Fleet, rigging and manpower matrix tailored to your cargo."
+            },
+            "timeline": {
+              "title": "Execution timeline",
+              "detail": "Mobilisation, transit, site works and demobilisation schedule."
+            }
+          }
+        }
+      },
+      "contact": {
+        "kicker": "Contact",
+        "title": "We're ready to support your next mobilization",
+        "description": "Reach our operations desks any time for project planning, equipment availability or shipment status. We mobilise fast across every major port, river terminal and industrial zone in Bangladesh.",
+        "tags": {
+          "opsDesk": "Corporate Office",
+          "dhakaHQ": "Dhaka HQ",
+          "chattagramOffice": "Chattagram office"
+        },
+        "stats": {
+          "locations": {
+            "value": "3",
+            "label": "Service locations",
+            "detail": "Head office, operations, branch and Chattagram desks to keep coverage tight."
+          },
+          "professionals": {
+            "value": "60+",
+            "label": "Project professionals",
+            "detail": "Supervisors, planners, permit specialists and coordinators on rotation."
+          },
+          "statusUpdates": {
+            "value": "Live",
+            "label": "Status updates",
+            "detail": "Tracking dashboards, WhatsApp updates and daily reports for every move."
+          }
+        },
+        "form": {
+          "namePlaceholder": "Your name",
+          "emailPlaceholder": "Email",
+          "phonePlaceholder": "Phone (optional)",
+          "subjectPlaceholder": "Subject",
+          "messagePlaceholder": "Your message",
+          "submitButton": "Send message",
+          "responseNote": "We respond within business hours."
+        },
+        "visitUs": {
+          "kicker": "Visit us",
+          "title": "Find our offices across Dhaka and Chattagram"
+        }
+      },
+      "tracking": {
+        "kicker": "Tracking",
+        "title": "Track your shipment in real time",
+        "description": "Enter your Shamolima reference to view the latest status, checkpoints and estimated arrival. Our operations desk is available 24/7 if you need additional updates.",
+        "tags": {
+          "desk": "24/7 desk",
+          "alerts": "SMS / WhatsApp alerts",
+          "visibility": "Route visibility"
+        },
+        "stats": {
+          "status": {
+            "value": "Live",
+            "label": "Status refresh",
+            "detail": "Pulls directly from our operations control tower."
+          },
+          "hotline": {
+            "value": "Hotline",
+            "label": "+880-2-9552676",
+            "detail": "Speak with the duty coordinator for priority updates."
+          }
+        },
+        "form": {
+          "trackingIdPlaceholder": "Tracking ID",
+          "submitButton": "Track shipment",
+          "helpText": "Need help finding your reference? Check the booking confirmation email or call our operations desk."
+        },
+        "assistance": {
+          "title": "Need extra assistance?",
+          "email": {
+            "title": "Email updates",
+            "detail": "opsdesk@shamolima.com for route snapshots and POD copies."
+          },
+          "whatsapp": {
+            "title": "WhatsApp alerts",
+            "detail": "Opt in for automated checkpoints and ETA changes."
+          },
+          "exception": {
+            "title": "Exception handling",
+            "detail": "Dedicated supervisor escalation for critical cargo."
+          }
+        },
+        "dashboards": {
+          "kicker": "Project dashboards",
+          "title": "Upgrade to full visibility for major mobilisations",
+          "description": "We provide customised dashboards combining GPS, permit status, crew rosters and site readiness for shutdowns, EPC projects and critical heavy lift operations.",
+          "cta": "Ask our team about enterprise tracking portals tailored to your project."
+        }
+      },
+      "services": {
+        "hero": {
+          "kicker": "Our Services",
+          "title": "End-to-end logistics for complex projects",
+          "description": "From heavy haulage and engineered lifts to customs clearance and site mobilisation, Shamolima delivers the Shamolima Limited-standard experience across Bangladesh."
+        },
+        "tags": {
+          "heavyHaulage": "Heavy haulage",
+          "spmtRigging": "SPMT & rigging",
+          "customsPorts": "Customs & ports",
+          "projectSupport": "Project support"
+        },
+        "actions": {
+          "planMove": "Plan a move",
+          "talkExpert": "Talk to an expert"
+        },
+        "stats": {
+          "pillars": {
+            "label": "Service pillars",
+            "detail": "Rental, transport, lifting, customs, site support and more under one license."
+          },
+          "crawlerCapacity": {
+            "label": "Crawler capacity",
+            "detail": "Fleet of cranes, SPMTs and hydraulic trailers ready for critical lifts."
+          },
+          "operationsDesks": {
+            "label": "Operations desks",
+            "detail": "Live coordination across seaports, river terminals and project sites."
+          }
+        },
+        "capabilities": {
+          "kicker": "Capabilities",
+          "title": "Choose a discipline to explore scope & references",
+          "lede": "Each service links to case studies, gallery references and typical execution scope.",
+          "cardCopy": "View scope, gallery and deliverables"
+        },
+        "whyItMatters": {
+          "kicker": "Why it matters",
+          "title": "Integrated execution keeps complex moves predictable",
+          "lede": "We handle permitting, equipment mobilisation, staffing, reporting and close-out under one project desk so your team focuses on critical milestones."
+        },
+        "included": {
+          "heading": "Included with every engagement",
+          "routeLift": {
+            "title": "Route & lift engineering",
+            "detail": "Autodesk lift plans, stability checks and corridor readiness reports."
+          },
+          "certified": {
+            "title": "Certified crews & equipment",
+            "detail": "Operators, riggers, escort pilots and maintenance teams on rotation."
+          },
+          "reporting": {
+            "title": "24/7 reporting",
+            "detail": "Progress dashboards, HSE tracking and client comms in real time."
+          }
+        },
+        "bundled": {
+          "title": "Need a bundled solution?",
+          "text": "We can combine haulage, lifting, clearance and site services under one contract."
+        },
+        "getStarted": {
+          "kicker": "Get started",
+          "title": "Share your scope for a rapid mobilisation plan",
+          "lede": "Tell us about cargo dimensions, pick-up / delivery points and timelines. Our project desk replies with recommended equipment, routing notes and a commercial overview.",
+          "ctas": {
+            "requestQuote": "Request a tailored quote",
+            "talkOps": "Talk to operations"
+          }
+        }
+      },
+      "fleet": {
+        "hero": {
+          "kicker": "Fleet",
+          "title": "Right-sized vehicles for every haul",
+          "description": "From city pickups to heavy-duty covered trucks, Shamolima' owned fleet moves cargo safely and efficiently while integrating with our heavy lift and rigging capability."
+        },
+        "tags": {
+          "coveredDeck": "Covered deck",
+          "permitReady": "Permit ready",
+          "gpsTracked": "GPS tracked"
+        },
+        "actions": {
+          "requestAvailability": "Request availability",
+          "exploreEquipmentRental": "Explore equipment rental"
+        },
+        "stats": {
+          "payloadRange": {
+            "label": "Payload range",
+            "detail": "Optimised for project cargo, sensitive equipment and last-mile delivery."
+          },
+          "coverage": {
+            "label": "Coverage",
+            "detail": "Dhaka, Chattagram, Khulna, Mongla and all major industrial corridors."
+          }
+        },
+        "catalogue": {
+          "kicker": "Vehicle catalogue",
+          "title": "Standard deck sizes & capacities",
+          "lede": "Every unit is maintained by in-house technicians and can be paired with escort pilots, rigging teams and temporary storage."
+        },
+        "trucks": [
+          {
+            "name": "Mini (7 ft)",
+            "size": "7x5 ft",
+            "capacityTons": 1.0
+          },
+          {
+            "name": "Pickup (8 ft)",
+            "size": "8x5 ft",
+            "capacityTons": 1.5
+          },
+          {
+            "name": "Small (10 ft)",
+            "size": "10x6 ft",
+            "capacityTons": 2.0
+          },
+          {
+            "name": "Medium (14 ft)",
+            "size": "14x7 ft",
+            "capacityTons": 3.0
+          },
+          {
+            "name": "Large (17 ft)",
+            "size": "17x7.5 ft",
+            "capacityTons": 5.0
+          },
+          {
+            "name": "Covered (20 ft)",
+            "size": "20x8 ft",
+            "capacityTons": 8.0
+          }
+        ],
+        "needSpecialised": {
+          "kicker": "Need something specialised?",
+          "title": "Combine pickups, covered trucks and heavy trailers in one brief",
+          "lede": "We can bundle forklifts, cranes, temporary storage, escort vehicles and manpower for turnarounds, shutdowns or project moves."
+        },
+        "dispatch": {
+          "heading": "Talk to our dispatch",
+          "dailyAvailability": {
+            "title": "Daily availability sheets",
+            "detail": "See which units are ready in Dhaka, Gazipur, Narayanganj and port zones."
+          },
+          "routeAdvisory": {
+            "title": "Route advisory",
+            "detail": "Identify restrictions, alternate corridors and staging yards."
+          },
+          "bundledStaffing": {
+            "title": "Bundled staffing",
+            "detail": "Drivers, riggers, operators and supervisors on a single roster."
+          },
+          "cta": "Speak with dispatch"
+        }
+      },
+      "qhse": {
+        "hero": {
+          "kicker": "QHSE",
+          "title": "Quality, Health, Safety & Environment without compromise",
+          "description": "Shamolima' integrated management system drives zero harm, disciplined execution and continual improvement across every project stage."
+        },
+        "tags": {
+          "iso": "ISO certification",
+          "training": "Training",
+          "audits": "Audits",
+          "compliance": "Compliance"
+        },
+        "actions": {
+          "viewGoals": "View QHSE goals",
+          "trainingFramework": "Training framework"
+        },
+        "stats": {
+          "zero": {
+            "label": "Incident ambition",
+            "detail": "Daily toolbox talks, audits and stop-work authority across all crews."
+          },
+          "ims": {
+            "label": "Integrated management system",
+            "detail": "ISO-driven processes covering quality, health, safety and environment."
+          },
+          "monitoring": {
+            "label": "Monitoring",
+            "detail": "Live tracking of permits, equipment condition, weather and corridor risk."
+          }
+        },
+        "commitments": {
+          "kicker": "Our commitments",
+          "title": "Embedding quality and safety in every mobilization"
+        },
+        "training": {
+          "kicker": "Training in action",
+          "title": "Hands-on drills & competency refreshers"
+        },
+        "certifications": {
+          "kicker": "Certifications",
+          "title": "Integrated management certificates & memberships",
+          "lede": "Our IMS certifications and industry memberships evidence the rigor we bring to safety, environmental stewardship and quality delivery."
+        },
+        "documents": {
+          "heading": "Key documents",
+          "ims": {
+            "title": "IMS Certificate",
+            "detail": "Download the latest ISO certifications covering QHSE."
+          },
+          "matrix": {
+            "title": "Training matrix",
+            "detail": "Role-based competency and refresher schedules."
+          },
+          "erp": {
+            "title": "Emergency response plan",
+            "detail": "Escalation pathways and 24/7 contact roster."
+          },
+          "downloadIMS": "Download IMS certificate"
+        }
+      },
+      "workActivities": {
+        "hero": {
+          "title": "Integrated logistics in the field",
+          "lede": "Every movement is custom engineered: feasibility studies, corridor readiness, lift plans, temporary works and final alignment. We own the gear, develop our crews and stay embedded until your cargo is commissioned."
+        },
+        "tags": [
+          "Heavy lift rigging",
+          "Multimodal transport",
+          "Route intelligence",
+          "EPC partnerships"
+        ],
+        "stats": [
+          {
+            "value": "25+",
+            "label": "Years leading heavy lift & transport in Bangladesh",
+            "detail": "Deep experience across ports, refineries, LNG terminals and grid upgrades."
+          },
+          {
+            "value": "420+",
+            "label": "Complex rigging & haulage moves executed",
+            "detail": "Crawler cranes, gantries, SPMTs and hydraulic trailers mobilised for critical cargo."
+          },
+          {
+            "value": "1,200 km+",
+            "label": "Route surveys & corridor readiness delivered",
+            "detail": "Road strengthening, barge studies and multimodal logistics engineered in-house."
+          },
+          {
+            "value": "24/7",
+            "label": "Field supervision & maintenance coverage",
+            "detail": "Execution teams backed by mechanics, riggers and compliance specialists on rotation."
+          }
+        ],
+        "focusAreas": [
+          {
+            "badge": "01",
+            "title": "Pre-project intelligence",
+            "copy": "Feasibility studies, corridor assessments and digital twins that de-risk every move before mobilisation."
+          },
+          {
+            "badge": "02",
+            "title": "Lift engineering",
+            "copy": "Autodesk lift plans, rigging studies and SPMT calculations signed-off by certified engineers."
+          },
+          {
+            "badge": "03",
+            "title": "Integrated transport",
+            "copy": "Heavy trailers, barges, staging yards and customs clearance orchestrated as one programme."
+          },
+          {
+            "badge": "04",
+            "title": "Site execution",
+            "copy": "Erection crews, alignment teams and commissioning support that stay on-site until handover."
+          }
+        ],
+        "milestones": [
+          {
+            "title": "Water bath heater install",
+            "detail": "150T crawler crane lift-in and tie-in for a gas processing facility in Narayanganj."
+          },
+          {
+            "title": "Heat exchanger haul",
+            "detail": "80T exchanger transported door-to-door on multi-axle trailers with escorted convoys."
+          },
+          {
+            "title": "Transformer relocation",
+            "detail": "SPMT roll-off and precision placement for a grid substation expansion in the north zone."
+          },
+          {
+            "title": "LNG terminal modules",
+            "detail": "Jetty-to-site multimodal delivery with barge handling, staging yard and final alignment."
+          }
+        ],
+        "phases": [
+          {
+            "title": "Scope & design",
+            "copy": "We kick off with feasibility studies, corridor intelligence and engineered lift studies tailored to your cargo envelope.",
+            "points": [
+              "Concept studies, risk registers and stakeholder alignment workshops",
+              "Lift diagrams, rigging calculus and stability checks for all critical lifts",
+              "Permit roadmaps and corridor readiness plans vetted with authorities"
+            ]
+          },
+          {
+            "title": "Mobilise & prep",
+            "copy": "Specialised gear, crews and spares are staged while permits, temporary works and HSE drills go live.",
+            "points": [
+              "Transport permits, port handling windows and escort coordination",
+              "Temporary bridging, stooling, saddles and engineered steelwork fabrication",
+              "Toolbox talks, competency refreshers and emergency response simulations"
+            ]
+          },
+          {
+            "title": "Execute & monitor",
+            "copy": "Operations are choreographed with live dashboards, telemetry, HSE checkpoints and route marshals for hazard control.",
+            "points": [
+              "On-site lift directors and supervisors with comms link",
+              "Telemetry, weather watch and load monitoring 24/7",
+              "Client updates with visuals and KPI scorecards"
+            ]
+          },
+          {
+            "title": "Close-out & handover",
+            "copy": "We close with reinstatement, documentation and readiness for follow-on scopes.",
+            "points": [
+              "As-built dossiers, photographic records and QA filings",
+              "Route reinstatement, third-party inspections and punch-list closure",
+              "Demobilisation sequencing with readiness for follow-on scopes"
+            ]
+          }
+        ],
+        "recentPlaysHeading": "Recent plays",
+        "planningCtaTitle": "Planning a critical move?",
+        "planningCtaTextPrefix": "Email our project desk at"
+      },
+      "logistics": {
+        "hero": {
+          "kicker": "Documentation",
+          "title": "Logistics Capabilities",
+          "description": "View our comprehensive logistics documentation and service capabilities."
+        },
+        "viewer": {
+          "loading": "Loading PDF…",
+          "prev": "Prev",
+          "next": "Next"
+        }
+      },
+      "serviceSingle": {
+        "heroKicker": "Service capability",
+        "heroLedePrefix": "Explore the Shamolima approach, references and deliverables drawn from our portfolio of",
+        "heroLedeSuffix": "projects.",
+        "heroTags": {
+          "engineering": "Engineering",
+          "execution": "Execution",
+          "support": "Support"
+        },
+        "backToServices": "Back to services",
+        "stats": {
+          "fullScope": {
+            "value": "Full Scope",
+            "label": "Detailed deliverables",
+            "detail": "Planning, execution and support notes from previous engagements."
+          },
+          "visualRefs": {
+            "value": "Visual References",
+            "label": "Project imagery",
+            "detail": "High-resolution photos from mobilisation, heavy lifts and on-site works."
+          }
+        },
+        "sidebar": {
+          "onThisPage": "On this page",
+          "overview": {
+            "title": "Overview",
+            "detail": "Service positioning and key outcomes."
+          },
+          "gallery": {
+            "title": "Gallery",
+            "detail": "Project references."
+          },
+          "scope": {
+            "title": "Scope",
+            "detail": "Shipping & customs highlights."
+          },
+          "cta": "Request a plan"
+        },
+        "overview": {
+          "title": "Service Overview",
+          "copyPrefix": "Explore our",
+          "copySuffix": "capability with references, images and scope from recent work. Use the gallery below for mobilisation visuals and share the highlights with your stakeholders.",
+          "tags": {
+            "planning": "Planning",
+            "execution": "Execution",
+            "support": "Support"
+          }
+        },
+        "gallery": {
+          "title": "Project Gallery",
+          "subtitle": "Visual references from completed mobilisations",
+          "note": "Images are provided for reference"
+        },
+        "scope": {
+          "title": "Scope / highlights"
+        },
+        "insight": {
+          "heading": "Need a tailored execution plan?",
+          "combine": {
+            "title": "Combine services",
+            "detail": "Bundle transport, lifting, customs and site teams under one brief."
+          },
+          "share": {
+            "title": "Share your scope",
+            "detail": "Tell us about cargo, route windows and constraints for a rapid plan."
+          },
+          "cta": "Request mobilisation plan"
+        }
+      }
+    }
   },
   "home": {
     "hero": {
@@ -17,7 +696,7 @@
     ],
     "stats": [
       {
-        "value": "35+",
+        "value": "40+",
         "label": "Years in Operation",
         "detail": "Pioneering logistics since 1983."
       },
@@ -40,22 +719,22 @@
     "aboutSnippet": "SHAMOLIMA has been providing comprehensive Project Support Services in Bangladesh since 1983. The company specializes in logistics, engineering, and project materials support for industries including oil and gas, power, energy, telecommunications, and infrastructure. It delivers high-quality professional consultancy, equipment rentals, transportation, shipping, customs clearance, and manpower solutions throughout Bangladesh.",
     "focusAreas": [
       {
-        "badge": "Fleet",
+        "badge": "Fle",
         "title": "Equipment Rentals",
         "copy": "Certified Cranes, Trailers, Forklifts, and a wide range of heavy equipment to support any project requirement."
       },
       {
-        "badge": "Sectors",
+        "badge": "Sec",
         "title": "Oil, Gas \u0026 Power",
         "copy": "Extensive knowledge and experience in moving Rigs, drilling equipment, and supporting the energy sector."
       },
       {
-        "badge": "Logistics",
+        "badge": "Logi",
         "title": "Shipping \u0026 Customs",
         "copy": "Actively engaged in Shipping, Freight Forwarding, and Customs Clearance for infrastructure and development projects."
       },
       {
-        "badge": "Support",
+        "badge": "Sup",
         "title": "Complete Site Services",
         "copy": "Includes warehousing, crew handling, and certified manpower to ensure seamless on-site operations."
       }
@@ -129,11 +808,6 @@
     },
     "timeline": [
       {
-        "year": "1983",
-        "title": "Foundation",
-        "description": "Shamolima was founded to fill a critical gap in specialized logistics services."
-      },
-      {
         "year": "1997",
         "title": "Expansion",
         "description": "Expanded fleet and services to support growing energy sector needs."
@@ -199,23 +873,27 @@
       "services": [
         {
           "title": "Multimodal Freight Management",
-          "description": "We offer end-to-end multimodal logistics for global and local project cargo. Our expertise spans air, sea, inland waterways, and road transport, ensuring seamless coordination from mother vessel to final destination, backed by our own shipping and customs licenses."
-        },
-        {
-          "title": "Cargo Handling Expertise",
-          "description": "With decades of experience, we expertly manage heavy lift, oversized, and sensitive cargo. Our trained teams and specialized equipment ensure safe handling, reducing risk and project downtime. From lashing to final positioning, we prioritize safety and precision at every step."
-        },
-        {
-          "title": "Freight Position \u0026 Negotiation",
-          "description": "Leveraging our long-standing relationships with global carriers and inland providers, we negotiate competitive freight rates and secure priority positioning. This enables cost-effective logistics planning and better project budgeting."
+          "description": "Air, sea, road, and rail shipping coordination backed by our global logistics partners."
         },
         {
           "title": "Shipment Tracking \u0026 Communication",
-          "description": "Utilize our advanced tracking systems and dedicated support teams to monitor cargo movement in real time. We provide regular updates on vessel arrivals, port handling, customs status, and land transport ensuring transparency, accountability, and peace of mind throughout the journey."
+          "description": "Access to our client portal \"Ecoflit\" providing real-time vehicle and shipment tracking,  event-based alerts via mobile and web apps, with proactive project manager updates."
+        },
+        {
+          "title": "Cargo Handling Expertise",
+          "description": "Safe management of oversized and fragile products, including dismantling advice for  oversized shipments to facilitate inland transport. Professional warehousing, cargo  inspection, and packaging to preserve product integrity through transit."
+        },
+        {
+          "title": "Carrier Selection \u0026 Negotiation",
+          "description": "Leveraging our volume and large network to secure competitive freight rates and  capacity."
+        },
+        {
+          "title": "Shipment Tracking \u0026 Communication",
+          "description": "Access to our client portal \"Ecoflit\" providing real-time vehicle and shipment tracking,  event-based alerts via mobile and web apps, with proactive project manager updates."
         },
         {
           "title": "Fleet \u0026 Transportation",
-          "description": "We operate a fleet of over 200 assets including hydraulic trailers, lowbed trailers, forklifts, cranes, and barges. Our vessels are maintained to the highest standards and staffed by certified operators, ready to handle diverse cargo across challenging terrains and waterways."
+          "description": "We operate a fleet with GPS tracking and live monitoring for inland cargo transport,  ensuring security and live visibility./n n our application we also track important milestones of CNF activities/documents like:\n \nBill of Lading / AWS\nCommercial Invoice\nPacking List\nImport Permit\nCustoms Clearance etc"
         }
       ]
     },
@@ -282,6 +960,15 @@
       "Shahid I Chowdhury (CEO)",
       "Masood Ali (MD)"
     ],
+    "leadersTitle": "Board of directors",
+    "leadersDescription": "Executive leadership overseeing operations, QHSE and client success.",
+    "advantagesTitle": "Our Commitment & Advantages",
+    "advantagesSubheading": "Shamolima delivers excellence across the entire customs brokerage and freight forwarding value chain",
+    "footerCta": {
+      "title": "Enhance your competitive edge in international trade with Shamolima â€” trusted, experienced, and technologically advanced customs brokerage and freight forwarding solutions.",
+      "subtitle": "Contact us today for a personalized consultation and a detailed quotation.",
+      "buttonLabel": "Get in Touch"
+    },
     "whatWeDo": [
       "Project materials supply and logistics",
       "Engineering, construction, and erection services",
@@ -345,6 +1032,17 @@
       "Prepare and maintain effective emergency arrangements and response procedures.",
       "Comply with all applicable legal and regulatory requirements.",
       "Continuously train personnel to improve awareness, competence, and performance."
+    ],
+    "trainingImages": [
+      "assets/work-activities/10-1.jpg",
+      "assets/work-activities/11-1.jpg",
+      "assets/work-activities/12-1.jpg",
+      "assets/work-activities/IMG-20221117-WA0003.jpg",
+      "assets/work-activities/IMG-20221116-WA0000.jpg",
+      "assets/work-activities/20220928_102317.jpg",
+      "assets/work-activities/IMG-20210906-WA0015.jpg",
+      "assets/work-activities/IMG-20210906-WA0016.jpg",
+      "assets/work-activities/IMG-20210912-WA0027.jpg"
     ],
     "imsCertificateImage": "assets/images/iso_certificate.jpg",
     "pageUrls": {
@@ -491,3 +1189,4 @@
     "isoCertificate": "assets/images/iso_certificate.jpg"
   }
 }
+

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {Header} from '../../core/components/header/header';
 import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import {Footer} from '../../core/components/footer/footer';
 import {CommonModule} from '@angular/common';
 import {listStagger} from '../../shared/animation';
 import {RevealOnScroll} from '../../shared/directives/reveal-on-scroll';
+import { ContentService } from '../../shared/content.service';
 
 class Truck {
   name: string | undefined;
@@ -24,6 +25,8 @@ class Truck {
   styleUrl: './fleet.scss'
 })
 export class Fleet {
+  private content = inject(ContentService);
+  ui$ = this.content.ui$;
   trucks: Truck[] = [
     { name: 'Mini (7 ft)',   size: '7×5 ft',   capacityTons: 1.0 },
     { name: 'Pickup (8 ft)', size: '8×5 ft',   capacityTons: 1.5 },

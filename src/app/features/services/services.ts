@@ -3,7 +3,7 @@ import { Footer } from '../../core/components/footer/footer';
 import { Header } from '../../core/components/header/header';
 import { PageHeroCarousel } from '../../shared/components/page-hero-carousel/page-hero-carousel';
 import { RouterLink } from '@angular/router';
-import { AsyncPipe, DecimalPipe, NgForOf } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgForOf, NgIf } from '@angular/common';
 import { fadeIn, listStagger } from '../../shared/animation';
 import { Observable } from 'rxjs';
 import { ServiceListItem } from '../../shared/types';
@@ -18,6 +18,7 @@ import { AnimateCounterDirective } from '../../shared/directives/animate-counter
     PageHeroCarousel,
     RouterLink,
     NgForOf,
+    NgIf,
     AsyncPipe,
     DecimalPipe,
     RevealOnScroll,
@@ -29,6 +30,6 @@ import { AnimateCounterDirective } from '../../shared/directives/animate-counter
 })
 export class Services {
   private content = inject(ContentService);
+  ui$ = this.content.ui$;
   services$: Observable<ServiceListItem[]> = this.content.serviceList$;
 }
-

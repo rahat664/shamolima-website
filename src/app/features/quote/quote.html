@@ -1,4 +1,4 @@
-<app-header />
+
 
 <section class="page-hero page-hero--navy" @fadeIn>
   <app-page-hero-carousel [images]="[
@@ -10,36 +10,34 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand">Request a quote</p>
-      <h1 class="page-hero__title">Share your cargo details for a rapid mobilisation plan</h1>
-      <p class="page-hero__lede">
-        We reply with recommended equipment, permits, escorts, lead time and commercials within hours. Tell us your route, timeline and constraints and we ll take it from there.
-      </p>
+      <p class="kicker text-brand">{{ ui.pages.quote.kicker }}</p>
+      <h1 class="page-hero__title">{{ ui.pages.quote.title }}</h1>
+      <p class="page-hero__lede">{{ ui.pages.quote.description }}</p>
 
       <div class="page-hero__tags">
-        <span class="tag-chip">Heavy lift</span>
-        <span class="tag-chip">Multimodal</span>
-        <span class="tag-chip">Customs & ports</span>
+        <span class="tag-chip">{{ ui.pages.quote.tags.heavyLift }}</span>
+        <span class="tag-chip">{{ ui.pages.quote.tags.multimodal }}</span>
+        <span class="tag-chip">{{ ui.pages.quote.tags.customsPorts }}</span>
       </div>
 
       <div class="page-hero__actions">
-        <a href="tel:+88029562676" class="btn btn-primary btn--glow">Call our project desk</a>
-        <a routerLink="/services" class="btn btn--light">View service catalogue</a>
+        <a href="tel:+88029562676" class="btn btn-primary btn--glow">{{ ui.pages.quote.buttons.callDesk }}</a>
+        <a routerLink="/services" class="btn btn--light">{{ ui.pages.quote.buttons.viewCatalogue }}</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card">
-        <div class="stat-card__value">2h</div>
-        <p class="stat-card__label">Average response time</p>
-        <p class="stat-card__detail">Dedicated desks in Dhaka & Chattagram to scope projects quickly.</p>
+        <div class="stat-card__value">{{ ui.pages.quote.stats.responseTime.value }}</div>
+        <p class="stat-card__label">{{ ui.pages.quote.stats.responseTime.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.quote.stats.responseTime.detail }}</p>
       </article>
       <article class="stat-card">
-        <div class="stat-card__value">360&deg;</div>
-        <p class="stat-card__label">Support coverage</p>
-        <p class="stat-card__detail">Route surveys, lift plans, customs, escorts and site execution.</p>
+        <div class="stat-card__value">{{ ui.pages.quote.stats.coverage.value }}</div>
+        <p class="stat-card__label">{{ ui.pages.quote.stats.coverage.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.quote.stats.coverage.detail }}</p>
       </article>
     </div>
   </div>
@@ -47,73 +45,72 @@
 
 <section class="section section--bright" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] items-start">
-    <form class="form-card grid gap-4" (ngSubmit)="submit()" #quoteForm="ngForm">
+    <form class="form-card grid gap-4" (ngSubmit)="submit()" #quoteForm="ngForm" *ngIf="ui$ | async as ui">
       <div class="grid md:grid-cols-2 gap-4">
-        <input class="form-field" placeholder="Your name" [(ngModel)]="model.name" name="name" required>
-        <input class="form-field" placeholder="Email" type="email" [(ngModel)]="model.email" name="email" required>
+        <input class="form-field" [placeholder]="ui.pages.quote.form.namePlaceholder" [(ngModel)]="model.name" name="name" required>
+        <input class="form-field" [placeholder]="ui.pages.quote.form.emailPlaceholder" type="email" [(ngModel)]="model.email" name="email" required>
       </div>
-      <input class="form-field" placeholder="Phone" [(ngModel)]="model.phone" name="phone">
+      <input class="form-field" [placeholder]="ui.pages.quote.form.phonePlaceholder" [(ngModel)]="model.phone" name="phone">
       <div class="grid md:grid-cols-2 gap-4">
-        <input class="form-field" placeholder="Pickup location" [(ngModel)]="model.pickup" name="pickup" required>
-        <input class="form-field" placeholder="Drop-off location" [(ngModel)]="model.dropoff" name="dropoff" required>
+        <input class="form-field" [placeholder]="ui.pages.quote.form.pickupPlaceholder" [(ngModel)]="model.pickup" name="pickup" required>
+        <input class="form-field" [placeholder]="ui.pages.quote.form.dropoffPlaceholder" [(ngModel)]="model.dropoff" name="dropoff" required>
       </div>
       <div class="grid md:grid-cols-2 gap-4">
-        <input class="form-field" type="date" placeholder="Preferred date" [(ngModel)]="model.date" name="date">
-        <input class="form-field" placeholder="Cargo (e.g., 10 ft skid, 12 ton)" [(ngModel)]="model.cargo" name="cargo">
+        <input class="form-field" type="date" [placeholder]="ui.pages.quote.form.datePlaceholder" [(ngModel)]="model.date" name="date">
+        <input class="form-field" [placeholder]="ui.pages.quote.form.cargoPlaceholder" [(ngModel)]="model.cargo" name="cargo">
       </div>
-      <textarea class="form-field" rows="4" placeholder="Notes / constraints" [(ngModel)]="model.notes" name="notes"></textarea>
-      <button class="btn btn-primary btn--glow justify-center" type="submit">Submit request</button>
-      <p class="text-xs text-slate-500">By submitting you agree to our data processing and response policy.</p>
+      <textarea class="form-field" rows="4" [placeholder]="ui.pages.quote.form.notesPlaceholder" [(ngModel)]="model.notes" name="notes"></textarea>
+      <button class="btn btn-primary btn--glow justify-center" type="submit">{{ ui.pages.quote.form.submitButton }}</button>
+      <p class="text-xs text-slate-500">{{ ui.pages.quote.form.disclaimer }}</p>
     </form>
 
-    <aside class="insight-card" [@listStagger]>
-      <h3 class="insight-card__heading">How it works</h3>
+    <aside class="insight-card" [@listStagger] *ngIf="ui$ | async as ui">
+      <h3 class="insight-card__heading">{{ ui.pages.quote.howItWorks.title }}</h3>
       <ul class="insight-card__list">
-        <li *ngFor="let s of steps">
+        <li *ngFor="let s of (steps$ | async)">
           <span class="insight-card__title">{{ s.n }}. {{ s.title }}</span>
           <span class="insight-card__detail">{{ s.text }}</span>
         </li>
       </ul>
       <div class="insight-card__cta mt-8">
-        <p class="font-semibold">Prefer a call instead?</p>
-        <p>Reach the project desk on <a class="text-brand hover:underline" href="tel:+88029562676">+880-2-9552676</a> or email <a class="text-brand hover:underline" href="mailto:info@shamolima.com">info@shamolima.com</a>.</p>
+        <p class="font-semibold">{{ ui.pages.quote.howItWorks.preferCall }}</p>
+        <p [innerHTML]="ui.pages.quote.howItWorks.reachText"></p>
       </div>
     </aside>
   </div>
 </section>
 
 <section class="section section--navy" @fadeIn>
-  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center">
+  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:items-center" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand">After submission</p>
-      <h2 class="section-title text-white">What to expect from the Shamolima team</h2>
-      <p class="section-lede text-white/70">We issue a mobilisation plan with equipment, permits, staging, HSE milestones and billing, then assign a project coordinator to stay with you through execution.</p>
+      <p class="kicker text-brand">{{ ui.pages.quote.afterSubmission.kicker }}</p>
+      <h2 class="section-title text-white">{{ ui.pages.quote.afterSubmission.title }}</h2>
+      <p class="section-lede text-white/70">{{ ui.pages.quote.afterSubmission.description }}</p>
     </div>
     <div class="insight-card">
-      <h3 class="insight-card__heading">Included deliverables</h3>
+      <h3 class="insight-card__heading">{{ ui.pages.quote.afterSubmission.deliverables.title }}</h3>
       <ul class="insight-card__list">
         <li>
-          <span class="insight-card__title">Route & lift assessments</span>
-          <span class="insight-card__detail">Preliminary engineering, corridor notes and permit roadmap.</span>
+          <span class="insight-card__title">{{ ui.pages.quote.afterSubmission.deliverables.route.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.quote.afterSubmission.deliverables.route.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Equipment lineup</span>
-          <span class="insight-card__detail">Fleet, rigging and manpower matrix tailored to your cargo.</span>
+          <span class="insight-card__title">{{ ui.pages.quote.afterSubmission.deliverables.equipment.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.quote.afterSubmission.deliverables.equipment.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Execution timeline</span>
-          <span class="insight-card__detail">Mobilisation, transit, site works and demobilisation schedule.</span>
+          <span class="insight-card__title">{{ ui.pages.quote.afterSubmission.deliverables.timeline.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.quote.afterSubmission.deliverables.timeline.detail }}</span>
         </li>
       </ul>
       <div class="insight-card__cta mt-8">
-        <a routerLink="/services" class="btn btn-outline w-full justify-center">Explore our capabilities</a>
+        <a routerLink="/services" class="btn btn-outline w-full justify-center">{{ ui.buttons?.explorCapabilities || 'Explore our capabilities' }}</a>
       </div>
     </div>
   </div>
 </section>
 
 <app-footer />
-
 
 
 

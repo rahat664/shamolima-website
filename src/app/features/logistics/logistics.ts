@@ -1,19 +1,22 @@
-import {Component, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
-import { NgIf } from '@angular/common';
+import {Component, ElementRef, ViewChild, AfterViewInit, inject} from '@angular/core';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Header } from '../../core/components/header/header';
 import { Footer } from '../../core/components/footer/footer';
 import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import type { PDFDocumentProxy } from 'pdfjs-dist/types/src/display/api';
 import {PageHeroCarousel} from '../../shared/components/page-hero-carousel/page-hero-carousel';
+import { ContentService } from '../../shared/content.service';
 
 @Component({
   selector: 'app-logistics',
   standalone: true,
-  imports: [NgIf, Header, Footer, PageHeroCarousel],
+  imports: [NgIf, AsyncPipe, Header, Footer, PageHeroCarousel],
   templateUrl: './logistics.html',
   styleUrl: './logistics.scss'
 })
 export class Logistics implements AfterViewInit {
+  private content = inject(ContentService);
+  ui$ = this.content.ui$;
   @ViewChild('pdfCanvas') pdfCanvas!: ElementRef<HTMLCanvasElement>;
   error: string | null = null;
   loading = true;

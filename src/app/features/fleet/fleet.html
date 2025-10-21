@@ -10,49 +10,47 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center" *ngIf="(ui$ | async) as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Fleet</p>
-      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">Right-sized vehicles for every haul</h1>
-      <p class="page-hero__lede">
-        From city pickups to heavy-duty covered trucks, Shamolima' owned fleet moves cargo safely and efficiently while integrating with our heavy lift and rigging capability.
-      </p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.fleet.hero.kicker }}</p>
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.fleet.hero.title }}</h1>
+      <p class="page-hero__lede">{{ ui.pages.fleet.hero.description }}</p>
 
       <div class="page-hero__tags">
-        <span class="tag-chip">Covered deck</span>
-        <span class="tag-chip">Permit ready</span>
-        <span class="tag-chip">GPS tracked</span>
+        <span class="tag-chip">{{ ui.pages.fleet.tags.coveredDeck }}</span>
+        <span class="tag-chip">{{ ui.pages.fleet.tags.permitReady }}</span>
+        <span class="tag-chip">{{ ui.pages.fleet.tags.gpsTracked }}</span>
       </div>
 
       <div class="page-hero__actions">
-        <a routerLink="/quote" class="btn btn-primary btn--glow">Request availability</a>
-        <a routerLink="/services/equipment-rental" class="btn btn--light">Explore equipment rental</a>
+        <a routerLink="/quote" class="btn btn-primary btn--glow">{{ ui.pages.fleet.actions.requestAvailability }}</a>
+        <a routerLink="/services/equipment-rental" class="btn btn--light">{{ ui.pages.fleet.actions.exploreEquipmentRental }}</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card">
         <div class="stat-card__value">1&ndash;8T</div>
-        <p class="stat-card__label">Payload range</p>
-        <p class="stat-card__detail">Optimised for project cargo, sensitive equipment and last-mile delivery.</p>
+        <p class="stat-card__label">{{ ui.pages.fleet.stats.payloadRange.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.fleet.stats.payloadRange.detail }}</p>
       </article>
       <article class="stat-card">
         <div class="stat-card__value">Nationwide</div>
-        <p class="stat-card__label">Coverage</p>
-        <p class="stat-card__detail">Dhaka, Chattagram, Khulna, Mongla and all major industrial corridors.</p>
+        <p class="stat-card__label">{{ ui.pages.fleet.stats.coverage.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.fleet.stats.coverage.detail }}</p>
       </article>
     </div>
   </div>
 </section>
 
 <section class="section section--bright" [@listStagger]>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Vehicle catalogue</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Standard deck sizes & capacities</h2>
-    <p class="section-lede">Every unit is maintained by in-house technicians and can be paired with escort pilots, rigging teams and temporary storage.</p>
+  <div class="container" *ngIf="(ui$ | async) as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.fleet.catalogue.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.fleet.catalogue.title }}</h2>
+    <p class="section-lede">{{ ui.pages.fleet.catalogue.lede }}</p>
 
     <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <article *ngFor="let truck of trucks" class="fleet-card group">
+      <article *ngFor="let truck of (ui.pages.fleet.trucks || [])" class="fleet-card group">
         <div class="fleet-card__header">
           <span class="fleet-card__badge">{{ truck.capacityTons }}T</span>
           <div class="fleet-card__icon">
@@ -93,30 +91,30 @@
 </section>
 
 <section class="section section--navy" @fadeIn>
-  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_340px] lg:items-center">
+  <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_340px] lg:items-center" *ngIf="(ui$ | async) as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Need something specialised?</p>
-      <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">Combine pickups, covered trucks and heavy trailers in one brief</h2>
-      <p class="section-lede text-white/70">We can bundle forklifts, cranes, temporary storage, escort vehicles and manpower for turnarounds, shutdowns or project moves.</p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.fleet.needSpecialised.kicker }}</p>
+      <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">{{ ui.pages.fleet.needSpecialised.title }}</h2>
+      <p class="section-lede text-white/70">{{ ui.pages.fleet.needSpecialised.lede }}</p>
     </div>
     <aside class="insight-card">
-      <h3 class="insight-card__heading">Talk to our dispatch</h3>
+      <h3 class="insight-card__heading">{{ ui.pages.fleet.dispatch.heading }}</h3>
       <ul class="insight-card__list">
         <li>
-          <span class="insight-card__title">Daily availability sheets</span>
-          <span class="insight-card__detail">See which units are ready in Dhaka, Gazipur, Narayanganj and port zones.</span>
+          <span class="insight-card__title">{{ ui.pages.fleet.dispatch.dailyAvailability.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.fleet.dispatch.dailyAvailability.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Route advisory</span>
-          <span class="insight-card__detail">Identify restrictions, alternate corridors and staging yards.</span>
+          <span class="insight-card__title">{{ ui.pages.fleet.dispatch.routeAdvisory.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.fleet.dispatch.routeAdvisory.detail }}</span>
         </li>
         <li>
-          <span class="insight-card__title">Bundled staffing</span>
-          <span class="insight-card__detail">Drivers, riggers, operators and supervisors on a single roster.</span>
+          <span class="insight-card__title">{{ ui.pages.fleet.dispatch.bundledStaffing.title }}</span>
+          <span class="insight-card__detail">{{ ui.pages.fleet.dispatch.bundledStaffing.detail }}</span>
         </li>
       </ul>
       <div class="insight-card__cta mt-8">
-        <a routerLink="/contact" class="btn btn-primary w-full justify-center">Speak with dispatch</a>
+        <a routerLink="/contact" class="btn btn-primary w-full justify-center">{{ ui.pages.fleet.dispatch.cta }}</a>
       </div>
     </aside>
   </div>

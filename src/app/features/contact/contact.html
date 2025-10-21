@@ -8,50 +8,49 @@
   <div class="page-hero__orb page-hero__orb--one"></div>
   <div class="page-hero__orb page-hero__orb--two"></div>
 
-  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center">
+  <div class="container grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center" *ngIf="ui$ | async as ui">
     <div>
-      <p class="kicker text-brand" appRevealOnScroll="fade">Contact</p>
-      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">We&rsquor;re ready to support your next mobilization</h1>
-      <p class="page-hero__lede">
-        Reach our operations desks any time for project planning, equipment availability or shipment status. We mobilise fast across every major port, river terminal and industrial zone in Bangladesh.
-      </p>
+      <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.contact.kicker }}</p>
+      <h1 class="page-hero__title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.contact.title }}</h1>
+      <p class="page-hero__lede">{{ ui.pages.contact.description }}</p>
 
       <div class="page-hero__tags">
-        <span class="tag-chip">24/7 ops desk</span>
-        <span class="tag-chip">Dhaka HQ</span>
-        <span class="tag-chip">Chattagram office</span>
+        <span class="tag-chip">{{ ui.pages.contact.tags.opsDesk }}</span>
+        <span class="tag-chip">{{ ui.pages.contact.tags.dhakaHQ }}</span>
+        <span class="tag-chip">{{ ui.pages.contact.tags.chattagramOffice }}</span>
       </div>
 
       <div class="page-hero__actions">
-        <a href="tel:+88029562676" class="btn btn-primary btn--glow">Call +880-2-9552676</a>
-        <a href="mailto:info@shamolima.com" class="btn btn--light">Email info@shamolima.com</a>
+        <a href="tel:+88029562676" class="btn btn-primary btn--glow">{{ ui.buttons?.callProjectDesk || '+880-2-9552676' }}</a>
+        <a href="mailto:info@shamolima.com" class="btn btn--light">{{ (ui.common?.email || 'Email') + ' info@shamolima.com' }}</a>
       </div>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
       <article class="stat-card">
-        <div class="stat-card__value">3</div>
-        <p class="stat-card__label">Service locations</p>
-        <p class="stat-card__detail">Head office, operations, branch and Chattagram desks to keep coverage tight.</p>
+        <div class="stat-card__value">{{ ui.pages.contact.stats.locations.value }}</div>
+        <p class="stat-card__label">{{ ui.pages.contact.stats.locations.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.contact.stats.locations.detail }}</p>
       </article>
       <article class="stat-card">
-        <div class="stat-card__value">60+</div>
-        <p class="stat-card__label">Project professionals</p>
-        <p class="stat-card__detail">Supervisors, planners, permit specialists and coordinators on rotation.</p>
+        <div class="stat-card__value">{{ ui.pages.contact.stats.professionals.value }}</div>
+        <p class="stat-card__label">{{ ui.pages.contact.stats.professionals.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.contact.stats.professionals.detail }}</p>
       </article>
       <article class="stat-card">
-        <div class="stat-card__value"><span>Live</span></div>
-        <p class="stat-card__label">Status updates</p>
-        <p class="stat-card__detail">Tracking dashboards, WhatsApp updates and daily reports for every move.</p>
+        <div class="stat-card__value"><span>{{ ui.pages.contact.stats.statusUpdates.value }}</span></div>
+        <p class="stat-card__label">{{ ui.pages.contact.stats.statusUpdates.label }}</p>
+        <p class="stat-card__detail">{{ ui.pages.contact.stats.statusUpdates.detail }}</p>
       </article>
     </div>
   </div>
 </section>
 
 <section class="section section--bright" [@listStagger]>
-  <div class="container grid gap-8 lg:grid-cols-2" *ngIf="contact$ | async as c">
+  <div class="container grid gap-8 lg:grid-cols-2" *ngIf="(contact$ | async) as c; else none">
+    <ng-container *ngIf="ui$ | async as ui">
     <div class="grid gap-6">
-      <ng-container *ngFor="let office of offices(c)">
+      <ng-container *ngFor="let office of offices(c, ui)">
         <article class="office-card" *ngIf="office.data as info">
           <div class="office-card__header">
             <span class="office-card__badge">{{ office.badge }}</span>
@@ -90,34 +89,37 @@
     </div>
 
     <div>
-      <form class="form-card grid gap-4" (ngSubmit)="submit()" #contactForm="ngForm">
+      <form class="form-card grid gap-4" (ngSubmit)="submit()" #contactForm="ngForm" *ngIf="ui$ | async as ui">
         <div class="grid md:grid-cols-2 gap-4">
-          <input class="form-field" placeholder="Your name" [(ngModel)]="model.name" name="name" required>
-          <input class="form-field" placeholder="Email" type="email" [(ngModel)]="model.email" name="email" required>
+          <input class="form-field" [placeholder]="ui.pages.contact.form.namePlaceholder" [(ngModel)]="model.name" name="name" required>
+          <input class="form-field" [placeholder]="ui.pages.contact.form.emailPlaceholder" type="email" [(ngModel)]="model.email" name="email" required>
         </div>
-        <input class="form-field" placeholder="Phone (optional)" [(ngModel)]="model.phone" name="phone">
-        <input class="form-field" placeholder="Subject" [(ngModel)]="model.subject" name="subject">
-        <textarea class="form-field" rows="4" placeholder="Your message" [(ngModel)]="model.message" name="message"></textarea>
-        <button class="btn btn-primary btn--glow justify-center" type="submit">Send message</button>
-        <p class="text-xs text-slate-500">We respond within business hours.</p>
+        <input class="form-field" [placeholder]="ui.pages.contact.form.phonePlaceholder" [(ngModel)]="model.phone" name="phone">
+        <input class="form-field" [placeholder]="ui.pages.contact.form.subjectPlaceholder" [(ngModel)]="model.subject" name="subject">
+        <textarea class="form-field" rows="4" [placeholder]="ui.pages.contact.form.messagePlaceholder" [(ngModel)]="model.message" name="message"></textarea>
+        <button class="btn btn-primary btn--glow justify-center" type="submit">{{ ui.pages.contact.form.submitButton }}</button>
+        <p class="text-xs text-slate-500">{{ ui.pages.contact.form.responseNote }}</p>
       </form>
     </div>
+    </ng-container>
   </div>
 </section>
 
 <section class="section section--gallery" @fadeIn>
-  <div class="container">
-    <p class="kicker text-brand" appRevealOnScroll="fade">Visit us</p>
-    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">Find our offices across Dhaka and Chattagram</h2>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.contact.visitUs.kicker }}</p>
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.contact.visitUs.title }}</h2>
     <div class="mt-8" *ngIf="contact$ | async as c">
       <app-map-embed
-        [markers]="mapMarkers(c)"
-        [label]="'Our Offices'"
+        [markers]="mapMarkers(c, ui)"
+        [label]="ui.pages.contact.visitUs.kicker"
         [zoom]="15"
         [heightRatio]="60"
         [showControls]="true" />
     </div>
   </div>
 </section>
+
+<ng-template #none></ng-template>
 
 <app-footer />
