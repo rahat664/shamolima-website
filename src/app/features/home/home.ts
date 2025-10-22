@@ -319,6 +319,11 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     return url;
   }
 
+  getCertificateAlt(index: number): string {
+    const names = ['IMS Badge', 'OPCA Certificate', 'ISO Certificate'];
+    return names[index] || 'Certification';
+  }
+
   private prefersReducedMotion(): boolean {
     try { return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return false; }
   }

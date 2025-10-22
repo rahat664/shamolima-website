@@ -127,14 +127,19 @@
 
       <div class="insight-card__cta" *ngIf="(certificates$ | async) as certificates">
         <p class="font-semibold">{{ ui.pages.home.certifications }}</p>
-        <div class="home-certificates">
-          <img *ngFor="let cert of certificates; trackBy: trackByUrl" [src]="cert" alt="Certification" loading="lazy">
+        <div class="home-certificates" data-gallery>
+          <img *ngFor="let cert of certificates; let i = index; trackBy: trackByUrl"
+               class="cert-image"
+               [src]="cert"
+               [alt]="getCertificateAlt(i)"
+               [title]="getCertificateAlt(i)"
+               loading="lazy">
         </div>
       </div>
 
       <div class="insight-card__cta" *ngIf="contactEmail$ | async as email">
-        <p class="font-semibold">Need mobilisation expertise?</p>
-        <p>Email <a class="text-brand hover:underline" [href]="'mailto:' + email">{{ email }}</a> to reach our project desk.</p>
+        <p class="font-semibold">{{ ui.pages.home.needExpertise }}</p>
+        <p>{{ ui.pages.home.emailPrefix }} <a class="text-brand hover:underline" [href]="'mailto:' + email">{{ email }}</a></p>
       </div>
     </aside>
   </div>
@@ -145,11 +150,11 @@
     <div class="container" *ngIf="ui$ | async as ui">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p class="kicker text-brand" appRevealOnScroll="fade">Spotlight operations</p>
-          <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">What our crews are delivering right now</h2>
+          <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.spotlight.kicker }}</p>
+          <h2 class="section-title text-white" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.spotlight.title }}</h2>
         </div>
         <p class="max-w-xl text-sm text-white/70" appRevealOnScroll="fade" [delay]="200">
-          Recent heavy haul, lifting and site support executed across Bangladesh. Each move reflects our integrated Shamolima Limited approach.
+          {{ ui.pages.home.sections.spotlight.description }}
         </p>
       </div>
 
@@ -178,17 +183,36 @@
   <div class="container" *ngIf="ui$ | async as ui">
     <p class="kicker text-brand" appRevealOnScroll="fade">{{ ui.pages.home.sections.clients.kicker }}</p>
     <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.clients.title }}</h2>
-    <div class="client-grid mt-6" *ngIf="clients$ | async as clients" appRevealOnScroll="zoom" [delay]="200">
-      <ng-container *ngFor="let c of clients; trackBy: trackByClient">
-        <img *ngIf="c.logo; else nameChip"
-             class="client-logo"
-             [src]="c.logo"
-             [alt]="c.name"
-             loading="lazy">
-        <ng-template #nameChip>
-          <span class="client-chip">{{ c.name }}</span>
-        </ng-template>
-      </ng-container>
+    <div class="clients-carousel-wrapper mt-8" *ngIf="clients$ | async as clients" appRevealOnScroll="fade" [delay]="200">
+      <div class="clients-carousel">
+        <div class="clients-track">
+          <!-- First set of logos -->
+          <ng-container *ngFor="let c of clients; trackBy: trackByClient">
+            <div class="client-card">
+              <img class="client-logo"
+                   [src]="c.logo || 'assets/logo/shamolima.png'"
+                   [alt]="c.name"
+                   [title]="c.name"
+                   loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+              <span class="client-chip" style="display: none;">{{ c.name }}</span>
+            </div>
+          </ng-container>
+          <!-- Duplicate set for seamless loop -->
+          <ng-container *ngFor="let c of clients; trackBy: trackByClient">
+            <div class="client-card">
+              <img class="client-logo"
+                   [src]="c.logo || 'assets/logo/shamolima.png'"
+                   [alt]="c.name"
+                   [title]="c.name"
+                   loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+              <span class="client-chip" style="display: none;">{{ c.name }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <p class="text-center text-sm text-slate-500 mt-6">{{ ui.pages.home.sections.clients.tagline }}</p>
     </div>
   </div>
 </section>
@@ -217,7 +241,12 @@
     <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.sections.recentProjects.title }}</h2>
     <div class="mt-8 grid gap-6 md:grid-cols-2">
       <article *ngFor="let p of (recentProjects$ | async)!; trackBy: trackByProject; let i = index" class="feature-card" appRevealOnScroll="up" [delay]="i * 100">
-        <span class="feature-card__badge">{{ ui.pages.home.sections.recentProjects.badge }}</span>
+        <span class="feature-card__badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </span>
         <h3 class="feature-card__title">{{ p.title }}</h3>
         <p class="feature-card__copy">{{ p.description }}</p>
         <p class="text-sm text-slate-500 mt-2"><strong>{{ ui.common.location }}:</strong> {{ p.location }}</p>

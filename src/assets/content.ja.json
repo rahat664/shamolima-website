@@ -216,7 +216,7 @@
           "whyChoose": "シャモリマが選ばれる理由",
           "video": { "kicker": "私たちのストーリーを見る", "title": "シャモリマの活動", "description": "バングラデシュ全土で統合ロジスティクスソリューションを提供する様子をご覧ください — 重量物輸送から最終試運転まで。" },
           "spotlight": { "kicker": "スポットライト", "title": "現場で今まさに実行中の作業", "description": "バングラデシュ各地での重量物輸送、揚重、現場支援の一部をご紹介。シャモリマの統合アプローチを体現した事例です。", "badge": "特集" },
-          "clients": { "kicker": "取引先", "title": "オペレーター・EPCからの信頼" },
+          "clients": { "kicker": "取引先", "title": "オペレーター・EPCからの信頼", "tagline": "エネルギー、インフラ、産業分野のリーディングカンパニーから信頼されています" },
           "howWeDeliver": { "kicker": "提供プロセス", "title": "ブリーフから引き渡しまでのライフサイクル支援" },
           "recentProjects": { "kicker": "最近の案件", "title": "主なリファレンス", "badge": "RP" },
           "gallery": { "kicker": "現場ギャラリー", "title": "ヤードと作業現場のハイライト", "description": "マルチモーダル輸送、エンジニアードリフト、据付支援の様子を抜粋で掲載。", "note": "写真は最近の作業実績から抜粋しています。" }
@@ -334,10 +334,10 @@
     ],
     "aboutSnippet": "シャモリマは1983年の創業以来、バングラデシュで統合プロジェクト物流と現場支援を提供してきました。物流、エンジニアリング、資材支援に強みを持ち、石油・ガス、電力、インフラなど幅広い産業に対応します。",
     "focusAreas": [
-      { "badge": "Fleet", "title": "機材レンタル", "copy": "認定クレーン、トレーラー、フォークリフト等、幅広い重量機材を提供。" },
-      { "badge": "Sectors", "title": "石油・ガス・電力", "copy": "リグや掘削機器の移送などエネルギー分野の実績が豊富。" },
-      { "badge": "Logistics", "title": "海運・通関", "copy": "海運、フォワーディング、通関をインフラ案件で多数実行。" },
-      { "badge": "Support", "title": "現場支援", "copy": "倉庫、クルー支援、認定人員で現場を円滑化。" }
+      { "badge": "01", "title": "機材レンタル", "copy": "認定クレーン、トレーラー、フォークリフト等、幅広い重量機材を提供。" },
+      { "badge": "02", "title": "石油・ガス・電力", "copy": "リグや掘削機器の移送などエネルギー分野の実績が豊富。" },
+      { "badge": "03", "title": "海運・通関", "copy": "海運、フォワーディング、通関をインフラ案件で多数実行。" },
+      { "badge": "04", "title": "現場支援", "copy": "倉庫、クルー支援、認定人員で現場を円滑化。" }
     ],
     "highlights": [
       { "title": "全国対応", "detail": "港湾・河川ターミナル・工業地帯にヤードを展開。" },
@@ -351,7 +351,11 @@
       { "title": "管理・連携", "copy": "単一窓口のPMが連絡と調整を一元化。", "points": ["通関・港湾手続き", "ステークホルダー調整", "コンプライアンス・報告"] },
       { "title": "完了・引渡し", "copy": "ドキュメントを揃え、目標到達を確認して引渡し。", "points": ["機材撤収", "最終レポート", "クライアント承認"] }
     ],
-    "certificates": [],
+    "certificates": [
+      "assets/images/ims_badge.jpg",
+      "assets/images/opca.jpg",
+      "assets/images/iso_certificate.jpg"
+    ],
     "testimonialsImages": []
   },
   "about": {
@@ -508,10 +512,49 @@
     ]
   },
   "clients": [
-    "Chevron Bangladesh", "Cairn Energy", "Halliburton", "Niko Resources", "Weatherford",
-    "KCA Deutag", "Diamond Drilling", "Larsen & Toubro", "Mitsui E&S", "BAT Bangladesh",
-    "Summit Power", "UNOCAL Bangladesh", "Siemens Bangladesh", "Toshiba", "Desh Energy",
-    "Beximco", "Bangla Trac", "Marubeni Corporation"
+    { "name": "Chevron Bangladesh", "logo": "assets/images/clients/chevron.png" },
+    { "name": "Halliburton", "logo": "assets/images/clients/halliburton.png" },
+    { "name": "Schlumberger", "logo": "assets/images/clients/schlumberger.png" },
+    { "name": "Baker Hughes", "logo": "assets/images/clients/baker_hughes.png" },
+    { "name": "Weatherford", "logo": "assets/images/clients/weatherford.png" },
+    { "name": "Cairn Energy", "logo": "assets/images/clients/cairn.png" },
+    { "name": "Niko Resources", "logo": "assets/images/clients/niko.png" },
+    { "name": "Santos", "logo": "assets/images/clients/santos.png" },
+    { "name": "Tullow Oil", "logo": "assets/images/clients/tullow.png" },
+    { "name": "KrisEnergy", "logo": "assets/images/clients/krisenergy.jpg" },
+    { "name": "CNOOC", "logo": "assets/images/clients/cnooc.jpg" },
+    { "name": "OXY", "logo": "assets/images/clients/oxy.png" },
+    { "name": "UNOCAL Bangladesh", "logo": "assets/images/clients/unocal.png" },
+    { "name": "BAPEX", "logo": "assets/images/clients/bapex.jpg" },
+    { "name": "ONGC", "logo": "assets/images/clients/ongc.png" },
+    { "name": "KCA Deutag", "logo": "assets/images/clients/kca-deutag.png" },
+    { "name": "Diamond Drilling", "logo": "assets/images/clients/diamond-drilling.png" },
+    { "name": "Hilong", "logo": "assets/images/clients/hilong.jpg" },
+    { "name": "Larsen & Toubro", "logo": "assets/images/clients/larsen-toubro.png" },
+    { "name": "Mitsui E&S", "logo": "assets/images/clients/mitsui.png" },
+    { "name": "Samsung", "logo": "assets/images/clients/samsung.png" },
+    { "name": "Hyundai", "logo": "assets/images/clients/hyundai.png" },
+    { "name": "POSCO", "logo": "assets/images/clients/posco.png" },
+    { "name": "Siemens Bangladesh", "logo": "assets/images/clients/siemens.png" },
+    { "name": "Toshiba", "logo": "assets/images/clients/toshiba.png" },
+    { "name": "Marubeni Corporation", "logo": "assets/images/clients/marubeni.png" },
+    { "name": "BAT Bangladesh", "logo": "assets/images/clients/bat.png" },
+    { "name": "Summit Power", "logo": "assets/images/clients/summit.png" },
+    { "name": "Doreen Power", "logo": "assets/images/clients/doreen_power.jpg" },
+    { "name": "Energypac", "logo": "assets/images/clients/energypac.jpg" },
+    { "name": "CPP", "logo": "assets/images/clients/cpp.jpg" },
+    { "name": "Beximco", "logo": "assets/images/clients/beximco.png" },
+    { "name": "Bangla Trac", "logo": "assets/images/clients/bangla-trac.png" },
+    { "name": "Aggreko", "logo": "assets/images/clients/aggreko.png" },
+    { "name": "Geocean", "logo": "assets/images/clients/geocean.png" },
+    { "name": "Deugro", "logo": "assets/images/clients/deugro.jpg" },
+    { "name": "Denzai", "logo": "assets/images/clients/denzai.png" },
+    { "name": "Saekyung", "logo": "assets/images/clients/saekyung.jpeg" },
+    { "name": "Runner", "logo": "assets/images/clients/runner.png" },
+    { "name": "National Tubes", "logo": "assets/images/clients/national_tubes.jpg" },
+    { "name": "ISS", "logo": "assets/images/clients/iss.jpg" },
+    { "name": "DIT", "logo": "assets/images/clients/dit.jpg" },
+    { "name": "Desh Energy", "logo": "assets/images/clients/desh.png" }
   ],
   "recentProjects": [
     {

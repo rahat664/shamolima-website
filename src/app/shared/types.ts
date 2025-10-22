@@ -72,7 +72,7 @@ export interface UITranslations {
         whyChoose: string;
         video: { kicker: string; title: string; description: string; };
         spotlight: { kicker: string; title: string; description: string; badge: string; };
-        clients: { kicker: string; title: string; };
+        clients: { kicker: string; title: string; tagline: string; };
         howWeDeliver: { kicker: string; title: string; };
         recentProjects: { kicker: string; title: string; badge: string; };
         gallery: { kicker: string; title: string; description: string; note: string; };

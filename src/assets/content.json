@@ -97,7 +97,8 @@
           },
           "clients": {
             "kicker": "Clients",
-            "title": "Trusted by operators & EPCs"
+            "title": "Trusted by operators & EPCs",
+            "tagline": "Trusted by leading companies in energy, infrastructure, and industrial sectors"
           },
           "howWeDeliver": {
             "kicker": "How we deliver",
@@ -719,22 +720,22 @@
     "aboutSnippet": "SHAMOLIMA has been providing comprehensive Project Support Services in Bangladesh since 1983. The company specializes in logistics, engineering, and project materials support for industries including oil and gas, power, energy, telecommunications, and infrastructure. It delivers high-quality professional consultancy, equipment rentals, transportation, shipping, customs clearance, and manpower solutions throughout Bangladesh.",
     "focusAreas": [
       {
-        "badge": "Fle",
+        "badge": "01",
         "title": "Equipment Rentals",
         "copy": "Certified Cranes, Trailers, Forklifts, and a wide range of heavy equipment to support any project requirement."
       },
       {
-        "badge": "Sec",
+        "badge": "02",
         "title": "Oil, Gas \u0026 Power",
         "copy": "Extensive knowledge and experience in moving Rigs, drilling equipment, and supporting the energy sector."
       },
       {
-        "badge": "Logi",
+        "badge": "03",
         "title": "Shipping \u0026 Customs",
         "copy": "Actively engaged in Shipping, Freight Forwarding, and Customs Clearance for infrastructure and development projects."
       },
       {
-        "badge": "Sup",
+        "badge": "04",
         "title": "Complete Site Services",
         "copy": "Includes warehousing, crew handling, and certified manpower to ensure seamless on-site operations."
       }
@@ -796,6 +797,9 @@
       }
     ],
     "certificates": [
+      "assets/images/ims_badge.jpg",
+      "assets/images/opca.jpg",
+      "assets/images/iso_certificate.jpg"
     ],
     "testimonialsImages": [
     ]
@@ -1110,24 +1114,49 @@
     ]
   },
   "clients": [
-    "Chevron Bangladesh",
-    "Cairn Energy",
-    "Halliburton",
-    "Niko Resources",
-    "Weatherford",
-    "KCA Deutag",
-    "Diamond Drilling",
-    "Larsen \u0026 Toubro",
-    "Mitsui E\u0026S",
-    "BAT Bangladesh",
-    "Summit Power",
-    "UNOCAL Bangladesh",
-    "Siemens Bangladesh",
-    "Toshiba",
-    "Desh Energy",
-    "Beximco",
-    "Bangla Trac",
-    "Marubeni Corporation"
+    { "name": "Chevron Bangladesh", "logo": "assets/images/clients/chevron.png" },
+    { "name": "Halliburton", "logo": "assets/images/clients/halliburton.png" },
+    { "name": "Schlumberger", "logo": "assets/images/clients/schlumberger.png" },
+    { "name": "Baker Hughes", "logo": "assets/images/clients/baker_hughes.png" },
+    { "name": "Weatherford", "logo": "assets/images/clients/weatherford.png" },
+    { "name": "Cairn Energy", "logo": "assets/images/clients/cairn.png" },
+    { "name": "Niko Resources", "logo": "assets/images/clients/niko.png" },
+    { "name": "Santos", "logo": "assets/images/clients/santos.png" },
+    { "name": "Tullow Oil", "logo": "assets/images/clients/tullow.png" },
+    { "name": "KrisEnergy", "logo": "assets/images/clients/krisenergy.jpg" },
+    { "name": "CNOOC", "logo": "assets/images/clients/cnooc.jpg" },
+    { "name": "OXY", "logo": "assets/images/clients/oxy.png" },
+    { "name": "UNOCAL Bangladesh", "logo": "assets/images/clients/unocal.png" },
+    { "name": "BAPEX", "logo": "assets/images/clients/bapex.jpg" },
+    { "name": "ONGC", "logo": "assets/images/clients/ongc.png" },
+    { "name": "KCA Deutag", "logo": "assets/images/clients/kca-deutag.png" },
+    { "name": "Diamond Drilling", "logo": "assets/images/clients/diamond-drilling.png" },
+    { "name": "Hilong", "logo": "assets/images/clients/hilong.jpg" },
+    { "name": "Larsen \u0026 Toubro", "logo": "assets/images/clients/larsen-toubro.png" },
+    { "name": "Mitsui E\u0026S", "logo": "assets/images/clients/mitsui.png" },
+    { "name": "Samsung", "logo": "assets/images/clients/samsung.png" },
+    { "name": "Hyundai", "logo": "assets/images/clients/hyundai.png" },
+    { "name": "POSCO", "logo": "assets/images/clients/posco.png" },
+    { "name": "Siemens Bangladesh", "logo": "assets/images/clients/siemens.png" },
+    { "name": "Toshiba", "logo": "assets/images/clients/toshiba.png" },
+    { "name": "Marubeni Corporation", "logo": "assets/images/clients/marubeni.png" },
+    { "name": "BAT Bangladesh", "logo": "assets/images/clients/bat.png" },
+    { "name": "Summit Power", "logo": "assets/images/clients/summit.png" },
+    { "name": "Doreen Power", "logo": "assets/images/clients/doreen_power.jpg" },
+    { "name": "Energypac", "logo": "assets/images/clients/energypac.jpg" },
+    { "name": "CPP", "logo": "assets/images/clients/cpp.jpg" },
+    { "name": "Beximco", "logo": "assets/images/clients/beximco.png" },
+    { "name": "Bangla Trac", "logo": "assets/images/clients/bangla-trac.png" },
+    { "name": "Aggreko", "logo": "assets/images/clients/aggreko.png" },
+    { "name": "Geocean", "logo": "assets/images/clients/geocean.png" },
+    { "name": "Deugro", "logo": "assets/images/clients/deugro.jpg" },
+    { "name": "Denzai", "logo": "assets/images/clients/denzai.png" },
+    { "name": "Saekyung", "logo": "assets/images/clients/saekyung.jpeg" },
+    { "name": "Runner", "logo": "assets/images/clients/runner.png" },
+    { "name": "National Tubes", "logo": "assets/images/clients/national_tubes.jpg" },
+    { "name": "ISS", "logo": "assets/images/clients/iss.jpg" },
+    { "name": "DIT", "logo": "assets/images/clients/dit.jpg" },
+    { "name": "Desh Energy", "logo": "assets/images/clients/desh.png" }
   ],
   "recentProjects": [
     {
