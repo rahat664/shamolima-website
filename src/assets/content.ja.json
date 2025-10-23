@@ -572,7 +572,7 @@
   ],
   "assets": {
     "logo": "assets/logo/shamolima.png",
-    "darkLogo": "assets/logo/shamolima_dark.svg",
+    "darkLogo": "assets/logo/shamolima.png",
     "imsBadge": "assets/images/ims_badge.jpg",
     "opcaCertificate": "assets/images/opca.jpg",
     "isoCertificate": "assets/images/iso_certificate.jpg"
