@@ -90,6 +90,11 @@
 
     <div>
       <form class="form-card grid gap-4" (ngSubmit)="submit()" #contactForm="ngForm" *ngIf="ui$ | async as ui">
+        @if (submitStatus(); as status) {
+          <div class="p-4 rounded-lg" [class.bg-green-50]="status.type === 'success'" [class.text-green-800]="status.type === 'success'" [class.bg-red-50]="status.type === 'error'" [class.text-red-800]="status.type === 'error'">
+            <p class="text-sm font-medium">{{ status.message }}</p>
+          </div>
+        }
         <div class="grid md:grid-cols-2 gap-4">
           <input class="form-field" [placeholder]="ui.pages.contact.form.namePlaceholder" [(ngModel)]="model.name" name="name" required>
           <input class="form-field" [placeholder]="ui.pages.contact.form.emailPlaceholder" type="email" [(ngModel)]="model.email" name="email" required>
@@ -97,7 +102,9 @@
         <input class="form-field" [placeholder]="ui.pages.contact.form.phonePlaceholder" [(ngModel)]="model.phone" name="phone">
         <input class="form-field" [placeholder]="ui.pages.contact.form.subjectPlaceholder" [(ngModel)]="model.subject" name="subject">
         <textarea class="form-field" rows="4" [placeholder]="ui.pages.contact.form.messagePlaceholder" [(ngModel)]="model.message" name="message"></textarea>
-        <button class="btn btn-primary btn--glow justify-center" type="submit">{{ ui.pages.contact.form.submitButton }}</button>
+        <button class="btn btn-primary btn--glow justify-center" type="submit" [disabled]="submitting()">
+          {{ submitting() ? 'Sending...' : ui.pages.contact.form.submitButton }}
+        </button>
         <p class="text-xs text-slate-500">{{ ui.pages.contact.form.responseNote }}</p>
       </form>
     </div>

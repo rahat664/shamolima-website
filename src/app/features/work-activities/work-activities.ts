@@ -193,28 +193,12 @@ export class WorkActivities implements OnInit, OnDestroy {
   trackByImage = (_: number, item: GalleryItem) => item.image;
 
   thumbFor(url: string): string {
-    if (!url) return url;
-    // Map to generated WebP thumbnails placed under thumbs/ with same base name
-    const m1 = url.match(/^(assets\/work-activities)\/(.+)$/i);
-    if (m1) {
-      const base = m1[2].replace(/\.[^.]+$/,'');
-      return `${m1[1]}/thumbs/${base}.webp`;
-    }
-    const m2 = url.match(/^(assets\/images)\/(.+)$/i);
-    if (m2) {
-      const base = m2[2].replace(/\.[^.]+$/,'');
-      return `${m2[1]}/thumbs/${base}.webp`;
-    }
+    // Use original images directly without optimization
     return url;
   }
 
   fullFor(url: string): string {
-    if (!url) return url;
-    const m1 = url.match(/^(assets\/(?:work-activities|images))\/(.+)$/i);
-    if (m1) {
-      const base = m1[2].replace(/\.[^.]+$/,'');
-      return `${m1[1]}/webp/${base}.webp`;
-    }
+    // Use original images directly without optimization
     return url;
   }
 

@@ -55,8 +55,8 @@ async function processFile(file) {
     tasks.push(
       sharp(file)
         .rotate()
-        .resize({ width: 480, withoutEnlargement: true })
-        .webp({ quality: 72 })
+        .resize({ width: 800, withoutEnlargement: true })
+        .webp({ quality: 85 })
         .toFile(thumbOut)
         .then(() => ({ file, kind: 'thumb' }))
     );

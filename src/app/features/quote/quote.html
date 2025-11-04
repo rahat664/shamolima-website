@@ -46,6 +46,11 @@
 <section class="section section--bright" @fadeIn>
   <div class="container grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] items-start">
     <form class="form-card grid gap-4" (ngSubmit)="submit()" #quoteForm="ngForm" *ngIf="ui$ | async as ui">
+      @if (submitStatus(); as status) {
+        <div class="p-4 rounded-lg" [class.bg-green-50]="status.type === 'success'" [class.text-green-800]="status.type === 'success'" [class.bg-red-50]="status.type === 'error'" [class.text-red-800]="status.type === 'error'">
+          <p class="text-sm font-medium">{{ status.message }}</p>
+        </div>
+      }
       <div class="grid md:grid-cols-2 gap-4">
         <input class="form-field" [placeholder]="ui.pages.quote.form.namePlaceholder" [(ngModel)]="model.name" name="name" required>
         <input class="form-field" [placeholder]="ui.pages.quote.form.emailPlaceholder" type="email" [(ngModel)]="model.email" name="email" required>
@@ -60,7 +65,9 @@
         <input class="form-field" [placeholder]="ui.pages.quote.form.cargoPlaceholder" [(ngModel)]="model.cargo" name="cargo">
       </div>
       <textarea class="form-field" rows="4" [placeholder]="ui.pages.quote.form.notesPlaceholder" [(ngModel)]="model.notes" name="notes"></textarea>
-      <button class="btn btn-primary btn--glow justify-center" type="submit">{{ ui.pages.quote.form.submitButton }}</button>
+      <button class="btn btn-primary btn--glow justify-center" type="submit" [disabled]="submitting()">
+        {{ submitting() ? 'Sending...' : ui.pages.quote.form.submitButton }}
+      </button>
       <p class="text-xs text-slate-500">{{ ui.pages.quote.form.disclaimer }}</p>
     </form>
 
