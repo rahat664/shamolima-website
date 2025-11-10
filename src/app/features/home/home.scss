@@ -553,3 +553,121 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px -6px rgba(30, 174, 152, 0.35);
 }
+
+/* Certificates carousel (homepage dedicated section) */
+.section--certificates {
+  position: relative;
+  padding-top: clamp(2rem, 4vh, 4rem);
+  padding-bottom: clamp(2rem, 4vh, 4rem);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 40%, #f8fafc 100%);
+}
+
+.certificates-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 90vh;
+  perspective: 1600px;
+}
+
+/* Local viewport container */
+.certificates-carousel .carousel__viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.certificates-viewport {
+  position: relative;
+  height: 100%;
+}
+
+.cert-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 300ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  padding: clamp(1rem, 3vw, 2.25rem);
+  transform-style: preserve-3d;
+  z-index: 1;
+  box-shadow: none; /* remove card shadow */
+}
+
+.cert-card.is-active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateZ(0) rotateY(0deg) scale(1);
+  z-index: 3;
+}
+
+.cert-card.is-prev,
+.cert-card.is-next {
+  opacity: 0.6;
+  filter: blur(1px);
+  z-index: 2;
+}
+
+.cert-card.is-prev { transform: translateX(-35%) rotateY(-12deg) scale(1); }
+.cert-card.is-next { transform: translateX(35%) rotateY(12deg) scale(1); }
+
+.cert-card__image {
+  max-width: min(920px, 92%);
+  width: auto;
+  height: clamp(360px, 70vh, 860px); /* fixed visual height for all */
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: none; /* remove image shadow */
+  background: #fff;
+}
+
+/* Side cards keep the same height to avoid visual jumps */
+
+/* Remove ambient glow */
+
+/* Dots */
+.cert-dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1rem, 3vh, 2rem);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.cert-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 42, 0.25);
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.cert-dot.active {
+  width: 36px;
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+@media (max-width: 768px) {
+  .certificates-carousel { min-height: 70vh; }
+  .cert-card.is-prev { transform: translateX(-20%) translateZ(-100px) rotateY(-10deg) scale(0.88); }
+  .cert-card.is-next { transform: translateX(20%) translateZ(-100px) rotateY(10deg) scale(0.88); }
+  .cert-card__image { max-width: 90%; max-height: 70vh; }
+  .cert-card.is-prev .cert-card__image,
+  .cert-card.is-next .cert-card__image { max-width: 64%; max-height: 52vh; }
+}
+
+/* Ensure any [hidden] node is really removed from layout */
+:host [hidden] { display: none !important; }

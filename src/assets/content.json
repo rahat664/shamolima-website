@@ -797,9 +797,9 @@
       }
     ],
     "certificates": [
-      "assets/images/ims_badge.jpg",
       "assets/images/opca.jpg",
-      "assets/images/iso_certificate.jpg"
+      "assets/images/iso_certificate.jpg",
+      "assets/images/hse_award.png"
     ],
     "testimonialsImages": [
     ]
@@ -1113,7 +1113,6 @@
     ]
   },
   "clients": [
-    { "name": "Chevron Bangladesh", "logo": "assets/images/clients/chevron.png" },
     { "name": "Halliburton", "logo": "assets/images/clients/halliburton.png" },
     { "name": "Schlumberger", "logo": "assets/images/clients/schlumberger.png" },
     { "name": "Baker Hughes", "logo": "assets/images/clients/baker_hughes.png" },
@@ -1158,17 +1157,6 @@
     { "name": "Desh Energy", "logo": "assets/images/clients/desh.png" }
   ],
   "recentProjects": [
-    {
-      "title": "Chevron Master Contracts",
-      "description": "Two master contracts with Chevron for Customs Clearance \u0026 Transportation and Heavy Equipment Rental, covering long-term project support for onshore operations.",
-      "location": "Bibiyana and Moulvibazar gas fields, Bangladesh",
-      "keyEquipment": [
-        "Trailers",
-        "Cranes",
-        "Forklifts",
-        "Prime movers"
-      ]
-    },
     {
       "title": "400 MW Bibiyana-III Combined Cycle Power Plant Project",
       "description": "Provided heavy equipment rentals including cranes, trailers, and forklifts for installation and logistics support.",

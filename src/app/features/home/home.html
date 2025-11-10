@@ -5,7 +5,7 @@
       <div class="home-hero__slide" *ngIf="heroSlideIndex === 0" [class.active]="true">
         <picture>
           <source srcset="assets/images/webp/fleet_yard.webp" type="image/webp">
-          <img class="home-hero__image"
+          <img class="home-hero__image" data-no-gallery="true"
                ngSrc="assets/images/fleet_yard.jpg"
                fill
                [priority]="heroSlideIndex === 0"
@@ -15,7 +15,7 @@
       <div class="home-hero__slide" *ngIf="heroSlideIndex === 1" [class.active]="true">
         <picture>
           <source srcset="assets/images/webp/generator_transformer.webp" type="image/webp">
-          <img class="home-hero__image"
+          <img class="home-hero__image" data-no-gallery="true"
                ngSrc="assets/images/generator_transformer.jpg"
                fill
                [priority]="heroSlideIndex === 1"
@@ -25,7 +25,7 @@
       <div class="home-hero__slide" *ngIf="heroSlideIndex === 2" [class.active]="true">
         <picture>
           <source srcset="assets/images/webp/project_equipment.webp" type="image/webp">
-          <img class="home-hero__image"
+          <img class="home-hero__image" data-no-gallery="true"
                ngSrc="assets/images/project_equipment.jpg"
                fill
                [priority]="heroSlideIndex === 2"
@@ -215,6 +215,63 @@
       <p class="text-center text-sm text-slate-500 mt-6">{{ ui.pages.home.sections.clients.tagline }}</p>
     </div>
   </div>
+</section>
+
+<!-- Certificates Carousel Section -->
+<section class="section section--certificates" @fadeIn>
+  <div class="container" *ngIf="ui$ | async as ui">
+    <h2 class="section-title" appRevealOnScroll="up" [delay]="100">{{ ui.pages.home.certifications }}</h2>
+    <div class="certificates-carousel mt-6"
+         *ngIf="(certificates$ | async) as certificates"
+         (mouseenter)="pauseCertAutoplay()"
+         (mouseleave)="resumeCertAutoplay()"
+         (touchstart)="onCertTouchStart($event)"
+         (touchend)="onCertTouchEnd($event)"
+         (keydown)="onCertKey($event)"
+         tabindex="0"
+         role="region"
+         aria-roledescription="carousel"
+         aria-label="Certificates carousel">
+      <button class="carousel__nav carousel__nav--prev"
+              type="button"
+              [attr.aria-label]="ui.common.previous"
+              (click)="prevCert(certificates.length)">
+        &#10094;
+      </button>
+      <div class="carousel__viewport certificates-viewport" data-gallery>
+        <article *ngFor="let cert of certificates; let i = index; trackBy: trackByUrl"
+                 class="cert-card"
+                 [class.is-active]="i === certIndex"
+                 [class.is-prev]="i === ((certIndex - 1 + certificates.length) % certificates.length)"
+                 [class.is-next]="i === ((certIndex + 1) % certificates.length)"
+                 [hidden]="!(i === certIndex || i === ((certIndex - 1 + certificates.length) % certificates.length) || i === ((certIndex + 1) % certificates.length))">
+          <img [src]="cert"
+               [alt]="getCertificateAlt(i)"
+               [title]="getCertificateAlt(i)"
+               loading="lazy"
+               class="cert-card__image">
+        </article>
+      </div>
+      <button class="carousel__nav carousel__nav--next"
+              type="button"
+              [attr.aria-label]="ui.common.next"
+              (click)="nextCert(certificates.length)">
+        &#10095;
+      </button>
+
+      <!-- Dots -->
+      <div class="cert-dots" role="tablist" aria-label="Certificates navigation">
+        <button *ngFor="let _ of certificates; index as i"
+                class="cert-dot"
+                role="tab"
+                [attr.aria-selected]="i === certIndex"
+                [class.active]="i === certIndex"
+                (click)="setCert(i, certificates.length)"
+                [attr.aria-label]="'Go to certificate ' + (i + 1)"></button>
+      </div>
+    </div>
+  </div>
+  
 </section>
 
 <section class="section" @fadeIn>

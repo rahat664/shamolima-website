@@ -42,9 +42,9 @@ export class PageHeroCarousel implements OnInit, OnDestroy {
   }
 
   toWebp(src: string): string {
-    if (!src) return src;
-    // Map assets/images/* or assets/work-activities/* to their webp outputs
-    const m = src.match(/^(assets\/(?:images|work-activities))\/(.+)$/i);
+    if (!src) return '';
+    // Only emit WebP for images under assets/images where webp derivatives exist.
+    const m = src.match(/^(assets\/images)\/(.+)$/i);
     if (!m) return '';
     const base = m[2].replace(/\.[^.]+$/, '');
     return `${m[1]}/webp/${base}.webp`;

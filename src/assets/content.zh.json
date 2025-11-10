@@ -8,7 +8,7 @@
       "home": "首页",
       "services": "服务",
       "about": "关于我们",
-      "qhse": "QHSE",
+      "qhse": "质量、健康、安全和环境",
       "contact": "联系我们",
       "workActivities": "工作实绩",
       "fleet": "车队",
@@ -40,7 +40,7 @@
       "language": "语言"
     },
     "footer": {
-      "tagline": "欢迎与专业物流和项目支持运营团队以及QHSE团队合作。",
+      "tagline": "欢迎与专业物流和项目支持运营团队以及质量、健康、安全和环境团队合作。",
       "callUs": "致电我们",
       "emailUs": "发送邮件",
       "company": "公司",
@@ -62,7 +62,7 @@
           "EPC 合作"
         ],
         "stats": [
-          { "value": "25+", "label": "在孟加拉从事重型吊装与运输的年数", "detail": "覆盖港口、炼厂、LNG 终端与电网升级。" },
+          { "value": "25+", "label": "在孟加拉从事重型吊装与运输的年数", "detail": "覆盖港口、炼厂、液化天然气 终端与电网升级。" },
           { "value": "420+", "label": "完成的复杂吊装与运输项目", "detail": "动员履带吊、龙门架、SPMT 与液压拖车。" },
           { "value": "1,200 km+", "label": "完成的路线勘察与通道整备", "detail": "道路加固、驳船研究与多式联运由内部工程完成。" },
           { "value": "24/7", "label": "现场监督与维保覆盖", "detail": "维修、索具与合规团队轮班支持执行。" }
@@ -77,7 +77,7 @@
           { "title": "水浴加热器安装", "detail": "150T 履带吊吊装、接管（纳拉扬甘杰）。" },
           { "title": "换热器运输", "detail": "多轴拖车 + 护送的门到门运输（80T）。" },
           { "title": "变压器转运", "detail": "SPMT 滚装卸载与精确就位（北部变电站扩建）。" },
-          { "title": "LNG 码头模块", "detail": "码头至现场的水陆联运，含驳船、场地与最终对位。" }
+          { "title": "液化天然气 码头模块", "detail": "码头至现场的水陆联运，含驳船、场地与最终对位。" }
         ],
         "phases": [
           { "title": "范围与设计", "copy": "针对货物包络开展可行性、通道信息与起重工程。", "points": ["方案、风险台账与协同会议", "关键起重图纸、索具与稳定性校核", "许可路线图与通道整备并与主管机构沟通"] },
@@ -136,9 +136,9 @@
         }
       },
       "qhse": {
-        "hero": { "kicker": "QHSE", "title": "质量、健康、安全与环境毫不妥协", "description": "Shamolima 的一体化管理体系推动零伤害、规范执行与持续改进。" },
+        "hero": { "kicker": "质量、健康、安全和环境", "title": "质量、健康、安全与环境毫不妥协", "description": "Shamolima 的一体化管理体系推动零伤害、规范执行与持续改进。" },
         "tags": { "iso": "ISO 认证", "training": "培训", "audits": "审核", "compliance": "合规" },
-        "actions": { "viewGoals": "查看 QHSE 目标", "trainingFramework": "培训框架" },
+        "actions": { "viewGoals": "查看 质量、健康、安全和环境 目标", "trainingFramework": "培训框架" },
         "stats": {
           "zero": { "label": "零事故愿景", "detail": "每日班前会、审核与停工权。" },
           "ims": { "label": "一体化管理体系", "detail": "基于 ISO 的质量、安全与环境流程。" },
@@ -149,7 +149,7 @@
         "certifications": { "kicker": "认证", "title": "一体化管理的证书与会员资格", "lede": "我们的 IMS 认证与行业会员体现对安全、环境与质量的严格要求。" },
         "documents": {
           "heading": "关键文件",
-          "ims": { "title": "IMS 证书", "detail": "下载涵盖 QHSE 的最新 ISO 认证。" },
+          "ims": { "title": "IMS 证书", "detail": "下载涵盖 质量、健康、安全和环境 的最新 ISO 认证。" },
           "matrix": { "title": "培训矩阵", "detail": "基于岗位的能力与再培训安排。" },
           "erp": { "title": "应急响应预案", "detail": "升级通道与 7×24 联系人。" },
           "downloadIMS": "下载 IMS 证书"
@@ -373,7 +373,7 @@
         "detail": "坚定致力于通过卓越、创新和持续改进来满足各种需求，实现客户满意度。"
       },
       {
-        "title": "聚焦QHSE",
+        "title": "聚焦质量、健康、安全和环境",
         "detail": "我们致力于通过提供健康的工作环境和最小化所有风险来预防伤害和疾病。"
       },
       {
@@ -559,7 +559,7 @@
     "values": [
       {
         "title": "安全第一",
-        "description": "在所有运营中对QHSE（质量、健康、安全、环境）的坚定承诺，确保零伤害。"
+        "description": "在所有运营中对质量、健康、安全和环境（质量、健康、安全、环境）的坚定承诺，确保零伤害。"
       },
       {
         "title": "以客户为中心",
@@ -620,7 +620,7 @@
         "slug": "power-plant-material-handling"
       },
       {
-        "title": "LNG项目",
+        "title": "液化天然气项目",
         "slug": "lng-project"
       },
       {
@@ -732,7 +732,6 @@
     ]
   },
   "clients": [
-    { "name": "雪佛龙孟加拉", "logo": "assets/images/clients/chevron.png" },
     { "name": "哈里伯顿", "logo": "assets/images/clients/halliburton.png" },
     { "name": "斯伦贝谢", "logo": "assets/images/clients/schlumberger.png" },
     { "name": "贝克休斯", "logo": "assets/images/clients/baker_hughes.png" },
@@ -778,30 +777,19 @@
   ],
   "recentProjects": [
     {
-      "title": "雪佛龙主合同",
-      "description": "与雪佛龙签订的两项主合同，涵盖清关与运输以及重型设备租赁，为陆上作业提供长期项目支持。",
-      "location": "孟加拉国比比亚纳和莫尔维巴扎尔气田",
+      "title": "400兆瓦Bibiyana-III联合循环发电厂项目",
+      "description": "提供重型设备租赁服务，包括起重机、拖车和叉车，用于安装和物流支持。",
+      "location": "孟加拉国，锡尔赫特",
       "keyEquipment": [
-        "拖车",
-        "起重机",
-        "叉车",
-        "主驱动车"
-      ]
-    },
-    {
-      "title": "400兆瓦比比亚纳III联合循环发电厂项目",
-      "description": "提供重型设备租赁，包括用于安装和物流支持的起重机、拖车和叉车。",
-      "location": "孟加拉国锡尔赫特",
-      "keyEquipment": [
-        "履带起重机",
+        "履带式起重机",
         "低平板拖车",
         "叉车"
       ]
     },
     {
-      "title": "335兆瓦和718兆瓦项目（锡迪尔贡杰与梅格纳加特）",
-      "description": "为多个EPC承包商长期租赁重型起重和运输设备。",
-      "location": "纳拉扬甘杰和梅格纳加特",
+      "title": "335兆瓦和718兆瓦项目（Siddhirganj 和 Meghnaghat）",
+      "description": "为多个EPC承包商提供重型起重和运输设备的长期租赁。",
+      "location": "纳拉扬甘杰和梅克纳加特",
       "keyEquipment": [
         "拖车",
         "起重机",
@@ -809,9 +797,9 @@
       ]
     },
     {
-      "title": "孟加拉特拉克100兆瓦发电项目",
-      "description": "使用本地重型起重方法处理从母船到码头的卸货、准备、安置和8台220吨发动机及配件的安装。",
-      "location": "孟加拉国杰索尔诺阿帕拉",
+      "title": "Bangla Trac 100兆瓦电力项目",
+      "description": "使用本土重型起重方法，处理了8台220吨发动机及配件的从母船到码头的卸货、准备、放置和安装工作。",
+      "location": "杰索尔，诺阿帕拉",
       "keyEquipment": [
         "龙门起重机",
         "驳船",
@@ -819,12 +807,12 @@
       ]
     },
     {
-      "title": "EPV 115兆瓦项目 塔库尔冈",
-      "description": "管理驳船和公路运输物流，使用龙门起重机和滑动系统组装和放置超过900吨的机械设备。",
-      "location": "孟加拉国塔库尔冈",
+      "title": "EPV 115兆瓦项目 - 塔akurgaon",
+      "description": "管理驳船和公路运输物流，使用龙门起重机和滑移系统对超过900吨的机械进行发动机组装和放置。",
+      "location": "孟加拉国，塔akurgaon",
       "keyEquipment": [
         "驳船",
-        "滑动系统",
+        "滑移系统",
         "龙门起重机"
       ]
     }

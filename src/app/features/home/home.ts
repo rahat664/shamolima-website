@@ -226,6 +226,36 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   heroSlideIndex = 0;
   private heroCarouselHandle: any = null;
 
+  // Certificates carousel
+  certIndex = 0;
+  private certCount = 0;
+  private certAutoplayHandle: any = null;
+  private certSub: any = null;
+  private certTouchStartX = 0;
+
+  nextCert(total?: number) {
+    const count = total ?? this.certCount;
+    if (!count) return;
+    this.certIndex = (this.certIndex + 1) % count;
+  }
+
+  prevCert(total?: number) {
+    const count = total ?? this.certCount;
+    if (!count) return;
+    this.certIndex = (this.certIndex - 1 + count) % count;
+  }
+
+  pauseCertAutoplay() {
+    if (this.certAutoplayHandle) {
+      clearInterval(this.certAutoplayHandle);
+      this.certAutoplayHandle = null;
+    }
+  }
+
+  resumeCertAutoplay() {
+    this.startCertAutoplay();
+  }
+
   ngOnInit() {
     this.spotlightSub = this.spotlight$.subscribe(slides => {
       this.spotlightCount = slides?.length ?? 0;
@@ -238,6 +268,15 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     });
 
     // Start hero carousel after view init
+    this.certSub = this.certificates$.subscribe(list => {
+      this.certCount = list?.length ?? 0;
+      if (this.certCount > 0) {
+        this.certIndex = this.certIndex % this.certCount;
+      } else {
+        this.certIndex = 0;
+      }
+      setTimeout(() => this.startCertAutoplay());
+    });
   }
 
   ngAfterViewInit() {
@@ -257,6 +296,14 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
       clearInterval(this.heroCarouselHandle);
       this.heroCarouselHandle = null;
     }
+    if (this.certAutoplayHandle) {
+      clearInterval(this.certAutoplayHandle);
+      this.certAutoplayHandle = null;
+    }
+    if (this.certSub) {
+      this.certSub.unsubscribe?.();
+      this.certSub = null;
+    }
   }
 
   setHeroSlide(index: number) {
@@ -273,6 +320,48 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     this.heroCarouselHandle = setInterval(() => {
       this.heroSlideIndex = (this.heroSlideIndex + 1) % 3;
     }, 7000); // Longer interval, less CPU
+  }
+
+  private startCertAutoplay() {
+    if (this.prefersReducedMotion()) return;
+    if (this.certAutoplayHandle) {
+      clearInterval(this.certAutoplayHandle);
+      this.certAutoplayHandle = null;
+    }
+    if (this.certCount < 2) return;
+    this.certAutoplayHandle = setInterval(() => {
+      this.nextCert(this.certCount);
+    }, 6000);
+  }
+
+  setCert(index: number, total?: number) {
+    const count = total ?? this.certCount;
+    if (!count) return;
+    this.certIndex = ((index % count) + count) % count;
+    this.startCertAutoplay();
+  }
+
+  onCertTouchStart(e: TouchEvent) {
+    try { this.certTouchStartX = e.changedTouches?.[0]?.clientX ?? 0; } catch { this.certTouchStartX = 0; }
+  }
+
+  onCertTouchEnd(e: TouchEvent) {
+    const endX = e.changedTouches?.[0]?.clientX ?? 0;
+    const dx = endX - this.certTouchStartX;
+    const threshold = 30;
+    if (Math.abs(dx) > threshold) {
+      if (dx > 0) this.prevCert(this.certCount); else this.nextCert(this.certCount);
+    }
+  }
+
+  onCertKey(e: KeyboardEvent) {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      this.prevCert(this.certCount);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      this.nextCert(this.certCount);
+    }
   }
 
 

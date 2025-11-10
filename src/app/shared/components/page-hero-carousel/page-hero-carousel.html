@@ -4,8 +4,11 @@
          *ngIf="i === currentSlide"
          [class.active]="true">
       <picture>
-        <source [attr.srcset]="toWebp(image)" type="image/webp">
+        <ng-container *ngIf="toWebp(image) as webp">
+          <source [attr.srcset]="webp" type="image/webp">
+        </ng-container>
         <img class="page-hero-carousel__image"
+             data-no-gallery="true"
              [ngSrc]="image"
              fill
              [priority]="i === currentSlide"
