@@ -420,9 +420,9 @@
       }
     ],
     "certificates": [
-      "assets/images/ims_badge.jpg",
       "assets/images/opca.jpg",
-      "assets/images/iso_certificate.jpg"
+      "assets/images/iso_certificate.jpg",
+      "assets/images/hse_award.png"
     ],
     "testimonialsImages": [
     ]

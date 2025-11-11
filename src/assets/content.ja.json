@@ -352,9 +352,9 @@
       { "title": "完了・引渡し", "copy": "ドキュメントを揃え、目標到達を確認して引渡し。", "points": ["機材撤収", "最終レポート", "クライアント承認"] }
     ],
     "certificates": [
-      "assets/images/ims_badge.jpg",
       "assets/images/opca.jpg",
-      "assets/images/iso_certificate.jpg"
+      "assets/images/iso_certificate.jpg",
+      "assets/images/hse_award.png"
     ],
     "testimonialsImages": []
   },
